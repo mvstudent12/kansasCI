@@ -49,6 +49,7 @@ module.exports = {
     try {
       res.render("service-details", {
         details,
+        category,
       });
     } catch (err) {
       console.log(err);

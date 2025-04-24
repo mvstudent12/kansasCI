@@ -1953,6 +1953,7 @@ section,
 
 .service-details .services-list a:hover {
   border-color: var(--accent-color);
+  background-color: #f5f5f5;
 }
 
 .service-details .services-img {

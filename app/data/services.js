@@ -2,6 +2,15 @@
 
 module.exports = {
   chemical: {
+    short: "chemical",
+    img: [
+      "/img/products/chemical/chemical-1.jpg",
+      "/img/products/chemical/chemical-2.jpg",
+      "/img/products/chemical/chemical-3.jpg",
+      "/img/products/chemical/chemical-4.jpg",
+      "/img/products/chemical/chemical-5.jpg",
+      "/img/products/chemical/chemical-6.jpg",
+    ],
     category: "Chemical Products",
     description:
       "KCI offers a dependable line of chemical products designed for correctional facility maintenance, janitorial services, and industrial use. Manufactured with safety, performance, and sustainability in mind, our chemical solutions meet the rigorous demands of a wide range of environments.",
@@ -48,6 +57,15 @@ module.exports = {
   },
 
   seating: {
+    short: "seating",
+    img: [
+      "/img/products/clothing-textiles/textiles-1.jpg",
+      "/img/products/clothing-textiles/textiles-2.jpg",
+      "/img/products/clothing-textiles/textiles-3.jpg",
+      "/img/products/clothing-textiles/textiles-4.jpg",
+      "/img/products/clothing-textiles/textiles-5.jpg",
+      "/img/products/clothing-textiles/textiles-6.jpg",
+    ],
     category: "Seating",
     description:
       "Durable and comfortable seating solutions for every environment, from offices to correctional settings.",
@@ -151,6 +169,7 @@ module.exports = {
   },
 
   clothingTextiles: {
+    short: "textiles",
     category: "Clothing & Textiles",
     description:
       "Textile goods and apparel for correctional and institutional use, crafted with durability and value in mind.",
@@ -224,6 +243,7 @@ module.exports = {
   },
 
   furniture: {
+    short: "furniture",
     category: "Furniture",
     description:
       "Custom and standard furniture options for offices, classrooms, and institutional settings.",
@@ -338,6 +358,7 @@ module.exports = {
   },
 
   metalProducts: {
+    short: "metal",
     category: "Metal Products",
     description:
       "Heavy-duty metal fabrication products including furniture and outdoor items.",
@@ -428,6 +449,7 @@ module.exports = {
   },
 
   signsGraphics: {
+    short: "signs",
     category: "Signs & Graphics",
     description:
       "Custom signage and graphic solutions for a wide range of applications.",
@@ -512,6 +534,7 @@ module.exports = {
   },
 
   officePanelSystems: {
+    short: "office",
     category: "Office Panel Systems",
     description:
       "Flexible and professional office panel configurations for modern workspaces.",
@@ -579,6 +602,7 @@ module.exports = {
   },
 
   softwareSolutions: {
+    short: "software",
     category: "Software Solutions",
     description:
       "Custom software development and digital services to support modern business needs.",
