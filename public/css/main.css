@@ -2942,3 +2942,7 @@ section,
 .text-y {
   color: var(--accent-color);
 }
+.img-small {
+  max-width: 80%;
+  height: auto;
+}

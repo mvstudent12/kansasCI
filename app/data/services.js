@@ -168,7 +168,7 @@ module.exports = {
     ],
   },
 
-  clothingTextiles: {
+  textiles: {
     short: "textiles",
     category: "Clothing & Textiles",
     description:
@@ -357,7 +357,7 @@ module.exports = {
     ],
   },
 
-  metalProducts: {
+  metal: {
     short: "metal",
     category: "Metal Products",
     description:
@@ -448,7 +448,7 @@ module.exports = {
     ],
   },
 
-  signsGraphics: {
+  signs: {
     short: "signs",
     category: "Signs & Graphics",
     description:
@@ -533,7 +533,7 @@ module.exports = {
     ],
   },
 
-  officePanelSystems: {
+  office: {
     short: "office",
     category: "Office Panel Systems",
     description:
@@ -601,7 +601,7 @@ module.exports = {
     ],
   },
 
-  softwareSolutions: {
+  software: {
     short: "software",
     category: "Software Solutions",
     description:
