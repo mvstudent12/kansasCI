@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const fs = require("fs");
 const path = require("path");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const User = require("../models/User"); // Adjust path if needed
 
 //const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/kansasci";
