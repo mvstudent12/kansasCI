@@ -170,7 +170,7 @@ module.exports = {
 
   textiles: {
     short: "textiles",
-    category: "Clothing & Textiles",
+    category: "Clothing/Textiles",
     description:
       "Textile goods and apparel for correctional and institutional use, crafted with durability and value in mind.",
     overview: {
@@ -232,14 +232,7 @@ module.exports = {
           "By purchasing KCI's clothing and textile products, you help provide valuable job training for incarcerated individuals in textile production.",
       },
     ],
-    items: [
-      "Boxer Shorts",
-      "Jackets - Blue Denim",
-      "Jeans - Blue Denim",
-      "Shirts",
-      "Pillows",
-      "Toweling",
-    ],
+    items: ["Clothing", "Toweling", "Coveralls", "Masks", "Bedding"],
   },
 
   furniture: {
@@ -384,12 +377,12 @@ module.exports = {
           "Versatile and durable kiosks designed for use in public spaces, providing self-service and information dissemination.",
       },
       {
-        name: "Metal Detention Furniture",
+        name: "Detention Furniture",
         description:
           "Strong and secure furniture designed for use in detention areas, including beds, desks, and lockers made from high-strength metal.",
       },
       {
-        name: "Metal Dormitory Furniture",
+        name: "Dormitory Furniture",
         description:
           "Functional and durable furniture for dormitory rooms, designed to withstand heavy use while maintaining a clean and professional appearance.",
       },
@@ -440,8 +433,8 @@ module.exports = {
       "Fire Pits/Rings",
       "Grills",
       "Kiosks",
-      "Metal Detention Furniture",
-      "Metal Dormitory Furniture",
+      "Detention Furniture",
+      "Dormitory Furniture",
       "Metal Outdoor Furniture",
       "Outdoor Items",
       "Custom Items",
