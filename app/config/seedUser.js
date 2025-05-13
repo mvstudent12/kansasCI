@@ -4,8 +4,10 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const User = require("../models/User"); // Adjust path if needed
 
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/kansasci";
+//const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/kansasci";
 
+const MONGO_URI =
+  "mongodb+srv://kcicodingdev:zaaKZI27u5MtY6Pw@kansasci.jdywjne.mongodb.net/?retryWrites=true&w=majority&appName=Kansasci";
 async function seedUsers() {
   try {
     await mongoose.connect(MONGO_URI, {
