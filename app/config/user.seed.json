@@ -8,7 +8,7 @@
   },
   {
     "email": "customer1@kci.com",
-    "passwordHash": "Customer123!",
+    "passwordHash": "password",
     "role": "customer",
     "name": "John Smart",
     "smartNumbers": ["SN-1001", "SN-1002"],
@@ -16,7 +16,7 @@
   },
   {
     "email": "customer2@kci.com",
-    "passwordHash": "Customer456!",
+    "passwordHash": "password",
     "role": "customer",
     "name": "Jane Doe",
     "smartNumbers": ["SN-2001"],
