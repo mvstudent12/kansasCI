@@ -14,8 +14,6 @@ mongoose
     ssl: true, // Ensure SSL is enabled -comment out in development/localhost all three lines
     tls: true, // Force TLS connection
     tlsInsecure: false, // Optionally, enforce secure connection (recommended)
-    sslValidate: true,
-    tlsAllowInvalidCertificates: false,
   })
   .then(() => console.log(`Connected to ${dbURI}`))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
