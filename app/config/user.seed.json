@@ -1,7 +1,7 @@
 [
   {
     "email": "admin@kci.com",
-    "passwordHash": "Admin1234!",
+    "passwordHash": "password",
     "role": "admin",
     "name": "Admin User",
     "adminPermissions": ["manageUsers", "manageOrders", "manageProducts"]
