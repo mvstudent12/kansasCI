@@ -6,7 +6,7 @@ module.exports = {
       res.render("public/index", { currentPage: "home" });
     } catch (err) {
       console.log(err);
-      res.render("error/404");
+      res.render("error/404", { layout: "error" });
     }
   },
   async contact(req, res) {
@@ -14,7 +14,7 @@ module.exports = {
       res.render("public/contact", { currentPage: "contact" });
     } catch (err) {
       console.log(err);
-      res.render("error/404");
+      res.render("error/404", { layout: "error" });
     }
   },
   async about(req, res) {
@@ -22,7 +22,7 @@ module.exports = {
       res.render("public/about", { currentPage: "about" });
     } catch (err) {
       console.log(err);
-      res.render("error/404");
+      res.render("error/404", { layout: "error" });
     }
   },
   async services(req, res) {
@@ -30,7 +30,31 @@ module.exports = {
       res.render("public/services", { currentPage: "services" });
     } catch (err) {
       console.log(err);
-      res.render("error/404");
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async shop(req, res) {
+    try {
+      res.render("shop/kcishop", { layout: "shop" });
+    } catch (err) {
+      console.log(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async products(req, res) {
+    try {
+      res.render("shop/products", { layout: "shop" });
+    } catch (err) {
+      console.log(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async productDetails(req, res) {
+    try {
+      res.render("shop/product-details", { layout: "shop" });
+    } catch (err) {
+      console.log(err);
+      res.render("error/404", { layout: "error" });
     }
   },
   async signIn(req, res) {
@@ -38,7 +62,7 @@ module.exports = {
       res.render("public/signIn", { currentPage: "signIn" });
     } catch (err) {
       console.log(err);
-      res.render("error/404");
+      res.render("error/404", { layout: "error" });
     }
   },
   async serviceDetails(req, res) {
@@ -52,7 +76,7 @@ module.exports = {
       });
     } catch (err) {
       console.log(err);
-      res.render("error/404");
+      res.render("error/404", { layout: "error" });
     }
   },
   async serviceItems(req, res) {
@@ -76,7 +100,7 @@ module.exports = {
       });
     } catch (err) {
       console.log(err);
-      res.render("error/404");
+      res.render("error/404", { layout: "error" });
     }
   },
 };

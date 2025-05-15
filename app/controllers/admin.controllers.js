@@ -6,7 +6,7 @@ module.exports = {
       res.render("admin/signIn", { currentPage: "signIn" });
     } catch (err) {
       console.log(err);
-      res.render("error/404");
+      res.render("error/404", { layout: "error" });
     }
   },
 };

@@ -3124,7 +3124,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-dark:focus,
 .btn-outline-dark.focus {
-  box-shadow: 0 0 0 0.2rem rgba(61, 70, 77, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .btn-outline-dark.disabled,
@@ -3144,7 +3144,7 @@ fieldset:disabled a.btn {
 .btn-outline-dark:not(:disabled):not(.disabled):active:focus,
 .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-dark.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(61, 70, 77, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .btn-link {
@@ -5125,7 +5125,7 @@ a.badge-dark:focus {
 a.badge-dark:focus,
 a.badge-dark.focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(61, 70, 77, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .jumbotron {
@@ -9975,7 +9975,7 @@ h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(61, 70, 77, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -10017,7 +10017,7 @@ h6 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(61, 70, 77, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 

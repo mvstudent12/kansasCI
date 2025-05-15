@@ -20,7 +20,7 @@ exports.signIn = async (req, res) => {
     };
     console.log(req.session.user);
     // res.status(200).json({ message: "Login successful", role: user.role });
-    res.render("customer/dashboard", { layout: "shop" });
+    res.render("shop/kcishop", { layout: "shop" });
   } catch (err) {
     res.status(500).json({ message: "Login error", error: err.message });
   }

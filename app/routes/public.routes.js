@@ -10,6 +10,12 @@ public.get("/about", publicController.about);
 
 public.get("/services", publicController.services);
 
+public.get("/shop", publicController.shop);
+
+public.get("/products", publicController.products);
+
+public.get("/product-details", publicController.productDetails);
+
 public.get("/signIn", publicController.signIn);
 
 public.get("/serviceDetails", publicController.serviceDetails);

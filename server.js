@@ -87,7 +87,7 @@ app.use("/auth", authRoutes);
 
 //404 route
 app.use((req, res) => {
-  res.status(404).render("error/404");
+  res.status(404).render("error/404", { layout: "error" });
 });
 
 // Start server
