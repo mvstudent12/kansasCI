@@ -57,6 +57,30 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
+  async cart(req, res) {
+    try {
+      res.render("shop/cart", { layout: "shop" });
+    } catch (err) {
+      console.log(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async favorites(req, res) {
+    try {
+      res.render("shop/favorites", { layout: "shop" });
+    } catch (err) {
+      console.log(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async checkout(req, res) {
+    try {
+      res.render("shop/checkout", { layout: "shop" });
+    } catch (err) {
+      console.log(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
   async signIn(req, res) {
     try {
       res.render("public/signIn", { currentPage: "signIn" });

@@ -16,6 +16,12 @@ public.get("/products", publicController.products);
 
 public.get("/product-details", publicController.productDetails);
 
+public.get("/cart", publicController.cart);
+
+public.get("/favorites", publicController.favorites);
+
+public.get("/checkout", publicController.checkout);
+
 public.get("/signIn", publicController.signIn);
 
 public.get("/serviceDetails", publicController.serviceDetails);
