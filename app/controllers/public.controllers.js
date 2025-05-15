@@ -51,7 +51,7 @@ module.exports = {
   },
   async productDetails(req, res) {
     try {
-      res.render("shop/product-details", { layout: "shop" });
+      res.render("shop/product-detail", { layout: "shop" });
     } catch (err) {
       console.log(err);
       res.render("error/404", { layout: "error" });
