@@ -117,7 +117,7 @@ module.exports = {
     console.log(products);
 
     try {
-      res.render("public/services/service-items", {
+      res.render("public/service-items", {
         details,
         category,
         products,
