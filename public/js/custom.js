@@ -1,10 +1,3 @@
-/**
- * WEBSITE: https://themefisher.com
- * TWITTER: https://twitter.com/themefisher
- * FACEBOOK: https://www.facebook.com/themefisher
- * GITHUB: https://github.com/themefisher/
- */
-
 /* ====== Index ======
 
 1. SCROLLBAR CONTENT
@@ -318,7 +311,7 @@ $(document).ready(function () {
       showMethod: "fadeIn",
       hideMethod: "fadeOut",
     };
-    toastr.success("Welcome to Mono Dashboard", "Howdy!");
+    toastr.success("Welcome to KCI Dashboard", "Hello!");
   }
 
   if (toaster.length != 0) {
@@ -538,4 +531,57 @@ $(document).ready(function () {
       emptyFill: [gray],
     });
   }
+});
+
+//todo list
+$(".tdl-new").on("keypress", function (e) {
+  var code = e.keyCode ? e.keyCode : e.which;
+
+  if (code == 13) {
+    var v = $(this).val();
+
+    var s = v.replace(/ +?/g, "");
+
+    if (s == "") {
+      return false;
+    } else {
+      $(".tdl-content ul").append(
+        "<li><label><input type='checkbox'><i></i><span>" +
+          v +
+          "</span><a href='#' class='mdi mdi-trash-can-outline'></a></label></li>"
+      );
+
+      $(this).val("");
+    }
+  }
+});
+
+$(".tdl-content a").on("click", function () {
+  var _li = $(this).parent().parent("li");
+
+  _li
+    .addClass("remove")
+    .stop()
+    .delay(100)
+    .slideUp("fast", function () {
+      _li.remove();
+    });
+
+  return false;
+});
+
+// for dynamically created a tags
+
+$(".tdl-content").on("click", "a", function () {
+  var _li = $(this).parent().parent("li");
+
+  _li
+    .addClass("remove")
+    .stop()
+    .delay(100)
+    .slideUp("fast", function () {
+      _li.remove();
+    });
+
+  return false;
 });
