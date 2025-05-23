@@ -94,7 +94,7 @@ module.exports = {
     const services = require("../data/services");
     const details = services[category];
     try {
-      res.render("public/services/service-details", {
+      res.render("public/service-details", {
         details,
         category,
       });
