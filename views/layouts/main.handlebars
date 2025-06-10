@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>KCI</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="/../img/favicon.png" rel="icon" />
+    <link href="/../img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="/../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/../vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="/../vendor/aos/aos.css" rel="stylesheet" />
+    <link href="/../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="/../vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="/../vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="/../css/main.css" rel="stylesheet" />
+
+</head>
+
+<body class="index-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center">
+
+                <img src="/../img/kci-logo.png" alt="" />
+                <h1 class="sitename">Kansas Correctional Industries</h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="/" class="{{#if (eq currentPage 'home')}}active{{/if}}">Home</a></li>
+                    <li><a href="/about" class="{{#if (eq currentPage 'about')}}active{{/if}}">About</a></li>
+                    <li><a href="/services" class="{{#if (eq currentPage 'services')}}active{{/if}}">Services</a></li>
+                    <li><a href="/contact" class="{{#if (eq currentPage 'contact')}}active{{/if}}">Contact</a></li>
+                    <li><a href="/shop">Shop</a></li>
+                    <li><a href="/signIn" class="{{#if (eq currentPage 'signIn')}}active{{/if}}">Sign In</a></li>
+
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+
+    {{{body}}}
+
+    <footer id="footer" class="footer dark-background">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="/" class="logo d-flex align-items-center">
+                        <span class="sitename">Kansas Correctional Industries</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>PO Box 2</p>
+                        <p>Lansing, KS 66043</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>+1 913 727-3249</span></p>
+                        <p><strong>Email:</strong> <span>Kim.Quinley@ks.gov</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About us</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="/serviceDetails?category=chemical">Chemical</a></li>
+                        <li><a href="/serviceDetails?category=seating">Seating</a></li>
+                        <li><a href="/serviceDetails?category=textiles">Clothing &amp; Textiles</a></li>
+                        <li><a href="/serviceDetails?category=furniture">Furniture</a></li>
+                        <li><a href="/serviceDetails?category=metal">Metal Products</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <ul>
+                        <li><a href="/serviceDetails?category=signs">Signs &amp; Graphics</a></li>
+                        <li><a href="/serviceDetails?category=office">Office Panel Systems</a></li>
+                        <li><a href="/serviceDetails?category=software">Software Solutions</a></li>
+                        <li><a href="/shop">Shop All</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span>
+                <strong class="px-1 sitename">Kansas Correctional Industries</strong>
+                <span>All Rights Reserved</span>
+            </p>
+            <div class="credits">
+                Designed by <a href="#">KCI Software Solutions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="/../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/../vendor/aos/aos.js"></script>
+    <script src="/../vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/../vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/../vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/../vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/../vendor/purecounter/purecounter_vanilla.js"></script>
+
+    <!-- Main JS File -->
+    <script src="/../js/main.js"></script>
+</body>
+
+</html>

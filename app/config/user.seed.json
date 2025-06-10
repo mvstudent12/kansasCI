@@ -1,0 +1,25 @@
+[
+  {
+    "email": "admin@kci.com",
+    "passwordHash": "password",
+    "role": "admin",
+    "name": "Admin User",
+    "adminPermissions": ["manageUsers", "manageOrders", "manageProducts"]
+  },
+  {
+    "email": "customer1@kci.com",
+    "passwordHash": "password",
+    "role": "customer",
+    "name": "John Smart",
+    "smartNumbers": ["SN-1001", "SN-1002"],
+    "shippingAddress": "123 Main St, Springfield, KS"
+  },
+  {
+    "email": "customer2@kci.com",
+    "passwordHash": "password",
+    "role": "customer",
+    "name": "Jane Doe",
+    "smartNumbers": ["SN-2001"],
+    "shippingAddress": "789 Elm St, Wichita, KS"
+  }
+]
