@@ -1,30 +1,26 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-// Variant Schema (embedded)
-const VariantSchema = new Schema(
-  {
-    sku: { type: String, required: true, unique: true },
-    color: String,
-    size: String,
-    material: String,
-    price: { type: Number, required: true },
-    quantity: { type: Number, default: 0 },
-    image: String,
-  },
-  { _id: false }
-); // No _id for embedded docs unless needed
-
 // Product Schema
 const ProductSchema = new Schema({
-  title: { type: String, required: true },
+  name: { type: String, required: true },
+  sku: { type: String, unique: true }, // Internal product ID
+  category: {
+    type: String,
+    required: true,
+  },
   description: String,
-  brand: String,
-  category: { type: String, required: true },
-  tags: [String],
-  images: [String],
-  basePrice: Number,
-  variants: [VariantSchema],
+  images: [String], // URLs or file paths
+  price: { type: Number, required: true },
+  tags: [String], // searchable tags
+  inStock: { type: Boolean, default: true },
+  variants: [
+    {
+      name: String, // e.g., "Color", "Size"
+      options: [String], // e.g., ["Red", "Blue"]
+    },
+  ],
+  attributes: mongoose.Schema.Types.Mixed, // flexible field for category-specific attributes
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 });
