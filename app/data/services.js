@@ -11,7 +11,7 @@ module.exports = {
       "/img/products/chemical/chemical-5.jpg",
       "/img/products/chemical/chemical-6.jpg",
     ],
-    category: "Chemical Products",
+    category: "Janitorial & Paint Products",
     description:
       "KCI offers a dependable line of chemical products designed for correctional facility maintenance, janitorial services, and industrial use. Manufactured with safety, performance, and sustainability in mind, our chemical solutions meet the rigorous demands of a wide range of environments.",
     overview: {
