@@ -43,7 +43,37 @@ module.exports = {
   },
   async products(req, res) {
     try {
-      res.render("shop/products", { layout: "shop" });
+      const perPage = 30;
+      const page = parseInt(req.query.page) || 1;
+      const selectedCategories = req.query.category || []; // array or string
+
+      let filter = {};
+      if (selectedCategories.length) {
+        filter.category = Array.isArray(selectedCategories)
+          ? { $in: selectedCategories }
+          : selectedCategories;
+      }
+
+      const [products, totalCount] = await Promise.all([
+        Product.find(filter)
+          .skip((page - 1) * perPage)
+          .limit(perPage)
+          .lean(),
+        Product.countDocuments(filter),
+      ]);
+
+      const allCategories = await Product.distinct("category");
+
+      res.render("shop/products", {
+        layout: "shop",
+        products,
+        currentPage: page,
+        totalPages: Math.ceil(totalCount / perPage),
+        allCategories,
+        selectedCategories: Array.isArray(selectedCategories)
+          ? selectedCategories
+          : [selectedCategories],
+      });
     } catch (err) {
       console.log(err);
       res.render("error/404", { layout: "error" });

@@ -41,7 +41,7 @@ async function main() {
   for (const file of files) {
     const ext = path.extname(file);
     const baseName = path.basename(file, ext).replace(/[_-]/g, " ");
-    const imageUrl = `/config/product-images/${file}`;
+    const imageUrl = `/img/product-images/${file}`;
 
     const product = new Product({
       title: baseName,

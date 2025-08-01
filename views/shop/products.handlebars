@@ -17,55 +17,41 @@
     <div class="row px-xl-5">
         <!-- Shop Sidebar Start -->
         <div class="col-lg-3 col-md-4">
-            <!-- Price Start -->
-            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Furniture
-                    Lines</span></h5>
-            <div class="bg-light p-4 mb-30">
-                <form>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" checked id="price-all">
-                        <label class="custom-control-label" for="price-all">Case Goods</label>
-                        <span class="badge border font-weight-normal">1000</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="price-1">
-                        <label class="custom-control-label" for="price-1">Signature</label>
-                        <span class="badge border font-weight-normal">150</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="price-3">
-                        <label class="custom-control-label" for="price-3">Director</label>
-                        <span class="badge border font-weight-normal">246</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="price-2">
-                        <label class="custom-control-label" for="price-2">Executive</label>
-                        <span class="badge border font-weight-normal">295</span>
-                    </div>
 
+
+            <h5 class="section-title position-relative text-uppercase mb-3"><span
+                    class="bg-secondary pr-3">Categories</span></h5>
+            <div class="bg-light p-4 mb-30">
+                <form id="filter-form" method="GET" action="/products">
+                    {{#each allCategories}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="category" value="{{this}}"
+                                id="cat-{{@index}}" {{#if (includes ../selectedCategories this)}}checked{{/if}}>
+                            <label class="form-check-label" for="cat-{{@index}}">
+                                {{this}}
+                            </label>
+                        </div>
+                    {{/each}}
+
+                    <button type="submit" class="btn btn-primary mt-3">Apply</button>
                 </form>
             </div>
-            <!-- Price End -->
 
-            <!-- Color Start -->
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Modular
                     Panels</span></h5>
             <div class="bg-light p-4 mb-30">
                 <form>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-1">
-                        <label class="custom-control-label" for="color-1">Bay Products</label>
-                        <span class="badge border font-weight-normal">4</span>
+                        <input type="checkbox" class="custom-control-input" id="Bay">
+                        <label class="custom-control-label" for="Bay">Bay Products</label>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-2">
-                        <label class="custom-control-label" for="color-2">OEI</label>
-                        <span class="badge border font-weight-normal">16</span>
+                        <input type="checkbox" class="custom-control-input" id="OEI">
+                        <label class="custom-control-label" for="OEI">OEI</label>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-3">
-                        <label class="custom-control-label" for="color-3">Swift Space Inc.</label>
-                        <span class="badge border font-weight-normal">13</span>
+                        <input type="checkbox" class="custom-control-input" id="Swift">
+                        <label class="custom-control-label" for="Swift">Swift Space Inc.</label>
                     </div>
                 </form>
             </div>
@@ -74,14 +60,12 @@
             <div class="bg-light p-4 mb-30">
                 <form>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-1">
-                        <label class="custom-control-label" for="color-1">Lighting</label>
-                        <span class="badge border font-weight-normal">4</span>
+                        <input type="checkbox" class="custom-control-input" id="">
+                        <label class="custom-control-label" for="">Lighting</label>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-2">
-                        <label class="custom-control-label" for="color-2">Desk Accessories</label>
-                        <span class="badge border font-weight-normal">16</span>
+                        <input type="checkbox" class="custom-control-input" id="">
+                        <label class="custom-control-label" for="">Desk Accessories</label>
                     </div>
                 </form>
             </div>
@@ -90,24 +74,20 @@
             <div class="bg-light p-4 mb-30">
                 <form>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-1">
-                        <label class="custom-control-label" for="color-1">Commercial Concepts</label>
-                        <span class="badge border font-weight-normal">4</span>
+                        <input type="checkbox" class="custom-control-input" id="">
+                        <label class="custom-control-label" for="">Commercial Concepts</label>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-2">
-                        <label class="custom-control-label" for="color-2">OEI</label>
-                        <span class="badge border font-weight-normal">16</span>
+                        <input type="checkbox" class="custom-control-input" id="">
+                        <label class="custom-control-label" for="">OEI</label>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-3">
-                        <label class="custom-control-label" for="color-3">Bay Products</label>
-                        <span class="badge border font-weight-normal">13</span>
+                        <input type="checkbox" class="custom-control-input" id="">
+                        <label class="custom-control-label" for="">Bay Products</label>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-3">
-                        <label class="custom-control-label" for="color-3">Noona</label>
-                        <span class="badge border font-weight-normal">13</span>
+                        <input type="checkbox" class="custom-control-input" id="">
+                        <label class="custom-control-label" for="">Noona</label>
                     </div>
                 </form>
             </div>
@@ -185,287 +165,79 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                    <div class="product-item bg-light mb-4">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="/img/club.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i
-                                        class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href="/favorites"><i
-                                        class="far fa-heart"></i></a>
+                {{#each products}}
 
-                                <a class="btn btn-outline-dark btn-square" href="/product-details"><i
-                                        class="fa fa-search"></i></a>
+                    <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                        <div class="product-item bg-light mb-4">
+                            <div class="product-img position-relative overflow-hidden bg-white">
+                                <img class="img-fluid w-100 bg-white" src="{{this.imageUrl}}" alt="">
+                                <div class="product-action">
+                                    <a class="btn btn-outline-dark btn-square" href=""><i
+                                            class="fa fa-shopping-cart"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href="/favorites"><i
+                                            class="far fa-heart"></i></a>
+
+                                    <a class="btn btn-outline-dark btn-square" href="/product-details"><i
+                                            class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                <a class="h6 text-decoration-none text-wrap" href="/product-details">{{this.title}}</a>
+                                {{!-- <div class="d-flex align-items-center justify-content-center mt-2">
+                                    <h5>$123.00</h5>
+
+                                </div> --}}
+                                {{!-- <div class="d-flex align-items-center justify-content-center mb-1">
+
+                                    <small class="text-primary mr-1"></small>
+                                    <strong class="text-dark mr-2">{{this.category}}</strong>
+
+                                </div> --}}
                             </div>
                         </div>
-                        {{!-- <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="/product-details">Product Name Goes
-                                Here</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5>
-
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-
-                                <small class="text-primary mr-1"></small>
-                                <strong class="text-dark mr-2">Additional info here:</strong>
-
-                            </div>
-                        </div> --}}
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                    <div class="product-item bg-light mb-4">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="/img/product-4.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i
-                                        class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href="/favorites"><i
-                                        class="far fa-heart"></i></a>
 
-                                <a class="btn btn-outline-dark btn-square" href="/product-details"><i
-                                        class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        {{!-- <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="/product-details">Product Name Goes
-                                Here</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5>
+                {{/each}}
 
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
+                <nav>
+                    <ul class="pagination justify-content-center">
 
-                                <small class="text-primary mr-1"></small>
-                                <strong class="text-dark mr-2">Additional info here:</strong>
+                        {{!-- Previous Button --}}
+                        {{#if (gt currentPage 1)}}
+                            <li class="page-item">
+                                <a class="page-link"
+                                    href="?page={{subtract currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Previous</a>
+                            </li>
+                        {{else}}
+                            <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                        {{/if}}
 
-                            </div>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                    <div class="product-item bg-light mb-4">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="/img/product-5.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i
-                                        class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href="/favorites"><i
-                                        class="far fa-heart"></i></a>
+                        {{!-- Dynamic Page Links --}}
+                        {{#each (paginationRange currentPage totalPages)}}
+                            {{#if (eq this "...")}}
+                                <li class="page-item disabled"><span class="page-link">…</span></li>
+                            {{else}}
+                                <li class="page-item {{#if (eq this ../currentPage)}}active{{/if}}">
+                                    <a class="page-link"
+                                        href="?page={{this}}{{#each ../selectedCategories}}&category={{this}}{{/each}}">{{this}}</a>
+                                </li>
+                            {{/if}}
+                        {{/each}}
 
-                                <a class="btn btn-outline-dark btn-square" href="/product-details"><i
-                                        class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        {{!-- <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="/product-details">Product Name Goes
-                                Here</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5>
+                        {{!-- Next Button --}}
+                        {{#if (lt currentPage totalPages)}}
+                            <li class="page-item">
+                                <a class="page-link"
+                                    href="?page={{add currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Next</a>
+                            </li>
+                        {{else}}
+                            <li class="page-item disabled"><span class="page-link">Next</span></li>
+                        {{/if}}
 
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
+                    </ul>
+                </nav>
 
-                                <small class="text-primary mr-1"></small>
-                                <strong class="text-dark mr-2">Additional info here:</strong>
 
-                            </div>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                    <div class="product-item bg-light mb-4">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="/img/product-19.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i
-                                        class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href="/favorites"><i
-                                        class="far fa-heart"></i></a>
-
-                                <a class="btn btn-outline-dark btn-square" href="/product-details"><i
-                                        class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        {{!-- <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="/product-details">Product Name Goes
-                                Here</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5>
-
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-
-                                <small class="text-primary mr-1"></small>
-                                <strong class="text-dark mr-2">Additional info here:</strong>
-
-                            </div>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                    <div class="product-item bg-light mb-4">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="/img/product-18.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i
-                                        class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href="/favorites"><i
-                                        class="far fa-heart"></i></a>
-
-                                <a class="btn btn-outline-dark btn-square" href="/product-details"><i
-                                        class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        {{!-- <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="/product-details">Product Name Goes
-                                Here</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5>
-
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-
-                                <small class="text-primary mr-1"></small>
-                                <strong class="text-dark mr-2">Additional info here:</strong>
-
-                            </div>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                    <div class="product-item bg-light mb-4">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="/img/product-6.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i
-                                        class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href="/favorites"><i
-                                        class="far fa-heart"></i></a>
-
-                                <a class="btn btn-outline-dark btn-square" href="/product-details"><i
-                                        class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        {{!-- <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="/product-details">Product Name Goes
-                                Here</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5>
-
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-
-                                <small class="text-primary mr-1"></small>
-                                <strong class="text-dark mr-2">Additional info here:</strong>
-
-                            </div>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                    <div class="product-item bg-light mb-4">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="/img/product-7.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i
-                                        class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href="/favorites"><i
-                                        class="far fa-heart"></i></a>
-
-                                <a class="btn btn-outline-dark btn-square" href="/product-details"><i
-                                        class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        {{!-- <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="/product-details">Product Name Goes
-                                Here</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5>
-
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-
-                                <small class="text-primary mr-1"></small>
-                                <strong class="text-dark mr-2">Additional info here:</strong>
-
-                            </div>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                    <div class="product-item bg-light mb-4">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="/img/product-8.png" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i
-                                        class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href="/favorites"><i
-                                        class="far fa-heart"></i></a>
-
-                                <a class="btn btn-outline-dark btn-square" href="/product-details"><i
-                                        class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        {{!-- <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="/product-details">Product Name Goes
-                                Here</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5>
-
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-
-                                <small class="text-primary mr-1"></small>
-                                <strong class="text-dark mr-2">Additional info here:</strong>
-
-                            </div>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                    <div class="product-item bg-light mb-4">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="/img/product-11.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i
-                                        class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href="/favorites"><i
-                                        class="far fa-heart"></i></a>
-
-                                <a class="btn btn-outline-dark btn-square" href="/product-details"><i
-                                        class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        {{!-- <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="/product-details">Product Name Goes
-                                Here</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5>
-
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-
-                                <small class="text-primary mr-1"></small>
-                                <strong class="text-dark mr-2">Additional info here:</strong>
-
-                            </div>
-                        </div> --}}
-                    </div>
-                </div>
-                <div class="col-12">
-                    <nav>
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</span></a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
-                </div>
             </div>
         </div>
         <!-- Shop Product End -->

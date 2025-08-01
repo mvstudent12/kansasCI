@@ -31,6 +31,47 @@ const helpers = {
   json: (context) => {
     return JSON.stringify(context);
   },
+  includes: (array, value) => {
+    if (!Array.isArray(array)) return false;
+    return array.includes(value);
+  },
+  lt: (a, b) => a < b,
+  gt: (a, b) => a > b,
+  subtract: (a, b) => a - b,
+  range: function (start, end) {
+    let arr = [];
+    for (let i = start; i <= end; i++) arr.push(i);
+    return arr;
+  },
+  paginationRange: function (currentPage, totalPages, maxVisible = 7) {
+    let range = [];
+
+    const showLeftEllipsis = currentPage > 4;
+    const showRightEllipsis = currentPage < totalPages - 3;
+
+    range.push(1); // always show first page
+
+    let start = Math.max(2, currentPage - 2);
+    let end = Math.min(totalPages - 1, currentPage + 2);
+
+    if (showLeftEllipsis && start > 2) {
+      range.push("...");
+    }
+
+    for (let i = start; i <= end; i++) {
+      range.push(i);
+    }
+
+    if (showRightEllipsis && end < totalPages - 1) {
+      range.push("...");
+    }
+
+    if (totalPages > 1) {
+      range.push(totalPages); // always show last page
+    }
+
+    return range;
+  },
 };
 
 module.exports = helpers;
