@@ -1,83 +1,93 @@
-// scripts/importFromImages.js
 const fs = require("fs");
 const path = require("path");
-const mongoose = require("mongoose");
-const Product = require("../models/Product");
 
-async function main() {
-  await mongoose.connect(
-    "mongodb+srv://kcicodingdev:zaaKZI27u5MtY6Pw@kansasci.jdywjne.mongodb.net/?retryWrites=true&w=majority&appName=Kansasci",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  );
-
-  // Drop obsolete unique index on variants.sku if exists
-  try {
-    await Product.collection.dropIndex("variants.sku_1");
-    console.log("✅ Dropped obsolete index variants.sku_1");
-  } catch (err) {
-    if (err.codeName === "IndexNotFound") {
-      console.log("ℹ️ variants.sku_1 index not found, nothing to drop.");
-    } else {
-      console.error("❌ Error dropping index variants.sku_1:", err);
-    }
-  }
-
-  await Product.collection.dropIndex("sku_1").catch((err) => {
-    if (err.codeName !== "IndexNotFound")
-      console.error("Failed to drop sku index:", err);
-    else console.log("sku index already removed");
-  });
-
-  // Clear existing products
-  await Product.deleteMany({});
-  console.log("🗑️ Cleared existing products from database.");
-
+function main() {
   const imageFolder = path.join(__dirname, "../config/product-images");
+  const outputPath = path.join(__dirname, "../config/products.json");
+
   const files = fs.readdirSync(imageFolder);
+
+  const products = [];
 
   for (const file of files) {
     const ext = path.extname(file);
     const baseName = path.basename(file, ext).replace(/[_-]/g, " ");
-    const imageUrl = `/img/product-images/${file}`;
+    const fileName = file;
+    const imagePath = `/uploads/${file}`;
 
-    const product = new Product({
+    // Build product object matching schema
+    const product = {
       title: baseName,
+      brandLine: guessBrandLine(baseName), // new helper for brandLine guess
       category: guessCategory(baseName),
-      lineType: guessLineType(baseName),
-      imageUrl,
-      price: 0,
-      description: "",
-    });
+      subcategory: guessSubcategory(baseName), // optional helper
+      colors: [], // empty array by default
+      dimensions: "", // blank default
+      productLine: guessProductLine(baseName), // renamed from lineType
+      description: "", // default blank
+      images: [
+        {
+          originalName: fileName,
+          fileName: fileName,
+          path: imagePath,
+          size: 0, // size unknown here, could add fs.statSync if needed
+          mimetype: guessMimeType(ext),
+        },
+      ],
+    };
 
-    try {
-      await product.save();
-      console.log(`✔️ Saved: ${baseName}`);
-    } catch (err) {
-      console.error(`❌ Error saving ${baseName}:`, err.message);
-    }
+    products.push(product);
+    console.log(`✔️ Prepared: ${baseName}`);
   }
 
-  await mongoose.disconnect();
+  fs.writeFileSync(outputPath, JSON.stringify(products, null, 2));
+  console.log(`✅ Products saved to ${outputPath}`);
 }
 
-main().catch((err) => {
-  console.error("💥 Script failed:", err);
-  mongoose.disconnect();
-});
+main();
 
-// Helper functions for category and lineType guessing
+// Helper to guess category based on name keywords
 function guessCategory(name) {
   if (/desk/i.test(name)) return "Desks";
   if (/table/i.test(name)) return "Tables";
   if (/chair/i.test(name)) return "Chairs";
+  if (/seat/i.test(name)) return "Chairs";
   return "Misc";
 }
 
-function guessLineType(name) {
-  if (/worksimpli/i.test(name)) return "Worksimpli";
-  if (/classic laminate/i.test(name)) return "Classic Laminate";
-  return "Uncategorized";
+// Helper to guess productLine based on name keywords
+function guessProductLine(name) {
+  if (/signature/i.test(name)) return "signature";
+  if (/director/i.test(name)) return "director";
+  if (/executive/i.test(name)) return "executive";
+  return "none";
+}
+
+// Optional: Guess brandLine (example: you can expand this)
+function guessBrandLine(name) {
+  if (/commercial concepts/i.test(name)) return "Commercial Concepts";
+  if (/worksimpli/i.test(name)) return "Commercial Concepts";
+  return "Commercial Concepts";
+}
+
+// Optional: Guess subcategory based on name keywords
+function guessSubcategory(name) {
+  if (/task/i.test(name)) return "Task Seating";
+  if (/conference/i.test(name)) return "Conference Tables";
+  return "";
+}
+
+// Guess mimetype from extension (basic)
+function guessMimeType(ext) {
+  switch (ext.toLowerCase()) {
+    case ".jpg":
+    case ".jpeg":
+      return "image/jpeg";
+    case ".png":
+      return "image/png";
+    case ".gif":
+      return "image/gif";
+    default:
+      return "application/octet-stream";
+  }
 }
