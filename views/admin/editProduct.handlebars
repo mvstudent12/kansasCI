@@ -1,0 +1,291 @@
+<div class="content-wrapper">
+    <div class="content">
+
+
+        {{!-- Table Product --}}
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h2>Edit Product Information</h2>
+
+                    </div>
+                    <form action="admin/editProduct" method="POST" enctype="multipart/form-data">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-8">
+
+                                    <div class="form-group mb-5">
+                                        <label for="title">Product Title</label>
+                                        <input type="text" class="form-control" id="title" name="title"
+                                            placeholder="Add Product" value="{{product.title}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="brandLine">Brand Line</label>
+                                        <select class="form-control" id="brandLine" name="brandLine">
+                                            <option value="Commercial Concepts" {{#if (eq
+                                                product.brandLine "Commercial Concepts" )}}selected{{/if}}>Commercial
+                                                Concepts</option>
+                                            <option value="OEI" {{#if (eq product.brandLine "OEI" )}}selected{{/if}}>OEI
+                                            </option>
+                                            <option value="Bay Products" {{#if (eq product.brandLine "Bay Products"
+                                                )}}selected{{/if}}>Bay Products</option>
+                                            <option value="Noona" {{#if (eq product.brandLine "Noona"
+                                                )}}selected{{/if}}>Noona</option>
+                                            <option value="KDOC Products" {{#if (eq product.brandLine "KDOC Products"
+                                                )}}selected{{/if}}>KDOC Products</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="category">Product Category</label>
+                                        <select class="form-control" id="category" name="category">
+                                            <option value="">-- Select a Product Category --</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subcategory">Product SubCategory</label>
+                                        <select class="form-control" id="subcategory" name="subcategory">
+                                            <option value="">-- Select a Product SubCategory --</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-row mb-4">
+                                        <div class="col">
+                                            <label for="colors">Colors</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="colors" name="colors"
+                                                    placeholder="red, green, black" aria-label="colors"
+                                                    aria-describedby="" value="{{product.colors}}">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <label for="dimensions">Dimensions</label>
+                                            <div class="input-group">
+
+                                                <input type="text" class="form-control" id="dimensions"
+                                                    name="dimensions" placeholder='30"H x 30"W' aria-label="dimensions"
+                                                    aria-describedby="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-type mb-3 ">
+                                        <label class="d-block" for="productLine">Product Line</label>
+                                        <div>
+                                            <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
+                                                <input type="radio" id="none" name="productLine"
+                                                    class="custom-control-input" value="none" {{#if (eq
+                                                    product.productLine "none" )}}checked{{/if}}>
+                                                <label class="custom-control-label" for="none">None</label>
+                                            </div>
+
+                                            <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
+                                                <input type="radio" id="signature" name="productLine"
+                                                    class="custom-control-input" value="signature" {{#if (eq
+                                                    product.productLine "signature" )}}checked{{/if}}>
+                                                <label class="custom-control-label" for="signature">Signature</label>
+                                            </div>
+
+                                            <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
+                                                <input type="radio" id="director" name="productLine"
+                                                    class="custom-control-input" value="director" {{#if (eq
+                                                    product.productLine "director" )}}checked{{/if}}>
+                                                <label class="custom-control-label" for="director">Director</label>
+                                            </div>
+
+                                            <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
+                                                <input type="radio" id="executive" name="productLine"
+                                                    class="custom-control-input" value="executive" {{#if (eq
+                                                    product.productLine "executive" )}}checked{{/if}}>
+                                                <label class="custom-control-label" for="executive">Executive</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="editor">
+                                        <label class="d-block" for="description">Description &amp; Features</label>
+                                        <textarea id="description" name="description" rows="6" cols="60"
+                                            placeholder="Enter description and features here..."
+                                            class="form-control">{{this.description}}</textarea>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-lg-4">
+                                    <div id="saved-images" class="mt-3">
+                                        <label>Saved Images</label>
+                                        <div class="d-flex flex-wrap">
+                                            {{#each product.images}}
+                                                <div class="saved-image position-relative m-2"
+                                                    style="display:inline-block;">
+                                                    <img src="{{path}}"
+                                                        style="max-width: 120px; border: 1px solid #ccc; border-radius: 4px;">
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-danger remove-saved-image"
+                                                        data-filename="{{filename}}"
+                                                        style="position:absolute; top:0; right:0;">&times;</button>
+                                                    <!-- Keep for resaving -->
+                                                    <input type="hidden" name="existingImages" value="{{filename}}">
+                                                </div>
+                                            {{/each}}
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- File Input for New Images -->
+                                    <div class="custom-file mt-3">
+                                        <input type="file" class="custom-file-input" id="imageFilesEdit"
+                                            name="imageFiles" multiple>
+                                        <label class="custom-file-label" for="imageFilesEdit">Choose images</label>
+                                    </div>
+                                    <div id="image-preview" style="margin-top: 10px;"></div>
+
+
+
+                                </div>
+
+
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-12">
+                                    <div>
+                                        <a href="/admin/products" class="btn btn-light btn-pill mr-1 mr-md-2">
+                                            cancel </a>
+                                        <button type="submit" class="btn btn-primary btn-pill">
+                                            save </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    const currentCategory = "{{product.category}}";
+    const currentSubcategory = "{{product.subcategory}}";
+</script>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const input = document.getElementById("imageFilesEdit");
+        const preview = document.getElementById("image-preview");
+
+        input.addEventListener("change", function () {
+            preview.innerHTML = ""; // Clear old previews
+
+            const files = input.files;
+            if (!files.length) return;
+
+            for (const file of files) {
+                if (!file.type.startsWith("image/")) continue;
+
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = document.createElement("img");
+                    img.src = e.target.result;
+                    img.style.maxWidth = "120px";
+                    img.style.margin = "5px";
+                    img.style.border = "1px solid #ccc";
+                    img.style.borderRadius = "4px";
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const categorySelect = document.getElementById("category");
+        const subcategorySelect = document.getElementById("subcategory");
+
+        fetch("/data/categories.json")
+            .then(response => response.json())
+            .then(categories => {
+                // Populate the category dropdown
+                categories.forEach(cat => {
+                    const opt = document.createElement("option");
+                    opt.value = cat.name;
+                    opt.textContent = cat.name;
+                    categorySelect.appendChild(opt);
+                });
+
+                // Function to populate subcategories for a category value
+                function populateSubcategories(categoryName) {
+                    const selected = categories.find(c => c.name === categoryName);
+
+                    subcategorySelect.innerHTML = '<option value="">-- Select Subcategory --</option>';
+
+                    if (selected && selected.subcategories.length) {
+                        subcategorySelect.disabled = false;
+
+                        selected.subcategories.forEach(sub => {
+                            const subOpt = document.createElement("option");
+                            subOpt.value = sub;
+                            subOpt.textContent = sub;
+                            subcategorySelect.appendChild(subOpt);
+                        });
+                    } else {
+                        subcategorySelect.disabled = true;
+                    }
+                }
+
+                // Event listener for user changes
+                categorySelect.addEventListener("change", function () {
+                    populateSubcategories(this.value);
+                });
+
+                // === Now the important part: Set the category and subcategory to the product's ===
+
+                if (currentCategory) {
+                    categorySelect.value = currentCategory;
+                    populateSubcategories(currentCategory);
+
+                    if (currentSubcategory) {
+                        subcategorySelect.value = currentSubcategory;
+                    }
+                } else {
+                    subcategorySelect.disabled = true;
+                }
+            })
+            .catch(err => {
+                console.error("Failed to load categories:", err);
+            });
+    });
+
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const savedImagesContainer = document.getElementById("saved-images");
+
+        savedImagesContainer?.addEventListener("click", e => {
+            if (e.target.classList.contains("remove-saved-image")) {
+                const imageDiv = e.target.closest(".saved-image");
+                const filename = e.target.dataset.filename;
+
+                // Remove from UI
+                imageDiv.remove();
+
+                // Append a hidden input so backend knows to delete it
+                const input = document.createElement("input");
+                input.type = "hidden";
+                input.name = "removedImages";
+                input.value = filename;
+                document.querySelector("form").appendChild(input);
+            }
+        });
+    });
+
+</script>
