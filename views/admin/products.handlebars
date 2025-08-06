@@ -33,450 +33,40 @@
                         <table id="productsTable" class="table table-hover table-product" style="width:100%">
                             <thead>
                                 <tr>
-
+                                    <th>#</th>
                                     <th>Product Name</th>
-                                    <th>ID</th>
-                                    <th>Qty</th>
-                                    <th>Variants</th>
-                                    <th>Committed</th>
-                                    <th>Daily Sale</th>
-                                    <th>Sold</th>
-                                    <th>In Stock</th>
-                                    <th></th>
+                                    <th>Brand</th>
+                                    <th>Line</th>
+                                    <th>Category</th>
+                                    <th>Subcategory</th>
+                                    <th>Options</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                {{#each products}}
+                                    <tr>
+                                        <td>{{add @index 1}}</td>
+                                        <td>{{title}}</td>
+                                        <td>{{brandLine}}</td>
+                                        <td>{{productLine}}</td>
+                                        <td>{{category}}</td>
+                                        <td>{{subcategory}}</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
+                                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                </a>
 
-                                <tr>
-
-                                    <td>Coach Swagger</td>
-                                    <td>24541</td>
-                                    <td>27</td>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>
-                                        <div id="tbl-chart-01"></div>
-                                    </td>
-                                    <td>4</td>
-                                    <td>18</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
+                                                <div class="dropdown-menu dropdown-menu-right"
+                                                    aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item" href="/admin/editProduct/{{_id}}">Edit</a>
+                                                    {{!-- <a class="dropdown-item" href="#">Delete</a> --}}
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td>Toddler Shoes, Gucci Watch</td>
-                                    <td>24542</td>
-                                    <td>18</td>
-                                    <td>7</td>
-                                    <td>5</td>
-                                    <td>
-                                        <div id="tbl-chart-02"></div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>14</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Hat Black Suits</td>
-                                    <td>24543</td>
-                                    <td>20</td>
-                                    <td>3</td>
-                                    <td>7</td>
-                                    <td>
-                                        <div id="tbl-chart-03"></div>
-                                    </td>
-                                    <td>6</td>
-                                    <td>26</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Backpack Gents</td>
-                                    <td>24544</td>
-                                    <td>37</td>
-                                    <td>8</td>
-                                    <td>3</td>
-                                    <td>
-                                        <div id="tbl-chart-04"></div>
-                                    </td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Speed 500 Ignite</td>
-                                    <td>24545</td>
-                                    <td>8</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>
-                                        <div id="tbl-chart-05"></div>
-                                    </td>
-                                    <td>8</td>
-                                    <td>42</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td>Olay</td>
-                                    <td>24546</td>
-                                    <td>19</td>
-                                    <td>6</td>
-                                    <td>6</td>
-                                    <td>
-                                        <div id="tbl-chart-06"></div>
-                                    </td>
-                                    <td>79</td>
-                                    <td>12</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Ledger Nano X</td>
-                                    <td>24547</td>
-                                    <td>61</td>
-                                    <td>46</td>
-                                    <td>18</td>
-                                    <td>
-                                        <div id="tbl-chart-07"></div>
-                                    </td>
-                                    <td>76</td>
-                                    <td>36</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td>Surface Laptop 2</td>
-                                    <td>24548</td>
-                                    <td>33</td>
-                                    <td>56</td>
-                                    <td>89</td>
-                                    <td>
-                                        <div id="tbl-chart-08"></div>
-                                    </td>
-                                    <td>38</td>
-                                    <td>5</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td>TIGI Bed Head Superstar Queen</td>
-                                    <td>24549</td>
-                                    <td>3</td>
-                                    <td>9</td>
-                                    <td>15</td>
-                                    <td>
-                                        <div id="tbl-chart-09"></div>
-                                    </td>
-                                    <td>6</td>
-                                    <td>46</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td>Wattbike Atom</td>
-                                    <td>24550</td>
-                                    <td>61</td>
-                                    <td>56</td>
-                                    <td>68</td>
-                                    <td>
-                                        <div id="tbl-chart-10"></div>
-                                    </td>
-                                    <td>3</td>
-                                    <td>19</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td>Smart Watch</td>
-                                    <td>24551</td>
-                                    <td>19</td>
-                                    <td>76</td>
-                                    <td>38</td>
-                                    <td>
-                                        <div id="tbl-chart-11"></div>
-                                    </td>
-                                    <td>3</td>
-                                    <td>17</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td>Magic Bullet Blender</td>
-                                    <td>24552</td>
-                                    <td>12</td>
-                                    <td>30</td>
-                                    <td>14</td>
-                                    <td>
-                                        <div id="tbl-chart-12"></div>
-                                    </td>
-                                    <td>26</td>
-                                    <td>9</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td>Kanana rucksack</td>
-                                    <td>24553</td>
-                                    <td>14</td>
-                                    <td>65</td>
-                                    <td>39</td>
-                                    <td>
-                                        <div id="tbl-chart-13"></div>
-                                    </td>
-                                    <td>9</td>
-                                    <td>55</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td>Copic Opaque White</td>
-                                    <td>24554</td>
-                                    <td>43</td>
-                                    <td>29</td>
-                                    <td>75</td>
-                                    <td>
-                                        <div id="tbl-chart-14"></div>
-                                    </td>
-                                    <td>7</td>
-                                    <td>15</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td>Headphones</td>
-                                    <td>24555</td>
-                                    <td>17</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                    <td>
-                                        <div id="tbl-chart-15"></div>
-                                    </td>
-                                    <td>6</td>
-                                    <td>98</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                {{/each}}
                             </tbody>
                         </table>
                     </div>
@@ -488,133 +78,126 @@
 </div>
 
 
-<!-- Stock Modal -->
+<!-- Add Product Modal -->
 <div class="modal fade modal-stock" id="modal-stock" aria-labelledby="modal-stock" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-        <form action="#">
+        <form action="/admin/addProduct" method="POST" enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="modal-header align-items-center p3 p-md-5">
                     <h2 class="modal-title" id="exampleModalGridTitle">Add Product</h2>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!-- Bootstrap 4 -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
 
                 </div>
-                <div class="modal-body p3 p-md-5">
+                <div class="modal-body p-3 p-md-5">
                     <div class="row">
                         <div class="col-lg-8">
                             <h3 class="h5 mb-5">Product Information</h3>
                             <div class="form-group mb-5">
-                                <label for="new-product">Product Title</label>
-                                <input type="text" class="form-control" id="new-product" placeholder="Add Product">
+                                <label for="title">Product Title</label>
+                                <input type="text" class="form-control" id="title" name="title"
+                                    placeholder="Add Product">
                             </div>
+                            <div class="form-group">
+                                <label for="brandLine">Brand Line</label>
+                                <select class="form-control" id="brandLine" name="brandLine">
+                                    <option value="">-- Select a Brand --</option>
+                                    <option value="Commercial Concepts">Commercial Concepts</option>
+                                    <option value="OEI">OEI</option>
+                                    <option value="Bay Products">Bay Products</option>
+                                    <option value="Noona">Noona</option>
+                                    <option value="KDOC Products">KDOC Products</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="category">Product Category</label>
+                                <select class="form-control" id="category" name="category">
+                                    <option value="">-- Select a Product Category --</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="subcategory">Product SubCategory</label>
+                                <select class="form-control" id="subcategory" name="subcategory">
+                                    <option value="">-- Select a Product SubCategory --</option>
+                                </select>
+                            </div>
+
                             <div class="form-row mb-4">
                                 <div class="col">
-                                    <label for="price">Price</label>
+                                    <label for="colors">Colors</label>
                                     <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon1">$</span>
-                                        </div>
-                                        <input type="text" class="form-control" id="price" placeholder="Price"
-                                            aria-label="Price" aria-describedby="basic-addon1">
+                                        <input type="text" class="form-control" id="colors" name="colors"
+                                            placeholder="red, green, black" aria-label="colors" aria-describedby="">
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label for="sale-price">Sale Price</label>
+                                    <label for="dimensions">Dimensions</label>
                                     <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon1">$</span>
-                                        </div>
-                                        <input type="text" class="form-control" id="sale-price" placeholder="Sale Price"
-                                            aria-label="SalePrice" aria-describedby="basic-addon1">
+
+                                        <input type="text" class="form-control" id="dimensions" name="dimensions"
+                                            placeholder='30"H x 30"W' aria-label="dimensions" aria-describedby="">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="product-type mb-3 ">
-                                <label class="d-block" for="sale-price">Product Type</label>
+                                <label class="d-block" for="productLine">Product Line</label>
                                 <div>
 
                                     <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
-                                        <input type="radio" id="customRadio1" name="customRadio"
-                                            class="custom-control-input" checked="checked">
-                                        <label class="custom-control-label" for="customRadio1">Physical
-                                            Good</label>
+                                        <input type="radio" id="none" name="productLine" class="custom-control-input"
+                                            checked="checked" value="none">
+                                        <label class="custom-control-label" for="none">None</label>
                                     </div>
 
                                     <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
-                                        <input type="radio" id="customRadio2" name="customRadio"
-                                            class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio2">Digital
-                                            Good</label>
+                                        <input type="radio" id="signature" name="productLine"
+                                            class="custom-control-input" value="signature">
+                                        <label class="custom-control-label" for="signature">Signature</label>
                                     </div>
 
                                     <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
-                                        <input type="radio" id="customRadio3" name="customRadio"
-                                            class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio3">Service</label>
+                                        <input type="radio" id="director" name="productLine"
+                                            class="custom-control-input" value="director">
+                                        <label class="custom-control-label" for="director">Director</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
+                                        <input type="radio" id="executive" name="productLine"
+                                            class="custom-control-input" value="executive">
+                                        <label class="custom-control-label" for="executive">Executive</label>
                                     </div>
 
                                 </div>
                             </div>
 
                             <div class="editor">
-                                <label class="d-block" for="sale-price">Description</label>
-                                <div id="standalone">
-                                    <div id="toolbar">
-                                        <span class="ql-formats">
-                                            <select class="ql-font"></select>
-                                            <select class="ql-size"></select>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <button class="ql-bold"></button>
-                                            <button class="ql-italic"></button>
-                                            <button class="ql-underline"></button>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <select class="ql-color"></select>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <button class="ql-blockquote"></button>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <button class="ql-list" value="ordered"></button>
-                                            <button class="ql-list" value="bullet"></button>
-                                            <button class="ql-indent" value="-1"></button>
-                                            <button class="ql-indent" value="+1"></button>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <button class="ql-direction" value="rtl"></button>
-                                            <select class="ql-align"></select>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div id="editor"></div>
-
-                                <div class="custom-control custom-checkbox d-inline-block mt-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                    <label class="custom-control-label" for="customCheck2">Hide
-                                        product from published site</label>
-                                </div>
-
+                                <label class="d-block" for="description">Description &amp; Features</label>
+                                <textarea id="description" name="description" rows="6" cols="60"
+                                    placeholder="Enter description and features here..."
+                                    class="form-control"></textarea>
                             </div>
+
 
                         </div>
                         <div class="col-lg-4">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile"
-                                    placeholder="please image here">
-                                <span class="upload-image">Click here to <span class="text-primary">add
-                                        product image.</span> </span>
+                                <input type="file" class="custom-file-input" id="imageFiles" name="imageFiles" multiple>
+                                <span class="upload-image">Click here to <span class="text-primary">add product
+                                        images.</span></span>
                             </div>
+                            <div id="image-preview" style="margin-top: 10px;"></div>
                         </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div>
                         <button type="button" class="btn btn-light btn-pill mr-1 mr-md-2" data-dismiss="modal">
                             cancel </button>
-                        <button type="submit" class="btn btn-primary  btn-pill" data-dismiss="modal">
+                        <button type="submit" class="btn btn-primary btn-pill">
                             save </button>
                     </div>
                 </div>
@@ -622,3 +205,75 @@
         </form>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const input = document.getElementById("imageFiles");
+        const preview = document.getElementById("image-preview");
+
+        input.addEventListener("change", function () {
+            preview.innerHTML = ""; // Clear old previews
+
+            const files = input.files;
+            if (!files.length) return;
+
+            for (const file of files) {
+                if (!file.type.startsWith("image/")) continue;
+
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = document.createElement("img");
+                    img.src = e.target.result;
+                    img.style.maxWidth = "120px";
+                    img.style.margin = "5px";
+                    img.style.border = "1px solid #ccc";
+                    img.style.borderRadius = "4px";
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const categorySelect = document.getElementById("category");
+        const subcategorySelect = document.getElementById("subcategory");
+
+        fetch("/data/categories.json")
+            .then(response => response.json())
+            .then(categories => {
+                // Populate the category dropdown
+                categories.forEach(cat => {
+                    const opt = document.createElement("option");
+                    opt.value = cat.name;
+                    opt.textContent = cat.name;
+                    categorySelect.appendChild(opt);
+                });
+
+                // On change, update subcategories
+                categorySelect.addEventListener("change", function () {
+                    const selected = categories.find(c => c.name === this.value);
+
+                    subcategorySelect.innerHTML = '<option value="">-- Select Subcategory --</option>';
+
+                    if (selected && selected.subcategories.length) {
+                        subcategorySelect.disabled = false;
+
+                        selected.subcategories.forEach(sub => {
+                            const subOpt = document.createElement("option");
+                            subOpt.value = sub;
+                            subOpt.textContent = sub;
+                            subcategorySelect.appendChild(subOpt);
+                        });
+                    } else {
+                        subcategorySelect.disabled = true;
+                    }
+                });
+            })
+            .catch(err => {
+                console.error("Failed to load categories:", err);
+            });
+    });
+</script>

@@ -1,23 +1,47 @@
 const mongoose = require("mongoose");
-const { Schema } = mongoose;
 
-const ProductSchema = new Schema({
-  title: { type: String, required: true },
-  category: { type: String, default: "Misc" },
-  lineType: { type: String, default: "Uncategorized" },
-  description: { type: String, default: "" },
-  imageUrl: { type: String, required: true },
-  price: { type: Number, default: 0 },
-  inStock: { type: Boolean, default: true },
-  tags: [String],
-  attributes: Schema.Types.Mixed,
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now },
-});
+const productSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+    },
+    brandLine: {
+      type: String,
+      required: true,
+    },
+    category: {
+      type: String,
+      required: true,
+    },
+    subcategory: {
+      type: String,
+    },
+    colors: {
+      type: [String], // store colors as array of strings
+    },
+    dimensions: {
+      type: String,
+    },
+    productLine: {
+      type: String,
+      enum: ["none", "signature", "director", "executive"], // restrict possible values
+      default: "none",
+    },
+    description: {
+      type: String,
+    },
+    images: [
+      {
+        originalName: String,
+        fileName: String,
+        path: String,
+        size: Number,
+        mimetype: String,
+      },
+    ],
+  },
+  { timestamps: true }
+);
 
-ProductSchema.pre("save", function (next) {
-  this.updatedAt = Date.now();
-  next();
-});
-
-module.exports = mongoose.model("Product", ProductSchema);
+module.exports = mongoose.model("Product", productSchema);

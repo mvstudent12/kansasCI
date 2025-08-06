@@ -63,6 +63,7 @@ module.exports = {
       ]);
 
       const allCategories = await Product.distinct("category");
+      console.log(products);
 
       res.render("shop/products", {
         layout: "shop",

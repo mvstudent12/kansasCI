@@ -72,6 +72,9 @@ const helpers = {
 
     return range;
   },
+  firstImagePath: function (images) {
+    return images && images.length > 0 ? images[0].path : "";
+  },
 };
 
 module.exports = helpers;

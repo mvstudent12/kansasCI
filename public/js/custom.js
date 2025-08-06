@@ -347,13 +347,13 @@ $(document).ready(function () {
       };
       var thisId = $(this).attr("id");
       if (thisId === "toaster-info") {
-        toastr.info("Welcome to Mono", " Info message");
+        toastr.info("Welcome to KCI Dashboard:", " Info message");
       } else if (thisId === "toaster-success") {
-        toastr.success("Welcome to Mono", "Success message");
+        toastr.success("Welcome to KCI Dashboard:", "Success message");
       } else if (thisId === "toaster-warning") {
-        toastr.warning("Welcome to Mono", "Warning message");
+        toastr.warning("Welcome to KCI Dashboard:", "Warning message");
       } else if (thisId === "toaster-danger") {
-        toastr.error("Welcome to Mono", "Danger message");
+        toastr.error("Welcome to KCI Dashboard:", "Danger message");
       }
     });
   }
