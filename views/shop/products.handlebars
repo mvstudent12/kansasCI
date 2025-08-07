@@ -24,14 +24,16 @@
             <div class="bg-light p-4 mb-30">
                 <form id="filter-form" method="GET" action="/products">
                     {{#each allCategories}}
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="category" value="{{this}}"
+                        <div
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" name="category" value="{{this}}"
                                 id="cat-{{@index}}" {{#if (includes ../selectedCategories this)}}checked{{/if}}>
-                            <label class="form-check-label" for="cat-{{@index}}">
+                            <label class="custom-control-label" for="cat-{{@index}}">
                                 {{this}}
                             </label>
                         </div>
                     {{/each}}
+
 
                     <button type="submit" class="btn btn-primary mt-3">Apply</button>
                 </form>
@@ -166,7 +168,6 @@
                     </div>
                 </div>
                 {{#each products}}
-
                     <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                         <div class="product-item bg-light mb-4">
                             <div class="product-img position-relative overflow-hidden bg-white">
@@ -177,70 +178,60 @@
                                     <a class="btn btn-outline-dark btn-square" href="/favorites"><i
                                             class="far fa-heart"></i></a>
 
-                                    <a class="btn btn-outline-dark btn-square" href="/product-details"><i
+                                    <a class="btn btn-outline-dark btn-square" href="/product-details/{{this._id}}"><i
                                             class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="text-center py-4">
                                 <a class="h6 text-decoration-none text-wrap" href="/product-details">{{this.title}}</a>
-                                {{!-- <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>$123.00</h5>
-
-                                </div> --}}
-                                {{!-- <div class="d-flex align-items-center justify-content-center mb-1">
-
-                                    <small class="text-primary mr-1"></small>
-                                    <strong class="text-dark mr-2">{{this.category}}</strong>
-
-                                </div> --}}
                             </div>
                         </div>
                     </div>
-
                 {{/each}}
 
-                <nav>
-                    <ul class="pagination justify-content-center">
-
-                        {{!-- Previous Button --}}
-                        {{#if (gt currentPage 1)}}
-                            <li class="page-item">
-                                <a class="page-link"
-                                    href="?page={{subtract currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Previous</a>
-                            </li>
-                        {{else}}
-                            <li class="page-item disabled"><span class="page-link">Previous</span></li>
-                        {{/if}}
-
-                        {{!-- Dynamic Page Links --}}
-                        {{#each (paginationRange currentPage totalPages)}}
-                            {{#if (eq this "...")}}
-                                <li class="page-item disabled"><span class="page-link">…</span></li>
-                            {{else}}
-                                <li class="page-item {{#if (eq this ../currentPage)}}active{{/if}}">
-                                    <a class="page-link"
-                                        href="?page={{this}}{{#each ../selectedCategories}}&category={{this}}{{/each}}">{{this}}</a>
-                                </li>
-                            {{/if}}
-                        {{/each}}
-
-                        {{!-- Next Button --}}
-                        {{#if (lt currentPage totalPages)}}
-                            <li class="page-item">
-                                <a class="page-link"
-                                    href="?page={{add currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Next</a>
-                            </li>
-                        {{else}}
-                            <li class="page-item disabled"><span class="page-link">Next</span></li>
-                        {{/if}}
-
-                    </ul>
-                </nav>
 
 
             </div>
+            <div class="row pb-3">
+                <div class="col-12 pb-1">
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            {{!-- Previous Button --}}
+                            {{#if (gt currentPage 1)}}
+                                <li class="page-item">
+                                    <a class="page-link"
+                                        href="?page={{subtract currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Previous</a>
+                                </li>
+                            {{else}}
+                                <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                            {{/if}}
+
+                            {{!-- Dynamic Page Links --}}
+                            {{#each (paginationRange currentPage totalPages)}}
+                                {{#if (eq this "...")}}
+                                    <li class="page-item disabled"><span class="page-link">…</span></li>
+                                {{else}}
+                                    <li class="page-item {{#if (eq this ../currentPage)}}active{{/if}}">
+                                        <a class="page-link"
+                                            href="?page={{this}}{{#each ../selectedCategories}}&category={{this}}{{/each}}">{{this}}</a>
+                                    </li>
+                                {{/if}}
+                            {{/each}}
+
+                            {{!-- Next Button --}}
+                            {{#if (lt currentPage totalPages)}}
+                                <li class="page-item">
+                                    <a class="page-link"
+                                        href="?page={{add currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Next</a>
+                                </li>
+                            {{else}}
+                                <li class="page-item disabled"><span class="page-link">Next</span></li>
+                            {{/if}}
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
-        <!-- Shop Product End -->
     </div>
 </div>
-<!-- Shop End -->

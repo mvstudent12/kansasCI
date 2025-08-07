@@ -1,5 +1,8 @@
 const Product = require("../models/Product");
 
+const fs = require("fs").promises;
+const path = require("path");
+
 module.exports = {
   async home(req, res) {
     try {
@@ -38,6 +41,54 @@ module.exports = {
       res.render("shop/kcishop", { layout: "shop" });
     } catch (err) {
       console.log(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async officeGallery(req, res) {
+    try {
+      const jsonPath = path.join(
+        __dirname,
+        "../../public/data/gallery-images.json"
+      );
+
+      const data = await fs.readFile(jsonPath, "utf-8");
+      const allImages = JSON.parse(data);
+
+      const perPage = 12;
+      const page = parseInt(req.query.page) || 1;
+      let selectedCategories = req.query.category || [];
+
+      // Normalize to array
+      if (typeof selectedCategories === "string") {
+        selectedCategories = [selectedCategories];
+      }
+
+      // Filter images if categories are selected
+      const filteredImages = selectedCategories.length
+        ? allImages.filter((img) => selectedCategories.includes(img.category))
+        : allImages;
+
+      const totalCount = filteredImages.length;
+      const paginatedImages = filteredImages.slice(
+        (page - 1) * perPage,
+        page * perPage
+      );
+
+      // Get unique categories for the filter list
+      const allCategories = [...new Set(allImages.map((img) => img.category))];
+
+      console.log({ selectedCategories, allCategories });
+
+      res.render("shop/office-gallery", {
+        layout: "shop",
+        images: paginatedImages,
+        currentPage: page,
+        totalPages: Math.ceil(totalCount / perPage),
+        allCategories,
+        selectedCategories,
+      });
+    } catch (err) {
+      console.error(err);
       res.render("error/404", { layout: "error" });
     }
   },
@@ -82,7 +133,10 @@ module.exports = {
   },
   async productDetails(req, res) {
     try {
-      res.render("shop/product-detail", { layout: "shop" });
+      const { ID } = req.params;
+      const product = await Product.findById(ID).lean();
+      console.log(product);
+      res.render("shop/product-detail", { layout: "shop", product });
     } catch (err) {
       console.log(err);
       res.render("error/404", { layout: "error" });

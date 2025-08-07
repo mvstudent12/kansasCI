@@ -1,0 +1,128 @@
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="/shop">KCI Shop</a>
+                <span class="breadcrumb-item active">Office Gallery</span>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+
+<!-- Shop Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <!-- Shop Sidebar Start -->
+        <div class="col-lg-3 col-md-4">
+            <h5 class="section-title position-relative text-uppercase mb-3">
+                <span class="bg-secondary pr-3">Design Themes</span>
+            </h5>
+            <div class="bg-light p-4 mb-30">
+                <form id="filter-form" method="GET" action="/officeGallery">
+                    {{#each allCategories}}
+                        <div
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="cat-{{@index}}" name="category"
+                                value="{{this}}" {{#if (includes ../selectedCategories this)}}checked{{/if}}>
+
+                            <label class="custom-control-label" for="cat-{{@index}}">
+                                {{this}}
+                            </label>
+                        </div>
+                    {{/each}}
+
+
+                    <button type="submit" class="btn btn-primary mt-3">Apply</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Shop Product Start -->
+        <div class="col-lg-9 col-md-8">
+            <div class="row pb-3">
+                <div class="col-12 pb-1">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                    </div>
+                </div>
+                {{#each images}}
+                    <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                        <div class="product-item bg-light mb-4">
+                            <img class="img-fluid w-100 bg-white" src="{{this.filePath}}" alt="{{this.category}}">
+
+                            <div class="product-action">
+                                <a href="{{this.filePath}}" class="btn btn-outline-dark btn-square glightbox"
+                                    data-gallery="officeGallery" data-title="{{this.category}}">
+                                    <i class="fa fa-expand"></i>
+                                </a>
+                                <a class="btn btn-outline-dark btn-square" href="/favorites/{{this.filePath}}"><i
+                                        class="far fa-heart"></i></a>
+                            </div>
+
+
+                            <div class="text-center py-4">
+                                <a class="h6 text-decoration-none text-wrap"
+                                    href="/product-details">{{this.category}}</a>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+
+
+            </div>
+            <div class="row pb-3">
+                <div class="col-12 pb-1">
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            {{!-- Previous Button --}}
+                            {{#if (gt currentPage 1)}}
+                                <li class="page-item">
+                                    <a class="page-link"
+                                        href="?page={{subtract currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Previous</a>
+                                </li>
+                            {{else}}
+                                <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                            {{/if}}
+                            {{!-- Dynamic Page Links --}}
+                            {{#each (paginationRange currentPage totalPages)}}
+                                {{#if (eq this "...")}}
+                                    <li class="page-item disabled"><span class="page-link">…</span></li>
+                                {{else}}
+                                    <li class="page-item {{#if (eq this ../currentPage)}}active{{/if}}">
+                                        <a class="page-link"
+                                            href="?page={{this}}{{#each ../selectedCategories}}&category={{this}}{{/each}}">{{this}}</a>
+                                    </li>
+                                {{/if}}
+                            {{/each}}
+
+                            {{!-- Next Button --}}
+                            {{#if (lt currentPage totalPages)}}
+                                <li class="page-item">
+                                    <a class="page-link"
+                                        href="?page={{add currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Next</a>
+                                </li>
+                            {{else}}
+                                <li class="page-item disabled"><span class="page-link">Next</span></li>
+                            {{/if}}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script> --}}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            closeButton: true,
+        });
+    });
+</script>

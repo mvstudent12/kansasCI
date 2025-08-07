@@ -1,0 +1,546 @@
+[
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Lounge-16.png",
+    "category": "Lounge"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Lounge-17.png",
+    "category": "Lounge"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Lounge-18.png",
+    "category": "Lounge"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Lounge-19.png",
+    "category": "Lounge"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Lounge-20.png",
+    "category": "Lounge"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Open-Plan-52.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Open-Plan-53.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Open-Plan-54.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Open-Plan-55.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Open-Plan-56.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Open-Plan-57.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Open-Plan-58.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Open-Plan-59.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Open-Plan-60.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Open-Plan-64.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Open-Plan-65.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-Lobby-Open-Plan-67.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Cafe-1.png",
+    "category": "Cafe"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Cafe-2.png",
+    "category": "Cafe"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Conference-001.png",
+    "category": "Conference"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Conference-004.png",
+    "category": "Conference"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Conference-006.png",
+    "category": "Conference"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Conference-007.png",
+    "category": "Conference"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Conference-009.png",
+    "category": "Conference"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Conference-10.png",
+    "category": "Conference"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Conference-11.png",
+    "category": "Conference"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Conference-12.png",
+    "category": "Conference"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Lounge-005.png",
+    "category": "Lounge"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Lounge-014.png",
+    "category": "Lounge"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-001.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-002.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-008.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-009.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-010.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-011.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-012.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-015.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-016.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-017.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-019.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-024.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-025.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-027.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-031.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-033.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-035.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-036.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-037.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-039.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-040.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-041.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-042.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-043.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-045.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-046.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-047.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-049.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-050.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Open-Plan-051.png",
+    "category": "Open-Plan"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-001.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-002.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-003.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-004.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-005.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-007.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-008.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-010.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-014.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-016.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-017.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-020.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-022.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-024.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-026.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-027.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-028.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-029.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-030.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-031.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-032.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-033.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-034.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-035.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-036.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-037.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-039.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-040.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-041.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-042.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-045.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-046.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-048.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-050.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-051.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-054.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-055.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-056.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-057.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-058.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-059.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-060.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-061.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-062.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-65.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-66.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-67.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-69.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-71.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-72.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-73.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-74.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-75.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-76.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-77.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-78.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-80.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-81.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-83.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Private-Office-85.png",
+    "category": "Private-Office"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Reception-004.png",
+    "category": "Reception"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Reception-005.png",
+    "category": "Reception"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Reception-006.png",
+    "category": "Reception"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Reception-007.png",
+    "category": "Reception"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Reception-009.png",
+    "category": "Reception"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Reception-010.png",
+    "category": "Reception"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Reception-017.png",
+    "category": "Reception"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Reception-021.png",
+    "category": "Reception"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Reception-022.png",
+    "category": "Reception"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Training-001.png",
+    "category": "Training"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Training-003.png",
+    "category": "Training"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Training-004.png",
+    "category": "Training"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Training-005.png",
+    "category": "Training"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Training-007.png",
+    "category": "Training"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Training-009.png",
+    "category": "Training"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Training-010.png",
+    "category": "Training"
+  },
+  {
+    "filePath": "/gallery-images/NDI-RS-Lobby-Training-011.png",
+    "category": "Training"
+  }
+]

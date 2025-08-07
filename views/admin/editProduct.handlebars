@@ -10,11 +10,11 @@
                         <h2>Edit Product Information</h2>
 
                     </div>
-                    <form action="admin/editProduct" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/editProductDB/{{product._id}}" method="POST" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="row">
+                                {{!-- left column --}}
                                 <div class="col-lg-8">
-
                                     <div class="form-group mb-5">
                                         <label for="title">Product Title</label>
                                         <input type="text" class="form-control" id="title" name="title"
@@ -50,23 +50,34 @@
                                             <option value="">-- Select a Product SubCategory --</option>
                                         </select>
                                     </div>
+                                    <div class="form-group mb-5">
+                                        <label for="details">Product Details</label>
+                                        <input type="text" class="form-control" id="details" name="details"
+                                            placeholder="Add Detail Line" value="{{product.details}}">
+                                    </div>
 
+                                    <div class="editor">
+                                        <label class="d-block" for="colors">Colors</label>
+                                        <textarea id="colors" name="colors" rows="6" cols="60"
+                                            placeholder="Separate with comma: Red, Blue, Green"
+                                            class="form-control">{{product.colors}}</textarea>
+                                    </div>
+
+                                    <div class="editor">
+                                        <label class="d-block" for="colors">Colors</label>
+                                        <textarea id="colors" name="colors" rows="6" cols="60"
+                                            placeholder="Separate with comma: Red, Blue, Green"
+                                            class="form-control">{{product.colors}}</textarea>
+                                    </div>
                                     <div class="form-row mb-4">
-                                        <div class="col">
-                                            <label for="colors">Colors</label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="colors" name="colors"
-                                                    placeholder="red, green, black" aria-label="colors"
-                                                    aria-describedby="" value="{{product.colors}}">
-                                            </div>
-                                        </div>
+
                                         <div class="col">
                                             <label for="dimensions">Dimensions</label>
                                             <div class="input-group">
 
                                                 <input type="text" class="form-control" id="dimensions"
                                                     name="dimensions" placeholder='30"H x 30"W' aria-label="dimensions"
-                                                    aria-describedby="">
+                                                    aria-describedby="" value="{{product.dimensions}}">
                                             </div>
                                         </div>
                                     </div>
@@ -109,26 +120,28 @@
                                         <label class="d-block" for="description">Description &amp; Features</label>
                                         <textarea id="description" name="description" rows="6" cols="60"
                                             placeholder="Enter description and features here..."
-                                            class="form-control">{{this.description}}</textarea>
+                                            class="form-control">{{product.description}}</textarea>
                                     </div>
 
 
                                 </div>
+                                {{!-- right column --}}
                                 <div class="col-lg-4">
+                                    {{!-- existing images --}}
                                     <div id="saved-images" class="mt-3">
                                         <label>Saved Images</label>
                                         <div class="d-flex flex-wrap">
                                             {{#each product.images}}
                                                 <div class="saved-image position-relative m-2"
                                                     style="display:inline-block;">
-                                                    <img src="{{path}}"
+                                                    <img src='{{path}}'
                                                         style="max-width: 120px; border: 1px solid #ccc; border-radius: 4px;">
                                                     <button type="button"
                                                         class="btn btn-sm btn-danger remove-saved-image"
-                                                        data-filename="{{filename}}"
+                                                        data-filename="{{fileName}}"
                                                         style="position:absolute; top:0; right:0;">&times;</button>
                                                     <!-- Keep for resaving -->
-                                                    <input type="hidden" name="existingImages" value="{{filename}}">
+                                                    <input type="hidden" name="existingImages" value="{{fileName}}">
                                                 </div>
                                             {{/each}}
                                         </div>
@@ -140,13 +153,9 @@
                                             name="imageFiles" multiple>
                                         <label class="custom-file-label" for="imageFilesEdit">Choose images</label>
                                     </div>
+                                    <hr class="mt-5">
                                     <div id="image-preview" style="margin-top: 10px;"></div>
-
-
-
                                 </div>
-
-
                             </div>
                             <div class="row mt-5">
                                 <div class="col-12">
@@ -166,54 +175,109 @@
 
     </div>
 </div>
-
 <script>
     const currentCategory = "{{product.category}}";
     const currentSubcategory = "{{product.subcategory}}";
-</script>
 
-
-
-<script>
     document.addEventListener("DOMContentLoaded", function () {
+        /** ================================
+         * 1. Preview & Remove New Images
+         * ================================= */
         const input = document.getElementById("imageFilesEdit");
         const preview = document.getElementById("image-preview");
 
+        let newImageMap = new Map(); // Track files by name for removal
+
         input.addEventListener("change", function () {
-            preview.innerHTML = ""; // Clear old previews
+            preview.innerHTML = "";
+            newImageMap.clear();
 
-            const files = input.files;
-            if (!files.length) return;
-
-            for (const file of files) {
-                if (!file.type.startsWith("image/")) continue;
+            Array.from(input.files).forEach((file, index) => {
+                if (!file.type.startsWith("image/")) return;
 
                 const reader = new FileReader();
                 reader.onload = function (e) {
+                    const container = document.createElement("div");
+                    container.classList.add("position-relative", "m-2", "d-inline-block");
+
                     const img = document.createElement("img");
                     img.src = e.target.result;
                     img.style.maxWidth = "120px";
-                    img.style.margin = "5px";
                     img.style.border = "1px solid #ccc";
                     img.style.borderRadius = "4px";
-                    preview.appendChild(img);
+                    img.style.display = "block";
+
+                    const removeBtn = document.createElement("button");
+                    removeBtn.type = "button";
+                    removeBtn.innerHTML = "&times;";
+                    removeBtn.classList.add("btn", "btn-sm", "btn-danger");
+                    removeBtn.style.position = "absolute";
+                    removeBtn.style.top = "0";
+                    removeBtn.style.right = "0";
+                    removeBtn.dataset.index = index;
+
+                    removeBtn.addEventListener("click", () => {
+                        container.remove();
+                        newImageMap.set(index, null); // Mark for exclusion
+                    });
+
+                    container.appendChild(img);
+                    container.appendChild(removeBtn);
+                    preview.appendChild(container);
+
+                    newImageMap.set(index, file);
                 };
                 reader.readAsDataURL(file);
+            });
+        });
+
+        // Override form submit to exclude removed new files
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function (e) {
+            if (newImageMap.size === 0) return;
+
+            const dt = new DataTransfer();
+
+            newImageMap.forEach((file) => {
+                if (file) dt.items.add(file);
+            });
+
+            input.files = dt.files;
+        });
+
+
+        /** ================================
+         * 2. Handle Removing Saved Images
+         * ================================= */
+        const savedImagesContainer = document.getElementById("saved-images");
+
+        savedImagesContainer?.addEventListener("click", function (e) {
+            if (e.target.classList.contains("remove-saved-image")) {
+                const imageDiv = e.target.closest(".saved-image");
+                const filename = e.target.dataset.filename;
+
+                // Remove the image visually
+                imageDiv.remove();
+
+                // Add hidden input to tell backend to delete this file
+                const input = document.createElement("input");
+                input.type = "hidden";
+                input.name = "removedImages";
+                input.value = filename;
+                document.querySelector("form").appendChild(input);
             }
         });
-    });
-</script>
 
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
+        /** ========================================
+         * 3. Populate Category/Subcategory Selects
+         * ========================================= */
         const categorySelect = document.getElementById("category");
         const subcategorySelect = document.getElementById("subcategory");
 
         fetch("/data/categories.json")
             .then(response => response.json())
             .then(categories => {
-                // Populate the category dropdown
+                // Populate category dropdown
                 categories.forEach(cat => {
                     const opt = document.createElement("option");
                     opt.value = cat.name;
@@ -221,15 +285,14 @@
                     categorySelect.appendChild(opt);
                 });
 
-                // Function to populate subcategories for a category value
+                // Populate subcategories
                 function populateSubcategories(categoryName) {
                     const selected = categories.find(c => c.name === categoryName);
 
-                    subcategorySelect.innerHTML = '<option value="">-- Select Subcategory --</option>';
+                    subcategorySelect.innerHTML = ' <option value="">-- Select Subcategory --</option>';
 
-                    if (selected && selected.subcategories.length) {
+                    if (selected?.subcategories?.length) {
                         subcategorySelect.disabled = false;
-
                         selected.subcategories.forEach(sub => {
                             const subOpt = document.createElement("option");
                             subOpt.value = sub;
@@ -241,13 +304,12 @@
                     }
                 }
 
-                // Event listener for user changes
+                // Update subcategories on change
                 categorySelect.addEventListener("change", function () {
                     populateSubcategories(this.value);
                 });
 
-                // === Now the important part: Set the category and subcategory to the product's ===
-
+                // Auto-select current values
                 if (currentCategory) {
                     categorySelect.value = currentCategory;
                     populateSubcategories(currentCategory);
@@ -263,29 +325,4 @@
                 console.error("Failed to load categories:", err);
             });
     });
-
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const savedImagesContainer = document.getElementById("saved-images");
-
-        savedImagesContainer?.addEventListener("click", e => {
-            if (e.target.classList.contains("remove-saved-image")) {
-                const imageDiv = e.target.closest(".saved-image");
-                const filename = e.target.dataset.filename;
-
-                // Remove from UI
-                imageDiv.remove();
-
-                // Append a hidden input so backend knows to delete it
-                const input = document.createElement("input");
-                input.type = "hidden";
-                input.name = "removedImages";
-                input.value = filename;
-                document.querySelector("form").appendChild(input);
-            }
-        });
-    });
-
 </script>

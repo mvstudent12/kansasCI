@@ -1,0 +1,133 @@
+[
+  {
+    "name": "Desks",
+    "slug": "desks",
+    "subcategories": [
+      "Desk & Credenza Shells",
+      "Height Adjustable Tables",
+      "Elements Support Components",
+      "Pedestals",
+      "Presentation",
+      "Reception",
+      "Borders+ Typicals",
+      "Returns & Bridges",
+      "Steel Desking"
+    ]
+  },
+  {
+    "name": "Seating",
+    "slug": "seating",
+    "subcategories": [
+      "Big & Tall Seating",
+      "Guest Seating",
+      "Lounge Seating",
+      "Management & Conference Seating",
+      "Nesting Chairs",
+      "Seating Accessories",
+      "Task Seating"
+    ]
+  },
+  {
+    "name": "Tables",
+    "slug": "tables",
+    "subcategories": [
+      "Blow Molded Folding Tables",
+      "Conference Tables",
+      "Flip Top Nesting Tables",
+      "Height Adjustable Tables",
+      "Occasional Tables",
+      "Table Bases and Components"
+    ]
+  },
+  {
+    "name": "Storage",
+    "slug": "storage",
+    "subcategories": [
+      "Bookcases",
+      "Hutches",
+      "Lateral Files",
+      "Pedestals",
+      "Steel Storage",
+      "Storage Cabinets"
+    ]
+  },
+  {
+    "name": "Accessories",
+    "slug": "accessories",
+    "subcategories": [
+      "Center Drawers",
+      "Chair Mats",
+      "Cushions",
+      "Drawer Pulls & Grommets",
+      "Keyboard & Mouse Trays",
+      "Lock Kits & Keys",
+      "Misc. Accessories",
+      "Modular Power",
+      "Monitor Mounts",
+      "Task Lighting"
+    ]
+  },
+  {
+    "name": "Clothing",
+    "slug": "clothing",
+    "subcategories": [
+      "Coveralls",
+      "Masks",
+      "Shirts",
+      "Pants",
+      "Jeans",
+      "Jackets",
+      "Boxers"
+    ]
+  },
+  {
+    "name": "Textiles",
+    "slug": "textiles",
+    "subcategories": ["Pillows", "Towelling"]
+  },
+  {
+    "name": "Signs & Graphics",
+    "slug": "signs and graphics",
+    "subcategories": [
+      "Awards",
+      "Decals",
+      "Nameplates",
+      "ADA Signage",
+      "Street Markers",
+      "Custom Signs",
+      "Neighborhood Signs",
+      "Wildlife & Parks"
+    ]
+  },
+  {
+    "name": "Metal",
+    "slug": "metal",
+    "subcategories": [
+      "Grills",
+      "Kiosks",
+      "Detention & Dormitory Furniture",
+      "Outdoor Items",
+      "Fire Pits & Rings",
+      "Custom Items & Designs"
+    ]
+  },
+  {
+    "name": "Janitorial",
+    "slug": "janitorial",
+    "subcategories": [
+      "Dish",
+      "Laundry",
+      "Floor Care",
+      "General Cleaning",
+      "Soap & Handcare",
+      "Cleaning Equipment",
+      "Containers",
+      "Accessories"
+    ]
+  },
+  {
+    "name": "Paint",
+    "slug": "paint",
+    "subcategories": ["Traffic", "Interior", "Exterior"]
+  }
+]

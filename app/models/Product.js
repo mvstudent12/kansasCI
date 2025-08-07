@@ -20,6 +20,9 @@ const productSchema = new mongoose.Schema(
     colors: {
       type: [String], // store colors as array of strings
     },
+    sizes: {
+      type: [String], // store colors as array of strings
+    },
     dimensions: {
       type: String,
     },
@@ -29,6 +32,9 @@ const productSchema = new mongoose.Schema(
       default: "none",
     },
     description: {
+      type: String,
+    },
+    details: {
       type: String,
     },
     images: [

@@ -22,7 +22,7 @@ admin.get("/editProduct/:ID", adminController.editProduct);
 admin.post(
   "/editProductDB/:ID",
   upload.array("imageFiles", 10),
-  adminController.editProduct
+  adminController.editProductDB
 );
 
 module.exports = admin;
