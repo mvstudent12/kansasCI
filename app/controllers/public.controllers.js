@@ -77,7 +77,7 @@ module.exports = {
       // Get unique categories for the filter list
       const allCategories = [...new Set(allImages.map((img) => img.category))];
 
-      console.log({ selectedCategories, allCategories });
+      console.log(req.path);
 
       res.render("shop/office-gallery", {
         layout: "shop",
@@ -86,6 +86,7 @@ module.exports = {
         totalPages: Math.ceil(totalCount / perPage),
         allCategories,
         selectedCategories,
+        currentPath: req.path,
       });
     } catch (err) {
       console.error(err);
@@ -125,6 +126,7 @@ module.exports = {
         selectedCategories: Array.isArray(selectedCategories)
           ? selectedCategories
           : [selectedCategories],
+        currentPath: req.path,
       });
     } catch (err) {
       console.log(err);

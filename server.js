@@ -73,7 +73,7 @@ app.use(
 );
 
 // Static files
-app.use(express.static("public", { maxage: "1d" }));
+app.use(express.static("public", { maxage: "30d", etag: false }));
 
 // Routes
 const publicRoutes = require("./app/routes/public.routes");

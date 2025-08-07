@@ -20,7 +20,7 @@
                 <div class="carousel-inner bg-light">
                     {{#each product.images}}
                         <div class="carousel-item {{#if @first}}active{{/if}}">
-                            <img class="w-100 h-100" src="{{this.path}}" alt="{{this.originalName}}">
+                            <img loading="lazy" class="w-100 h-100" src="{{this.path}}" alt="{{this.originalName}}">
                         </div>
                     {{/each}}
                 </div>
@@ -47,32 +47,33 @@
                         {{product.details}}
                         {{else~}}Call for details!{{/if}}</p>
 
-
-                {{!-- <div class="d-flex mb-3">
-                    <strong class="text-dark mr-3">Sizes:</strong>
-                    <form>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-1" name="size">
-                            <label class="custom-control-label" for="size-1">XS</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-2" name="size">
-                            <label class="custom-control-label" for="size-2">S</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-3" name="size">
-                            <label class="custom-control-label" for="size-3">M</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-4" name="size">
-                            <label class="custom-control-label" for="size-4">L</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-5" name="size">
-                            <label class="custom-control-label" for="size-5">XL</label>
-                        </div>
-                    </form>
-                </div> --}}
+                {{#if product.sizes}}
+                    <div class="d-flex mb-3">
+                        <strong class="text-dark mr-3">Sizes:</strong>
+                        <form>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-1" name="size">
+                                <label class="custom-control-label" for="size-1">XS</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-2" name="size">
+                                <label class="custom-control-label" for="size-2">S</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-3" name="size">
+                                <label class="custom-control-label" for="size-3">M</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-4" name="size">
+                                <label class="custom-control-label" for="size-4">L</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-5" name="size">
+                                <label class="custom-control-label" for="size-5">XL</label>
+                            </div>
+                        </form>
+                    </div>
+                {{/if}}
                 {{!-- COLORS --}}
                 {{#if product.colors}}
                     <div class="d-flex mb-4">
