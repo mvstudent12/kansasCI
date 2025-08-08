@@ -185,4 +185,35 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
+
+  async deleteProduct(req, res) {
+    try {
+      const { ID } = req.params;
+
+      const product = await Product.findById(ID);
+      if (!product) {
+        return res.status(404).render("error/404", { layout: "error" });
+      }
+
+      // Delete image files
+      if (product.imageFiles && product.imageFiles.length) {
+        product.imageFiles.forEach((imgPath) => {
+          const fullPath = path.join(__dirname, "../../public", imgPath); // already includes /uploads
+          fs.unlink(fullPath, (err) => {
+            if (err) {
+              console.warn("Failed to delete file:", fullPath, err.message);
+            }
+          });
+        });
+      }
+
+      // Delete the product
+      await Product.findByIdAndDelete(ID);
+
+      res.redirect("/admin/products");
+    } catch (err) {
+      console.error(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
 };

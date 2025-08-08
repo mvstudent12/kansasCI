@@ -25,4 +25,6 @@ admin.post(
   adminController.editProductDB
 );
 
+admin.get("/deleteProduct/:ID", adminController.deleteProduct);
+
 module.exports = admin;

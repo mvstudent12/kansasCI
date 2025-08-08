@@ -75,6 +75,7 @@ const helpers = {
   firstImagePath: function (images) {
     return images && images.length > 0 ? images[0].path : "";
   },
+  length: (arr) => arr?.length || 0,
 };
 
 module.exports = helpers;

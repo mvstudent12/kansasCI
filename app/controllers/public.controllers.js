@@ -12,6 +12,39 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
+  // Assuming you have a Product model
+  async searchProducts(req, res) {
+    try {
+      const searchTerm = req.query.q;
+
+      if (!searchTerm || searchTerm.trim() === "") {
+        return res.redirect("/products"); // or render empty results
+      }
+
+      // Case-insensitive regex search across title, brand, or category
+      const regex = new RegExp(searchTerm, "i");
+
+      const results = await Product.find({
+        $or: [
+          { title: regex },
+          { brand: regex },
+          { category: regex },
+          { description: regex },
+        ],
+      })
+        .limit(12)
+        .lean();
+
+      res.render("shop/search-results", {
+        layout: "shop",
+        products: results,
+        query: searchTerm,
+      });
+    } catch (err) {
+      console.error(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
   async contact(req, res) {
     try {
       res.render("public/contact", { currentPage: "contact" });
@@ -44,7 +77,7 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
-  async officeGallery(req, res) {
+  async galleryRoom(req, res) {
     try {
       const jsonPath = path.join(
         __dirname,
@@ -79,7 +112,7 @@ module.exports = {
 
       console.log(req.path);
 
-      res.render("shop/office-gallery", {
+      res.render("shop/gallery-room", {
         layout: "shop",
         images: paginatedImages,
         currentPage: page,

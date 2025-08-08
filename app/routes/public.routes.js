@@ -6,6 +6,8 @@ public.get("/", publicController.home);
 
 public.get("/signIn", publicController.signIn);
 
+public.get("/searchProducts", publicController.searchProducts);
+
 public.get("/contact", publicController.contact);
 
 public.get("/about", publicController.about);
@@ -26,6 +28,6 @@ public.get("/checkout", publicController.checkout);
 
 public.get("/serviceDetails", publicController.serviceDetails);
 
-public.get("/officeGallery", publicController.officeGallery);
+public.get("/galleryRoom", publicController.galleryRoom);
 
 module.exports = public;
