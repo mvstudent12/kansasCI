@@ -911,25 +911,7 @@
       }
     ]
   },
-  {
-    "title": "54SEAT",
-    "brandLine": "Commercial Concepts",
-    "category": "Chairs",
-    "subcategory": "",
-    "colors": [],
-    "dimensions": "",
-    "productLine": "none",
-    "description": "",
-    "images": [
-      {
-        "originalName": "54SEAT.png",
-        "fileName": "54SEAT.png",
-        "path": "/uploads/54SEAT.png",
-        "size": 0,
-        "mimetype": "image/png"
-      }
-    ]
-  },
+
   {
     "title": "59 Power Harness",
     "brandLine": "Commercial Concepts",
@@ -1313,7 +1295,7 @@
   {
     "title": "Academy Series   Armless Task chair w footring",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "Task Seating",
     "colors": [],
     "dimensions": "",
@@ -1332,7 +1314,7 @@
   {
     "title": "Academy Series   Armless Task chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "Task Seating",
     "colors": [],
     "dimensions": "",
@@ -1484,7 +1466,7 @@
   {
     "title": "Acura High Back Exec Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -1560,7 +1542,7 @@
   {
     "title": "Arm Kit for 8501 Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -1579,7 +1561,7 @@
   {
     "title": "Ashton Fabric Guest Chair with Arms",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -1598,7 +1580,7 @@
   {
     "title": "Ashton Series   Sled Based Guest Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -1617,7 +1599,7 @@
   {
     "title": "Aspire Executive Arm Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -1636,7 +1618,7 @@
   {
     "title": "Avery Guest Chair with Arms",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -1655,7 +1637,7 @@
   {
     "title": "Baker Mesh Back Guest Chair with Arms",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -1674,7 +1656,7 @@
   {
     "title": "Baker Mesh Back Guest Chair without Arms",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -1693,7 +1675,7 @@
   {
     "title": "Banquet Stack Chair wVinyl Seat",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -1712,7 +1694,7 @@
   {
     "title": "Bariatric Guest Seating with Arms   400 LBS RATING",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -1731,7 +1713,7 @@
   {
     "title": "Barrett Series   Executive High Back Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -1750,7 +1732,7 @@
   {
     "title": "Basic Seat Mesh Back Task Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "Task Seating",
     "colors": [],
     "dimensions": "",
@@ -1959,7 +1941,7 @@
   {
     "title": "Big Joe  Big & Tall Executive Task Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "Task Seating",
     "colors": [],
     "dimensions": "",
@@ -1978,7 +1960,7 @@
   {
     "title": "Biomesh  Pivot Back Guest Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -1997,7 +1979,7 @@
   {
     "title": "Biomesh Pivot Back Guest Chair w Casters",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -2111,7 +2093,7 @@
   {
     "title": "BOGA Collection Café Stack Arm Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -2130,7 +2112,7 @@
   {
     "title": "BOGA Plus 4 Legged Guest Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -2149,7 +2131,7 @@
   {
     "title": "Boga Plus Chair Dolly",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -2472,7 +2454,7 @@
   {
     "title": "Caldwell Guest Arm Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -2567,7 +2549,7 @@
   {
     "title": "Chair & Anti Fatigue Mat",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -2586,7 +2568,7 @@
   {
     "title": "Chair Mat – Medium Pile – EverLife®",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -2605,7 +2587,7 @@
   {
     "title": "Chair Mats – Low Pile – EverLife®",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -2624,7 +2606,7 @@
   {
     "title": "Chambers Executive Swivel Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -2643,7 +2625,7 @@
   {
     "title": "Chase High Back Executive Mesh Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -3422,7 +3404,7 @@
   {
     "title": "Compose Modular Corner Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -3460,7 +3442,7 @@
   {
     "title": "Compose Series   Club Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -3574,7 +3556,7 @@
   {
     "title": "Cool Mesh Armless Nesting chair with Titanium Frame",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -3593,7 +3575,7 @@
   {
     "title": "Cool Mesh High Back Task Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "Task Seating",
     "colors": [],
     "dimensions": "",
@@ -3631,7 +3613,7 @@
   {
     "title": "Cool Mesh Nesting Chair with Arms and Titanium Frame",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -3688,7 +3670,7 @@
   {
     "title": "Cover for Chair Seat",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -4182,7 +4164,7 @@
   {
     "title": "Eazze Mid Back Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -4676,7 +4658,7 @@
   {
     "title": "Eloise  Mid Back Conference Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "Conference Tables",
     "colors": [],
     "dimensions": "",
@@ -4695,7 +4677,7 @@
   {
     "title": "Elond Series  High Back Executive Chair wflip arms",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -4828,7 +4810,7 @@
   {
     "title": "Entrigue Mid Back Task Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "Task Seating",
     "colors": [],
     "dimensions": "",
@@ -4961,7 +4943,7 @@
   {
     "title": "Finley Chair Sled Base",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -4980,7 +4962,7 @@
   {
     "title": "Finley Chair Spider Base",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5094,7 +5076,7 @@
   {
     "title": "Fuse Lounge Seating Arm",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5113,7 +5095,7 @@
   {
     "title": "Fuse Lounge Seating Ottoman",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5132,7 +5114,7 @@
   {
     "title": "Fuse Modular Armless 45° Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5151,7 +5133,7 @@
   {
     "title": "Fuse Modular Armless 90° Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5170,7 +5152,7 @@
   {
     "title": "Fuse Modular Armless Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5208,7 +5190,7 @@
   {
     "title": "Garrison   Mesh Back Executive Task Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "Task Seating",
     "colors": [],
     "dimensions": "",
@@ -5227,7 +5209,7 @@
   {
     "title": "Garrison – Mesh Back Guest Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5246,7 +5228,7 @@
   {
     "title": "Genesis – Flip Arm Executive Vinyl Task Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "Task Seating",
     "colors": [],
     "dimensions": "",
@@ -5265,7 +5247,7 @@
   {
     "title": "Glance Series  Executive High Back Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5379,7 +5361,7 @@
   {
     "title": "Hagen Retro Club Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5474,7 +5456,7 @@
   {
     "title": "Headrest for Willow Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5569,7 +5551,7 @@
   {
     "title": "Heavy Duty Executive Multifunction Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5588,7 +5570,7 @@
   {
     "title": "Hedreat for Rider Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5607,7 +5589,7 @@
   {
     "title": "Heritage Collection Executive Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5664,7 +5646,7 @@
   {
     "title": "Ideal Mesh Back Guest Arm Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -5702,7 +5684,7 @@
   {
     "title": "James – Executive Chair wFlip Arms",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -7393,7 +7375,7 @@
   {
     "title": "Lure Big & Tall Executive High Back Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -7716,7 +7698,7 @@
   {
     "title": "Metro Two Seat Sofa",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -7773,7 +7755,7 @@
   {
     "title": "Miles – Basic Value Task Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "Task Seating",
     "colors": [],
     "dimensions": "",
@@ -8001,7 +7983,7 @@
   {
     "title": "Montgomery Captains Chair wCasters",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -8020,7 +8002,7 @@
   {
     "title": "Montgomery Captains Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -8077,7 +8059,7 @@
   {
     "title": "Olson – Mesh Back Guest Chair wArms",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -8096,7 +8078,7 @@
   {
     "title": "Olson – Mesh Back Guest Chair woArms",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -8343,7 +8325,7 @@
   {
     "title": "Piper – Black Vinyl Mid Back Task Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "Task Seating",
     "colors": [],
     "dimensions": "",
@@ -8457,7 +8439,7 @@
   {
     "title": "Pogo Mesh Back Stack Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -8704,7 +8686,7 @@
   {
     "title": "Presta Series   Mid Back Executive Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -8742,7 +8724,7 @@
   {
     "title": "Racer – Black Vinyl Side Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -8818,7 +8800,7 @@
   {
     "title": "Remington  Armless Guest Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -8837,7 +8819,7 @@
   {
     "title": "Remington  Bariatric Armless Guest Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -9179,7 +9161,7 @@
   {
     "title": "Ryder Flip up Arm Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -9939,7 +9921,7 @@
   {
     "title": "Ryker Lock Accessories",
     "brandLine": "Commercial Concepts",
-    "category": "Misc",
+    "category": "Accessories",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10129,7 +10111,7 @@
   {
     "title": "Seat fAgenda & Cool Msh Nest Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10148,7 +10130,7 @@
   {
     "title": "Seat for Baker Guest Chairs",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10167,7 +10149,7 @@
   {
     "title": "Seat for Guest Chairs",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10186,7 +10168,7 @@
   {
     "title": "Seat for Ideal Guest Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10490,7 +10472,7 @@
   {
     "title": "Sleek Stackable Chair with Arms",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10547,7 +10529,7 @@
   {
     "title": "Slone  – Guest Cantilever Frame Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10566,7 +10548,7 @@
   {
     "title": "Slone Mid Back Fabric Executive Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10585,7 +10567,7 @@
   {
     "title": "Slone Mid Mesh Back Executive Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10623,7 +10605,7 @@
   {
     "title": "Slone – Optional Fabric Seat Cover",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10661,7 +10643,7 @@
   {
     "title": "Sovereign Big & Tall Executive Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10680,7 +10662,7 @@
   {
     "title": "Spice Drafting Chair Mesh Back",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10699,7 +10681,7 @@
   {
     "title": "Spice Mesh Back Guest Chair with Arms",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10718,7 +10700,7 @@
   {
     "title": "Spice Mid Back Swivel Tilt Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -10965,7 +10947,7 @@
   {
     "title": "Tally High Back Executive Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -11079,7 +11061,7 @@
   {
     "title": "Tribeca Series   Club Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -11098,7 +11080,7 @@
   {
     "title": "Tribeca Series   Loveseat",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -11497,7 +11479,7 @@
   {
     "title": "Valour Mid Back Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -11516,7 +11498,7 @@
   {
     "title": "Value Mesh Back Task Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "Task Seating",
     "colors": [],
     "dimensions": "",
@@ -11706,7 +11688,7 @@
   {
     "title": "Williamson Side Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -11725,7 +11707,7 @@
   {
     "title": "Windsor High Back Executive Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -11744,7 +11726,7 @@
   {
     "title": "Windsor Mid Back Executive  Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -11763,7 +11745,7 @@
   {
     "title": "Windsor Mid Back Executive Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -11839,7 +11821,7 @@
   {
     "title": "Wood Guest Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
@@ -11934,7 +11916,7 @@
   {
     "title": "Zypher Mid Back Executive Chair",
     "brandLine": "Commercial Concepts",
-    "category": "Chairs",
+    "category": "Seating",
     "subcategory": "",
     "colors": [],
     "dimensions": "",
