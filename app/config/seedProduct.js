@@ -20,7 +20,7 @@ async function seed() {
     console.log("🗑️ Database dropped");
 
     // Read your JSON products file
-    const productsPath = path.join(__dirname, "products.json");
+    const productsPath = path.join(__dirname, "products_updated.json");
     const rawData = fs.readFileSync(productsPath, "utf-8");
     const products = JSON.parse(rawData);
 

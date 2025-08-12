@@ -11,93 +11,36 @@
 </div>
 <!-- Breadcrumb End -->
 
-
 <!-- Shop Start -->
 <div class="container-fluid">
     <div class="row px-xl-5">
-        <!-- Shop Sidebar Start -->
+
+        <!-- Category Filter -->
         <div class="col-lg-3 col-md-4">
-
-
-            <h5 class="section-title position-relative text-uppercase mb-3"><span
-                    class="bg-secondary pr-3">Categories</span></h5>
+            <h5 class="section-title position-relative text-uppercase mb-3">
+                <span class="bg-secondary pr-3">Categories</span>
+            </h5>
             <div class="bg-light p-4 mb-30">
-                <form id="filter-form" method="GET" action="/products">
+                <form id="category-filter-form" method="GET" action="/products">
                     {{#each allCategories}}
                         <div
                             class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" name="category" value="{{this}}"
-                                id="cat-{{@index}}" {{#if (includes ../selectedCategories this)}}checked{{/if}}>
+                                id="cat-{{@index}}" {{#if (includes ../selectedCategories this)}}checked{{/if}} />
                             <label class="custom-control-label" for="cat-{{@index}}">
                                 {{this}}
                             </label>
                         </div>
                     {{/each}}
 
-
                     <button type="submit" class="btn btn-primary mt-3">Apply</button>
                 </form>
             </div>
 
-            {{!-- <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Modular
-                    Panels</span></h5>
-            <div class="bg-light p-4 mb-30">
-                <form>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="Bay">
-                        <label class="custom-control-label" for="Bay">Bay Products</label>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="OEI">
-                        <label class="custom-control-label" for="OEI">OEI</label>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="Swift">
-                        <label class="custom-control-label" for="Swift">Swift Space Inc.</label>
-                    </div>
-                </form>
-            </div>
-            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Specialty
-                    Accessories</span></h5>
-            <div class="bg-light p-4 mb-30">
-                <form>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="">
-                        <label class="custom-control-label" for="">Lighting</label>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="">
-                        <label class="custom-control-label" for="">Desk Accessories</label>
-                    </div>
-                </form>
-            </div>
-            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Lounge
-                    Furniture</span></h5>
-            <div class="bg-light p-4 mb-30">
-                <form>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="">
-                        <label class="custom-control-label" for="">Commercial Concepts</label>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="">
-                        <label class="custom-control-label" for="">OEI</label>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="">
-                        <label class="custom-control-label" for="">Bay Products</label>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="">
-                        <label class="custom-control-label" for="">Noona</label>
-                    </div>
-                </form>
-            </div> --}}
         </div>
 
 
-
-        <!-- Shop Product Start -->
+        <!-- Shop Products -->
         <div class="col-lg-9 col-md-8">
             <div class="row pb-3">
                 {{#each products}}
@@ -121,8 +64,6 @@
                         </div>
                     </div>
                 {{/each}}
-
-
 
             </div>
             <div class="row pb-3">

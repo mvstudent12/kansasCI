@@ -5,7 +5,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Tables",
     "subcategory": "Conference Tables",
-    "colors": ["Ages Oak", "Dove Oak"],
+    "colors": [
+      "Ages Oak",
+      "Dove Oak"
+    ],
     "sizes": [],
     "dimensions": "1.5' Thick Fluted edge top\r\n10' length\r\nRectangular Shaped Top",
     "productLine": "none",
@@ -132,7 +135,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Center Drawers",
-    "colors": ["Silver"],
+    "colors": [
+      "Silver"
+    ],
     "sizes": [],
     "dimensions": "18.9 W X 2.36 H X 8.07 D\r\n\r\nNet Weight: 7 lbs.",
     "productLine": "none",
@@ -234,7 +239,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Newport Grey"],
+    "colors": [
+      "Newport Grey"
+    ],
     "sizes": [],
     "dimensions": "24 x 36",
     "productLine": "none",
@@ -260,7 +267,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Tables",
     "subcategory": "Conference Tables",
-    "colors": ["Age Oak", "Aged Oak"],
+    "colors": [
+      "Age Oak",
+      "Aged Oak"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -380,7 +390,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Modular Power",
-    "colors": ["Black"],
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "Single Circuit Power: Designed for one-circuit electrical setups—ideal for individual workstations or focused task zones\r\n\r\n15\" Black Power Lead: Clean, compact, and easy to manage in tight spaces\r\n\r\nModular Compatibility: Built to work with standard systems furniture and ELECTRI‐PAK components\r\n\r\nTool-Free Installation: Simple to connect and disconnect without specialized tools\r\n\r\nLow-Profile Design: Keeps your work surface tidy and unobtrusive\r\n",
     "productLine": "none",
@@ -406,7 +418,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Modular Power",
-    "colors": ["Black"],
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "Dedicated Circuit 2 Outlet: Perfect for separating loads between circuits—great for larger workstations or multi-device setups.\r\n\r\n15\" Black Power Lead: Offers clean cable routing in modular office environments.\r\n\r\nModular Compatibility: Built to work with standard systems furniture and ELECTRI‐PAK components\r\n\r\nEasy Installation: Quick connect/disconnect design means you can reconfigure without calling in an electrician.\r\n\r\nLow-Profile Design: Keeps your work surface tidy and unobtrusive",
     "productLine": "none",
@@ -432,7 +446,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Modular Power",
-    "colors": ["Black"],
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -458,7 +474,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Modular Power",
-    "colors": ["Orange"],
+    "colors": [
+      "Orange"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -484,7 +502,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Tables",
     "subcategory": "Conference Tables",
-    "colors": ["Aged Oak", "Dove Oak"],
+    "colors": [
+      "Aged Oak",
+      "Dove Oak"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -577,7 +598,7 @@
     "title": "1700",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
+    "subcategory": "Guest Chairs",
     "colors": [
       "Cherry",
       "Espresso",
@@ -610,7 +631,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Tables",
     "subcategory": "Conference Tables",
-    "colors": ["Age Oak", "Dove Oak"],
+    "colors": [
+      "Age Oak",
+      "Dove Oak"
+    ],
     "sizes": [],
     "dimensions": "Length: 18 feet\r\n\r\nTop Thickness: 1.5″",
     "productLine": "none",
@@ -704,7 +728,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Misc. Accessories",
-    "colors": ["Black"],
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "18\" ",
     "productLine": "none",
@@ -877,7 +903,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Misc. Accessories",
-    "colors": ["Charcoal", "Metal frame"],
+    "colors": [
+      "Charcoal",
+      "Metal frame"
+    ],
     "sizes": [],
     "dimensions": "• 43\" \r\n",
     "productLine": "none",
@@ -903,7 +932,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Misc. Accessories",
-    "colors": ["Charcoal", "metal frame"],
+    "colors": [
+      "Charcoal",
+      "metal frame"
+    ],
     "sizes": [],
     "dimensions": "66\" Height\r\n",
     "productLine": "none",
@@ -953,8 +985,11 @@
     "title": "Mobile Locking B/B/F 3-Drawer Pedestal",
     "brandLine": "Commercial Concepts",
     "category": "Storage",
-    "subcategory": "Pedestals",
-    "colors": ["Charcoal", "Light Gray"],
+    "subcategory": "Desk Pedestals",
+    "colors": [
+      "Charcoal",
+      "Light Gray"
+    ],
     "sizes": [],
     "dimensions": "15 x 20 x 28\" \t\r\nWeight - 72lbs",
     "productLine": "none",
@@ -1901,7 +1936,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Tables",
     "subcategory": "Conference Tables",
-    "colors": ["Aged Oak", "Dove Oak"],
+    "colors": [
+      "Aged Oak",
+      "Dove Oak"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -1994,7 +2032,7 @@
     "title": "Academy Series   Armless Task chair w footring",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
+    "subcategory": "Task Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -2020,7 +2058,7 @@
     "title": "Academy Series   Armless Task chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
+    "subcategory": "Task Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "D210.63*W23.8*H34.84-39.96",
@@ -2046,7 +2084,7 @@
     "title": "Acrylic Privacy Divider 15H x 24W",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
+    "subcategory": "Table Bases & Components",
     "colors": [],
     "sizes": [],
     "dimensions": "15″H X 24″W",
@@ -2072,7 +2110,7 @@
     "title": "Acrylic Privacy Divider 15H x 30W",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
+    "subcategory": "Table Bases & Components",
     "colors": [],
     "sizes": [],
     "dimensions": "15″H X 30″W",
@@ -2098,7 +2136,7 @@
     "title": "Acrylic Privacy Divider 15H x 36W",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
+    "subcategory": "Table Bases & Components",
     "colors": [],
     "sizes": [],
     "dimensions": "15″H X 36″W",
@@ -2124,7 +2162,7 @@
     "title": "Acrylic Privacy Divider 15H x 42W",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
+    "subcategory": "Table Bases & Components",
     "colors": [],
     "sizes": [],
     "dimensions": "15″H X 42″W",
@@ -2150,7 +2188,7 @@
     "title": "Acrylic Privacy Divider 15H x 48W",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
+    "subcategory": "Table Bases & Components",
     "colors": [],
     "sizes": [],
     "dimensions": "15″H X 48″W",
@@ -2176,7 +2214,7 @@
     "title": "Acrylic Privacy Divider 15H x 54W",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
+    "subcategory": "Table Bases & Components",
     "colors": [],
     "sizes": [],
     "dimensions": "15″H X 54″W",
@@ -2202,7 +2240,7 @@
     "title": "Acrylic Privacy Divider 15H x 66W",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
+    "subcategory": "Table Bases & Components",
     "colors": [],
     "sizes": [],
     "dimensions": "15″H x 66″W",
@@ -2228,8 +2266,11 @@
     "title": "Acura High Back Exec Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Management & Conference Seating",
-    "colors": ["Black", "Gray"],
+    "subcategory": "Management & Conference Seatings",
+    "colors": [
+      "Black",
+      "Gray"
+    ],
     "sizes": [],
     "dimensions": "27”W x 28”D x 48” - 51.5”H",
     "productLine": "none",
@@ -2254,8 +2295,12 @@
     "title": "Adjustable Main Desk Beam 48 78",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["Black", "Silver", "White"],
+    "subcategory": "Support Components",
+    "colors": [
+      "Black",
+      "Silver",
+      "White"
+    ],
     "sizes": [],
     "dimensions": "48\"-78\"",
     "productLine": "none",
@@ -2281,7 +2326,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Storage Cabinets",
-    "colors": ["Black", "Light Gray"],
+    "colors": [
+      "Black",
+      "Light Gray"
+    ],
     "sizes": [],
     "dimensions": "36″W x 18″D x 72″H",
     "productLine": "none",
@@ -2306,7 +2354,7 @@
     "title": "Archie – Vinyl Armless Medical Stool",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
+    "subcategory": "Task Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "24 W X 20.5 H X 24 D",
@@ -2332,7 +2380,7 @@
     "title": "Arm Kit for 8501 Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Seating Accessories",
+    "subcategory": "Chair Accessories",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -2358,7 +2406,7 @@
     "title": "Ashton Fabric Guest Chair with Arms",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
+    "subcategory": "Guest Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "Overall: 24″W x 25″D x 34.50″H\r\nSeat: 20″W x 19″D x 18″H",
@@ -2384,8 +2432,10 @@
     "title": "Ashton Series   Sled Based Guest Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["Black"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "Overall: 24”W x 25.2”D x 34.60“H\r\nSeat: 20.1”W x 18.9”D x 18.1”H",
     "productLine": "none",
@@ -2410,8 +2460,10 @@
     "title": "Aspire Executive Arm Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Management & Conference Seating",
-    "colors": ["Black"],
+    "subcategory": "Management & Conference Seatings",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "• Overall Height (in) 39.50-42.25\r\n• Overall Width (in) 25.25\r\n• Overall Depth (in) 26.00\r\n• Seat Height (in) 17.75-20.50\r\n• Seat Depth (in) 19.75\r\n• Seat Width (in) 20.50\r\n• Back Height (in) 23.75\r\n• Back Width (in) 20.25",
     "productLine": "executive",
@@ -2436,8 +2488,10 @@
     "title": "Avery Guest Chair with Arms",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["Black"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": " D23.82*W23.23*H34.45",
     "productLine": "none",
@@ -2462,8 +2516,13 @@
     "title": "Baker Mesh Back Guest Chair with Arms",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["Blue", "Grey", "Red", "Black"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "Blue",
+      "Grey",
+      "Red",
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "Overall width 22.50”\r\nOverall depth 23.25”\r\nOverall height 33.50”\r\n",
     "productLine": "none",
@@ -2488,8 +2547,10 @@
     "title": "Baker Mesh Back Guest Chair without Arms",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["Black"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "22.5″W x 23.25″D x 33.5″H | Seat: 19″W x 19″D x 18″H",
     "productLine": "none",
@@ -2514,8 +2575,10 @@
     "title": "Banquet Stack Chair wVinyl Seat",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["Black"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "Overall: 17.5″W x 19.5″D x 33.5″H\r\nSeat: 16″W x 14.5″D x 18″H",
     "productLine": "none",
@@ -2540,8 +2603,10 @@
     "title": "Bariatric Guest Seating with Arms   400 LBS RATING",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["Black"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "Overall: 26″W x 22″D x 32.5″H\r\n\r\nSeat: 22″W x 19″D x 18″H",
     "productLine": "none",
@@ -2566,8 +2631,10 @@
     "title": "Barrett Series   Executive High Back Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Management & Conference Seating",
-    "colors": ["Black"],
+    "subcategory": "Management & Conference Seatings",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "• Overall Height (in) 41.75-45.00\r\n• Overall Width (in) 28.00\r\n• Overall Depth (in) 33.25\r\n• Seat Height (in) 19.00-22.25\r\n• Seat Depth (in) 19.75\r\n• Seat Width (in) 19.50\r\n• Back Height (in) 25.25\r\n• Back Width (in) 21.75 ",
     "productLine": "executive",
@@ -2592,8 +2659,10 @@
     "title": "Basic Seat Mesh Back Task Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
-    "colors": ["Black"],
+    "subcategory": "Task Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "Overall height 36-40”\r\nOverall width 26”\r\nOverall depth 23”\r\nSeat width 20”\r\nSeat depth 19”",
     "productLine": "none",
@@ -2618,8 +2687,10 @@
     "title": "Bell Executive High Back",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Management & Conference Seating",
-    "colors": ["Black"],
+    "subcategory": "Management & Conference Seatings",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "D31.30/W25.79/H44.49-47.44",
     "productLine": "executive",
@@ -2644,8 +2715,10 @@
     "title": "Bianca 24″x66″ White DbL Ped Base Laminate Modesty L Base",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["White"],
+    "subcategory": "Support Components",
+    "colors": [
+      "White"
+    ],
     "sizes": [],
     "dimensions": "24” x 66” Desk – 24” x 42” Return",
     "productLine": "none",
@@ -2670,8 +2743,10 @@
     "title": "Bianca 24″x66″ White DbL Ped Base Laminate Modesty U Base",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["White"],
+    "subcategory": "Support Components",
+    "colors": [
+      "White"
+    ],
     "sizes": [],
     "dimensions": "24” x 66” Desk – 24” x 42”",
     "productLine": "none",
@@ -2696,8 +2771,10 @@
     "title": "Bianca 24″x66″ White DbL Ped Base Metal Modesty L Base",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["White"],
+    "subcategory": "Support Components",
+    "colors": [
+      "White"
+    ],
     "sizes": [],
     "dimensions": "24” x 66” Desk – 24” x 42” Return / Wire Modesty",
     "productLine": "none",
@@ -2722,7 +2799,7 @@
     "title": "Bianca 24″x66″ White DbL Ped Base Metal Modesty U Base",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [],
     "sizes": [],
     "dimensions": "24” x 66” Desk and Credenza- 24” x 48” Bridge / Wire Modesty",
@@ -2748,8 +2825,10 @@
     "title": "Bianca 24″x66″ White DbL Ped Base wLaminate Modesty",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["White"],
+    "subcategory": "Support Components",
+    "colors": [
+      "White"
+    ],
     "sizes": [],
     "dimensions": "24″x66″",
     "productLine": "none",
@@ -2774,8 +2853,10 @@
     "title": "Bianca 24″x66″ White DbL Ped Base wMetal Mesh Modesty",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["White"],
+    "subcategory": "Support Components",
+    "colors": [
+      "White"
+    ],
     "sizes": [],
     "dimensions": "24″x66″",
     "productLine": "none",
@@ -2800,8 +2881,10 @@
     "title": "Bianca 24″x66″ White Sgl Ped Base Laminate Modesty L Base",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["White"],
+    "subcategory": "Support Components",
+    "colors": [
+      "White"
+    ],
     "sizes": [],
     "dimensions": "24” x 66” Desk – 24” x 42” Return / Laminate Modesty",
     "productLine": "none",
@@ -2826,8 +2909,10 @@
     "title": "Bianca 24″x66″ White Sgl Ped Base Metal Modesty L Base",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["White"],
+    "subcategory": "Support Components",
+    "colors": [
+      "White"
+    ],
     "sizes": [],
     "dimensions": "24” x 66” Desk – 24” x 42” Return / Wire Modesty",
     "productLine": "none",
@@ -2852,8 +2937,10 @@
     "title": "Bianca 24″x66″ White Single Ped Base wMetal Mesh Modesty",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["White"],
+    "subcategory": "Support Components",
+    "colors": [
+      "White"
+    ],
     "sizes": [],
     "dimensions": "24\"×66\" ",
     "productLine": "none",
@@ -2878,8 +2965,10 @@
     "title": "Big Joe  Big & Tall Executive Task Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Big & Tall Seating",
-    "colors": ["Black"],
+    "subcategory": "Big & Tall Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "Overall Dimensions\r\n30”W x 27”D x 40.5-44”H\r\nSeat Dimensions\r\n21.5”W x 19.5”D x 21-24.5”H",
     "productLine": "executive",
@@ -2904,8 +2993,10 @@
     "title": "Biomesh  Pivot Back Guest Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["Black"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "Overall: 24″W x 22″D x 42″H\r\nSeat: 21″W x 19.25″D x 119.75-23″H",
     "productLine": "none",
@@ -2931,7 +3022,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Seating",
     "subcategory": "",
-    "colors": ["Black"],
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "Overall Dimensions\r\n22.5W x 25.59D x34.39H\r\nSeat Dimensions\r\n18.90W x 18.19D x 18.52H",
     "productLine": "none",
@@ -2957,7 +3050,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Chair Mats",
-    "colors": ["Black"],
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "36\"x48\"",
     "productLine": "none",
@@ -3008,8 +3103,10 @@
     "title": "Blow Mold Folding Table 30W x72L",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Blow Molded Folding Tables",
-    "colors": ["White"],
+    "subcategory": "Folding Tables",
+    "colors": [
+      "White"
+    ],
     "sizes": [],
     "dimensions": "30”D x 72”W x 29”H",
     "productLine": "none",
@@ -3310,7 +3407,7 @@
     "title": "Borders+ U Reception Desk  with Extended Worksurfaces Full Double Pedestal 141″ x 71″ Footprint",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Reception",
+    "subcategory": "Reception Desks",
     "colors": [
       "Aspen",
       "Mahogany",
@@ -3461,7 +3558,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Aspen"],
+    "colors": [
+      "Aspen"
+    ],
     "sizes": [],
     "dimensions": "71\"W",
     "productLine": "none",
@@ -3546,8 +3645,11 @@
     "title": "Budget Adjustable Height Base",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
-    "colors": ["Black", "Silver"],
+    "subcategory": "Table Bases & Components",
+    "colors": [
+      "Black",
+      "Silver"
+    ],
     "sizes": [],
     "dimensions": "48\"",
     "productLine": "none",
@@ -3633,8 +3735,11 @@
     "title": "Bullet Desk Metal Leg for PL131147",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Steel Desking",
-    "colors": ["Black", "Silver"],
+    "subcategory": "Steel Desks",
+    "colors": [
+      "Black",
+      "Silver"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -3659,8 +3764,11 @@
     "title": "Caldwell Guest Arm Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["Black", "Oxblood"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "Black",
+      "Oxblood"
+    ],
     "sizes": [],
     "dimensions": "D26.57 x W24.02 x H35.83",
     "productLine": "none",
@@ -3685,7 +3793,7 @@
     "title": "Casters for PL End Table",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
+    "subcategory": "Table Bases & Components",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -3711,7 +3819,7 @@
     "title": "Casters set f CPS & CMP Metal Peds",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
+    "subcategory": "Table Bases & Components",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -3788,7 +3896,7 @@
     "title": "Chair & Anti Fatigue Mat",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Seating Accessories",
+    "subcategory": "Chair Accessories",
     "colors": [],
     "sizes": [],
     "dimensions": "36\" x 53\"",
@@ -3814,7 +3922,7 @@
     "title": "Chair Mat – Medium Pile – EverLife®",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Seating Accessories",
+    "subcategory": "Chair Accessories",
     "colors": [],
     "sizes": [],
     "dimensions": "36\" x 48\" Rectangle,\r\n45\" x 53\" + Lip (25\" x 12\"), or\r\n46\" x 60\" Rectangle",
@@ -3840,7 +3948,7 @@
     "title": "Chair Mats – Low Pile – EverLife®",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Seating Accessories",
+    "subcategory": "Chair Accessories",
     "colors": [],
     "sizes": [],
     "dimensions": "36\" x 48\" + Lip (20\" x 10\") .110 Gauge,\r\n45\" x 53\" + Lip (25\" x 12\") .110 Gauge,\r\n46\" x 60\" (Crystal Edge),\r\n36\" x 48\" Black,\r\n36\" x 48\" + Lip (20\" x 10\") .098 Gauge,\r\n45\" x 53\" + Lip (25\" x 12\") .098 Gauge,\r\n46\" x 60\" .098 Gauge,\r\n36\" x 48\" + Lip (20\" x 10\") .085 Gauge",
@@ -3866,8 +3974,11 @@
     "title": "Chambers Executive Swivel Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Management & Conference Seating",
-    "colors": ["Black", "Oxblood"],
+    "subcategory": "Management & Conference Seatings",
+    "colors": [
+      "Black",
+      "Oxblood"
+    ],
     "sizes": [],
     "dimensions": "D28.35 x W25.98 x H43.11-46.65",
     "productLine": "executive",
@@ -3892,8 +4003,10 @@
     "title": "Chase High Back Executive Mesh Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Management & Conference Seating",
-    "colors": ["Black"],
+    "subcategory": "Management & Conference Seatings",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "27.17 W X 44.09 H X 24.21 D",
     "productLine": "executive",
@@ -3918,8 +4031,10 @@
     "title": "Chrome Base for PL9997 Table Top",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
-    "colors": ["Chrome"],
+    "subcategory": "Table Bases & Components",
+    "colors": [
+      "Chrome"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -3944,8 +4059,10 @@
     "title": "Clamp on Legs set of 4",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
-    "colors": ["Black"],
+    "subcategory": "Table Bases & Components",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "1.97 W X 29.72 H X 2.76 D",
     "productLine": "none",
@@ -3970,7 +4087,7 @@
     "title": "Classic Lam L Reception Desk Full Single Pedestal w Bow Transaction Top 71″ x 72″ Footprint",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Reception",
+    "subcategory": "Reception Desks",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4003,7 +4120,7 @@
     "title": "Classic Lam L Reception Desk Mobile BF Double Pedestal w Bow Transaction Top 71″ x 72″ Footprint",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4036,7 +4153,7 @@
     "title": "Classic Laminate Bow Front Desk Full Double Pedestal 30″ x 66″",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4069,7 +4186,7 @@
     "title": "Classic Laminate Bow Front Desk Full Double Pedestal 36″ x 71″",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4102,7 +4219,7 @@
     "title": "Classic Laminate Bow Front Extended Worksurface U Desk wHutch Full Pedestals 71″ x 96″ Footprint",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4160,7 +4277,7 @@
     "title": "Classic Laminate Desk 3/4 Double Pedestal 30″ x 60″",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4193,7 +4310,7 @@
     "title": "Classic Laminate Desk 3/4 Double Pedestal 30″ x 66″",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4226,7 +4343,7 @@
     "title": "Classic Laminate Desk 3/4 Double Pedestal 36″ x 71″",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4259,7 +4376,7 @@
     "title": "Classic Laminate Desk 3/4 Single Pedestal 24″ x 48″",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4292,7 +4409,7 @@
     "title": "Classic Laminate Desk 34 Single Pedestal 30″ x 48″",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4325,7 +4442,7 @@
     "title": "Classic Laminate Desk Full Double Pedestal 30″ x 60″",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4358,7 +4475,7 @@
     "title": "Classic Laminate Desk Full Double Pedestal 30″ x 66″",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4391,7 +4508,7 @@
     "title": "Classic Laminate Desk Full Double Pedestal 36″ x 71″",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4424,7 +4541,7 @@
     "title": "Classic Laminate Desk Full Single Pedestal 30″ x 48″",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4457,7 +4574,7 @@
     "title": "Classic Laminate L Desk  Hanging BF Pedestal 71″ x 84″ Footprint",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4490,7 +4607,7 @@
     "title": "Classic Laminate L Desk 34 Pedestal  66″ x 72″ Footprint",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -4523,7 +4640,7 @@
     "title": "Classic Laminate L Desk 34 Pedestal 66″ x 78″ Footprint",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -5081,8 +5198,10 @@
     "title": "Compose Modular Ottoman",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["Black"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "19\"H X 20.25\"W X 20.25\"D\r\nseat height 19\"",
     "productLine": "none",
@@ -5107,8 +5226,10 @@
     "title": "Compose Series   Club Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["Black"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "31.25\"H X 30.50\"W X 20.75\"D\r\nseat height 19\"",
     "productLine": "none",
@@ -5133,8 +5254,11 @@
     "title": "Confer Armless Mesh Back Counter Stool",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Lounge Seating",
-    "colors": ["Black vinyl", "Black frame"],
+    "subcategory": "Lounge Chairs",
+    "colors": [
+      "Black vinyl",
+      "Black frame"
+    ],
     "sizes": [],
     "dimensions": "Overall Stool Dimensions\r\n24\"W x 23.5\"D x 42\"H\r\nStool Seat Dimensions\r\n18.5\"W x 18\"D x 28.5\"H",
     "productLine": "none",
@@ -5159,8 +5283,11 @@
     "title": "Confer Mesh Back Counter Stool With Arms",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Lounge Seating",
-    "colors": ["Black vinyl", "Black frame"],
+    "subcategory": "Lounge Chairs",
+    "colors": [
+      "Black vinyl",
+      "Black frame"
+    ],
     "sizes": [],
     "dimensions": "Overall Stoll Dimensions\r\n24\"W x 23.5\"D x 42\"H\r\nStool Seat Dimensions\r\n18.5\"W x 18\"D x 28.5\"H",
     "productLine": "none",
@@ -5297,7 +5424,7 @@
     "title": "Cool Mesh High Back Task Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
+    "subcategory": "Task Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -5323,7 +5450,14 @@
     "brandLine": "Commercial Concepts",
     "category": "Seating",
     "subcategory": "Nesting Chairs",
-    "colors": ["Black", "Blue", "Green", "Orange", "Red", "Gray"],
+    "colors": [
+      "Black",
+      "Blue",
+      "Green",
+      "Orange",
+      "Red",
+      "Gray"
+    ],
     "sizes": [],
     "dimensions": "24\"W x 24\"D x 37\"H",
     "productLine": "none",
@@ -5349,7 +5483,11 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Aspen", "Cherry", "Honey"],
+    "colors": [
+      "Aspen",
+      "Cherry",
+      "Honey"
+    ],
     "sizes": [],
     "dimensions": "42\"W x 15\"D x 36\"H",
     "productLine": "none",
@@ -5374,8 +5512,12 @@
     "title": "Cover for Adjustable Beam 72",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["Black", "Silver", "White"],
+    "subcategory": "Support Components",
+    "colors": [
+      "Black",
+      "Silver",
+      "White"
+    ],
     "sizes": [],
     "dimensions": "72\"W",
     "productLine": "none",
@@ -5400,8 +5542,10 @@
     "title": "Cover for Chair Seat",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Seating Accessories",
-    "colors": ["Grey - Antimicrobial Vinyl"],
+    "subcategory": "Chair Accessories",
+    "colors": [
+      "Grey - Antimicrobial Vinyl"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -6702,7 +6846,7 @@
     "title": "Eliptical Base Set for Conf Tables",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
+    "subcategory": "Table Bases & Components",
     "colors": [
       "Espresso",
       "Mahogany",
@@ -6734,8 +6878,13 @@
     "title": "Eliptical Modesty f14'+ Conf Tops",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
-    "colors": ["Espresso", "Modern Walnut", "Newport Gray", "Coastal Gray"],
+    "subcategory": "Table Bases & Components",
+    "colors": [
+      "Espresso",
+      "Modern Walnut",
+      "Newport Gray",
+      "Coastal Gray"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -6760,7 +6909,7 @@
     "title": "Eloise  Mid Back Conference Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Management & Conference Seating",
+    "subcategory": "Management & Conference Seatings",
     "colors": [],
     "sizes": [],
     "dimensions": "Overall Dimensions\r\n24.61”W x 23.23”D x 37.6-39.76”H\r\nSeat Dimensions\r\n17.91”W x 17.72-19.69”D x 16.93-19.09”H",
@@ -6786,7 +6935,7 @@
     "title": "Elond Series  High Back Executive Chair wflip arms",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Management & Conference Seating",
+    "subcategory": "Management & Conference Seatings",
     "colors": [],
     "sizes": [],
     "dimensions": "Overall: 26.25″W x 29″D x 41.25″-44″H\r\nSeat: 21″W x 20.5″D x 17.75″-20.5″H",
@@ -6812,7 +6961,7 @@
     "title": "End Cap for 24H Panel Section",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [],
     "sizes": [],
     "dimensions": "24\"",
@@ -6838,7 +6987,7 @@
     "title": "End Cap for 42H Panel",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [],
     "sizes": [],
     "dimensions": "42\"",
@@ -6864,7 +7013,7 @@
     "title": "End Cap for 66H Panel",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [],
     "sizes": [],
     "dimensions": "66\"",
@@ -6890,8 +7039,10 @@
     "title": "End Panel Set for 41 H Table 30 D",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
-    "colors": ["Coastal Gray"],
+    "subcategory": "Table Bases & Components",
+    "colors": [
+      "Coastal Gray"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -6916,8 +7067,10 @@
     "title": "End Panel Set for 41 H Table 36 D",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
-    "colors": ["Coastal Gray"],
+    "subcategory": "Table Bases & Components",
+    "colors": [
+      "Coastal Gray"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -6942,7 +7095,7 @@
     "title": "Entice Multi Function High Back",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Management & Conference Seating",
+    "subcategory": "Management & Conference Seatings",
     "colors": [],
     "sizes": [],
     "dimensions": "27.25”W x 25.75’D x 18”-22”H",
@@ -6968,7 +7121,7 @@
     "title": "Entrigue Mid Back Task Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
+    "subcategory": "Task Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -7096,7 +7249,12 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Aspen", "Maple", "Newport Gray", "White"],
+    "colors": [
+      "Aspen",
+      "Maple",
+      "Newport Gray",
+      "White"
+    ],
     "sizes": [],
     "dimensions": "72\"",
     "productLine": "none",
@@ -7121,7 +7279,7 @@
     "title": "Extension Glide for 27H Support Leg",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -7147,8 +7305,11 @@
     "title": "Fabric PET Panel",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["Light Grey", "Dark Grey (Ash)"],
+    "subcategory": "Support Components",
+    "colors": [
+      "Light Grey",
+      "Dark Grey (Ash)"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -7173,7 +7334,7 @@
     "title": "Finley Chair Sled Base",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
+    "subcategory": "Guest Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "25″W X 35.5″H X 24″D",
@@ -7199,7 +7360,7 @@
     "title": "Finley Chair Spider Base",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
+    "subcategory": "Guest Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "25″W X 35.5″H X 24″D",
@@ -7500,7 +7661,7 @@
     "title": "Garrison   Mesh Back Executive Task Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
+    "subcategory": "Task Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -7550,7 +7711,7 @@
     "title": "Genesis – Flip Arm Executive Vinyl Task Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
+    "subcategory": "Task Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -8202,7 +8363,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Storage Cabinets",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8228,7 +8391,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Bookcases",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8254,7 +8419,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "Jax-Timber Oak - 42 x 20 Bridge with modesty",
     "productLine": "none",
@@ -8280,7 +8447,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8306,7 +8475,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8332,7 +8503,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Storage Cabinets",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8358,7 +8531,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Bookcases",
-    "colors": ["brown"],
+    "colors": [
+      "brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8384,7 +8559,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "",
-    "colors": ["brown"],
+    "colors": [
+      "brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8410,7 +8587,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Bookcases",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8436,7 +8615,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8462,7 +8643,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8488,7 +8671,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8514,7 +8699,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Walnut"],
+    "colors": [
+      "Walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8540,7 +8727,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8566,7 +8755,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8592,7 +8783,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Storage Cabinets",
-    "colors": ["Brown"],
+    "colors": [
+      "Brown"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8618,7 +8811,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["white"],
+    "colors": [
+      "white"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8644,7 +8839,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Tables",
     "subcategory": "Conference Tables",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8669,8 +8866,10 @@
     "title": "Laminate Bookcase 32wx30h",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Borders+ Typicals",
-    "colors": ["walnut"],
+    "subcategory": "Desk Configurations",
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8696,7 +8895,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Bookcases",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8722,7 +8923,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Bookcases",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8748,7 +8951,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Bookcases",
-    "colors": ["Walnut"],
+    "colors": [
+      "Walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8774,7 +8979,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Bookcases",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8800,7 +9007,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8826,7 +9035,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8852,7 +9063,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Lateral Files",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8903,7 +9116,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -8928,7 +9143,9 @@
     "title": "Laminate Bridge 42W x 24D",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "42wx24d",
     "productLine": "none",
@@ -8979,7 +9196,9 @@
     "title": "Laminate Bullet Desk 66 x 30",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "colors": ["Brown and Grey"],
+    "colors": [
+      "Brown and Grey"
+    ],
     "sizes": [],
     "dimensions": "66\" x 30\"",
     "productLine": "none",
@@ -9005,7 +9224,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "71\" x 36\"",
     "productLine": "none",
@@ -9031,7 +9252,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Tables",
     "subcategory": "Occasional Tables",
-    "colors": ["walnut or brown"],
+    "colors": [
+      "walnut or brown"
+    ],
     "sizes": [],
     "dimensions": "24\" x 48\"",
     "productLine": "none",
@@ -9057,7 +9280,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Bookcases",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "15\"W x 36\"H",
     "productLine": "none",
@@ -9083,7 +9308,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Bookcases",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "15\"w x 66\"H",
     "productLine": "none",
@@ -9109,7 +9336,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Bookcases",
-    "colors": ["Walnut or Brown"],
+    "colors": [
+      "Walnut or Brown"
+    ],
     "sizes": [],
     "dimensions": "24w 36H",
     "productLine": "none",
@@ -9135,7 +9364,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "36\" x 36\"",
     "productLine": "none",
@@ -9235,8 +9466,10 @@
     "title": "Laminate Deluxe Transaction Top",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Reception",
-    "colors": ["walnut"],
+    "subcategory": "Reception Desks",
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -9262,7 +9495,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Drawer Pulls & Grommets",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "32\"w",
     "productLine": "none",
@@ -9288,7 +9523,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Tables",
     "subcategory": "Occasional Tables",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "24\" x 24\"",
     "productLine": "none",
@@ -9313,8 +9550,10 @@
     "title": "Laminate False Pedestal 29.5D",
     "brandLine": "Commercial Concepts",
     "category": "Storage",
-    "subcategory": "Pedestals",
-    "colors": ["walnut"],
+    "subcategory": "Desk Pedestals",
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "29.5D",
     "productLine": "none",
@@ -9339,8 +9578,10 @@
     "title": "Laminate False Pedestal 42D",
     "brandLine": "Commercial Concepts",
     "category": "Storage",
-    "subcategory": "Pedestals",
-    "colors": ["walnut"],
+    "subcategory": "Desk Pedestals",
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "42D",
     "productLine": "none",
@@ -9366,7 +9607,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["walnut"],
+    "colors": [
+      "walnut"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -9392,7 +9635,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Aged Oak and Dove Oak"],
+    "colors": [
+      "Aged Oak and Dove Oak"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -9418,7 +9663,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Lateral Files",
-    "colors": ["Aged Oak and Dove Oak"],
+    "colors": [
+      "Aged Oak and Dove Oak"
+    ],
     "sizes": [],
     "dimensions": "36\"W",
     "productLine": "none",
@@ -9444,7 +9691,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Lateral Files",
-    "colors": ["Aged Oak and Dove Oak"],
+    "colors": [
+      "Aged Oak and Dove Oak"
+    ],
     "sizes": [],
     "dimensions": "36\"W",
     "productLine": "none",
@@ -9470,7 +9719,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Bookcases",
-    "colors": ["Grey"],
+    "colors": [
+      "Grey"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -9893,7 +10144,7 @@
     "title": "Laminate Top for Full Height Peds",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Cherry",
       "Espresso",
@@ -10010,7 +10261,7 @@
     "title": "Laminate Worksurface 24 x 36",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [
       "Espresso",
       "Modern Walnut",
@@ -10042,7 +10293,7 @@
     "title": "Laminate Worksurface 24 x 42",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [
       "Espresso",
       "Modern walnut",
@@ -10074,7 +10325,7 @@
     "title": "Laminate Worksurface 24 x 48",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [
       "Aspen",
       "Espresso",
@@ -10109,7 +10360,7 @@
     "title": "Laminate Worksurface 24 x 60",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [
       "Aspen",
       "Espresso",
@@ -10144,7 +10395,7 @@
     "title": "Laminate Worksurface 24 x 66",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [
       "Aspen",
       "Espresso",
@@ -10178,7 +10429,7 @@
     "title": "Laminate Worksurface 24 x 72",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [
       "Aspen",
       "Espresso",
@@ -10213,7 +10464,7 @@
     "title": "Laminate Worksurface 30 Round",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [
       "Espresso",
       "Honey",
@@ -10247,7 +10498,7 @@
     "title": "Laminate Worksurface 30 x 60",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [
       "Aspen",
       "Cherry",
@@ -10281,7 +10532,7 @@
     "title": "Laminate Worksurface 30 x 72",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [
       "Aspen",
       "Cherry",
@@ -10315,7 +10566,7 @@
     "title": "Laminate Worksurface 36 Round",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [
       "Aspen",
       "Cherry",
@@ -10350,7 +10601,7 @@
     "title": "Laminate Worksurface 36 x 36",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
+    "subcategory": "Support Components",
     "colors": [
       "Aspen",
       "Cherry",
@@ -10385,8 +10636,14 @@
     "title": "Laminate Worksurface 36 x 72",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["Aspen", "Espresso", "Modern Walnut", "Newport Gray", "White"],
+    "subcategory": "Support Components",
+    "colors": [
+      "Aspen",
+      "Espresso",
+      "Modern Walnut",
+      "Newport Gray",
+      "White"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10462,7 +10719,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Lateral Files",
-    "colors": ["Light Gray", "Black"],
+    "colors": [
+      "Light Gray",
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10488,7 +10748,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Lock Kits & Keys",
-    "colors": ["Black", "Silver"],
+    "colors": [
+      "Black",
+      "Silver"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10514,7 +10777,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Lock Kits & Keys",
-    "colors": ["Black", "Silver"],
+    "colors": [
+      "Black",
+      "Silver"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10540,7 +10806,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Lock Kits & Keys",
-    "colors": ["n/a"],
+    "colors": [
+      "n/a"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10566,7 +10834,11 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Height Adjustable Tables",
-    "colors": ["Black", "Silver", "White"],
+    "colors": [
+      "Black",
+      "Silver",
+      "White"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10591,8 +10863,10 @@
     "title": "Lure Big & Tall Executive High Back Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Big & Tall Seating",
-    "colors": ["Black"],
+    "subcategory": "Big & Tall Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "executive",
@@ -10618,7 +10892,12 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Misc. Accessories",
-    "colors": ["Blue", "green", "Mustard", "Tomato"],
+    "colors": [
+      "Blue",
+      "green",
+      "Mustard",
+      "Tomato"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10644,7 +10923,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Task Lighting",
-    "colors": ["n/a"],
+    "colors": [
+      "n/a"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10670,7 +10951,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Lock Kits & Keys",
-    "colors": ["n/a"],
+    "colors": [
+      "n/a"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10695,8 +10978,10 @@
     "title": "Mesh Back Big & Tall Executive Task with Arms",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
-    "colors": ["Black"],
+    "subcategory": "Task Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "executive",
@@ -10722,7 +11007,11 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Storage Cabinets",
-    "colors": ["Black", "Light Gray", "Putty"],
+    "colors": [
+      "Black",
+      "Light Gray",
+      "Putty"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10748,7 +11037,11 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Storage Cabinets",
-    "colors": ["Black", "Light Gray", "Putty"],
+    "colors": [
+      "Black",
+      "Light Gray",
+      "Putty"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10774,7 +11067,11 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Storage Cabinets",
-    "colors": ["Black", "Light Gray", "Putty"],
+    "colors": [
+      "Black",
+      "Light Gray",
+      "Putty"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10800,7 +11097,11 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Storage Cabinets",
-    "colors": ["Black", "Light Gray", "Putty"],
+    "colors": [
+      "Black",
+      "Light Gray",
+      "Putty"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -10826,7 +11127,11 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Storage Cabinets",
-    "colors": ["Black", "Light Gray", "Putty"],
+    "colors": [
+      "Black",
+      "Light Gray",
+      "Putty"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -11076,7 +11381,7 @@
     "title": "Miles Mesh Back Task Stool Black Fabric",
     "brandLine": "Commercial Concepts",
     "category": "Misc",
-    "subcategory": "Task Seating",
+    "subcategory": "Task Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -11101,7 +11406,7 @@
     "title": "Miles – Basic Value Task Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
+    "subcategory": "Task Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -11401,8 +11706,11 @@
     "title": "Montgomery Captains Chair wCasters",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["Black", "oxblood"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "Black",
+      "oxblood"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -11427,8 +11735,11 @@
     "title": "Montgomery Captains Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["black", "oxblood"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "black",
+      "oxblood"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -11454,7 +11765,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Misc. Accessories",
-    "colors": ["black", "white"],
+    "colors": [
+      "black",
+      "white"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -11479,8 +11793,10 @@
     "title": "Nesting Base Width Adjustable Flip for 48 72″ W Tops",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Flip Top Nesting Tables",
-    "colors": ["silver"],
+    "subcategory": "Flip-Top Tables",
+    "colors": [
+      "silver"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -11505,8 +11821,10 @@
     "title": "Olson – Mesh Back Guest Chair wArms",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["black mesh"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "black mesh"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -11531,7 +11849,7 @@
     "title": "Olson – Mesh Back Guest Chair woArms",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
+    "subcategory": "Guest Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -11626,8 +11944,10 @@
     "title": "Optional Adjustable Arms",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Seating Accessories",
-    "colors": ["Black"],
+    "subcategory": "Chair Accessories",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -11652,8 +11972,10 @@
     "title": "Optional Adjustable Arms",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Seating Accessories",
-    "colors": ["Black"],
+    "subcategory": "Chair Accessories",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -11679,7 +12001,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["chrome"],
+    "colors": [
+      "chrome"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -11704,7 +12028,7 @@
     "title": "Optional Headrest",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Seating Accessories",
+    "subcategory": "Chair Accessories",
     "colors": [
       "Black",
       "Celestial Clue",
@@ -11741,8 +12065,10 @@
     "title": "Palmer House Steel Base",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Steel Desking",
-    "colors": ["Steel"],
+    "subcategory": "Steel Desks",
+    "colors": [
+      "Steel"
+    ],
     "sizes": [],
     "dimensions": "• Overall height of 28”\r\n• Base: 31.5” x 15.75” x .32”T\r\n• Top plate: 12” x 12” (painted) x 2\r\n• Column: 3” square",
     "productLine": "none",
@@ -11793,7 +12119,7 @@
     "title": "Pedestal BoxFile 34 Hanging with Lock 19”D",
     "brandLine": "Commercial Concepts",
     "category": "Storage",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -11826,7 +12152,7 @@
     "title": "Pedestal BoxFile 34 Hanging with Lock 22”D",
     "brandLine": "Commercial Concepts",
     "category": "Storage",
-    "subcategory": "Pedestals",
+    "subcategory": "Desk Pedestals",
     "colors": [
       "Aspen",
       "Cherry",
@@ -11860,7 +12186,11 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Espresso Modern Walnut", "Newport Gray", "White"],
+    "colors": [
+      "Espresso Modern Walnut",
+      "Newport Gray",
+      "White"
+    ],
     "sizes": [],
     "dimensions": "PL111: 70.87”W x 35.43”D x29.53”H\r\nNet weight: 97.66lbs",
     "productLine": "none",
@@ -11920,7 +12250,7 @@
     "title": "Piper – Black Vinyl Mid Back Task Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
+    "subcategory": "Task Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -11947,7 +12277,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Bookcases",
-    "colors": ["Honey", "Newport Gray"],
+    "colors": [
+      "Honey",
+      "Newport Gray"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -11972,7 +12305,7 @@
     "title": "Plastic Blow Molded Table",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Blow Molded Folding Tables",
+    "subcategory": "Folding Tables",
     "colors": [],
     "sizes": [],
     "dimensions": "60″W x 30″D",
@@ -12973,8 +13306,10 @@
     "title": "Rustic Corner Brackets – set of 4",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
-    "colors": ["black"],
+    "subcategory": "Table Bases & Components",
+    "colors": [
+      "black"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -12999,8 +13334,10 @@
     "title": "Rustic X Leg",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
-    "colors": ["black"],
+    "subcategory": "Table Bases & Components",
+    "colors": [
+      "black"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -13025,8 +13362,10 @@
     "title": "Ryder Flip up Arm Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Management & Conference Seating",
-    "colors": ["black"],
+    "subcategory": "Management & Conference Seatings",
+    "colors": [
+      "black"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -13052,7 +13391,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Dove Oak", "Aged Oak"],
+    "colors": [
+      "Dove Oak",
+      "Aged Oak"
+    ],
     "sizes": [],
     "dimensions": "12″W x 1″D x 28″H",
     "productLine": "none",
@@ -13078,7 +13420,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Dove Oak", "Aged Oak"],
+    "colors": [
+      "Dove Oak",
+      "Aged Oak"
+    ],
     "sizes": [],
     "dimensions": "Ryker 20×48",
     "productLine": "none",
@@ -13104,7 +13449,11 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Aged Oak", "Dove Oak", ""],
+    "colors": [
+      "Aged Oak",
+      "Dove Oak",
+      ""
+    ],
     "sizes": [],
     "dimensions": " Ryker 20×48",
     "productLine": "none",
@@ -13230,7 +13579,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Dove Oak", "Aged Oak"],
+    "colors": [
+      "Dove Oak",
+      "Aged Oak"
+    ],
     "sizes": [],
     "dimensions": "Ryker 24×48",
     "productLine": "none",
@@ -13256,7 +13608,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Tables",
     "subcategory": "Occasional Tables",
-    "colors": ["Dove Oak", "Aged Oak"],
+    "colors": [
+      "Dove Oak",
+      "Aged Oak"
+    ],
     "sizes": [],
     "dimensions": " 48″W x 24″D x 20″H",
     "productLine": "none",
@@ -13282,7 +13637,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Dove Oak", "Aged Oak"],
+    "colors": [
+      "Dove Oak",
+      "Aged Oak"
+    ],
     "sizes": [],
     "dimensions": "71″W x 30″D x 29.5″H",
     "productLine": "none",
@@ -13308,7 +13666,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Dove Oak", "Aged Oak"],
+    "colors": [
+      "Dove Oak",
+      "Aged Oak"
+    ],
     "sizes": [],
     "dimensions": "48″W X 24″D",
     "productLine": "none",
@@ -13334,7 +13695,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Dove Oak", "Aged Oak"],
+    "colors": [
+      "Dove Oak",
+      "Aged Oak"
+    ],
     "sizes": [],
     "dimensions": "48″W X 24″D",
     "productLine": "none",
@@ -13360,7 +13724,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Dove Oak", "Aged Oak"],
+    "colors": [
+      "Dove Oak",
+      "Aged Oak"
+    ],
     "sizes": [],
     "dimensions": " 71″W x 30″D x 29.5″H",
     "productLine": "none",
@@ -13386,7 +13753,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Dove Oak", "Aged Oak"],
+    "colors": [
+      "Dove Oak",
+      "Aged Oak"
+    ],
     "sizes": [],
     "dimensions": "71″W x 24″D x 29.5″H",
     "productLine": "none",
@@ -13412,7 +13782,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Desks",
     "subcategory": "Desk & Credenza Shells",
-    "colors": ["Dove Oak", "Aged Oak"],
+    "colors": [
+      "Dove Oak",
+      "Aged Oak"
+    ],
     "sizes": [],
     "dimensions": "71″W x 36″D x 29.5″H",
     "productLine": "none",
@@ -15445,7 +15818,7 @@
     "title": "Task Light wDimmer & Magnet",
     "brandLine": "Commercial Concepts",
     "category": "Misc",
-    "subcategory": "Task Seating",
+    "subcategory": "Task Chairs",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -15645,8 +16018,11 @@
     "title": "U Leg Support Standard Desk Height",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["Black", "Silver"],
+    "subcategory": "Support Components",
+    "colors": [
+      "Black",
+      "Silver"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -15750,7 +16126,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Pewter Fabric", "Clear Acrylic"],
+    "colors": [
+      "Pewter Fabric",
+      "Clear Acrylic"
+    ],
     "sizes": [],
     "dimensions": "24\"W x 42\"H",
     "productLine": "none",
@@ -15776,7 +16155,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Pewter Fabric", "Clear Acrylic"],
+    "colors": [
+      "Pewter Fabric",
+      "Clear Acrylic"
+    ],
     "sizes": [],
     "dimensions": "24\"W x 66''H",
     "productLine": "none",
@@ -15802,7 +16184,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Pewter Fabric", "Clear Acrylic"],
+    "colors": [
+      "Pewter Fabric",
+      "Clear Acrylic"
+    ],
     "sizes": [],
     "dimensions": "66″H X 24″W",
     "productLine": "none",
@@ -15828,7 +16213,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Pewter Fabric", "Clear Acrylic"],
+    "colors": [
+      "Pewter Fabric",
+      "Clear Acrylic"
+    ],
     "sizes": [],
     "dimensions": "30W x 66H",
     "productLine": "none",
@@ -15854,7 +16242,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Pewter Fabric", "Clear Acrylic"],
+    "colors": [
+      "Pewter Fabric",
+      "Clear Acrylic"
+    ],
     "sizes": [],
     "dimensions": "66\"Hx 30″W",
     "productLine": "none",
@@ -15880,7 +16271,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Pewter Fabric", "Clear Acrylic"],
+    "colors": [
+      "Pewter Fabric",
+      "Clear Acrylic"
+    ],
     "sizes": [],
     "dimensions": "42″H X 36″W",
     "productLine": "none",
@@ -15906,7 +16300,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Pewter Fabric", "Clear Acrylic"],
+    "colors": [
+      "Pewter Fabric",
+      "Clear Acrylic"
+    ],
     "sizes": [],
     "dimensions": "66″H x 36″W",
     "productLine": "none",
@@ -15932,7 +16329,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Pewter Fabric", "Clear Acrylic"],
+    "colors": [
+      "Pewter Fabric",
+      "Clear Acrylic"
+    ],
     "sizes": [],
     "dimensions": "66\"H X 36\"W",
     "productLine": "none",
@@ -15958,7 +16358,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Pewter Fabric", "Clear Acrylic"],
+    "colors": [
+      "Pewter Fabric",
+      "Clear Acrylic"
+    ],
     "sizes": [],
     "dimensions": "42\"H X 30\"W ",
     "productLine": "none",
@@ -15983,8 +16386,11 @@
     "title": "Upholstered 48W x 66H Non Powered Panel",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["Pewter Fabric", "Clear Acrylic"],
+    "subcategory": "Support Components",
+    "colors": [
+      "Pewter Fabric",
+      "Clear Acrylic"
+    ],
     "sizes": [],
     "dimensions": "66\"H X 48\"W Panel Pewter Fabric ",
     "productLine": "none",
@@ -16059,8 +16465,10 @@
     "title": "V Leg Set (3) for 36 48 Round Top",
     "brandLine": "Commercial Concepts",
     "category": "Tables",
-    "subcategory": "Table Bases and Components",
-    "colors": ["white"],
+    "subcategory": "Table Bases & Components",
+    "colors": [
+      "white"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -16086,7 +16494,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Accessories",
     "subcategory": "Desk Accessories",
-    "colors": ["Black", "Silver"],
+    "colors": [
+      "Black",
+      "Silver"
+    ],
     "sizes": [],
     "dimensions": "height: \r\n28, 41\r\nDepth:\r\n24-30, 36-42, 48-60",
     "productLine": "none",
@@ -16111,8 +16522,10 @@
     "title": "Valour Mid Back Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Management & Conference Seating",
-    "colors": ["black"],
+    "subcategory": "Management & Conference Seatings",
+    "colors": [
+      "black"
+    ],
     "sizes": [],
     "dimensions": "Overall Dimensions\r\n27.5\" W x 44.5 - 47.5\" H\r\nSeat Dimensions\r\n21\" W x 20.5\" D x 18.5 - 21.5\" H",
     "productLine": "none",
@@ -16137,8 +16550,10 @@
     "title": "Value Mesh Back Task Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
-    "colors": ["black"],
+    "subcategory": "Task Chairs",
+    "colors": [
+      "black"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -16163,8 +16578,10 @@
     "title": "Value Mesh Stool with Adj. Footring",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Task Seating",
-    "colors": ["black"],
+    "subcategory": "Task Chairs",
+    "colors": [
+      "black"
+    ],
     "sizes": [],
     "dimensions": "Overall: 24”W x 24”D x 35-40”H\r\nSeat: 19.75”W x 18.25”D x 3.25”T\r\nSeat height from ground: 17”-22”",
     "productLine": "none",
@@ -16190,7 +16607,10 @@
     "brandLine": "Commercial Concepts",
     "category": "Tables",
     "subcategory": "Height Adjustable Tables",
-    "colors": ["Black", "Silver"],
+    "colors": [
+      "Black",
+      "Silver"
+    ],
     "sizes": [],
     "dimensions": "Max. Load Capacity: 330lbs / 150kg\r\nSpeed: 38 mm/s\r\nPower Type: 100-127V / 200-240V\r\nDecibel: <50db\r\nStroke: 25.6″ / 650mm\r\nHeight Range: 22.8″-48.4″ / 580-1230mm\r\nRecommended Tabletop Dimensions:\r\n\r\n90°: 51.2″ – 74.8″ / 1300-1900mm, (2 sides) 23.6″-31.5″ / 600-800mm\r\n120°: 43.3″-70.9″ / 1100-1800mm, 23.6″-31.5″ / 600-800mm\r\n180°:66.9″-114.2″ / 1700-2900mm, 23.6″-39.4″ / 600-1000mm",
     "productLine": "none",
@@ -16216,7 +16636,9 @@
     "brandLine": "Commercial Concepts",
     "category": "Storage",
     "subcategory": "Hutches",
-    "colors": ["Black"],
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "12.25”W x 12.25”D x 18.50”H\r\nProduct weight: 23.75 lbs",
     "productLine": "none",
@@ -16377,8 +16799,10 @@
     "title": "White Glass Bow Frt Transaction Top",
     "brandLine": "Commercial Concepts",
     "category": "Desks",
-    "subcategory": "Elements Support Components",
-    "colors": ["White"],
+    "subcategory": "Support Components",
+    "colors": [
+      "White"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -16403,8 +16827,10 @@
     "title": "Williamson Side Chair",
     "brandLine": "Commercial Concepts",
     "category": "Seating",
-    "subcategory": "Guest Seating",
-    "colors": ["Black"],
+    "subcategory": "Guest Chairs",
+    "colors": [
+      "Black"
+    ],
     "sizes": [],
     "dimensions": "",
     "productLine": "none",
@@ -16730,7 +17156,9 @@
     "brandLine": "KDOC Products",
     "category": "Clothing",
     "subcategory": "Shirts",
-    "colors": ["Heather Gray"],
+    "colors": [
+      "Heather Gray"
+    ],
     "sizes": [],
     "dimensions": "Sizes Available in SM - 9X",
     "productLine": "none",
@@ -16755,8 +17183,10 @@
     "title": "Boxer Shorts",
     "brandLine": "KDOC Products",
     "category": "Clothing",
-    "subcategory": "Boxers",
-    "colors": ["White"],
+    "subcategory": "Boxer Shorts",
+    "colors": [
+      "White"
+    ],
     "sizes": [],
     "dimensions": "Sizes W28 - W64",
     "productLine": "none",
@@ -16901,7 +17331,7 @@
     "title": "Bath Towel",
     "brandLine": "KDOC Products",
     "category": "Textiles",
-    "subcategory": "Towelling",
+    "subcategory": "Towels",
     "colors": [],
     "sizes": [],
     "dimensions": "20\" x 40\" ",
@@ -16935,7 +17365,7 @@
     "title": "Hand Towel",
     "brandLine": "KDOC Products",
     "category": "Textiles",
-    "subcategory": "Towelling",
+    "subcategory": "Towels",
     "colors": [],
     "sizes": [],
     "dimensions": "16\" x 26\" ",
@@ -16969,7 +17399,7 @@
     "title": "Washcloth",
     "brandLine": "KDOC Products",
     "category": "Textiles",
-    "subcategory": "Towelling",
+    "subcategory": "Towels",
     "colors": [],
     "sizes": [],
     "dimensions": "12\" x 12\" ",
@@ -17003,7 +17433,7 @@
     "title": "Acrylic Awards",
     "brandLine": "KDOC Products",
     "category": "Signs & Graphics",
-    "subcategory": "Awards",
+    "subcategory": "Awards & Plaques",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -17053,7 +17483,7 @@
     "title": "Wooden Awards",
     "brandLine": "KDOC Products",
     "category": "Signs & Graphics",
-    "subcategory": "Awards",
+    "subcategory": "Awards & Plaques",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -17253,7 +17683,7 @@
     "title": "Plastic ADA Signs",
     "brandLine": "KDOC Products",
     "category": "Signs & Graphics",
-    "subcategory": "ADA Signage",
+    "subcategory": "ADA Signs",
     "colors": [],
     "sizes": [],
     "dimensions": "",
@@ -17319,7 +17749,7 @@
     "title": "Street Marker Signs",
     "brandLine": "KDOC Products",
     "category": "Signs & Graphics",
-    "subcategory": "Street Markers",
+    "subcategory": "Street Signs",
     "colors": [],
     "sizes": [],
     "dimensions": "",

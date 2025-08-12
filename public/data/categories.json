@@ -5,38 +5,40 @@
     "subcategories": [
       "Desk & Credenza Shells",
       "Height Adjustable Tables",
-      "Elements Support Components",
-      "Pedestals",
-      "Presentation",
-      "Reception",
-      "Borders+ Typicals",
+      "Support Components",
+      "Desk Pedestals",
+      "Presentation Stations",
+      "Reception Desks",
+      "Desk Configurations",
       "Returns & Bridges",
-      "Steel Desking"
+      "Steel Desks"
     ]
   },
   {
     "name": "Seating",
     "slug": "seating",
     "subcategories": [
-      "Big & Tall Seating",
-      "Guest Seating",
-      "Lounge Seating",
-      "Management & Conference Seating",
+      "Big & Tall Chairs",
+      "Guest Chairs",
+      "Lounge Chairs",
+      "Management & Conference Seatings",
       "Nesting Chairs",
-      "Seating Accessories",
-      "Task Seating"
+      "Chair Accessories",
+      "Task Chairs",
+      "Stools",
+      "Executive Chairs"
     ]
   },
   {
     "name": "Tables",
     "slug": "tables",
     "subcategories": [
-      "Blow Molded Folding Tables",
+      "Folding Tables",
       "Conference Tables",
-      "Flip Top Nesting Tables",
+      "Flip-Top Tables",
       "Height Adjustable Tables",
       "Occasional Tables",
-      "Table Bases and Components"
+      "Table Bases & Components"
     ]
   },
   {
@@ -46,8 +48,8 @@
       "Bookcases",
       "Hutches",
       "Lateral Files",
-      "Pedestals",
-      "Steel Storage",
+      "Desk Pedestals",
+      "Steel Cabinets",
       "Storage Cabinets"
     ]
   },
@@ -73,62 +75,62 @@
     "slug": "clothing",
     "subcategories": [
       "Coveralls",
-      "Masks",
+      "Face Masks",
       "Shirts",
       "Pants",
       "Jeans",
       "Jackets",
-      "Boxers"
+      "Boxer Shorts"
     ]
   },
   {
     "name": "Textiles",
     "slug": "textiles",
-    "subcategories": ["Pillows", "Towelling"]
+    "subcategories": ["Pillows", "Towels"]
   },
   {
     "name": "Signs & Graphics",
-    "slug": "signs and graphics",
+    "slug": "signs-and-graphics",
     "subcategories": [
-      "Awards",
+      "Awards & Plaques",
       "Decals",
       "Nameplates",
-      "ADA Signage",
-      "Street Markers",
+      "ADA Signs",
+      "Street Signs",
       "Custom Signs",
       "Neighborhood Signs",
-      "Wildlife & Parks"
+      "Park Signs"
     ]
   },
   {
-    "name": "Metal",
-    "slug": "metal",
+    "name": "Metal Works",
+    "slug": "metal-works",
     "subcategories": [
       "Grills",
       "Kiosks",
-      "Detention & Dormitory Furniture",
+      "Detention Furniture",
       "Outdoor Items",
       "Fire Pits & Rings",
-      "Custom Items & Designs"
+      "Custom Designs"
     ]
   },
   {
     "name": "Janitorial",
     "slug": "janitorial",
     "subcategories": [
-      "Dish",
-      "Laundry",
+      "Dish Products",
+      "Laundry Products",
       "Floor Care",
-      "General Cleaning",
+      "Cleaning Supplies",
       "Soap & Handcare",
       "Cleaning Equipment",
       "Containers",
-      "Accessories"
+      "Janitorial Accessories"
     ]
   },
   {
     "name": "Paint",
     "slug": "paint",
-    "subcategories": ["Traffic", "Interior", "Exterior"]
+    "subcategories": ["Traffic Paint", "Interior Paint", "Exterior Paint"]
   }
 ]
