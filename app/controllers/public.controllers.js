@@ -147,15 +147,11 @@ module.exports = {
         Product.countDocuments(filter),
       ]);
 
-      const allCategories = await Product.distinct("category");
-      console.log(products);
-
       res.render("shop/products", {
         layout: "shop",
         products,
         currentPage: page,
         totalPages: Math.ceil(totalCount / perPage),
-        allCategories,
         selectedCategories: Array.isArray(selectedCategories)
           ? selectedCategories
           : [selectedCategories],

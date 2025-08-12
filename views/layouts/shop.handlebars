@@ -130,7 +130,7 @@
                     id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                     <div class="navbar-nav w-100">
                         {{#each allCategories}}
-                            <a href="/products?category={{this}}" class="nav-item nav-link">
+                            <a href="/products?category={{urlEncode this}}" class="nav-item nav-link">
                                 {{this}}
                             </a>
                         {{/each}}

@@ -76,6 +76,9 @@ const helpers = {
     return images && images.length > 0 ? images[0].path : "";
   },
   length: (arr) => arr?.length || 0,
+  urlEncode: function (string) {
+    return encodeURIComponent(string);
+  },
 };
 
 module.exports = helpers;
