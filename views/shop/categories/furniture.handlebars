@@ -1,0 +1,368 @@
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="/shop">KCI Shop</a>
+                <span class="breadcrumb-item active">Furniture</span>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+<!-- Shop Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+
+        <!-- Category Filter -->
+
+        <div class="col-lg-3 col-md-4">
+            <h5 class="section-title position-relative text-uppercase mb-3">
+                <span class="bg-secondary pr-3">Shop by Type</span>
+            </h5>
+            <div class="bg-light p-4 mb-30">
+                <form id="category-filter-form" method="GET" action="/furniture">
+                    <!-- Furniture Categories -->
+                    <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
+                        <input type="radio" class="custom-control-input" name="category" value="Desks" id="cat-desks"
+                            {{#if (includes selectedCategories "Desks" )}}checked{{/if}} />
+                        <label class="custom-control-label" for="cat-desks">Desks</label>
+                    </div>
+
+                    <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
+                        <input type="radio" class="custom-control-input" name="category" value="Seating"
+                            id="cat-seating" {{#if (includes selectedCategories "Seating" )}}checked{{/if}} />
+                        <label class="custom-control-label" for="cat-seating">Seating</label>
+                    </div>
+
+                    <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
+                        <input type="radio" class="custom-control-input" name="category" value="Tables" id="cat-tables"
+                            {{#if (includes selectedCategories "Tables" )}}checked{{/if}} />
+                        <label class="custom-control-label" for="cat-tables">Tables</label>
+                    </div>
+
+                    <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
+                        <input type="radio" class="custom-control-input" name="category" value="Storage"
+                            id="cat-storage" {{#if (includes selectedCategories "Storage" )}}checked{{/if}} />
+                        <label class="custom-control-label" for="cat-storage">Storage</label>
+                    </div>
+
+                    <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
+                        <input type="radio" class="custom-control-input" name="category" value="Accessories"
+                            id="cat-accessories" {{#if (includes selectedCategories "Accessories" )}}checked{{/if}} />
+                        <label class="custom-control-label" for="cat-accessories">Accessories</label>
+                    </div>
+                </form>
+            </div>
+            {{#if subcategories.length}}
+                <h5 class="section-title position-relative text-uppercase mb-3">
+                    <span class="bg-secondary pr-3">Shop By Category</span>
+                </h5>
+                <div class="bg-light p-4 mb-30">
+                    <form id="subcategory-filter-form" method="GET" action="/furniture">
+                        <!-- Keep category selection -->
+                        {{#each selectedCategories}}
+                            <input type="hidden" name="category" value="{{this}}">
+                        {{/each}}
+
+                        <!-- Render subcategories dynamically -->
+                        {{#each subcategories}}
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" name="subcategory" value="{{this}}"
+                                    id="sub-{{@index}}" {{#if (includes ../selectedSubcategories
+                                    this)}}checked{{/if}} />
+                                <label class="custom-control-label" for="sub-{{@index}}">{{this}}</label>
+                            </div>
+                        {{/each}}
+
+                        <button type="submit" class="btn btn-primary mt-3">Apply</button>
+                    </form>
+                </div>
+            {{/if}}
+
+            <!-- Desk Subcategories -->
+            {{!-- {{#if (includes selectedCategories "Desks")}}
+                <h5 class="section-title position-relative text-uppercase mb-3">
+                    <span class="bg-secondary pr-3">Desk Products</span>
+                </h5>
+                <div class="bg-light p-4 mb-30">
+                    <form id="desks-filter-form" method="GET" action="/furniture">
+                        <!-- Keep category selection -->
+                        {{#each selectedCategories}}
+                            <input type="hidden" name="category" value="{{this}}">
+                        {{/each}}
+
+                        <!-- Desk Subcategories -->
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Desk & Credenza Shells" id="sub-desk-credenza-shells" {{#if (includes
+                                selectedSubcategories "Desk & Credenza Shells" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-desk-credenza-shells">Desk &amp; Credenza
+                                Shells</label>
+                        </div>
+
+                        <div
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Height Adjustable Tables" id="sub-height-adjustable-tables" {{#if (includes
+                                selectedSubcategories "Height Adjustable Tables" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-height-adjustable-tables">Height Adjustable
+                                Tables</label>
+                        </div>
+
+                        <div
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Support Components" id="sub-support-components" {{#if (includes
+                                selectedSubcategories "Support Components" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-support-components">Support Components</label>
+                        </div>
+
+                        <div
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Desk Pedestals" id="sub-desk-pedestals" {{#if (includes
+                                selectedSubcategories "Desk Pedestals" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-desk-pedestals">Desk Pedestals</label>
+                        </div>
+
+                        <div
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Presentation Stations" id="sub-presentation-stations" {{#if (includes
+                                selectedSubcategories "Presentation Stations" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-presentation-stations">Presentation
+                                Stations</label>
+                        </div>
+
+                        <div
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Reception Desks" id="sub-reception-desks" {{#if (includes
+                                selectedSubcategories "Reception Desks" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-reception-desks">Reception Desks</label>
+                        </div>
+
+                        <div
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Desk Configurations" id="sub-desk-configurations" {{#if (includes
+                                selectedSubcategories "Desk Configurations" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-desk-configurations">Desk
+                                Configurations</label>
+                        </div>
+
+                        <div
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Returns & Bridges" id="sub-returns-bridges" {{#if (includes
+                                selectedSubcategories "Returns & Bridges" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-returns-bridges">Returns &amp; Bridges</label>
+                        </div>
+
+                        <div
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory" value="Steel Desks"
+                                id="sub-steel-desks" {{#if (includes selectedSubcategories "Steel Desks"
+                                )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-steel-desks">Steel Desks</label>
+                        </div>
+
+                        <div
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Desk Frames & Bases" id="sub-desk-frames-bases" {{#if (includes
+                                selectedSubcategories "Desk Frames & Bases" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-desk-frames-bases">Desk Frames &amp;
+                                Bases</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mt-3">Apply</button>
+                    </form>
+                </div>
+            {{/if}} --}}
+
+            <!-- Seating Subcategories -->
+            {{!-- {{#if (includes selectedCategories "Seating")}}
+                <h5 class="section-title position-relative text-uppercase mb-3">
+                    <span class="bg-secondary pr-3">Seating Products</span>
+                </h5>
+                <div class="bg-light p-4 mb-30">
+                    <form id="seating-filter-form" method="GET" action="/furniture">
+                        <!-- Keep category selection -->
+                        {{#each selectedCategories}}
+                            <input type="hidden" name="category" value="{{this}}">
+                        {{/each}}
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Big & Tall Chairs" id="sub-big-tall-chairs" {{#if (includes
+                                selectedSubcategories "Big & Tall Chairs" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-big-tall-chairs">Big &amp; Tall Chairs</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory" value="Guest Chairs"
+                                id="sub-guest-chairs" {{#if (includes selectedSubcategories "Guest Chairs"
+                                )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-guest-chairs">Guest Chairs</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory" value="Lounge Chairs"
+                                id="sub-lounge-chairs" {{#if (includes selectedSubcategories "Lounge Chairs"
+                                )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-lounge-chairs">Lounge Chairs</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Management & Conference Seatings" id="sub-management-conference-seatings" {{#if
+                                (includes selectedSubcategories "Management & Conference Seatings" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-management-conference-seatings">Management
+                                &amp; Conference
+                                Seatings</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Nesting & Stacking Chairs" id="sub-nesting-stacking-chairs" {{#if (includes
+                                selectedSubcategories "Nesting & Stacking Chairs" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-nesting-stacking-chairs">Nesting &amp; Stacking
+                                Chairs</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Chair Accessories" id="sub-chair-accessories" {{#if (includes
+                                selectedSubcategories "Chair Accessories" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-chair-accessories">Chair Accessories</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory" value="Task Chairs"
+                                id="sub-task-chairs" {{#if (includes selectedSubcategories "Task Chairs"
+                                )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-task-chairs">Task Chairs</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory" value="Stools"
+                                id="sub-stools" {{#if (includes selectedSubcategories "Stools" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-stools">Stools</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Executive Chairs" id="sub-executive-chairs" {{#if (includes
+                                selectedSubcategories "Executive Chairs" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-executive-chairs">Executive Chairs</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory"
+                                value="Law Enforcement-24/7" id="sub-law-enforcement-24-7" {{#if (includes
+                                selectedSubcategories "Law Enforcement-24/7" )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-law-enforcement-24-7">Law
+                                Enforcement-24/7</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory" value="Heavy-Duty"
+                                id="sub-heavy-duty" {{#if (includes selectedSubcategories "Heavy-Duty"
+                                )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-heavy-duty">Heavy-Duty</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory" value="Ergonomic"
+                                id="sub-ergonomic" {{#if (includes selectedSubcategories "Ergonomic"
+                                )}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-ergonomic">Ergonomic</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mt-3">Apply</button>
+                    </form>
+                </div>
+            {{/if}} --}}
+        </div>
+        {{!-- END of Filter Sidebar --}}
+
+
+        <!-- Shop Products -->
+        <div class="col-lg-9 col-md-8">
+            <div class="row pb-3">
+                {{#each products}}
+                    <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                        <div class="product-item bg-light mb-4">
+                            <div class="product-img position-relative overflow-hidden bg-white">
+                                <img class="img-fluid w-100 bg-white" src="{{firstImagePath this.images}}" alt="">
+                                <div class="product-action">
+                                    <a class="btn btn-outline-dark btn-square" href="#"><i
+                                            class="fa fa-shopping-cart"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href="#"><i class="far fa-heart"></i></a>
+
+                                    <a class="btn btn-outline-dark btn-square" href="/product-details/{{this._id}}"><i
+                                            class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                <a class="h6 text-decoration-none text-wrap"
+                                    href="/product-details/{{this._id}}">{{this.title}}</a>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+
+            </div>
+            <div class="row pb-3">
+                <div class="col-12 pb-1">
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            {{!-- Previous Button --}}
+                            {{#if (gt currentPage 1)}}
+                                <li class="page-item">
+                                    <a class="page-link"
+                                        href="?page={{subtract currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Previous</a>
+                                </li>
+                            {{else}}
+                                <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                            {{/if}}
+
+                            {{!-- Dynamic Page Links --}}
+                            {{#each (paginationRange currentPage totalPages)}}
+                                {{#if (eq this "...")}}
+                                    <li class="page-item disabled"><span class="page-link">…</span></li>
+                                {{else}}
+                                    <li class="page-item {{#if (eq this ../currentPage)}}active{{/if}}">
+                                        <a class="page-link"
+                                            href="?page={{this}}{{#each ../selectedCategories}}&category={{this}}{{/each}}">{{this}}</a>
+                                    </li>
+                                {{/if}}
+                            {{/each}}
+
+                            {{!-- Next Button --}}
+                            {{#if (lt currentPage totalPages)}}
+                                <li class="page-item">
+                                    <a class="page-link"
+                                        href="?page={{add currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Next</a>
+                                </li>
+                            {{else}}
+                                <li class="page-item disabled"><span class="page-link">Next</span></li>
+                            {{/if}}
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('#category-filter-form input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            document.getElementById('category-filter-form').submit();
+        });
+    });
+</script>

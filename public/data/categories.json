@@ -1,5 +1,6 @@
 [
   {
+    "metaCategory": "Furniture",
     "name": "Desks",
     "slug": "desks",
     "subcategories": [
@@ -11,10 +12,12 @@
       "Reception Desks",
       "Desk Configurations",
       "Returns & Bridges",
-      "Steel Desks"
+      "Steel Desks",
+      "Desk Frames & Bases"
     ]
   },
   {
+    "metaCategory": "Furniture",
     "name": "Seating",
     "slug": "seating",
     "subcategories": [
@@ -33,6 +36,7 @@
     ]
   },
   {
+    "metaCategory": "Furniture",
     "name": "Tables",
     "slug": "tables",
     "subcategories": [
@@ -42,10 +46,12 @@
       "Height Adjustable Tables",
       "Occasional Tables",
       "Table Bases & Components",
-      "Worksurfaces & Table Tops"
+      "Worksurfaces & Table Tops",
+      "Work Tables"
     ]
   },
   {
+    "metaCategory": "Furniture",
     "name": "Storage",
     "slug": "storage",
     "subcategories": [
@@ -58,6 +64,7 @@
     ]
   },
   {
+    "metaCategory": "Furniture",
     "name": "Accessories",
     "slug": "accessories",
     "subcategories": [
@@ -75,6 +82,7 @@
     ]
   },
   {
+    "metaCategory": "Textiles",
     "name": "Clothing",
     "slug": "clothing",
     "subcategories": [
@@ -88,11 +96,13 @@
     ]
   },
   {
+    "metaCategory": "Textiles",
     "name": "Textiles",
     "slug": "textiles",
     "subcategories": ["Pillows", "Towels"]
   },
   {
+    "metaCategory": "Signs",
     "name": "Signs & Graphics",
     "slug": "signs-and-graphics",
     "subcategories": [
@@ -107,6 +117,7 @@
     ]
   },
   {
+    "metaCategory": "Metal",
     "name": "Metal Works",
     "slug": "metal-works",
     "subcategories": [
@@ -119,6 +130,7 @@
     ]
   },
   {
+    "metaCategory": "Janitorial",
     "name": "Janitorial",
     "slug": "janitorial",
     "subcategories": [
@@ -133,6 +145,7 @@
     ]
   },
   {
+    "metaCategory": "Janitorial",
     "name": "Paint",
     "slug": "paint",
     "subcategories": ["Traffic Paint", "Interior Paint", "Exterior Paint"]

@@ -12,6 +12,7 @@ module.exports = {
       "/img/products/chemical/chemical-6.jpg",
     ],
     category: "Janitorial & Paint Products",
+    shopLink: "/products?category=Janitorial&category=Paint",
     description:
       "KCI offers a dependable line of chemical products designed for correctional facility maintenance, janitorial services, and industrial use. Manufactured with safety, performance, and sustainability in mind, our chemical solutions meet the rigorous demands of a wide range of environments.",
     overview: {
@@ -67,6 +68,7 @@ module.exports = {
       "/img/products/clothing-textiles/textiles-6.jpg",
     ],
     category: "Seating",
+    shopLink: "/products?category=Seating",
     description:
       "Durable and comfortable seating solutions for every environment, from offices to correctional settings.",
     overview: {
@@ -170,7 +172,8 @@ module.exports = {
 
   textiles: {
     short: "textiles",
-    category: "Clothing/Textiles",
+    category: "Clothing & Textiles",
+    shopLink: "/products?category=Clothing&category=Textiles",
     description:
       "Textile goods and apparel for correctional and institutional use, crafted with durability and value in mind.",
     overview: {
@@ -238,6 +241,8 @@ module.exports = {
   furniture: {
     short: "furniture",
     category: "Furniture",
+    shopLink:
+      "/products?category=Desks&category=Seating&category=Tables&category=Storage&category=Accessories",
     description:
       "Custom and standard furniture options for offices, classrooms, and institutional settings.",
     overview: {
@@ -352,7 +357,8 @@ module.exports = {
 
   metal: {
     short: "metal",
-    category: "Metal Products",
+    category: "Metal Works",
+    shopLink: "/products?category=Metal+Works",
     description:
       "Heavy-duty metal fabrication products including furniture and outdoor items.",
     overview: {
@@ -444,6 +450,7 @@ module.exports = {
   signs: {
     short: "signs",
     category: "Signs & Graphics",
+    shopLink: "/products?category=Signs+%26+Graphics",
     description:
       "Custom signage and graphic solutions for a wide range of applications.",
     overview: {
@@ -529,6 +536,7 @@ module.exports = {
   office: {
     short: "office",
     category: "Office Panel Systems",
+    shopLink: "/products?category=Office+Panel+Systems",
     description:
       "Flexible and professional office panel configurations for modern workspaces.",
     overview: {
@@ -597,6 +605,7 @@ module.exports = {
   software: {
     short: "software",
     category: "Software Solutions",
+    shopLink: "",
     description:
       "Custom software development and digital services to support modern business needs.",
     overview: {

@@ -79,6 +79,13 @@ const helpers = {
   urlEncode: function (string) {
     return encodeURIComponent(string);
   },
+  dashify: function (text) {
+    return text
+      .replace(/\s+/g, "-")
+      .replace(/&/g, "and")
+      .replace(/[^a-zA-Z0-9-_]/g, "")
+      .toLowerCase();
+  },
 };
 
 module.exports = helpers;

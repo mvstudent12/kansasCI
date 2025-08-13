@@ -4,7 +4,7 @@
         <div class="col-12">
             <nav class="breadcrumb bg-light mb-30">
                 <a class="breadcrumb-item text-dark" href="/shop">KCI Shop</a>
-                <span class="breadcrumb-item active">Products</span>
+                <span class="breadcrumb-item active">{{name}}</span>
             </nav>
         </div>
     </div>
@@ -17,33 +17,29 @@
 
         <!-- Category Filter -->
         <div class="col-lg-3 col-md-4">
+            <!-- Seating Subcategories -->
             <h5 class="section-title position-relative text-uppercase mb-3">
-                <span class="bg-secondary pr-3">Categories</span>
+                <span class="bg-secondary pr-3">Shop By Types</span>
             </h5>
             <div class="bg-light p-4 mb-30">
-                {{#if selectedMetaCategory}}
-                    <form id="category-filter-form" method="GET" action="/products">
-                        <input type="hidden" name="metaCategory" value="{{selectedMetaCategory}}" />
-                        {{#each allCategories}}
-                            <div
-                                class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                                <input type="checkbox" class="custom-control-input" name="category" value="{{this}}"
-                                    id="cat-{{@index}}" {{#if (includes ../selectedCategories this)}}checked{{/if}} />
-                                <label class="custom-control-label" for="cat-{{@index}}">
-                                    {{this}}
-                                </label>
-                            </div>
-                        {{/each}}
-                        <button type="submit" class="btn btn-primary mt-3">Apply</button>
-                    </form>
-                {{else}}
-                    <p>Please select a category group to filter products.</p>
-                {{/if}}
+                <form id="{{filter}}-filter-form" method="GET" action="/{{filter}}">
+
+
+                    {{!-- Loop through all subcategories dynamically --}}
+                    {{#each subcategoriesToRender}}
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" name="subcategory" value="{{this}}"
+                                id="sub-{{dashify this}}" {{#if (includes ../selectedSubcategories
+                                this)}}checked{{/if}} />
+                            <label class="custom-control-label" for="sub-{{dashify this}}">{{this}}</label>
+                        </div>
+                    {{/each}}
+
+                    <button type="submit" class="btn btn-primary mt-3">Apply</button>
+                </form>
             </div>
+            {{!-- END of Filter Sidebar --}}
         </div>
-
-
-
         <!-- Shop Products -->
         <div class="col-lg-9 col-md-8">
             <div class="row pb-3">
