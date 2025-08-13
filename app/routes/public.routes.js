@@ -56,4 +56,6 @@ public.get("/metal", publicController.metal);
 
 public.get("/janitorial", publicController.janitorial);
 
+public.get("/software", publicController.software);
+
 module.exports = public;
