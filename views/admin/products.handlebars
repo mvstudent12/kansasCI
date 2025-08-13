@@ -161,22 +161,16 @@
                                     placeholder="Add Detail Line">
                             </div>
 
-                            <div class="form-row mb-4">
-                                <div class="col">
-                                    <label for="colors">Colors</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="colors" name="colors"
-                                            placeholder="red, green, black" aria-label="colors" aria-describedby="">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <label for="dimensions">Dimensions</label>
-                                    <div class="input-group">
+                            <div class="editor mb-5">
+                                <label class="d-block" for="colors">Colors</label>
+                                <textarea id="colors" name="colors" rows="6" cols="60"
+                                    placeholder="Separate with comma: Red, Blue, Green" class="form-control"></textarea>
+                            </div>
 
-                                        <input type="text" class="form-control" id="dimensions" name="dimensions"
-                                            placeholder='30"H x 30"W' aria-label="dimensions" aria-describedby="">
-                                    </div>
-                                </div>
+                            <div class="editor mb-5">
+                                <label class="d-block" for="dimensions">Dimensions</label>
+                                <textarea id="dimensions" name="dimensions" rows="6" cols="60"
+                                    placeholder="25″W X 35.5″H X 24″D" class="form-control"></textarea>
                             </div>
 
                             <div class="product-type mb-3 ">
