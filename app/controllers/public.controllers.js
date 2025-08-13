@@ -259,9 +259,8 @@ module.exports = {
           (item) => item._id.toString() !== req.params.productID
         );
       }
-      res.render("shop/cart", {
-        layout: "shop",
-        cart: req.session.cart || [],
+      req.session.save(() => {
+        res.redirect("/cart");
       });
     } catch (err) {
       console.error(err);
