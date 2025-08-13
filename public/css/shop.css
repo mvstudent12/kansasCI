@@ -10133,3 +10133,17 @@ h6 {
     transform: translateY(-15px);
   }
 }
+.product-action form {
+  display: inline-block; /* so hover effects work like links */
+  margin: 0; /* remove extra spacing if needed */
+}
+
+.product-action .btn-square {
+  transition: transform 0.2s, opacity 0.2s;
+  opacity: 0; /* hidden by default */
+}
+
+.product-action:hover .btn-square {
+  opacity: 1; /* show on hover */
+  transform: translateY(0);
+}

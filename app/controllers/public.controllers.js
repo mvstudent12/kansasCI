@@ -112,8 +112,6 @@ module.exports = {
       // Get unique categories for the filter list
       const allCategories = [...new Set(allImages.map((img) => img.category))];
 
-      console.log(req.path);
-
       res.render("shop/gallery-room", {
         layout: "shop",
         images: paginatedImages,
@@ -202,7 +200,7 @@ module.exports = {
     try {
       const { ID } = req.params;
       const product = await Product.findById(ID).lean();
-      console.log(product);
+
       res.render("shop/product-detail", { layout: "shop", product });
     } catch (err) {
       console.log(err);
@@ -211,9 +209,62 @@ module.exports = {
   },
   async cart(req, res) {
     try {
-      res.render("shop/cart", { layout: "shop" });
+      res.render("shop/cart", {
+        layout: "shop",
+        cart: req.session.cart || [],
+      });
     } catch (err) {
-      console.log(err);
+      console.error(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+
+  async addToCart(req, res) {
+    try {
+      const product = await Product.findById(req.params.productID).lean();
+      if (!product) {
+        return res.status(404).send("Product not found");
+      }
+
+      if (!req.session.cart) {
+        req.session.cart = [];
+      }
+
+      // Check if product already in cart
+      const existingItem = req.session.cart.find(
+        (item) => item._id.toString() === product._id.toString()
+      );
+      const qty = parseInt(req.body.quantity) || 1;
+
+      if (existingItem) {
+        existingItem.quantity += qty;
+      } else {
+        req.session.cart.push({ ...product, quantity: qty });
+      }
+
+      // Save the session and redirect
+      req.session.save(() => {
+        res.redirect("/cart"); // or res.redirect("back") to go to the same page
+      });
+    } catch (err) {
+      console.error(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+
+  async removeFromCart(req, res) {
+    try {
+      if (req.session.cart) {
+        req.session.cart = req.session.cart.filter(
+          (item) => item._id.toString() !== req.params.productID
+        );
+      }
+      res.render("shop/cart", {
+        layout: "shop",
+        cart: req.session.cart || [],
+      });
+    } catch (err) {
+      console.error(err);
       res.render("error/404", { layout: "error" });
     }
   },

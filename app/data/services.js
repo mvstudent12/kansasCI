@@ -605,7 +605,7 @@ module.exports = {
   software: {
     short: "software",
     category: "Software Solutions",
-    shopLink: "",
+    shopLink: "/software",
     description:
       "Custom software development and digital services to support modern business needs.",
     overview: {

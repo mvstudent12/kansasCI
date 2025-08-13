@@ -28,6 +28,10 @@ public.get(
 
 public.get("/cart", publicController.cart);
 
+public.post("/cart/add/:productID", publicController.addToCart);
+
+public.post("/cart/remove/:productID", publicController.removeFromCart); // optional
+
 public.get(
   "/favorites/:filePath",
 

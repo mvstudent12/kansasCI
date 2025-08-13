@@ -58,13 +58,13 @@ app.use(
   session({
     secret: sessionSecret, // Use a strong, unique secret key for session ,encryption
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     store: MongoStore.create({
       mongoUrl: dbURI, // MongoDB URI
       collectionName: "sessions", // Collection name for storing sessions in MongoDB
     }),
     cookie: {
-      maxAge: 1000 * 60 * 60 * 24, // 1 day
+      maxAge: 2 * 60 * 60 * 1000, // 1 day
       secure: false, //set true only in production
       httpOnly: true, // Set 'secure: true' if you're using HTTPS
       sameSite: "strict", // Helps prevent CSRF
@@ -77,7 +77,17 @@ app.use(express.static("public", { maxage: "30d", etag: false }));
 
 // Routes
 const publicRoutes = require("./app/routes/public.routes");
-app.use("/", publicRoutes);
+// Middleware for shop pages only
+app.use(
+  "/",
+  (req, res, next) => {
+    res.locals.cartCount = req.session.cart
+      ? req.session.cart.reduce((total, item) => total + item.quantity, 0)
+      : 0;
+    next();
+  },
+  publicRoutes
+);
 
 const adminRoutes = require("./app/routes/admin.routes");
 app.use("/admin", adminRoutes);
