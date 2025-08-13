@@ -278,6 +278,7 @@ module.exports = {
   },
   async checkout(req, res) {
     try {
+      const cart = req.session.cart || [];
       res.render("shop/checkout", { layout: "shop" });
     } catch (err) {
       console.log(err);
