@@ -1,0 +1,116 @@
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="/shop">KCI Shop</a>
+                <span class="breadcrumb-item active">Inspiration Gallery</span>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+
+<!-- Shop Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        {{#if inspirationList}}
+            <div class="col-lg-12">
+                <div class="row pb-3">
+                    <div class="col-12 pb-1">
+                        <div class="bg-light p-30 mb-5">
+                            <div class="pt-2">
+                                <a href="/cart" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Send your
+                                    Inspiration Gallery to the KCI sales team to explore your
+                                    options.</a>
+                            </div>
+                        </div>
+                    </div>
+                    {{#each inspirationList}}
+                        <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                            <div class="product-item bg-light mb-4">
+                                <img class="img-fluid w-100 bg-white" src="{{this.filePath}}" alt="{{this.category}}">
+
+                                <div class="product-action">
+                                    <a href="{{this.filePath}}" class="btn btn-outline-dark btn-square glightbox"
+                                        data-gallery="galleryRoom" data-title="{{this.category}}">
+                                        <i class="fa fa-expand"></i>
+                                    </a>
+
+                                    {{!-- Inspiration button --}}
+                                    {{#if (containsInspiration ../inspirationList this.filePath "gallery")}}
+                                        <a class="btn btn-outline-dark btn-square"
+                                            href="/inspirationList/remove?file={{this.filePath}}">
+                                            <i class="fas fa-star text-danger"></i>
+                                        </a>
+                                    {{else}}
+                                        <a class="btn btn-outline-dark btn-square"
+                                            href="/inspirationList/add?file={{this.filePath}}">
+                                            <i class="far fa-star"></i>
+                                        </a>
+                                    {{/if}}
+
+                                </div>
+
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+                <div class="row pb-3">
+                    <div class="col-12 pb-1">
+                        <nav>
+                            <ul class="pagination justify-content-center">
+                                {{!-- Previous Button --}}
+                                {{#if (gt currentPage 1)}}
+                                    <li class="page-item">
+                                        <a class="page-link"
+                                            href="?page={{subtract currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Previous</a>
+                                    </li>
+                                {{else}}
+                                    <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                                {{/if}}
+                                {{!-- Dynamic Page Links --}}
+                                {{#each (paginationRange currentPage totalPages)}}
+                                    {{#if (eq this "...")}}
+                                        <li class="page-item disabled"><span class="page-link">…</span></li>
+                                    {{else}}
+                                        <li class="page-item {{#if (eq this ../currentPage)}}active{{/if}}">
+                                            <a class="page-link"
+                                                href="?page={{this}}{{#each ../selectedCategories}}&category={{this}}{{/each}}">{{this}}</a>
+                                        </li>
+                                    {{/if}}
+                                {{/each}}
+
+                                {{!-- Next Button --}}
+                                {{#if (lt currentPage totalPages)}}
+                                    <li class="page-item">
+                                        <a class="page-link"
+                                            href="?page={{add currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Next</a>
+                                    </li>
+                                {{else}}
+                                    <li class="page-item disabled"><span class="page-link">Next</span></li>
+                                {{/if}}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="col-12 pb-1 alert alert-info text-center mb-4">
+                You have not added any rooms to your Inspiration Gallery.
+            </div>
+        {{/if}}
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            closeButton: true,
+        });
+    });
+</script>

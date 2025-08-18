@@ -1,0 +1,67 @@
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="/shop">KCI Shop</a>
+                <span class="breadcrumb-item active">Wish List</span>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- Wish List -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-lg-12 table-responsive mb-5">
+            <table class="table table-light table-borderless table-hover text-center mb-0">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Products</th>
+                        <th></th>
+                        <th>Remove</th>
+                        <th>Move to Cart</th>
+                    </tr>
+                </thead>
+                <tbody class="align-middle">
+                    {{#if wishList.length}}
+                        {{#each wishList}}
+                            <tr class="align-middle">
+                                <td class="text-center">
+
+                                    <img src="{{this.productImage}}" alt="Product Image"
+                                        style="width: 60px; height: 60px; object-fit: cover;">
+
+                                </td>
+                                <td class="align-middle text-center">
+
+                                    {{this.title}}
+
+                                </td>
+                                <td class="align-middle text-center">
+                                    <!-- Remove Button -->
+                                    <a href="/wishList/remove?{{#if (eq this.type 'gallery')}}file={{this.filePath}}{{else}}productId={{this.id}}{{/if}}"
+                                        class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                                <td class="align-middle text-center">
+                                    <!-- Move to Cart Button -->
+                                    <a href="/wishList/moveToCart?productId={{this.id}}"
+                                        class="btn btn-sm btn-primary ml-1">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                        <tr>
+                            <td colspan="4" class="text-center">Your wish list is empty.</td>
+                        </tr>
+                    {{/if}}
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>

@@ -86,6 +86,24 @@ const helpers = {
       .replace(/[^a-zA-Z0-9-_]/g, "")
       .toLowerCase();
   },
+  multiply: function (a, b) {
+    return (a * b).toFixed(2);
+  },
+  // Checks if a product is in the wishlist
+  containsWish: function (wishList, productId) {
+    if (!wishList) return false;
+    return wishList.some(
+      (item) => item.type === "product" && String(item.id) === String(productId)
+    );
+  },
+
+  // Checks if a gallery image is in the “inspiration” list
+  containsInspiration: function (inspirationList, filePath) {
+    if (!inspirationList) return false;
+    return inspirationList.some(
+      (item) => item.type === "gallery" && item.filePath === filePath
+    );
+  },
 };
 
 module.exports = helpers;

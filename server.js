@@ -77,17 +77,30 @@ app.use(express.static("public", { maxage: "30d", etag: false }));
 
 // Routes
 const publicRoutes = require("./app/routes/public.routes");
-// Middleware for shop pages only
-app.use(
-  "/",
-  (req, res, next) => {
-    res.locals.cartCount = req.session.cart
-      ? req.session.cart.reduce((total, item) => total + item.quantity, 0)
-      : 0;
-    next();
-  },
-  publicRoutes
-);
+const shopRoutes = require("./app/routes/shop.routes");
+
+// Middleware to make cart, wishList, inspirationList and counts available to all views
+app.use((req, res, next) => {
+  // Cart session and count
+  res.locals.cart = req.session.cart || [];
+  res.locals.cartCount = res.locals.cart.reduce(
+    (total, item) => total + (item.quantity || 0),
+    0
+  );
+
+  // Wishlist session and count
+  res.locals.wishList = req.session.wishList || [];
+  res.locals.wishCount = res.locals.wishList.length;
+
+  // Inspiration / gallery session and count
+  res.locals.inspirationList = req.session.inspirationList || [];
+  res.locals.inspirationCount = res.locals.inspirationList.length;
+
+  next();
+});
+
+app.use("/", publicRoutes); // public pages
+app.use("/", shopRoutes); // shop pages
 
 const adminRoutes = require("./app/routes/admin.routes");
 app.use("/admin", adminRoutes);

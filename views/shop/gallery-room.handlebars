@@ -41,11 +41,15 @@
 
         </div>
 
-        <!-- Shop Product Start -->
+
         <div class="col-lg-9 col-md-8">
             <div class="row pb-3">
                 <div class="col-12 pb-1">
                     <div class="d-flex align-items-center justify-content-between mb-4">
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        ⭐ Add rooms to your inspiration gallery. Your selections can be sent to the KCI sales
+                        team for further discussion and quotes.
                     </div>
                 </div>
                 {{#each images}}
@@ -58,8 +62,20 @@
                                     data-gallery="galleryRoom" data-title="{{this.category}}">
                                     <i class="fa fa-expand"></i>
                                 </a>
-                                <a class="btn btn-outline-dark btn-square" href="fa-heart"><i
-                                        class="far fa-heart"></i></a>
+
+                                {{!-- Inspiration button --}}
+                                {{#if (containsInspiration ../inspirationList this.filePath "gallery")}}
+                                    <a class="btn btn-outline-dark btn-square"
+                                        href="/inspirationList/remove?file={{this.filePath}}">
+                                        <i class="fas fa-star text-danger"></i>
+                                    </a>
+                                {{else}}
+                                    <a class="btn btn-outline-dark btn-square"
+                                        href="/inspirationList/add?file={{this.filePath}}">
+                                        <i class="far fa-star"></i>
+                                    </a>
+                                {{/if}}
+
                             </div>
 
                             <div class="text-center py-4">
@@ -67,6 +83,7 @@
                             </div>
                         </div>
                     </div>
+
                 {{/each}}
 
 
@@ -112,6 +129,7 @@
         </div>
     </div>
 </div>
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {

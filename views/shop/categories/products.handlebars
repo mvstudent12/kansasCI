@@ -49,19 +49,8 @@
                             <div class="product-img position-relative overflow-hidden bg-white">
                                 <img class="img-fluid w-100 bg-white" src="{{firstImagePath this.images}}" alt="">
                                 <div class="product-action">
-                                    <form action="/cart/add/{{this._id}}" method="POST" style="display:inline-block;"
-                                        class="mr-2">
-                                        <button type="submit" class="btn btn-outline-dark btn-square">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </button>
-                                    </form>
-
-                                    <form action="/product-details/{{this._id}}" method="GET"
-                                        style="display:inline-block;">
-                                        <button type="submit" class="btn btn-outline-dark btn-square">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </form>
+                                    <a class="btn btn-outline-dark btn-square" href="/product-details/{{this._id}}"><i
+                                            class="fa fa-search"></i></a>
                                 </div>
 
                             </div>
