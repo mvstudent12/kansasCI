@@ -1,4 +1,7 @@
 const Product = require("../models/Product");
+
+const Customer = require("../models/Customer");
+
 const fs = require("fs");
 const path = require("path");
 
@@ -86,7 +89,6 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
-
   async editProduct(req, res) {
     try {
       const { ID } = req.params;
@@ -185,7 +187,6 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
-
   async deleteProduct(req, res) {
     try {
       const { ID } = req.params;
@@ -211,6 +212,57 @@ module.exports = {
       await Product.findByIdAndDelete(ID);
 
       res.redirect("/admin/products");
+    } catch (err) {
+      console.error(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async openOrders(req, res) {
+    try {
+      const orders = await Customer.find({ status: "Pending" }).lean();
+      console.log(orders);
+
+      res.render("admin/openOrders", {
+        layout: "admin",
+        orders,
+      });
+    } catch (err) {
+      console.log(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async deleteOrder(req, res) {
+    try {
+      const { ID } = req.params;
+
+      // Update the customer: empty cartItems and inspirationGallery, mark as Completed
+      await Customer.findByIdAndUpdate(
+        ID,
+        {
+          $set: { cartItems: [], inspirationGallery: [], status: "Completed" },
+        },
+        { new: true }
+      );
+
+      res.redirect("/admin/openOrders"); // redirect after update
+    } catch (err) {
+      console.error(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async viewOrder(req, res) {
+    try {
+      const { _id } = req.params;
+
+      // Find customer/order by ID
+      const order = await Customer.findById(_id).lean();
+
+      if (!order) {
+        return res.status(404).render("error/404", { layout: "error" });
+      }
+      console.log(order);
+      // Render an admin template (e.g., admin/viewOrder.handlebars)
+      res.render("admin/viewOrder", { layout: "admin", order });
     } catch (err) {
       console.error(err);
       res.render("error/404", { layout: "error" });

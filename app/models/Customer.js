@@ -30,7 +30,11 @@ const customerSchema = new mongoose.Schema(
     customerType: { type: String, required: true },
     cartItems: [orderItemSchema], // snapshot of products at checkout
     inspirationGallery: [{ type: String }],
-    status: { type: String, default: "Pending" }, // Pending, Completed, Shipped, etc.
+    status: {
+      type: String,
+      enum: ["Pending", "Completed"],
+      default: "Pending",
+    },
   },
   { timestamps: true }
 );
