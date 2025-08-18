@@ -591,16 +591,14 @@ module.exports = {
         title: item.title,
         brandLine: item.brandLine,
         quantity: item.quantity,
-        price: item.price || 0,
         size: item.size || "",
         color: item.color || "",
         images: item.images || [],
       }));
 
-      // Calculate total price
-      const totalPrice = cartItems.reduce(
-        (sum, item) => sum + (item.price || 0) * item.quantity,
-        0
+      /// Pull inspiration gallery images from session (map to file paths only)
+      const inspirationGallery = (req.session.inspirationList || []).map(
+        (item) => item.filePath
       );
 
       // Create and save customer/order
@@ -616,15 +614,14 @@ module.exports = {
         zip,
         customerType,
         cartItems,
-        totalPrice,
+        inspirationGallery,
       });
 
       await order.save();
 
-      // Clear session cart and wait for save
+      // Clear session cart
       req.session.cart = [];
       await req.session.save();
-
       res.redirect(`/order-confirmation/${order._id}`);
     } catch (err) {
       console.error(err);
@@ -879,7 +876,6 @@ module.exports = {
       res.status(500).send("Unable to add to inspiration list");
     }
   },
-
   async removeFromInspirationList(req, res) {
     try {
       if (!req.session.inspirationList) req.session.inspirationList = [];

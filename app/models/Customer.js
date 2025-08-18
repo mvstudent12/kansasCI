@@ -9,7 +9,6 @@ const orderItemSchema = new mongoose.Schema({
   title: String,
   brandLine: String,
   quantity: { type: Number, required: true },
-  price: Number, // optional: store product price at checkout
   size: String,
   color: String,
   images: [Object], // array of image paths or objects
@@ -29,9 +28,8 @@ const customerSchema = new mongoose.Schema(
     state: { type: String, required: true },
     zip: { type: String, required: true },
     customerType: { type: String, required: true },
-
     cartItems: [orderItemSchema], // snapshot of products at checkout
-    totalPrice: Number, // optional: total price
+    inspirationGallery: [{ type: String }],
     status: { type: String, default: "Pending" }, // Pending, Completed, Shipped, etc.
   },
   { timestamps: true }
