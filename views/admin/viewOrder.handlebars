@@ -20,13 +20,13 @@
                 </div>
                 <div class="col-xl-3 col-lg-4">
                     {{!-- <p class="text-dark mb-2">-</p> --}}
-                    <p>{{order.firstName}} {{order.lastName}}</p>
-                    <p>{{order.email}}</p>
-                    <p>{{order.mobile}}</p>
+                    <p>{{customer.firstName}} {{customer.lastName}}</p>
+                    <p>{{customer.email}}</p>
+                    <p>{{customer.mobile}}</p>
                     <address>
-                        {{order.address1}}
-                        {{#if order.address2}}<br> {{order.address2}}{{/if}}
-                        <br> {{order.city}}, {{order.state}}, {{order.zip}}
+                        {{customer.address1}}
+                        {{#if customer.address2}}<br> {{customer.address2}}{{/if}}
+                        <br> {{customer.city}}, {{customer.state}}, {{customer.zip}}
                     </address>
                 </div>
                 <div class="col-xl-3 col-lg-4">
@@ -79,7 +79,9 @@
             </div> --}}
 
             {{#if order.inspirationGallery}}
+                <h5 class="text-capitalize mt-5">{{customer.firstName}}'s Inspiration Gallery</h5>
                 <div class="row mt-3">
+
                     {{#each order.inspirationGallery}}
                         <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                             <div class="product-item bg-light">

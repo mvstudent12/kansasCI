@@ -1,5 +1,6 @@
 const Product = require("../models/Product");
-const Customer = require("../models/Customer"); // your Customer schema
+const Customer = require("../models/Customer");
+const Order = require("../models/Order");
 
 const fs = require("fs").promises;
 const path = require("path");
@@ -602,6 +603,24 @@ module.exports = {
         customerType,
       } = req.body;
 
+      // Check if customer already exists (optional)
+      let customer = await Customer.findOne({ email });
+      if (!customer) {
+        customer = new Customer({
+          firstName,
+          lastName,
+          email,
+          mobile,
+          address1,
+          address2,
+          city,
+          state,
+          zip,
+          customerType,
+        });
+        await customer.save();
+      }
+
       // Map cart items into order schema
       const cartItems = cart.map((item) => ({
         productId: item._id,
@@ -613,32 +632,24 @@ module.exports = {
         images: item.images || [],
       }));
 
-      /// Pull inspiration gallery images from session (map to file paths only)
+      // Pull inspiration gallery images from session (file paths only)
       const inspirationGallery = (req.session.inspirationList || []).map(
         (item) => item.filePath
       );
 
-      // Create and save customer/order
-      const order = new Customer({
-        firstName,
-        lastName,
-        email,
-        mobile,
-        address1,
-        address2,
-        city,
-        state,
-        zip,
-        customerType,
+      // Create and save the order
+      const order = new Order({
+        customerId: customer._id,
         cartItems,
         inspirationGallery,
       });
-
       await order.save();
 
       // Clear session cart
       req.session.cart = [];
+      req.session.inspirationList = [];
       await req.session.save();
+
       res.redirect(`/order-confirmation/${order._id}`);
     } catch (err) {
       console.error(err);
@@ -647,14 +658,21 @@ module.exports = {
   },
   async orderConfirmation(req, res) {
     try {
-      const order = await Customer.findById(req.params.orderId).lean();
+      const order = await Order.findById(req.params.orderId)
+        .populate("customerId") // populate customer info
+        .lean();
+
       if (!order) return res.status(404).send("Order not found");
 
-      console.log(order);
+      // Separate customer object from order
+      const customer = order.customerId;
+      delete order.customerId; // remove from order to avoid duplication
+      console.log(customer, order);
 
       res.render("shop/order-confirmation", {
         layout: "shop",
         order,
+        customer, // now available separately in the template
       });
     } catch (err) {
       console.error(err);

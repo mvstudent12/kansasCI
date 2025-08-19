@@ -10,6 +10,8 @@ admin.get("/dashboard", adminController.dashboard);
 
 admin.get("/products", adminController.products);
 
+admin.get("/customers", adminController.customers);
+
 admin.get("/openOrders", adminController.openOrders);
 
 admin.get("/viewOrder/:_id", adminController.viewOrder);

@@ -27,7 +27,7 @@
                                     <th>Order Date</th>
                                     <th>Phone</th>
                                     <th>City</th>
-                                    <th>State</th>
+                                    <th>Status</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
@@ -35,11 +35,11 @@
                                 {{#each orders}}
                                     <tr>
                                         <td>{{add @index 1}}</td>
-                                        <td>{{firstName}} {{lastName}}</td>
+                                        <td>{{customer.firstName}} {{customer.lastName}}</td>
                                         <td>{{formatDate createdAt}}</td>
-                                        <td>{{mobile}}</td>
-                                        <td>{{city}}</td>
-                                        <td>{{state}}</td>
+                                        <td>{{customer.mobile}}</td>
+                                        <td>{{customer.city}}</td>
+                                        <td>{{status}}</td>
                                         <td>
                                             <div class="dropdown">
                                                 <a class="dropdown-toggle icon-burger-mini" href="#" role="button"

@@ -1,5 +1,5 @@
 const Product = require("../models/Product");
-
+const Order = require("../models/Order");
 const Customer = require("../models/Customer");
 
 const fs = require("fs");
@@ -29,6 +29,19 @@ module.exports = {
       res.render("admin/products", {
         layout: "admin",
         products,
+      });
+    } catch (err) {
+      console.log(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async customers(req, res) {
+    try {
+      const customers = await Customer.find().lean(); // use lean for Handlebars
+
+      res.render("admin/customers", {
+        layout: "admin",
+        customers,
       });
     } catch (err) {
       console.log(err);
@@ -103,6 +116,42 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
+  async deleteProduct(req, res) {
+    try {
+      const { ID } = req.params;
+
+      const product = await Product.findById(ID);
+      if (!product) {
+        return res.status(404).render("error/404", { layout: "error" });
+      }
+
+      // Delete image files
+      if (product.images && product.images.length) {
+        product.images.forEach((img) => {
+          const fullPath = path.join(
+            __dirname,
+            "../../public",
+            img.path.replace(/^\//, "")
+          );
+          fs.unlink(fullPath, (err) => {
+            if (err) {
+              console.warn("Failed to delete file:", fullPath, err.message);
+            } else {
+              console.log("Deleted file:", fullPath);
+            }
+          });
+        });
+      }
+
+      // Delete the product document
+      await Product.findByIdAndDelete(ID);
+
+      res.redirect("/admin/products");
+    } catch (err) {
+      console.error(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
   async editProductDB(req, res) {
     try {
       const productId = req.params.ID;
@@ -120,21 +169,13 @@ module.exports = {
       } = req.body;
 
       // Normalize existingImages to always be an array
-      if (typeof existingImages === "string") {
-        existingImages = [existingImages];
-      }
+      if (typeof existingImages === "string") existingImages = [existingImages];
 
       // Get current product from DB
       const product = await Product.findById(productId);
       if (!product) return res.status(404).send("Product not found");
 
-      console.log("Existing images from form:", existingImages);
-      console.log(
-        "Current product images:",
-        product.images.map((i) => i.fileName)
-      );
-
-      // Identify which images were removed
+      // Identify removed images
       const removedImages = product.images.filter(
         (img) => !existingImages.includes(img.fileName)
       );
@@ -147,13 +188,17 @@ module.exports = {
           "public",
           img.path.replace(/^\//, "")
         );
-        if (fs.existsSync(filePath)) {
-          fs.unlinkSync(filePath);
-          console.log(`Deleted file: ${filePath}`);
+        try {
+          if (fs.existsSync(filePath)) {
+            fs.unlinkSync(filePath);
+            console.log(`Deleted file: ${filePath}`);
+          }
+        } catch (err) {
+          console.error(`Error deleting file ${filePath}:`, err);
         }
       }
 
-      // Keep only the retained images
+      // Retain only images that are still in existingImages
       const retainedImages = product.images.filter((img) =>
         existingImages.includes(img.fileName)
       );
@@ -167,7 +212,7 @@ module.exports = {
         mimetype: file.mimetype,
       }));
 
-      // ✅ Update fields
+      // Update product fields
       product.title = title;
       product.brandLine = brandLine;
       product.productLine = productLine;
@@ -178,10 +223,8 @@ module.exports = {
       product.description = description;
       product.details = details;
       product.images = [...retainedImages, ...newImages];
-      product.updatedAt = new Date();
-
-      // ✅ Handle visibility (checkbox)
       product.visible = req.body.visible ? true : false;
+      product.updatedAt = new Date();
 
       await product.save();
       console.log("Updated product:", product);
@@ -192,47 +235,28 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
-  async deleteProduct(req, res) {
-    try {
-      const { ID } = req.params;
-
-      const product = await Product.findById(ID);
-      if (!product) {
-        return res.status(404).render("error/404", { layout: "error" });
-      }
-
-      // Delete image files
-      if (product.imageFiles && product.imageFiles.length) {
-        product.imageFiles.forEach((imgPath) => {
-          const fullPath = path.join(__dirname, "../../public", imgPath); // already includes /uploads
-          fs.unlink(fullPath, (err) => {
-            if (err) {
-              console.warn("Failed to delete file:", fullPath, err.message);
-            }
-          });
-        });
-      }
-
-      // Delete the product
-      await Product.findByIdAndDelete(ID);
-
-      res.redirect("/admin/products");
-    } catch (err) {
-      console.error(err);
-      res.render("error/404", { layout: "error" });
-    }
-  },
   async openOrders(req, res) {
     try {
-      const orders = await Customer.find({ status: "Pending" }).lean();
+      // Fetch all orders with status "Pending" and populate customer info
+      let orders = await Order.find({ status: "Pending" })
+        .populate("customerId") // gets the full customer document
+        .lean();
+
+      // Separate customer from order for each
+      orders = orders.map((order) => {
+        const customer = order.customerId;
+        delete order.customerId;
+        return { ...order, customer };
+      });
+
       console.log(orders);
 
       res.render("admin/openOrders", {
         layout: "admin",
-        orders,
+        orders, // each order now has a separate 'customer' object
       });
     } catch (err) {
-      console.log(err);
+      console.error(err);
       res.render("error/404", { layout: "error" });
     }
   },
@@ -240,8 +264,8 @@ module.exports = {
     try {
       const { ID } = req.params;
 
-      // Update the customer: empty cartItems and inspirationGallery, mark as Completed
-      await Customer.findByIdAndUpdate(
+      // Update the order: empty cartItems and inspirationGallery, mark as Completed
+      await Order.findByIdAndUpdate(
         ID,
         {
           $set: { cartItems: [], inspirationGallery: [], status: "Completed" },
@@ -259,15 +283,26 @@ module.exports = {
     try {
       const { _id } = req.params;
 
-      // Find customer/order by ID
-      const order = await Customer.findById(_id).lean();
+      // Find order by ID and populate customer info
+      let order = await Order.findById(_id).populate("customerId").lean();
 
       if (!order) {
         return res.status(404).render("error/404", { layout: "error" });
       }
-      console.log(order);
-      // Render an admin template (e.g., admin/viewOrder.handlebars)
-      res.render("admin/viewOrder", { layout: "admin", order });
+
+      // Separate customer from order
+      const customer = order.customerId;
+      delete order.customerId;
+
+      console.log("Order:", order);
+      console.log("Customer:", customer);
+
+      // Render admin template with separate customer object
+      res.render("admin/viewOrder", {
+        layout: "admin",
+        order,
+        customer,
+      });
     } catch (err) {
       console.error(err);
       res.render("error/404", { layout: "error" });

@@ -7,67 +7,65 @@
 
             <div class="bg-light p-30 mb-5">
                 <!-- Thank you message -->
-                <h4 class="text-success text-center mb-3">Thank you, {{order.firstName}}!</h4>
-                <p class="text-center">
-                    Your request has been successfully submitted. A KCI sales representative will contact you
-                    shortly to review your selected items, discuss specifications, and provide pricing. Below is a
+                <h4 class="text-primary mb-3">Thank you, {{customer.firstName}}!</h4>
+                <p class="">
+                    Your request has been successfully submitted. <br>A KCI sales representative will contact you
+                    soon to review your selected items, discuss specifications, and provide pricing. Below is a
                     summary of your submission:
                 </p>
 
                 <!-- Order Summary -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="">Request Summary</h5>
 
-                <div class="col-12 pb-1">
-                    <div class="bg-light p-30">
-                        <div class="pt-2">
-                            <h5 class="text-center">Request Summary</h5>
-                            <div class="card">
-                                <div class="card-body">
-                                    {{#if order.cartItems.length}}
-                                        <div class="table-responsive">
-                                            <table
-                                                class="table table-light table-borderless table-hover text-center mb-0">
-                                                <thead class="thead-dark">
+                        <div class="bg-light p-30">
+                            <div class="pt-2">
+                                {{#if order.cartItems.length}}
+                                    <div class="table-responsive">
+                                        <table class="table table-light table-striped table-hover mb-0">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th>Product</th>
+                                                    <th>Quantity</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each order.cartItems}}
                                                     <tr>
-                                                        <th>Product</th>
-                                                        <th>Quantity</th>
+                                                        <td>{{this.title}}</td>
+                                                        <td>{{this.quantity}}</td>
                                                     </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {{#each order.cartItems}}
-                                                        <tr>
-                                                            <td>{{this.title}}</td>
-                                                            <td>{{this.quantity}}</td>
-                                                        </tr>
-                                                    {{/each}}
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    {{else}}
-                                        <p class="text-center text-muted mb-0">No items were included in this quote
-                                            request.</p>
-                                    {{/if}}
-                                </div>
+                                                {{/each}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                {{else}}
+                                    <p class="text-center text-muted mb-0">No items were included in this quote
+                                        request.</p>
+                                {{/if}}
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- Customer / Shipping Information -->
                 <h5 class="mt-4">Contact &amp; Shipping Information</h5>
                 <div class="row">
                     <div class="col-md-6">
                         <p>
-                            <strong>Name:</strong> {{order.firstName}} {{order.lastName}}<br>
-                            <strong>Email:</strong> {{order.email}}<br>
-                            <strong>Phone:</strong> {{order.mobile}}
-                            <strong>Customer Type:</strong> {{order.customerType}}
+                            <strong>Name:</strong> {{customer.firstName}} {{customer.lastName}}<br>
+                            <strong>Email:</strong> {{customer.email}}<br>
+                            <strong>Phone:</strong> {{customer.mobile}}<br>
+                            <strong>Customer Type:</strong> {{customer.customerType}}
                         </p>
                     </div>
                     <div class="col-md-6">
                         <p>
-                            <strong>Address:</strong> <br>{{order.address1}}{{#if order.address2}},
-                                {{order.address2}}{{/if}}<br>
-                            {{order.city}}, {{order.state}} {{order.zip}}<br>
+                            <strong>Address:</strong> <br>{{customer.address1}}{{#if customer.address2}},
+                                {{customer.address2}}{{/if}}<br>
+                            {{customer.city}}, {{customer.state}} {{customer.zip}}<br>
 
                         </p>
                     </div>
