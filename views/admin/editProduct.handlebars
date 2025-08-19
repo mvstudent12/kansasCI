@@ -110,6 +110,13 @@
                                             placeholder="Enter description and features here..."
                                             class="form-control">{{product.description}}</textarea>
                                     </div>
+                                    <div class="form-check d-inline-block mr-3 mb-3 mt-3">
+                                        <input name="visible" class="form-check-input" type="checkbox" id="showProduct"
+                                            {{#if product.visible}}checked{{/if}}>
+                                        <label class="form-check-label" for="showProduct">
+                                            Show Product On Site
+                                        </label>
+                                    </div>
 
 
                                 </div>

@@ -58,16 +58,19 @@ module.exports = {
       } = req.body;
 
       // req.files is array of uploaded files
-      const images = req.files.map((file) => ({
+      const images = (req.files || []).map((file) => ({
         originalName: file.originalname,
         fileName: file.filename,
-        path: file.path.replace(/\\/g, "/").replace(/^public\//, "/"), //normalize path slashes and remove public from path
+        path: file.path.replace(/\\/g, "/").replace(/^public\//, "/"), // normalize path
         size: file.size,
         mimetype: file.mimetype,
       }));
 
       // Convert colors string to array (if provided)
       const colorsArray = colors ? colors.split(",").map((c) => c.trim()) : [];
+
+      // ✅ Handle visibility checkbox
+      const visible = req.body.visible ? true : false;
 
       const newProduct = new Product({
         title,
@@ -80,6 +83,7 @@ module.exports = {
         description,
         details,
         images,
+        visible, // ✅ include visibility
       });
 
       await newProduct.save();
@@ -137,8 +141,6 @@ module.exports = {
 
       // Delete removed images from disk
       for (const img of removedImages) {
-        // img.path probably starts with "/uploads/filename.ext"
-        // so we join with public folder safely:
         const filePath = path.join(
           __dirname,
           "..",
@@ -165,7 +167,7 @@ module.exports = {
         mimetype: file.mimetype,
       }));
 
-      // Update fields
+      // ✅ Update fields
       product.title = title;
       product.brandLine = brandLine;
       product.productLine = productLine;
@@ -177,6 +179,9 @@ module.exports = {
       product.details = details;
       product.images = [...retainedImages, ...newImages];
       product.updatedAt = new Date();
+
+      // ✅ Handle visibility (checkbox)
+      product.visible = req.body.visible ? true : false;
 
       await product.save();
       console.log("Updated product:", product);

@@ -27,9 +27,10 @@ module.exports = {
       const regex = new RegExp(searchTerm, "i");
 
       const results = await Product.find({
+        visible: true, // ✅ only return products marked visible
         $or: [
           { title: regex },
-          { brand: regex },
+          { brandLine: regex }, // 👈 I changed this from "brand" to "brandLine" since your schema uses brandLine
           { category: regex },
           { description: regex },
         ],
@@ -117,7 +118,8 @@ module.exports = {
       }
 
       // Build Mongo filter
-      let filter = {};
+      let filter = { visible: true }; // only fetch visible products by default
+
       if (selectedCategories.length) {
         filter.category = { $in: selectedCategories };
       }
@@ -224,10 +226,18 @@ module.exports = {
       }
 
       // === Build Mongo filter ===
-      const filter = { category: { $in: categoriesToFilter } };
-      if (selectedSubcategories.length)
+      const filter = {
+        category: { $in: categoriesToFilter },
+        visible: true, // only show visible products
+      };
+
+      if (selectedSubcategories.length) {
         filter.subcategory = { $in: selectedSubcategories };
-      if (selectedBrands.length) filter.brand = { $in: selectedBrands };
+      }
+
+      if (selectedBrands.length) {
+        filter.brand = { $in: selectedBrands };
+      }
 
       // === Query products & count ===
       const [products, totalCount] = await Promise.all([
@@ -285,9 +295,12 @@ module.exports = {
       // === Build Mongo filter ===
       const filter = {
         category: "Seating",
+        visible: true, // only show visible products
       };
-      if (selectedSubcategories.length)
+
+      if (selectedSubcategories.length) {
         filter.subcategory = { $in: selectedSubcategories };
+      }
 
       // === Query products & count ===
       const [products, totalCount] = await Promise.all([
@@ -338,6 +351,7 @@ module.exports = {
       // === Build Mongo filter ===
       const filter = {
         category: { $in: ["Textiles", "Clothing"] },
+        visible: true, // only show visible products
       };
       if (selectedSubcategories.length) {
         filter.subcategory = { $in: selectedSubcategories };
@@ -393,6 +407,7 @@ module.exports = {
       // === Build Mongo filter ===
       const filter = {
         category: { $in: signsEntries.map((c) => c.name) }, // e.g. ["Signs & Graphics"]
+        visible: true, // only show visible products
       };
       if (selectedSubcategories.length) {
         filter.subcategory = { $in: selectedSubcategories };
@@ -448,6 +463,7 @@ module.exports = {
       // === Build Mongo filter ===
       const filter = {
         category: { $in: metalEntries.map((c) => c.name) }, // e.g. ["Metal Works"]
+        visible: true, // only show visible products
       };
       if (selectedSubcategories.length) {
         filter.subcategory = { $in: selectedSubcategories };
@@ -504,6 +520,7 @@ module.exports = {
       // === Build Mongo filter ===
       const filter = {
         category: { $in: janitorialEntries.map((c) => c.name) }, // e.g. ["Janitorial", "Paint"]
+        visible: true, // only show visible products
       };
       if (selectedSubcategories.length) {
         filter.subcategory = { $in: selectedSubcategories };

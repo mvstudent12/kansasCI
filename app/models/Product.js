@@ -46,6 +46,10 @@ const productSchema = new mongoose.Schema(
         mimetype: String,
       },
     ],
+    visible: {
+      type: Boolean,
+      default: true, // product is visible on site by default
+    },
   },
   { timestamps: true }
 );
