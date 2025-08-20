@@ -10,6 +10,14 @@ admin.get("/dashboard", adminController.dashboard);
 
 admin.get("/products", adminController.products);
 
+admin.get("/calendar", adminController.calendar);
+
+admin.post("/addEvent", adminController.addEvent);
+
+admin.get("/getEvents", adminController.getEvents);
+
+admin.get("/events", adminController.events);
+
 admin.get("/customers", adminController.customers);
 
 admin.get("/openOrders", adminController.openOrders);

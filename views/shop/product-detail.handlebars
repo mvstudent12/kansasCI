@@ -4,8 +4,7 @@
         <div class="col-12">
             <nav class="breadcrumb bg-light mb-30">
                 <a class="breadcrumb-item text-dark" href="/shop">KCI Shop</a>
-                <a class="breadcrumb-item text-dark" href="/products?category={{product.category}}">
-                    {{product.category}}</a>
+
                 <span class="breadcrumb-item active">{{product.title}}</span>
             </nav>
         </div>
@@ -114,7 +113,6 @@
                             <i class="fa fa-shopping-cart mr-1"></i> Add To Cart
                         </button>
 
-                        {{!-- HERE IS WHERE I AM AT - these buttons do not change when item is in wishlist --}}
                         {{#if (containsWish wishList product._id "product")}}
                             <a href="/wishList/remove?productId={{product._id}}" class="btn btn-primary px-3 ml-2">
                                 <i class="fas fa-heart mr-1"></i> Remove from Wish List
@@ -124,11 +122,6 @@
                                 <i class="far fa-heart mr-1"></i> Add to Wish List
                             </a>
                         {{/if}}
-
-
-
-
-
                     </div>
                 </form>
             </div>
@@ -193,3 +186,39 @@
     });
 
 </script>
+<!-- Toast Message Container -->
+{{#if cartMessage}}
+    <div id="cart-toast" style="
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: all 0.5s ease;
+">
+        {{cartMessage}}
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toast = document.getElementById('cart-toast');
+            if (!toast) return;
+            requestAnimationFrame(() => {
+                toast.style.opacity = 1;
+                toast.style.transform = 'translateY(0)';
+            });
+            setTimeout(() => {
+                toast.style.opacity = 0;
+                toast.style.transform = 'translateY(-20px)';
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+        });
+    </script>
+{{/if}}

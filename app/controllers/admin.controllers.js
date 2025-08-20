@@ -1,9 +1,24 @@
 const Product = require("../models/Product");
 const Order = require("../models/Order");
 const Customer = require("../models/Customer");
+const Event = require("../models/Event");
 
 const fs = require("fs");
 const path = require("path");
+
+// Helper function to convert 12h time to 24h format string
+function convertTimeTo24(timeStr) {
+  if (!timeStr) return "00:00"; // default to midnight
+  let [time, modifier] = timeStr.split(/(am|pm)/i);
+  let [hours, minutes] = time.split(":").map(Number);
+
+  if (modifier.toLowerCase() === "pm" && hours < 12) hours += 12;
+  if (modifier.toLowerCase() === "am" && hours === 12) hours = 0;
+
+  return `${hours.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")}:00`;
+}
 
 module.exports = {
   async signIn(req, res) {
@@ -16,7 +31,19 @@ module.exports = {
   },
   async dashboard(req, res) {
     try {
-      res.render("admin/dashboard", { layout: "admin" });
+      // Fetch all orders with status "Pending" and populate customer info
+      let orders = await Order.find({ status: "Pending" })
+        .populate("customerId") // gets the full customer document
+        .lean();
+
+      // Separate customer from order for each
+      orders = orders.map((order) => {
+        const customer = order.customerId;
+        delete order.customerId;
+        return { ...order, customer };
+      });
+      console.log(orders);
+      res.render("admin/dashboard", { layout: "admin", orders });
     } catch (err) {
       console.log(err);
       res.render("error/404", { layout: "error" });
@@ -33,6 +60,106 @@ module.exports = {
     } catch (err) {
       console.log(err);
       res.render("error/404", { layout: "error" });
+    }
+  },
+  async calendar(req, res) {
+    try {
+      res.render("admin/calendar", {
+        layout: "admin",
+      });
+    } catch (err) {
+      console.log(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async addEvent(req, res) {
+    try {
+      const { title, dateRange, time, description } = req.body;
+
+      // Validate required fields
+      if (!title || !dateRange || !time) {
+        return res.status(400).send("Title, date, and time are required");
+      }
+
+      // Convert dateRange string to Date object
+      const parsedDate = new Date(dateRange);
+      if (isNaN(parsedDate)) {
+        return res.status(400).send("Invalid date format");
+      }
+
+      // Create new Event instance
+      const newEvent = new Event({
+        title,
+        dateRange: parsedDate,
+        time,
+        description,
+      });
+
+      // Save event to DB
+      await newEvent.save();
+
+      console.log("Event added:", newEvent);
+
+      // Redirect to calendar or another admin page
+      res.redirect("/admin/calendar");
+    } catch (err) {
+      console.error("Error adding event:", err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async events(req, res) {
+    try {
+      const events = await Event.find().lean();
+
+      const calendarEvents = events.map((ev) => {
+        const dateStr = ev.dateRange
+          ? ev.dateRange.toISOString().split("T")[0]
+          : null;
+        const timeStr = convertTimeTo24(ev.time); // safe now
+
+        return {
+          id: ev._id,
+          title: ev.title,
+          start: dateStr ? `${dateStr}T${timeStr}` : null,
+          description: ev.description || "",
+        };
+      });
+
+      res.json(calendarEvents);
+    } catch (err) {
+      console.error("Error fetching events:", err);
+      res.status(500).json({ error: "Failed to fetch events" });
+    }
+  },
+  async getEvents(req, res) {
+    try {
+      const events = await Event.find().lean();
+
+      const calendarEvents = events.map((ev) => {
+        // Combine dateRange (Date) + time (string) into one ISO datetime
+        const date = new Date(ev.dateRange);
+        if (ev.time) {
+          let [hours, minutes] = ev.time.split(":");
+          const isPM = ev.time.toLowerCase().includes("pm");
+          hours = parseInt(hours);
+          minutes = parseInt(minutes || 0);
+          if (isPM && hours < 12) hours += 12;
+          if (!isPM && hours === 12) hours = 0;
+          date.setHours(hours, minutes, 0, 0);
+        }
+
+        return {
+          id: ev._id,
+          title: ev.title,
+          start: date.toISOString(),
+          description: ev.description || "",
+        };
+      });
+
+      res.json(calendarEvents);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: "Failed to fetch events" });
     }
   },
   async customers(req, res) {
@@ -248,8 +375,6 @@ module.exports = {
         delete order.customerId;
         return { ...order, customer };
       });
-
-      console.log(orders);
 
       res.render("admin/openOrders", {
         layout: "admin",

@@ -12,6 +12,11 @@ const customerSchema = new mongoose.Schema(
     state: { type: String, required: true },
     zip: { type: String, required: true },
     customerType: { type: String, required: true },
+    custID: { type: String, default: null },
+    companyName: {
+      type: String,
+      default: "Individual",
+    },
   },
   { timestamps: true }
 );

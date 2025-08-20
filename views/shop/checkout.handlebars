@@ -27,6 +27,29 @@
                 <div class="bg-light p-30 mb-5">
                     <div class="row">
                         <div class="col-md-6 form-group">
+                            <label>
+                                Company Name
+                                <span data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="If you are purchasing as an individual and not representing a company, you may leave this field blank.">
+                                    <i class="fas fa-info-circle text-primary"></i>
+                                </span>
+                            </label>
+                            <input class="form-control" type="text" name="companyName" placeholder="Company Name"
+                                pattern="^[A-Za-z\s-]+$" title="Please enter the name of the company you work for.">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>
+                                Customer ID
+                                <span data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="If you have previously purchased from KCI, enter the Customer ID provided to you. If you are a new customer, leave this blank.">
+                                    <i class="fas fa-info-circle text-primary"></i>
+                                </span>
+                            </label>
+                            <input class="form-control" type="text" name="custID" placeholder="Customer ID"
+                                pattern="^[0-9]+$" title="Customer ID must contain numbers only.">
+                        </div>
+
+                        <div class="col-md-6 form-group">
                             <label>First Name</label>
                             <input class="form-control" type="text" name="firstName" placeholder="John" required
                                 pattern="^[A-Za-z\s-]+$"
@@ -121,8 +144,6 @@
                                 <option value="WY">Wyoming</option>
                             </select>
                         </div>
-
-
                         <div class="col-md-6 form-group">
                             <label>ZIP Code</label>
                             <input class="form-control" name="zip" type="text" placeholder="12345" required

@@ -171,10 +171,16 @@ module.exports = {
     try {
       const { ID } = req.params;
       const product = await Product.findById(ID).lean();
+      const wishList = req.session.wishList || [];
+
+      // Read toast from query
+      const cartMessage = req.query.toast === "added" ? "Added to cart!" : null;
 
       res.render("shop/product-detail", {
         layout: "shop",
         product,
+        wishList,
+        cartMessage,
       });
     } catch (err) {
       console.log(err);
@@ -601,6 +607,8 @@ module.exports = {
         state,
         zip,
         customerType,
+        custId,
+        companyName,
       } = req.body;
 
       // Check if customer already exists (optional)
@@ -617,6 +625,8 @@ module.exports = {
           state,
           zip,
           customerType,
+          custId,
+          companyName,
         });
         await customer.save();
       }
@@ -691,20 +701,16 @@ module.exports = {
   },
   async addToCart(req, res) {
     try {
-      const product = await Product.findById(req.params.productID).lean();
-      if (!product) {
-        return res.status(404).send("Product not found");
-      }
+      const { productID } = req.params;
+      const product = await Product.findById(productID).lean();
+      if (!product) return res.status(404).send("Product not found");
 
-      if (!req.session.cart) {
-        req.session.cart = [];
-      }
+      if (!req.session.cart) req.session.cart = [];
 
-      // Check if product already in cart
+      const qty = parseInt(req.body.quantity) || 1;
       const existingItem = req.session.cart.find(
         (item) => item._id.toString() === product._id.toString()
       );
-      const qty = parseInt(req.body.quantity) || 1;
 
       if (existingItem) {
         existingItem.quantity += qty;
@@ -712,15 +718,57 @@ module.exports = {
         req.session.cart.push({ ...product, quantity: qty });
       }
 
-      // Save the session and redirect
-      req.session.save(() => {
-        res.redirect("/cart"); // or res.redirect("back") to go to the same page
-      });
+      await req.session.save();
+
+      // Redirect with query param for toast
+      res.redirect(`/product-details/${productID}?toast=added`);
     } catch (err) {
       console.error(err);
       res.render("error/404", { layout: "error" });
     }
   },
+  async addToWishList(req, res) {
+    try {
+      if (!req.session.wishList) req.session.wishList = [];
+      const { productId } = req.query;
+      if (!productId) return res.status(400).send("No product specified");
+
+      const exists = req.session.wishList.some(
+        (item) => item.type === "product" && item.id === String(productId)
+      );
+
+      if (!exists)
+        req.session.wishList.push({ type: "product", id: String(productId) });
+
+      await req.session.save();
+
+      res.redirect(`/product-details/${productId}`);
+    } catch (err) {
+      console.error(err);
+      res.status(500).send("Unable to add to wishlist");
+    }
+  },
+
+  async removeFromWishList(req, res) {
+    try {
+      if (!req.session.wishList) req.session.wishList = [];
+      const { productId } = req.query;
+      if (!productId)
+        return res.status(400).send("No product specified to remove");
+
+      req.session.wishList = req.session.wishList.filter(
+        (item) => !(item.type === "product" && item.id === String(productId))
+      );
+
+      await req.session.save();
+
+      res.redirect(`/product-details/${productId}`);
+    } catch (err) {
+      console.error(err);
+      res.status(500).send("Unable to remove from wishlist");
+    }
+  },
+
   async removeFromCart(req, res) {
     try {
       if (req.session.cart) {
@@ -772,57 +820,7 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
-  async addToWishList(req, res) {
-    try {
-      if (!req.session.wishList) req.session.wishList = [];
 
-      const { productId } = req.query;
-
-      if (!productId) {
-        return res.status(400).send("No product specified");
-      }
-
-      const newItem = { type: "product", id: String(productId) };
-
-      // Avoid duplicates
-      const exists = req.session.wishList.some(
-        (item) => item.type === "product" && item.id === newItem.id
-      );
-
-      if (!exists) {
-        req.session.wishList.push(newItem);
-      }
-
-      await req.session.save();
-
-      res.redirect(req.get("referer") || "/");
-    } catch (err) {
-      console.error("Error adding to wishlist:", err);
-      res.status(500).send("Unable to add to wishlist");
-    }
-  },
-  async removeFromWishList(req, res) {
-    try {
-      if (!req.session.wishList) req.session.wishList = [];
-
-      const { productId } = req.query;
-
-      if (!productId) {
-        return res.status(400).send("No product specified to remove");
-      }
-
-      req.session.wishList = req.session.wishList.filter(
-        (item) => !(item.type === "product" && item.id === String(productId))
-      );
-
-      await req.session.save();
-
-      res.redirect(req.get("referer") || "/wishList");
-    } catch (err) {
-      console.error("Error removing from wishlist:", err);
-      res.status(500).send("Unable to remove from wishlist");
-    }
-  },
   async moveToCart(req, res) {
     try {
       const { productId, file } = req.query;
