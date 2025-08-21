@@ -15,9 +15,35 @@
 <div class="container-fluid">
     <div class="row px-xl-5">
 
+
         <!-- Category Filter -->
 
         <div class="col-lg-3 col-md-4">
+            <h5 class="section-title position-relative text-uppercase mb-3">
+                <span class="bg-secondary pr-3">Shop by Line</span>
+            </h5>
+            <div class="bg-light p-4 mb-30">
+                <form id="line-filter-form" method="GET" action="/furniture">
+                    <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
+                        <input type="radio" class="custom-control-input" name="line" value="signature"
+                            id="line-signature" {{#if (includes selectedLines "signature" )}}checked{{/if}} />
+                        <label class="custom-control-label" for="line-signature">Signature Series</label>
+                    </div>
+
+                    <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
+                        <input type="radio" class="custom-control-input" name="line" value="director" id="line-director"
+                            {{#if (includes selectedLines "director" )}}checked{{/if}} />
+                        <label class="custom-control-label" for="line-director">Director Series</label>
+                    </div>
+
+                    <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
+                        <input type="radio" class="custom-control-input" name="line" value="executive"
+                            id="line-executive" {{#if (includes selectedLines "executive" )}}checked{{/if}} />
+                        <label class="custom-control-label" for="line-executive">Executive Series</label>
+                    </div>
+                </form>
+            </div>
+
             <h5 class="section-title position-relative text-uppercase mb-3">
                 <span class="bg-secondary pr-3">Shop by Type</span>
             </h5>
@@ -85,6 +111,7 @@
         <!-- Shop Products -->
         <div class="col-lg-9 col-md-8">
             <div class="row pb-3">
+
                 {{#each products}}
                     <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                         <div class="product-item bg-light mb-4">
@@ -151,9 +178,17 @@
 </div>
 
 <script>
+    // Auto-submit on category change
     document.querySelectorAll('#category-filter-form input[type="radio"]').forEach(radio => {
         radio.addEventListener('change', () => {
             document.getElementById('category-filter-form').submit();
+        });
+    });
+
+    // Auto-submit on line change
+    document.querySelectorAll('#line-filter-form input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            document.getElementById('line-filter-form').submit();
         });
     });
 </script>

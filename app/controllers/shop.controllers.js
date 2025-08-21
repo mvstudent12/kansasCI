@@ -210,6 +210,9 @@ module.exports = {
         ? [rawBrands]
         : [];
 
+      const rawLine = req.query.line || null;
+      const selectedLines = rawLine ? [rawLine] : [];
+
       // === Build furniture taxonomy from categories JSON ===
       const furnitureEntries = categoriesData.filter(
         (c) => c.metaCategory === "Furniture"
@@ -246,6 +249,10 @@ module.exports = {
         filter.brand = { $in: selectedBrands };
       }
 
+      if (selectedLines.length) {
+        filter.productLine = { $in: selectedLines };
+      }
+
       // === Query products & count ===
       const [products, totalCount] = await Promise.all([
         Product.find(filter)
@@ -269,6 +276,7 @@ module.exports = {
         selectedCategories,
         selectedSubcategories,
         selectedBrands,
+        selectedLines,
         productTypes: furnitureTypes,
         subcategories: subcategoriesToRender, // dynamic
         brands,
@@ -748,7 +756,6 @@ module.exports = {
       res.status(500).send("Unable to add to wishlist");
     }
   },
-
   async removeFromWishList(req, res) {
     try {
       if (!req.session.wishList) req.session.wishList = [];
@@ -768,7 +775,6 @@ module.exports = {
       res.status(500).send("Unable to remove from wishlist");
     }
   },
-
   async removeFromCart(req, res) {
     try {
       if (req.session.cart) {
@@ -820,7 +826,6 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
-
   async moveToCart(req, res) {
     try {
       const { productId, file } = req.query;
