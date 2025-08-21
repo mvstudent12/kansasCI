@@ -42,7 +42,7 @@ module.exports = {
         delete order.customerId;
         return { ...order, customer };
       });
-      console.log(orders);
+
       res.render("admin/dashboard", { layout: "admin", orders });
     } catch (err) {
       console.log(err);
@@ -105,8 +105,6 @@ module.exports = {
 
       // Save event to DB
       await newEvent.save();
-
-      console.log("Event added:", newEvent);
 
       // Redirect to calendar or another admin page
       res.redirect("/admin/calendar");
@@ -197,9 +195,7 @@ module.exports = {
       const orders = await Order.find({ customerId: ID })
         .sort({ createdAt: -1 })
         .lean();
-      console.log(orders);
 
-      // Render the view with customer and orders
       res.render("admin/viewCustomer", {
         layout: "admin",
         customer,
@@ -442,7 +438,6 @@ module.exports = {
       product.updatedAt = new Date();
 
       await product.save();
-      console.log("Updated product:", product);
 
       res.redirect("/admin/products");
     } catch (err) {
@@ -506,9 +501,6 @@ module.exports = {
       // Separate customer from order
       const customer = order.customerId;
       delete order.customerId;
-
-      console.log("Order:", order);
-      console.log("Customer:", customer);
 
       // Render admin template with separate customer object
       res.render("admin/viewOrder", {
