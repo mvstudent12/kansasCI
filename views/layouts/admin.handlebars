@@ -42,7 +42,6 @@
 
     <div class="wrapper">
 
-
         {{!-- left sidebar menu --}}
         <aside class="left-sidebar sidebar-dark" id="left-sidebar">
             <div id="sidebar" class="sidebar sidebar-with-footer">
@@ -57,7 +56,6 @@
                 <div class="sidebar-left" data-simplebar style="height: 100%;">
                     <!-- sidebar menu -->
                     <ul class="nav sidebar-inner" id="sidebar-menu">
-
 
 
                         <li class="active">
@@ -102,15 +100,9 @@
                             Workspace
                         </li>
                         <li>
-                            <a class="sidenav-item-link" href="#">
+                            <a class="sidenav-item-link" href="/admin/contacts">
                                 <i class="mdi mdi-account-group"></i>
                                 <span class="nav-text">Sales Team</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidenav-item-link" href="/admin/contacts">
-                                <i class="mdi mdi-phone"></i>
-                                <span class="nav-text">Contacts</span>
                             </a>
                         </li>
 
@@ -174,7 +166,6 @@
 
         {{!-- page wrapper --}}
         <div class="page-wrapper">
-
             {{!-- header --}}
             <header class="main-header" id="header">
                 <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
@@ -187,26 +178,6 @@
 
                     <div class="navbar-right ">
 
-                        {{!-- Search Bar --}}
-                        <div class="search-form">
-                            <form action="#" method="get">
-                                <div class="input-group input-group-sm" id="input-group-search">
-                                    <input type="text" autocomplete="off" name="query" id="search-input"
-                                        class="form-control" placeholder="Search..." />
-                                    <div class="input-group-append">
-                                        <button class="btn" type="button">/</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <ul class="dropdown-menu dropdown-menu-search">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Morbi leo risus</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Dapibus ac facilisis in</a>
-                                </li>
-                            </ul>
-                        </div>
 
                         <ul class="nav navbar-nav">
                             <!-- Offcanvas -->
@@ -232,7 +203,7 @@
                                                 href="#message" role="tab" aria-controls="nav-profile"
                                                 aria-selected="false">Msgs (4)</a>
                                             <a class="nav-item nav-link" id="other-tab" data-toggle="tab" href="#other"
-                                                role="tab" aria-controls="nav-contact" aria-selected="false">Others
+                                                role="tab" aria-controls="nav-contact" aria-selected="false">Events
                                                 (3)</a>
                                         </div>
                                     </header>
@@ -246,15 +217,13 @@
                                                 <div class="media media-sm bg-warning-10 p-4 mb-0">
                                                     <div class="media-sm-wrapper">
                                                         <a href="#">
-                                                            <img src="/images/user/user-sm-02.jpg" alt="User Image">
+                                                            <img src="/images/user/avatar.png" alt="User Image">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
                                                         <a href="#">
                                                             <span class="title mb-0">John</span>
-                                                            <span class="discribe">Extremity sweetness difficult
-                                                                behaviour he of. On disposal of as landlord horrible.
-                                                                Afraid at highly months do things on at.</span>
+                                                            <span class="discribe">example msg</span>
                                                             <span class="time">
                                                                 <time>Just now</time>...
                                                             </span>
@@ -282,14 +251,13 @@
                                                 <div class="media media-sm p-4 mb-0">
                                                     <div class="media-sm-wrapper">
                                                         <a href="#">
-                                                            <img src="/images/user/user-sm-03.jpg" alt="User Image">
+                                                            <img src="/images/user/avatar.png" alt="User Image">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
                                                         <a href="#">
                                                             <span class="title mb-0">Sagge Hudson</span>
-                                                            <span class="discribe">On disposal of as landlord Afraid at
-                                                                highly months do things on at.</span>
+                                                            <span class="discribe">example msg</span>
                                                             <span class="time">
                                                                 <time>1 hrs ago</time>...
                                                             </span>
@@ -305,9 +273,8 @@
                                                     </div>
                                                     <div class="media-body">
                                                         <a href="#">
-                                                            <span class="title mb-0">Add request</span>
-                                                            <span class="discribe">Add Dany Jones as your
-                                                                contact.</span>
+                                                            <span class="title mb-0">Order request</span>
+                                                            <span class="discribe">Add order to your workload.</span>
                                                             <div class="buttons">
                                                                 <a href="#"
                                                                     class="btn btn-sm btn-success shadow-none text-white">accept</a>
@@ -329,8 +296,7 @@
                                                     <div class="media-body">
                                                         <a href="#">
                                                             <span class="title mb-0">Task complete</span>
-                                                            <span class="discribe">Afraid at highly months do things on
-                                                                at.</span>
+                                                            <span class="discribe">Meeting 10:30</span>
                                                             <span class="time">
                                                                 <time>1 hrs ago</time>...
                                                             </span>
@@ -346,14 +312,13 @@
                                                 <div class="media media-sm p-4 mb-0">
                                                     <div class="media-sm-wrapper">
                                                         <a href="#">
-                                                            <img src="/images/user/user-sm-01.jpg" alt="User Image">
+                                                            <img src="/images/user/avatar.png" alt="User Image">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
                                                         <a href="#">
                                                             <span class="title mb-0">Selena Wagner</span>
-                                                            <span class="discribe">Lorem ipsum dolor sit amet,
-                                                                consectetur adipisicing elit.</span>
+                                                            <span class="discribe">example msg</span>
                                                             <span class="time">
                                                                 <time>15 min ago</time>...
                                                             </span>
@@ -364,53 +329,13 @@
                                                 <div class="media media-sm p-4 mb-0">
                                                     <div class="media-sm-wrapper">
                                                         <a href="#">
-                                                            <img src="/images/user/user-sm-03.jpg" alt="User Image">
-                                                        </a>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <a href="#">
-                                                            <span class="title mb-0">Sagge Hudson</span>
-                                                            <span class="discribe">On disposal of as landlord Afraid at
-                                                                highly months do things on at.</span>
-                                                            <span class="time">
-                                                                <time>1 hrs ago</time>...
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-
-                                                <div class="media media-sm bg-warning-10 p-4 mb-0">
-                                                    <div class="media-sm-wrapper">
-                                                        <a href="#">
-                                                            <img src="/images/user/user-sm-02.jpg" alt="User Image">
-                                                        </a>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <a href="#">
-                                                            <span class="title mb-0">John</span>
-                                                            <span class="discribe">Extremity sweetness difficult
-                                                                behaviour he of. On disposal of as landlord horrible.
-                                                                Afraid
-                                                                at highly months do things on at.</span>
-                                                            <span class="time">
-                                                                <time>Just now</time>...
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-
-                                                <div class="media media-sm p-4 mb-0">
-                                                    <div class="media-sm-wrapper">
-                                                        <a href="#">
-                                                            <img src="/images/user/user-sm-04.jpg" alt="User Image">
+                                                            <img src="/images/user/avatar.png" alt="User Image">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
                                                         <a href="#">
                                                             <span class="title mb-0">Albrecht Straub</span>
-                                                            <span class="discribe"> Beatae quia natus assumenda
-                                                                laboriosam, nisi perferendis aliquid consectetur
-                                                                expedita non tenetur.</span>
+                                                            <span class="discribe"> example msg</span>
                                                             <span class="time">
                                                                 <time>Just now</time>...
                                                             </span>
@@ -447,9 +372,8 @@
                                                     </div>
                                                     <div class="media-body">
                                                         <a href="#">
-                                                            <span class="title mb-0">Add request</span>
-                                                            <span class="discribe">Add Dany Jones as your
-                                                                contact.</span>
+                                                            <span class="title mb-0">Order request</span>
+                                                            <span class="discribe">Add order to your workload.</span>
                                                             <div class="buttons">
                                                                 <a href="#"
                                                                     class="btn btn-sm btn-success shadow-none text-white">accept</a>
@@ -471,15 +395,13 @@
                                                     <div class="media-body">
                                                         <a href="#">
                                                             <span class="title mb-0">Task complete</span>
-                                                            <span class="discribe">Afraid at highly months do things on
-                                                                at.</span>
+                                                            <span class="discribe">1:00 pm meeting</span>
                                                             <span class="time">
                                                                 <time>1 hrs ago</time>...
                                                             </span>
                                                         </a>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -498,7 +420,7 @@
                                 <button class="dropdown-toggle nav-link" data-toggle="dropdown">
                                     <img src="/images/user/avatar.png" class="user-image rounded-circle"
                                         alt="User Image" />
-                                    <span class="d-none d-lg-inline-block">John</span>
+                                    <span class="d-none d-lg-inline-block">Admin</span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li>
@@ -517,7 +439,7 @@
                                     <li>
                                         <a class="dropdown-link-item" href="#">
                                             <i class="mdi mdi-diamond-stone"></i>
-                                            <span class="nav-text">Activitise</span></a>
+                                            <span class="nav-text">Activities</span></a>
                                     </li>
                                     <li>
                                         <a class="dropdown-link-item" href="#">
@@ -558,8 +480,7 @@
     <!-- Card Offcanvas -->
     <div class="card card-offcanvas" id="contact-off">
         <div class="card-header">
-            <h2>Contacts</h2>
-            <a href="#" class="btn btn-primary btn-pill px-4">Add New</a>
+            <h2>Sales Team</h2>
         </div>
         <div class="card-body">
 
@@ -571,14 +492,14 @@
             <div class="media media-sm">
                 <div class="media-sm-wrapper">
                     <a href="#">
-                        <img src="/images/user/user-sm-01.jpg" alt="User Image">
+                        <img src="/images/user/avatar.png" alt="User Image">
                         <span class="active bg-primary"></span>
                     </a>
                 </div>
                 <div class="media-body">
                     <a href="#">
                         <span class="title">Selena Wagner</span>
-                        <span class="discribe">Designer</span>
+                        <span class="discribe">Sales Rep</span>
                     </a>
                 </div>
             </div>
@@ -586,14 +507,14 @@
             <div class="media media-sm">
                 <div class="media-sm-wrapper">
                     <a href="#">
-                        <img src="/images/user/user-sm-02.jpg" alt="User Image">
+                        <img src="/images/user/avatar.png" alt="User Image">
                         <span class="active bg-primary"></span>
                     </a>
                 </div>
                 <div class="media-body">
                     <a href="#">
                         <span class="title">Walter Reuter</span>
-                        <span>Developer</span>
+                        <span>Sales Rep</span>
                     </a>
                 </div>
             </div>
@@ -601,13 +522,13 @@
             <div class="media media-sm">
                 <div class="media-sm-wrapper">
                     <a href="#">
-                        <img src="/images/user/user-sm-03.jpg" alt="User Image">
+                        <img src="/images/user/avatar.png" alt="User Image">
                     </a>
                 </div>
                 <div class="media-body">
                     <a href="#">
                         <span class="title">Larissa Gebhardt</span>
-                        <span>Cyber Punk</span>
+                        <span>Sales Rep</span>
                     </a>
                 </div>
             </div>
@@ -615,14 +536,14 @@
             <div class="media media-sm">
                 <div class="media-sm-wrapper">
                     <a href="#">
-                        <img src="/images/user/user-sm-04.jpg" alt="User Image">
+                        <img src="/images/user/avatar.png" alt="User Image">
                     </a>
 
                 </div>
                 <div class="media-body">
                     <a href="#">
                         <span class="title">Albrecht Straub</span>
-                        <span>Photographer</span>
+                        <span>Sales Rep</span>
                     </a>
                 </div>
             </div>
@@ -630,14 +551,14 @@
             <div class="media media-sm">
                 <div class="media-sm-wrapper">
                     <a href="#">
-                        <img src="/images/user/user-sm-05.jpg" alt="User Image">
+                        <img src="/images/user/avatar.png" alt="User Image">
                         <span class="active bg-danger"></span>
                     </a>
                 </div>
                 <div class="media-body">
                     <a href="#">
                         <span class="title">Leopold Ebert</span>
-                        <span>Fashion Designer</span>
+                        <span>Sales Rep</span>
                     </a>
                 </div>
             </div>
@@ -645,14 +566,14 @@
             <div class="media media-sm">
                 <div class="media-sm-wrapper">
                     <a href="#">
-                        <img src="/images/user/user-sm-06.jpg" alt="User Image">
+                        <img src="/images/user/avatar.png" alt="User Image">
                         <span class="active bg-primary"></span>
                     </a>
                 </div>
                 <div class="media-body">
                     <a href="#">
                         <span class="title">Selena Wagner</span>
-                        <span>Photographer</span>
+                        <span>Sales Rep</span>
                     </a>
                 </div>
             </div>
