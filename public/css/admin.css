@@ -12543,7 +12543,7 @@ button {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -6rem;
+  margin-top: -10rem;
   text-align: center;
 }
 @media (min-width: 1200px) {

@@ -8,6 +8,8 @@ admin.get("/", adminController.signIn);
 
 admin.get("/dashboard", adminController.dashboard);
 
+admin.get("/analytics", adminController.analytics);
+
 admin.get("/products", adminController.products);
 
 admin.get("/calendar", adminController.calendar);
@@ -19,6 +21,10 @@ admin.get("/getEvents", adminController.getEvents);
 admin.get("/events", adminController.events);
 
 admin.get("/customers", adminController.customers);
+
+admin.get("/viewCustomer/:ID", adminController.viewCustomer);
+
+admin.post("/editCustomer/:ID", adminController.editCustomer);
 
 admin.get("/openOrders", adminController.openOrders);
 

@@ -1,0 +1,442 @@
+<div class="content-wrapper">
+    <div class="content">
+        <div class="card card-default card-profile">
+            <div class="card-header-bg" style=""></div>
+            <div class="card-body card-profile-body">
+                <div class="profile-avata">
+                    <img class="rounded-circle" src="/images/user/avatar_big.png" alt="Avatar Image">
+                    <span class="h5 d-block mt-3 mb-2">{{customer.firstName}} {{customer.lastName}}</span>
+                    <span class="d-block">{{customer.email}}</span>
+                </div>
+            </div>
+            <div class="card-footer card-profile-footer">
+                <ul class="nav nav-border-top justify-content-center" id="profileTabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-target="infoTab" href="#">Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-target="ordersTab" href="#">Orders</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-target="settingsTab" href="#">Settings</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- Info Section -->
+        <div class="row tab-content" id="infoTab">
+            <div class="col-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h2>Customer Info</h2>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label"><strong>Company</strong></label>
+                                    <input type="text" class="form-control" value="{{customer.companyName}}" disabled>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label"><strong>Cust ID</strong></label>
+                                    <input type="text" class="form-control"
+                                        value="{{#if customer.custID}}{{customer.custID}}{{else}}none{{/if}}" disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label"><strong>Name</strong></label>
+                                    <input type="text" class="form-control"
+                                        value="{{customer.firstName}} {{customer.lastName}}" disabled>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label"><strong>Mobile</strong></label>
+                                    <input type="text" class="form-control" value="{{customer.mobile}}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label"><strong>Email</strong></label>
+                                    <input type="text" class="form-control" value="{{customer.email}}" disabled>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label"><strong>Address</strong></label>
+                                    <input type="text" class="form-control"
+                                        value="{{customer.address1}} {{#if customer.address2}}{{customer.address2}}{{/if}}, {{customer.city}}, {{customer.state}} {{customer.zip}}"
+                                        disabled>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label"><strong>Customer Type</strong></label>
+                                    <input type="text" class="form-control" value="{{customer.customerType}}" disabled>
+                                </div>
+
+                            </div>
+                            <div class="d-flex justify-content-end mt-4">
+                                <a href="#" class="btn btn-primary btn-pill" data-toggle="modal"
+                                    data-target="#modal-stock">
+                                    Edit Customer
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Orders Table -->
+        <div class="row tab-content d-none" id="ordersTab">
+            <div class="col-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h2>Order History</h2>
+                    </div>
+                    <div class="card-body">
+                        <table id="" class="table table-hover " style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Order Date</th>
+                                    <th>Status</th>
+                                    <th>Cust ID</th>
+                                    <th>Products</th>
+                                    <th>Cart Items</th>
+                                    <th>Gallery</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each orders}}
+                                    <tr>
+                                        <td>{{add @index 1}}</td>
+                                        <td>{{formatDate createdAt}}</td>
+                                        <td>{{status}}</td>
+                                        <td>{{#if ../customer.custID}}{{../customer.custID}}{{else}}none{{/if}}</td>
+                                        <td>{{cartItems.length}}</td>
+                                        <td>{{#if cartItems}}yes{{else}}no{{/if}}</td>
+                                        <td>{{#if inspirationGallery}}yes{{else}}no{{/if}}</td>
+                                    </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Settings Section -->
+        <div class="row tab-content d-none" id="settingsTab">
+            <div class="col-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h2>Settings</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-underline">
+                            <li class="list-item">
+                                Show customer in Dashboard
+                                <label class="switch switch-primary switch-pill form-control-label">
+                                    <input type="checkbox" class="switch-input form-check-input" value="on" checked>
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>
+                            </li>
+                            <li class="list-item">
+                                Customer is active
+                                <label class="switch switch-primary switch-pill form-control-label">
+                                    <input type="checkbox" class="switch-input form-check-input" value="on" checked>
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- edit modal --}}
+<div class="modal fade modal-stock" id="modal-stock" aria-labelledby="modal-stock" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <form action="/admin/editCustomer/{{customer._id}}" method="POST">
+            <div class="modal-content">
+                <div class="modal-header align-items-center p3 p-md-5">
+                    <h2 class="modal-title" id="exampleModalGridTitle">Edit Customer</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-3 p-md-5">
+                    <div class="row px-5">
+                        <div class="col-lg-12">
+                            <h3 class="h5 mb-5">Customer Information</h3>
+                            <div class="bg-light p-30 mb-5">
+                                <div class="row px-5 pt-3">
+                                    <div class="col-md-6 form-group">
+                                        <label>
+                                            Company Name
+                                            <span data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="If this individual is not representing a company, you may leave this field blank.">
+                                                <i class="fas fa-info-circle text-primary"></i>
+                                            </span>
+                                        </label>
+                                        <input class="form-control" type="text" name="companyName"
+                                            placeholder="Company Name" pattern="^[A-Za-z\s-]+$"
+                                            title="Please enter the name of the company you work for."
+                                            value="{{customer.companyName}}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>
+                                            Customer ID
+                                            <span data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="If this is a new customer, you may leave this blank.">
+                                                <i class="fas fa-info-circle text-primary"></i>
+                                            </span>
+                                        </label>
+                                        <input class="form-control" type="text" name="custID" placeholder=""
+                                            pattern="^[0-9]+$" title="Customer ID must contain numbers only."
+                                            value="{{customer.custID}}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>First Name</label>
+                                        <input class="form-control" type="text" name="firstName" placeholder="John"
+                                            required pattern="^[A-Za-z\s-]+$"
+                                            title="First name can only contain letters, spaces, and hyphens"
+                                            value="{{customer.firstName}}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>Last Name</label>
+                                        <input class="form-control" type="text" name="lastName" placeholder="Doe"
+                                            required pattern="^[A-Za-z\s-]+$"
+                                            title="Last name can only contain letters, spaces, and hyphens"
+                                            value="{{customer.lastName}}">
+                                    </div>
+
+                                    <div class="col-md-6 form-group">
+                                        <label>E-mail</label>
+                                        <input class="form-control" type="email" name="email"
+                                            placeholder="example@email.com" required
+                                            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                            title="Please enter a valid email address" value="{{customer.email}}">
+                                    </div>
+
+                                    <div class="col-md-6 form-group">
+                                        <label>Mobile No</label>
+                                        <input id="mobileInput" class="form-control" type="text" name="mobile"
+                                            placeholder="(123) 456-7890" required maxlength="14"
+                                            value="{{customer.mobile}}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>Address Line 1</label>
+                                        <input class="form-control" name="address1" type="text" placeholder="" required
+                                            value="{{customer.address1}}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>Address Line 2</label>
+                                        <input class="form-control" type="text" name="address2" placeholder=""
+                                            value="{{customer.address2}}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>City</label>
+                                        <input class="form-control" name="city" type="text" placeholder="Topeka"
+                                            required pattern="^[A-Za-z\s-]+$"
+                                            title="City name can only contain letters, spaces, and hyphens"
+                                            value="{{customer.city}}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label for="state">State</label>
+                                        <select class="form-control" id="state" name="state" required>
+                                            <option value="" disabled {{#unless customer.state}}selected{{/unless}}>
+                                                Select State</option>
+                                            <option value="AL" {{#if (eq customer.state "AL" )}}selected{{/if}}>Alabama
+                                            </option>
+                                            <option value="AK" {{#if (eq customer.state "AK" )}}selected{{/if}}>Alaska
+                                            </option>
+                                            <option value="AZ" {{#if (eq customer.state "AZ" )}}selected{{/if}}>Arizona
+                                            </option>
+                                            <option value="AR" {{#if (eq customer.state "AR" )}}selected{{/if}}>Arkansas
+                                            </option>
+                                            <option value="CA" {{#if (eq customer.state "CA" )}}selected{{/if}}>
+                                                California</option>
+                                            <option value="CO" {{#if (eq customer.state "CO" )}}selected{{/if}}>Colorado
+                                            </option>
+                                            <option value="CT" {{#if (eq customer.state "CT" )}}selected{{/if}}>
+                                                Connecticut</option>
+                                            <option value="DE" {{#if (eq customer.state "DE" )}}selected{{/if}}>Delaware
+                                            </option>
+                                            <option value="FL" {{#if (eq customer.state "FL" )}}selected{{/if}}>Florida
+                                            </option>
+                                            <option value="GA" {{#if (eq customer.state "GA" )}}selected{{/if}}>Georgia
+                                            </option>
+                                            <option value="HI" {{#if (eq customer.state "HI" )}}selected{{/if}}>Hawaii
+                                            </option>
+                                            <option value="ID" {{#if (eq customer.state "ID" )}}selected{{/if}}>Idaho
+                                            </option>
+                                            <option value="IL" {{#if (eq customer.state "IL" )}}selected{{/if}}>Illinois
+                                            </option>
+                                            <option value="IN" {{#if (eq customer.state "IN" )}}selected{{/if}}>Indiana
+                                            </option>
+                                            <option value="IA" {{#if (eq customer.state "IA" )}}selected{{/if}}>Iowa
+                                            </option>
+                                            <option value="KS" {{#if (eq customer.state "KS" )}}selected{{/if}}>Kansas
+                                            </option>
+                                            <option value="KY" {{#if (eq customer.state "KY" )}}selected{{/if}}>Kentucky
+                                            </option>
+                                            <option value="LA" {{#if (eq customer.state "LA" )}}selected{{/if}}>
+                                                Louisiana</option>
+                                            <option value="ME" {{#if (eq customer.state "ME" )}}selected{{/if}}>Maine
+                                            </option>
+                                            <option value="MD" {{#if (eq customer.state "MD" )}}selected{{/if}}>Maryland
+                                            </option>
+                                            <option value="MA" {{#if (eq customer.state "MA" )}}selected{{/if}}>
+                                                Massachusetts</option>
+                                            <option value="MI" {{#if (eq customer.state "MI" )}}selected{{/if}}>Michigan
+                                            </option>
+                                            <option value="MN" {{#if (eq customer.state "MN" )}}selected{{/if}}>
+                                                Minnesota</option>
+                                            <option value="MS" {{#if (eq customer.state "MS" )}}selected{{/if}}>
+                                                Mississippi</option>
+                                            <option value="MO" {{#if (eq customer.state "MO" )}}selected{{/if}}>Missouri
+                                            </option>
+                                            <option value="MT" {{#if (eq customer.state "MT" )}}selected{{/if}}>Montana
+                                            </option>
+                                            <option value="NE" {{#if (eq customer.state "NE" )}}selected{{/if}}>Nebraska
+                                            </option>
+                                            <option value="NV" {{#if (eq customer.state "NV" )}}selected{{/if}}>Nevada
+                                            </option>
+                                            <option value="NH" {{#if (eq customer.state "NH" )}}selected{{/if}}>New
+                                                Hampshire</option>
+                                            <option value="NJ" {{#if (eq customer.state "NJ" )}}selected{{/if}}>New
+                                                Jersey</option>
+                                            <option value="NM" {{#if (eq customer.state "NM" )}}selected{{/if}}>New
+                                                Mexico</option>
+                                            <option value="NY" {{#if (eq customer.state "NY" )}}selected{{/if}}>New York
+                                            </option>
+                                            <option value="NC" {{#if (eq customer.state "NC" )}}selected{{/if}}>North
+                                                Carolina</option>
+                                            <option value="ND" {{#if (eq customer.state "ND" )}}selected{{/if}}>North
+                                                Dakota</option>
+                                            <option value="OH" {{#if (eq customer.state "OH" )}}selected{{/if}}>Ohio
+                                            </option>
+                                            <option value="OK" {{#if (eq customer.state "OK" )}}selected{{/if}}>Oklahoma
+                                            </option>
+                                            <option value="OR" {{#if (eq customer.state "OR" )}}selected{{/if}}>Oregon
+                                            </option>
+                                            <option value="PA" {{#if (eq customer.state "PA" )}}selected{{/if}}>
+                                                Pennsylvania</option>
+                                            <option value="RI" {{#if (eq customer.state "RI" )}}selected{{/if}}>Rhode
+                                                Island</option>
+                                            <option value="SC" {{#if (eq customer.state "SC" )}}selected{{/if}}>South
+                                                Carolina</option>
+                                            <option value="SD" {{#if (eq customer.state "SD" )}}selected{{/if}}>South
+                                                Dakota</option>
+                                            <option value="TN" {{#if (eq customer.state "TN" )}}selected{{/if}}>
+                                                Tennessee</option>
+                                            <option value="TX" {{#if (eq customer.state "TX" )}}selected{{/if}}>Texas
+                                            </option>
+                                            <option value="UT" {{#if (eq customer.state "UT" )}}selected{{/if}}>Utah
+                                            </option>
+                                            <option value="VT" {{#if (eq customer.state "VT" )}}selected{{/if}}>Vermont
+                                            </option>
+                                            <option value="VA" {{#if (eq customer.state "VA" )}}selected{{/if}}>Virginia
+                                            </option>
+                                            <option value="WA" {{#if (eq customer.state "WA" )}}selected{{/if}}>
+                                                Washington</option>
+                                            <option value="WV" {{#if (eq customer.state "WV" )}}selected{{/if}}>West
+                                                Virginia</option>
+                                            <option value="WI" {{#if (eq customer.state "WI" )}}selected{{/if}}>
+                                                Wisconsin</option>
+                                            <option value="WY" {{#if (eq customer.state "WY" )}}selected{{/if}}>Wyoming
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6 form-group">
+                                        <label>ZIP Code</label>
+                                        <input class="form-control" name="zip" type="text" placeholder="12345" required
+                                            pattern="^\d{5}(-\d{4})?$" value="{{customer.zip}}"
+                                            title="ZIP code must be 5 digits or 5 digits followed by a dash and 4 digits (12345 or 12345-6789)">
+                                    </div>
+
+                                    <!-- Customer Type Select -->
+                                    <div class="col-md-6 form-group">
+                                        <label>
+                                            Customer Type
+                                            <span data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="By law, KCI can only sell products to certain agencies, organizations, and approved groups. Please select the appropriate customer type.">
+                                                <i class="fas fa-info-circle text-primary"></i>
+                                            </span>
+                                        </label>
+                                        <select class="form-control" name="customerType" id="customerType" required>
+                                            <option value="" disabled {{#unless
+                                                customer.customerType}}selected{{/unless}}>Select Customer Type</option>
+                                            <option value="State of KS Employee" {{#if (eq
+                                                customer.customerType "State of KS Employee" )}}selected{{/if}}>State
+                                                of KS Employee</option>
+                                            <option value="State of KS Agency" {{#if (eq
+                                                customer.customerType "State of KS Agency" )}}selected{{/if}}>State of
+                                                KS Agency</option>
+                                            <option value="Non-Profit Agency" {{#if (eq
+                                                customer.customerType "Non-Profit Agency" )}}selected{{/if}}>Non-Profit
+                                                Agency</option>
+                                            <option value="Government Agency" {{#if (eq
+                                                customer.customerType "Government Agency" )}}selected{{/if}}>Government
+                                                Agency</option>
+                                            <option value="Educational Institution" {{#if (eq
+                                                customer.customerType "Educational Institution" )}}selected{{/if}}>
+                                                Educational Institution</option>
+                                            <option value="Religious Organization" {{#if (eq
+                                                customer.customerType "Religious Organization" )}}selected{{/if}}>
+                                                Religious Organization</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div>
+                        <button type="button" class="btn btn-light btn-pill mr-1 mr-md-2" data-dismiss="modal">
+                            cancel </button>
+                        <button type="submit" class="btn btn-primary btn-pill">
+                            save </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{{!-- Switch Tabs --}}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const tabs = document.querySelectorAll("#profileTabs .nav-link");
+        const contents = document.querySelectorAll(".tab-content");
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                // Remove active from all tabs
+                tabs.forEach(t => t.classList.remove("active"));
+
+                // Hide all content sections
+                contents.forEach(c => c.classList.add("d-none"));
+
+                // Activate clicked tab
+                tab.classList.add("active");
+
+                // Show the matching section
+                const targetId = tab.getAttribute("data-target");
+                document.getElementById(targetId).classList.remove("d-none");
+            });
+        });
+    });
+</script>

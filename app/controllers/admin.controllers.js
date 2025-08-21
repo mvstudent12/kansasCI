@@ -49,6 +49,14 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
+  async analytics(req, res) {
+    try {
+      res.render("admin/analytics", { layout: "admin" });
+    } catch (err) {
+      console.log(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
   async products(req, res) {
     try {
       const products = await Product.find().lean(); // use lean for Handlebars
@@ -173,6 +181,86 @@ module.exports = {
     } catch (err) {
       console.log(err);
       res.render("error/404", { layout: "error" });
+    }
+  },
+  async viewCustomer(req, res) {
+    try {
+      const { ID } = req.params;
+
+      // Find the customer
+      const customer = await Customer.findById(ID).lean();
+      if (!customer) {
+        return res.status(404).render("error/404", { layout: "error" });
+      }
+
+      // Find all orders associated with this customer
+      const orders = await Order.find({ customerId: ID })
+        .sort({ createdAt: -1 })
+        .lean();
+      console.log(orders);
+
+      // Render the view with customer and orders
+      res.render("admin/viewCustomer", {
+        layout: "admin",
+        customer,
+        orders, // pass orders to template
+      });
+    } catch (err) {
+      console.error(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async editCustomer(req, res) {
+    try {
+      const customerId = req.params.ID;
+
+      let {
+        companyName,
+        custID,
+        firstName,
+        lastName,
+        mobile,
+        email,
+        address1,
+        address2,
+        city,
+        state,
+        zip,
+      } = req.body;
+
+      if (!companyName || companyName.trim() === "") {
+        companyName = "Individual";
+      }
+
+      const updatedCustomer = await Customer.findByIdAndUpdate(
+        customerId,
+        {
+          companyName,
+          custID,
+          firstName,
+          lastName,
+          mobile,
+          email,
+          address1,
+          address2,
+          city,
+          state,
+          zip,
+        },
+        { new: true, runValidators: true }
+      ).lean();
+
+      if (!updatedCustomer) {
+        return res.status(404).send("Customer not found");
+      }
+
+      res.render("admin/viewCustomer", {
+        layout: "admin",
+        customer: updatedCustomer,
+      });
+    } catch (err) {
+      console.error(err);
+      res.status(500).send("Server Error");
     }
   },
   async contacts(req, res) {

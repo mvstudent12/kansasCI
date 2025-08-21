@@ -2,17 +2,25 @@
     <div class="content">
         <div class="invoice-wrapper rounded border bg-white py-5 px-3 px-md-4 px-lg-5 mb-6">
             <div class="d-flex justify-content-between">
-                <h2 class="text-dark font-weight-medium">Invoice</h2>
+                <h2 class="text-dark font-weight-medium">Request Invoice</h2>
                 <div class="btn-group">
-                    <button class="btn btn-sm btn-light">
-                        <i class="mdi mdi-content-save"></i> Save</button>
-                    <button class="btn btn-sm btn-secondary">
-                        <i class="mdi mdi-printer"></i> Print</button>
+                    <!-- Save/Download Button -->
+                    <button class="btn btn-sm btn-light" id="downloadBtn">
+                        <i class="mdi mdi-content-save"></i> Save
+                    </button>
+
+                    <!-- Print Button -->
+                    <button class="btn btn-sm btn-secondary" id="printBtn">
+                        <i class="mdi mdi-printer"></i> Print
+                    </button>
+
                 </div>
             </div>
             <div class="row pt-5">
                 <div class="col-xl-3 col-lg-4">
                     {{!-- <p class="text-dark mb-2">Customer Details</p> --}}
+                    <p class="text-dark">Company:</p>
+                    <p class="text-dark">Cust ID:</p>
                     <p class="text-dark">Customer Name:</p>
                     <p class="text-dark">Email:</p>
                     <p class="text-dark">Mobile:</p>
@@ -20,6 +28,8 @@
                 </div>
                 <div class="col-xl-3 col-lg-4">
                     {{!-- <p class="text-dark mb-2">-</p> --}}
+                    <p>{{customer.companyName}}</p>
+                    <p>{{#if customer.custID}}{{customer.custID}}{{else}}No ID{{/if}}</p>
                     <p>{{customer.firstName}} {{customer.lastName}}</p>
                     <p>{{customer.email}}</p>
                     <p>{{customer.mobile}}</p>
@@ -30,8 +40,8 @@
                     </address>
                 </div>
                 <div class="col-xl-3 col-lg-4">
-                    <p class="text-dark mb-2">Status - {{order.status}}</p>
-                    <p class="text-dark mb-2">Order Date - {{formatDate order.createdAt}}</p>
+                    <p class="text-dark mb-1">Status - {{order.status}}</p>
+                    <p class="text-dark">Order Date - {{formatDate order.createdAt}}</p>
 
                 </div>
             </div>
@@ -61,27 +71,9 @@
                     </tbody>
                 </table>
             </div>
-            {{!-- <div class="row justify-content-end">
-                <div class="col-lg-5 col-xl-4 col-xl-3 ml-sm-auto">
-                    <ul class="list-unstyled mt-4">
-                        <li class="mid pb-3 text-dark"> Status
-                            <span class="d-inline-block float-right text-default">{{order.status}}</span>
-                        </li>
-                        <li class="mid pb-3 text-dark">Order Date
-                            <span class="d-inline-block float-right text-default">{{formatDate order.createdAt}}</span>
-                        </li>
-                        <li class="pb-3 text-dark">Total
-                            <span class="d-inline-block float-right">$8.686,70</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="btn btn-block mt-2 btn-lg btn-primary btn-pill"> Do Something</a>
-                </div>
-            </div> --}}
-
             {{#if order.inspirationGallery}}
                 <h5 class="text-capitalize mt-5">{{customer.firstName}}'s Inspiration Gallery</h5>
                 <div class="row mt-3">
-
                     {{#each order.inspirationGallery}}
                         <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                             <div class="product-item bg-light">
@@ -93,5 +85,39 @@
             {{/if}}
         </div>
     </div>
-
 </div>
+
+<!-- PDF Download/Print of invoice -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+    function generatePDF(printInstead = false) {
+        const invoice = document.querySelector(".invoice-wrapper");
+        const options = {
+            margin: 0.5,
+            filename: 'invoice.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+
+        if (printInstead) {
+            // Create the PDF and open in a new tab for printing
+            html2pdf().set(options).from(invoice).toPdf().get('pdf').then(function (pdf) {
+                const blobUrl = URL.createObjectURL(pdf.output('blob'));
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = blobUrl;
+                document.body.appendChild(iframe);
+                iframe.onload = function () {
+                    iframe.contentWindow.print();
+                };
+            });
+        } else {
+            // Download as PDF
+            html2pdf().set(options).from(invoice).save();
+        }
+    }
+
+    document.getElementById("downloadBtn").addEventListener("click", () => generatePDF(false));
+    document.getElementById("printBtn").addEventListener("click", () => generatePDF(true));
+</script>

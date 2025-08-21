@@ -1,7 +1,5 @@
 <div class="content-wrapper">
 
-
-
     <div class="content">
         {{!-- Add Customer --}}
         <div class="row">
@@ -23,68 +21,28 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>Company</th>
                                     <th>Name</th>
                                     <th>email</th>
                                     <th>mobile</th>
                                     <th>type</th>
                                     <th>state</th>
-                                    <th>Options</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 {{#each customers}}
-                                    <tr>
+                                    <tr class="clickable-row" data-href="/admin/viewCustomer/{{_id}}">
                                         <td>{{add @index 1}}</td>
+                                        <td>{{companyName}}</td>
                                         <td class="text-capitalize">{{firstName}} {{lastName}}</td>
                                         <td>{{email}}</td>
                                         <td>{{mobile}}</td>
                                         <td>{{customerType}}</td>
                                         <td>{{state}}</td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                </a>
-
-                                                <div class="dropdown-menu dropdown-menu-right"
-                                                    aria-labelledby="dropdownMenuLink">
-                                                    <a class="dropdown-item" href="#">Edit</a>
-                                                    <a href="#" class="dropdown-item text-danger" data-toggle="modal"
-                                                        data-target="#deleteModal-{{_id}}">
-                                                        Delete
-                                                    </a>
-
-                                                </div>
-                                            </div>
-                                        </td>
                                     </tr>
-                                    <div class="modal fade" id="deleteModal-{{_id}}" tabindex="-1" role="dialog"
-                                        aria-labelledby="deleteModalLabel-{{_id}}" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header bg-danger text-white">
-                                                    <h5 class="modal-title" id="deleteModalLabel-{{_id}}">Confirm
-                                                        Deletion</h5>
-                                                    <button type="button" class="close text-white" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Are you sure you want to permanently delete
-                                                    <strong>{{title}}</strong>? This action cannot be undone.
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary btn-pill"
-                                                        data-dismiss="modal">Cancel</button>
-                                                    <a href="/admin/deleteProduct/{{_id}}"
-                                                        class="btn btn-danger btn-pill">Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 {{/each}}
+
                             </tbody>
                         </table>
                     </div>
@@ -96,7 +54,7 @@
 </div>
 
 
-<!-- Add Product Modal -->
+<!-- Add Customer Modal -->
 <div class="modal fade modal-stock" id="modal-stock" aria-labelledby="modal-stock" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
         <form action="" method="POST" enctype="multipart/form-data">
@@ -106,7 +64,6 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-
                 </div>
                 <div class="modal-body p-3 p-md-5">
                     <div class="row px-5">
@@ -285,78 +242,9 @@
 
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const input = document.getElementById("imageFiles");
-        const preview = document.getElementById("image-preview");
 
-        input.addEventListener("change", function () {
-            preview.innerHTML = ""; // Clear old previews
 
-            const files = input.files;
-            if (!files.length) return;
-
-            for (const file of files) {
-                if (!file.type.startsWith("image/")) continue;
-
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const img = document.createElement("img");
-                    img.src = e.target.result;
-                    img.style.maxWidth = "120px";
-                    img.style.margin = "5px";
-                    img.style.border = "1px solid #ccc";
-                    img.style.borderRadius = "4px";
-                    preview.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    });
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const categorySelect = document.getElementById("category");
-        const subcategorySelect = document.getElementById("subcategory");
-
-        fetch("/data/categories.json")
-            .then(response => response.json())
-            .then(categories => {
-                // Populate the category dropdown
-                categories.forEach(cat => {
-                    const opt = document.createElement("option");
-                    opt.value = cat.name;
-                    opt.textContent = cat.name;
-                    categorySelect.appendChild(opt);
-                });
-
-                // On change, update subcategories
-                categorySelect.addEventListener("change", function () {
-                    const selected = categories.find(c => c.name === this.value);
-
-                    subcategorySelect.innerHTML = '<option value="">-- Select Subcategory --</option>';
-
-                    if (selected && selected.subcategories.length) {
-                        subcategorySelect.disabled = false;
-
-                        selected.subcategories.forEach(sub => {
-                            const subOpt = document.createElement("option");
-                            subOpt.value = sub;
-                            subOpt.textContent = sub;
-                            subcategorySelect.appendChild(subOpt);
-                        });
-                    } else {
-                        subcategorySelect.disabled = true;
-                    }
-                });
-            })
-            .catch(err => {
-                console.error("Failed to load categories:", err);
-            });
-    });
-</script>
-
+{{!-- Tooltips for add new customer --}}
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
@@ -365,7 +253,7 @@
         })
     });
 </script>
-
+{{!-- mobile number formatting --}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const mobileInput = document.getElementById("mobileInput");
@@ -388,6 +276,17 @@
             }
 
             e.target.value = formatted;
+        });
+    });
+</script>
+
+{{!-- clickable rows  --}}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".clickable-row").forEach(row => {
+            row.addEventListener("click", () => {
+                window.location = row.dataset.href;
+            });
         });
     });
 </script>
