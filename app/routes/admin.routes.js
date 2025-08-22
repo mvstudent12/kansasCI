@@ -34,6 +34,8 @@ admin.get("/deleteOrder/:ID", adminController.deleteOrder);
 
 admin.get("/contacts", adminController.contacts);
 
+admin.post("/addNewUser", adminController.addNewUser);
+
 admin.post(
   "/addProduct",
   upload.array("imageFiles", 10),

@@ -292,71 +292,89 @@ $(document).ready(function () {
   }
 
   /*======== 11. TOASTER ========*/
-  var toaster = $("#toaster");
-  function callToaster(positionClass) {
-    toastr.options = {
-      closeButton: true,
-      debug: false,
-      newestOnTop: false,
-      progressBar: true,
-      positionClass: positionClass,
-      preventDuplicates: false,
-      onclick: null,
-      showDuration: "300",
-      hideDuration: "1000",
-      timeOut: "5000",
-      extendedTimeOut: "1000",
-      showEasing: "swing",
-      hideEasing: "linear",
-      showMethod: "fadeIn",
-      hideMethod: "fadeOut",
-    };
-    toastr.success("Welcome to KCI Dashboard", "Hello!");
-  }
+  // var toaster = $("#toaster");
 
-  if (toaster.length != 0) {
-    if (document.dir != "rtl") {
-      callToaster("toast-top-right");
-    } else {
-      callToaster("toast-top-left");
-    }
-  }
+  // function callToaster(positionClass, type, title, message) {
+  //   toastr.options = {
+  //     closeButton: true,
+  //     debug: false,
+  //     newestOnTop: false,
+  //     progressBar: true,
+  //     positionClass: positionClass,
+  //     preventDuplicates: false,
+  //     onclick: null,
+  //     showDuration: "300",
+  //     hideDuration: "1000",
+  //     timeOut: "5000",
+  //     extendedTimeOut: "1000",
+  //     showEasing: "swing",
+  //     hideEasing: "linear",
+  //     showMethod: "fadeIn",
+  //     hideMethod: "fadeOut",
+  //   };
 
-  /*======== 12. INFO BAR ========*/
-  var infoTeoaset = $(
-    "#toaster-info, #toaster-success, #toaster-warning, #toaster-danger"
-  );
-  if (infoTeoaset !== null) {
-    infoTeoaset.on("click", function () {
-      toastr.options = {
-        closeButton: true,
-        debug: false,
-        newestOnTop: false,
-        progressBar: false,
-        positionClass: "toast-top-right",
-        preventDuplicates: false,
-        onclick: null,
-        showDuration: "3000",
-        hideDuration: "1000",
-        timeOut: "5000",
-        extendedTimeOut: "1000",
-        showEasing: "swing",
-        hideEasing: "linear",
-        showMethod: "fadeIn",
-        hideMethod: "fadeOut",
-      };
-      var thisId = $(this).attr("id");
-      if (thisId === "toaster-info") {
-        toastr.info("Welcome to KCI Dashboard:", " Info message");
-      } else if (thisId === "toaster-success") {
-        toastr.success("Welcome to KCI Dashboard:", "Success message");
-      } else if (thisId === "toaster-warning") {
-        toastr.warning("Welcome to KCI Dashboard:", "Warning message");
-      } else if (thisId === "toaster-danger") {
-        toastr.error("Welcome to KCI Dashboard:", "Danger message");
-      }
-    });
-  }
+  //   // Show the appropriate toast type
+  //   switch (type) {
+  //     case "success":
+  //       toastr.success(message, title);
+  //       break;
+  //     case "error":
+  //       toastr.error(message, title);
+  //       break;
+  //     case "info":
+  //       toastr.info(message, title);
+  //       break;
+  //     case "warning":
+  //       toastr.warning(message, title);
+  //       break;
+  //     default:
+  //       toastr.info(message, title);
+  //   }
+  // }
+
+  // if (toaster.length != 0) {
+  //   if (document.dir != "rtl") {
+  //     callToaster("toast-top-right");
+  //   } else {
+  //     callToaster("toast-top-left");
+  //   }
+  // }
+
+  // /*======== 12. INFO BAR ========*/
+  // var infoTeoaset = $(
+  //   "#toaster-info, #toaster-success, #toaster-warning, #toaster-danger"
+  // );
+  // if (infoTeoaset !== null) {
+  //   infoTeoaset.on("click", function () {
+  //     toastr.options = {
+  //       closeButton: true,
+  //       debug: false,
+  //       newestOnTop: false,
+  //       progressBar: false,
+  //       positionClass: "toast-top-right",
+  //       preventDuplicates: false,
+  //       onclick: null,
+  //       showDuration: "3000",
+  //       hideDuration: "1000",
+  //       timeOut: "5000",
+  //       extendedTimeOut: "1000",
+  //       showEasing: "swing",
+  //       hideEasing: "linear",
+  //       showMethod: "fadeIn",
+  //       hideMethod: "fadeOut",
+  //     };
+  //     var thisId = $(this).attr("id");
+  //     if (thisId === "toaster-info") {
+  //       toastr.info("Welcome to KCI Dashboard:", " Info message");
+  //     } else if (thisId === "toaster-success") {
+  //       toastr.success("Welcome to KCI Dashboard:", "Success message");
+  //     } else if (thisId === "toaster-warning") {
+  //       toastr.warning("Welcome to KCI Dashboard:", "Warning message");
+  //     } else if (thisId === "toaster-danger") {
+  //       toastr.error("Welcome to KCI Dashboard:", "Danger message");
+  //     }
+  //   });
+  // }
 
   /*======== 13. PROGRESS BAR ========*/
   NProgress.done();

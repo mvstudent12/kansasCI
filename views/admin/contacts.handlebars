@@ -1,9 +1,16 @@
+{{#if success_msg}}
+    <div id="toaster" data-msg="{{success_msg}}" data-type="success"></div>
+{{/if}}
+
+{{#if error_msg}}
+    <div id="toaster" data-msg="{{error_msg}}" data-type="error"></div>
+{{/if}}
+
 <div class="content-wrapper">
     <div class="content">
         <div class="card card-default">
             <div class="card-header align-items-center px-3 px-md-5">
                 <h2>Sales Team</h2>
-
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-contact"> Add
                     Member
                 </button>
@@ -11,289 +18,253 @@
 
             <div class="card-body px-3 px-md-5">
                 <div class="row">
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="card card-default p-4">
-                            <a href="javascript:0" class="media text-secondary" data-toggle="modal"
-                                data-target="#modal-contact">
-                                <img src="/images/user/avatar.png" class="mr-3 img-fluid rounded" alt="Avatar Image">
-
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-2 text-dark">Emma Smith</h5>
-                                    <ul class="list-unstyled text-smoke text-smoke">
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-account-tie mr-1"></i>
-                                            <span>Sales Representative</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-email mr-1"></i>
-                                            <span>example@email.com</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-phone mr-1"></i>
-                                            <span>(778) 554-2345</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="card card-default p-4">
-                            <a href="javascript:0" class="media text-secondary" data-toggle="modal"
-                                data-target="#modal-contact">
-                                <img src="/images/user/avatar.png" class="mr-3 img-fluid rounded" alt="Avatar Image">
-
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-2 text-dark">Emma Smith</h5>
-                                    <ul class="list-unstyled text-smoke text-smoke">
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-account-tie mr-1"></i>
-                                            <span>Sales Representative</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-email mr-1"></i>
-                                            <span>example@email.com</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-phone mr-1"></i>
-                                            <span>(778) 554-2345</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="card card-default p-4">
-                            <a href="javascript:0" class="media text-secondary" data-toggle="modal"
-                                data-target="#modal-contact">
-                                <img src="/images/user/avatar.png" class="mr-3 img-fluid rounded" alt="Avatar Image">
-
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-2 text-dark">Emma Smith</h5>
-                                    <ul class="list-unstyled text-smoke text-smoke">
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-account-tie mr-1"></i>
-                                            <span>Sales Representative</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-email mr-1"></i>
-                                            <span>example@email.com</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-phone mr-1"></i>
-                                            <span>(778) 554-2345</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="card card-default p-4">
-                            <a href="javascript:0" class="media text-secondary" data-toggle="modal"
-                                data-target="#modal-contact">
-                                <img src="/images/user/avatar.png" class="mr-3 img-fluid rounded" alt="Avatar Image">
-
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-2 text-dark">Emma Smith</h5>
-                                    <ul class="list-unstyled text-smoke text-smoke">
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-account-tie mr-1"></i>
-                                            <span>Sales Representative</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-email mr-1"></i>
-                                            <span>example@email.com</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-phone mr-1"></i>
-                                            <span>(778) 554-2345</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="card card-default p-4">
-                            <a href="javascript:0" class="media text-secondary" data-toggle="modal"
-                                data-target="#modal-contact">
-                                <img src="/images/user/avatar.png" class="mr-3 img-fluid rounded" alt="Avatar Image">
-
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-2 text-dark">Emma Smith</h5>
-                                    <ul class="list-unstyled text-smoke text-smoke">
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-account-tie mr-1"></i>
-                                            <span>Sales Representative</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-email mr-1"></i>
-                                            <span>example@email.com</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-phone mr-1"></i>
-                                            <span>(778) 554-2345</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="card card-default p-4">
-                            <a href="javascript:0" class="media text-secondary" data-toggle="modal"
-                                data-target="#modal-contact">
-                                <img src="/images/user/avatar.png" class="mr-3 img-fluid rounded" alt="Avatar Image">
-
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-2 text-dark">Emma Smith</h5>
-                                    <ul class="list-unstyled text-smoke text-smoke">
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-account-tie mr-1"></i>
-                                            <span>Sales Representative</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-email mr-1"></i>
-                                            <span>example@email.com</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="mdi mdi-phone mr-1"></i>
-                                            <span>(778) 554-2345</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact Modal -->
-        <div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header justify-content-end border-bottom-0">
-                        <button type="button" class="btn-edit-icon" data-dismiss="modal" aria-label="Close">
-                            <i class="mdi mdi-pencil"></i>
-                        </button>
-
-                        <div class="dropdown">
-                            <button class="btn-dots-icon" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i class="mdi mdi-dots-vertical"></i>
-                            </button>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="javascript:void(0)">Message</a>
-                                {{!-- <a class="dropdown-item" href="javascript:void(0)">Another action</a>
-                                <a class="dropdown-item" href="javascript:void(0)">Something else here</a> --}}
+                    {{#each users}}
+                        <div class="col-lg-6 col-xl-4">
+                            <div class="card card-default p-4">
+                                <a href="javascript:0" class="media text-secondary" data-toggle="modal"
+                                    data-target="#modal-contact-{{_id}}">
+                                    <img src="/images/user/avatar.png" class="mr-3 img-fluid rounded"
+                                        alt="Avatar Image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-2 text-dark text-capitalize">{{firstName}} {{lastName}}</h5>
+                                        <ul class="list-unstyled text-smoke text-smoke">
+                                            <li class="d-flex">
+                                                <i class="mdi mdi-account-tie mr-1"></i>
+                                                <span class="text-capitalize">{{position}}</span>
+                                            </li>
+                                            <li class="d-flex">
+                                                <i class="mdi mdi-email mr-1"></i>
+                                                <span>{{email}}</span>
+                                            </li>
+                                            <li class="d-flex">
+                                                <i class="mdi mdi-phone mr-1"></i>
+                                                <span>{{mobile}}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
                             </div>
                         </div>
 
-                        <button type="button" class="btn-close-icon" data-dismiss="modal" aria-label="Close">
-                            <i class="mdi mdi-close"></i>
-                        </button>
-                    </div>
+                        <!-- Contact Modal -->
+                        <div class="modal fade" id="modal-contact-{{_id}}" tabindex="-1" role="dialog"
+                            aria-labelledby="modal-contact-{{_id}}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header justify-content-end border-bottom-0">
 
-                    <div class="modal-body pt-0">
-                        <div class="row no-gutters">
-                            <div class="col-md-6">
-                                <div class="profile-content-left px-4">
-                                    <div class="card text-center px-0 border-0">
-                                        <div class="card-img mx-auto">
-                                            <img class="rounded-circle" src="/images/user/avatar_big.png"
-                                                alt="user image">
+                                        <div class="dropdown">
+                                            <button class="btn-dots-icon" type="button" id="dropdownMenuButton"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="mdi mdi-dots-vertical"></i>
+                                            </button>
+
+                                            <div class="dropdown-menu dropdown-menu-right"
+                                                aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="/admin/editUser/{{_id}}"><i
+                                                        class="mdi mdi-pencil"></i> Edit</a>
+                                                <a class="dropdown-item text-danger" href="/admin/deleteUser/{{_id}}"><i
+                                                        class="mdi mdi-delete"></i> Delete</a>
+                                            </div>
                                         </div>
 
-                                        <div class="card-body">
-                                            <h4 class="py-2">Emma Smith</h4>
-                                            <p>example@gmail.com</p>
-                                            <a class="btn btn-primary btn-pill btn-lg my-4"
-                                                href="javascript:void(0)">Message</a>
+                                        <button type="button" class="btn-close-icon" data-dismiss="modal"
+                                            aria-label="Close">
+                                            <i class="mdi mdi-close"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body pt-0">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-6">
+                                                <div class="profile-content-left px-4">
+                                                    <div class="card text-center px-0 border-0">
+                                                        <div class="card-img mx-auto">
+                                                            <img class="rounded-circle"
+                                                                src="/images/user/avatar_big.png" alt="user image">
+                                                        </div>
+
+                                                        <div class="card-body">
+                                                            <h4 class="py-2 text-capitalize">{{firstName}} {{lastName}}
+                                                            </h4>
+                                                            <p>{{email}}</p>
+                                                            <a class="btn btn-primary btn-pill btn-lg my-4"
+                                                                href="javascript:void(0)">Message</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="contact-info px-4">
+                                                    <h4 class="mb-1">Contact Details</h4>
+                                                    <p class="text-dark font-weight-medium pt-4 mb-2"><i
+                                                            class="mdi mdi-email mr-1"></i>
+                                                        Email address</p>
+                                                    <p>{{email}}</p>
+                                                    <p class="text-dark font-weight-medium pt-4 mb-2"><i
+                                                            class="mdi mdi-phone mr-1"></i>
+                                                        Phone Number</p>
+                                                    <p>{{mobile}}</p>
+                                                    <p class="text-dark font-weight-medium pt-4 mb-2"><i
+                                                            class="mdi mdi-account-tie mr-1"></i>
+                                                        Position</p>
+                                                    <p class="text-capitalize">{{position}}</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-md-6">
-                                <div class="contact-info px-4">
-                                    <h4 class="mb-1">Contact Details</h4>
-                                    <p class="text-dark font-weight-medium pt-4 mb-2"><i class="mdi mdi-email mr-1"></i>
-                                        Email address</p>
-                                    <p>Albrecht.straub@gmail.com</p>
-                                    <p class="text-dark font-weight-medium pt-4 mb-2"><i class="mdi mdi-phone mr-1"></i>
-                                        Phone Number</p>
-                                    <p>(778) 334-2456</p>
-                                    <p class="text-dark font-weight-medium pt-4 mb-2"><i
-                                            class="mdi mdi-account-tie mr-1"></i> Position</p>
-                                    <p>Sales Representative</p>
-
-                                </div>
-                            </div>
                         </div>
-                    </div>
+                    {{/each}}
                 </div>
             </div>
         </div>
 
-        <!-- Add Contact Button  -->
+
+
+        <!-- Add Contact Modal  -->
         <div class="modal fade" id="modal-add-contact" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
-                    <form>
+                    <form action="/admin/addNewUser" method="POST">
                         <div class="modal-header px-4">
                             <h5 class="modal-title" id="exampleModalCenterTitle">Create New Team Member</h5>
                         </div>
                         <div class="modal-body px-4">
-
                             <div class="row mb-2">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="firstName">First name</label>
-                                        <input type="text" class="form-control" id="firstName">
+                                        <input type="text" class="form-control" id="firstName" name="firstName"
+                                            required>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="lastName">Last name</label>
-                                        <input type="text" class="form-control" id="lastName">
+                                        <input type="text" class="form-control" id="lastName" name="lastName" required>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="form-group mb-4">
                                         <label for="position">Position</label>
-                                        <input type="text" class="form-control" id="position">
+                                        <input type="text" class="form-control" id="position" name="position" required>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group mb-4">
-                                        <label for="mobile">Mobile</label>
-                                        <input type="text" class="form-control" id="mobile">
-                                    </div>
+
+                                <div class="col-md-6 form-group">
+                                    <label for="mobileInput">Mobile No</label>
+                                    <input id="mobileInput" class="form-control" type="text" name="mobile"
+                                        placeholder="(123) 456-7890" required maxlength="14">
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="form-group mb-4">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email">
+                                        <input type="email" class="form-control" id="email" name="email" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer px-4">
                             <button type="button" class="btn btn-smoke btn-pill" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary btn-pill">Save Contact</button>
+                            <button type="submit" class="btn btn-primary btn-pill">Save</button>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+{{!-- Toast --}}
+
+{{#if success_msg}}
+    <div id="toaster" data-msg="{{success_msg}}" data-type="success"></div>
+{{/if}}
+
+{{#if error_msg}}
+    <div id="toaster" data-msg="{{error_msg}}" data-type="error"></div>
+{{/if}}
+
+
+<script>
+    function callToaster(positionClass, type, title, message) {
+        toastr.options = {
+            closeButton: true,
+            debug: false,
+            newestOnTop: false,
+            progressBar: true,
+            positionClass: positionClass,
+            preventDuplicates: false,
+            onclick: null,
+            showDuration: "300",
+            hideDuration: "1000",
+            timeOut: "5000",
+            extendedTimeOut: "1000",
+            showEasing: "swing",
+            hideEasing: "linear",
+            showMethod: "fadeIn",
+            hideMethod: "fadeOut",
+        };
+
+        switch (type) {
+            case "success": toastr.success(message, title); break;
+            case "error": toastr.error(message, title); break;
+            case "info": toastr.info(message, title); break;
+            case "warning": toastr.warning(message, title); break;
+            default: toastr.info(message, title);
+        }
+    }
+
+    // Trigger toast on page load
+    document.addEventListener("DOMContentLoaded", function () {
+        const toaster = document.getElementById("toaster");
+
+        if (toaster) {
+            const message = toaster.dataset.msg;
+            const type = toaster.dataset.type || "info";
+            const position = document.dir !== "rtl" ? "toast-top-right" : "toast-top-left";
+
+            if (message) {
+                callToaster(position, type, "KCI Dashboard", message);
+            }
+        }
+    });
+</script>
+
+
+{{!-- mobile number formatting --}}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const mobileInput = document.getElementById("mobileInput");
+
+        mobileInput.addEventListener("input", function (e) {
+            // Strip all non-digits
+            let value = e.target.value.replace(/\D/g, "");
+
+            // Limit to 10 digits
+            if (value.length > 10) value = value.substring(0, 10);
+
+            // Apply formatting (123) 456-7890
+            let formatted = value;
+            if (value.length > 6) {
+                formatted = `(${value.substring(0, 3)}) ${value.substring(3, 6)}-${value.substring(6)}`;
+            } else if (value.length > 3) {
+                formatted = `(${value.substring(0, 3)}) ${value.substring(3)}`;
+            } else if (value.length > 0) {
+                formatted = `(${value}`;
+            }
+
+            e.target.value = formatted;
+        });
+    });
+</script>

@@ -1,0 +1,50 @@
+[
+  {
+    "firstName": "mark ",
+    "lastName": "daugherty",
+    "email": "mark.daugherty@ks.gov",
+    "mobile": "(785) 224-5096",
+    "role": "admin",
+    "position": "marketing manager"
+  },
+  {
+    "firstName": "debra",
+    "lastName": "gillespie",
+    "email": "debra.gillespie@ks.gov",
+    "mobile": "(913) 547-3434",
+    "role": "admin",
+    "position": "sales representative sr."
+  },
+  {
+    "firstName": "martin",
+    "lastName": "baughman",
+    "email": "martin.baughman@ks.gov",
+    "mobile": "(913) 683-8853",
+    "role": "admin",
+    "position": "sales representative"
+  },
+  {
+    "firstName": "kerby",
+    "lastName": "ball",
+    "email": "kerby.ball@ks.gov",
+    "mobile": "(913) 775-2086",
+    "role": "admin",
+    "position": "marketing sales representative"
+  },
+  {
+    "firstName": "jeff",
+    "lastName": "haffner",
+    "email": "jeff.hafner@ks.gov",
+    "mobile": "(913) 547-1370",
+    "role": "admin",
+    "position": "sales representative"
+  },
+  {
+    "firstName": "aleah",
+    "lastName": "porche",
+    "email": "aleah.porche@ks.gov",
+    "mobile": "(111) 111-1111",
+    "role": "admin",
+    "position": "customer service"
+  }
+]

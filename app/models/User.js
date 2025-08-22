@@ -4,30 +4,51 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    email: {
+    firstName: {
       type: String,
       required: true,
-      unique: true,
       lowercase: true,
       trim: true,
     },
-    passwordHash: {
+    lastName: {
       type: String,
       required: true,
+      lowercase: true,
+      trim: true,
     },
+    email: {
+      type: String,
+      required: [true, "Email is required"],
+      unique: true,
+      lowercase: true,
+      trim: true,
+      match: [
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        "Please enter a valid email address",
+      ],
+    },
+    mobile: {
+      type: String,
+      required: [true, "Mobile number is required"],
+      match: [
+        /^\(\d{3}\)\s\d{3}-\d{4}$/,
+        "Please enter a valid mobile number (e.g., (123) 456-7890)",
+      ],
+    },
+    position: {
+      type: String,
+      required: true,
+      lowercase: true,
+      trim: true,
+    },
+
+    // passwordHash: { type: String },
     role: {
       type: String,
-      enum: ["customer", "admin"],
-      default: "customer",
-    },
-    name: String,
-    smartNumbers: {
-      type: [String],
-      default: [],
-    },
-    adminPermissions: {
-      type: [String],
-      default: [],
+      enum: ["admin"], // only "admin" allowed
+      default: "admin", // always set to admin by default
+      immutable: true, // prevents it from being changed after creation
+      required: true,
     },
   },
   { timestamps: true }

@@ -2,6 +2,7 @@ const Product = require("../models/Product");
 const Order = require("../models/Order");
 const Customer = require("../models/Customer");
 const Event = require("../models/Event");
+const User = require("../models/User");
 
 const fs = require("fs");
 const path = require("path");
@@ -31,21 +32,28 @@ module.exports = {
   },
   async dashboard(req, res) {
     try {
-      // Fetch all orders with status "Pending" and populate customer info
+      // Get pending orders
       let orders = await Order.find({ status: "Pending" })
-        .populate("customerId") // gets the full customer document
+        .populate("customerId")
         .lean();
 
-      // Separate customer from order for each
+      // Re-map orders to include customer info separately
       orders = orders.map((order) => {
         const customer = order.customerId;
         delete order.customerId;
         return { ...order, customer };
       });
 
-      res.render("admin/dashboard", { layout: "admin", orders });
+      // Count customers
+      const customerCount = await Customer.countDocuments();
+
+      res.render("admin/dashboard", {
+        layout: "admin",
+        orders,
+        customerCount, // pass to view
+      });
     } catch (err) {
-      console.log(err);
+      console.error(err);
       res.render("error/404", { layout: "error" });
     }
   },
@@ -261,10 +269,41 @@ module.exports = {
   },
   async contacts(req, res) {
     try {
-      res.render("admin/contacts", { layout: "admin" });
+      const users = await User.find().lean();
+      res.render("admin/contacts", { layout: "admin", users });
     } catch (err) {
       console.log(err);
       res.render("error/404", { layout: "error" });
+    }
+  },
+  async addNewUser(req, res) {
+    try {
+      const { firstName, lastName, email, mobile, position } = req.body;
+
+      const newUser = new User({
+        firstName,
+        lastName,
+        email,
+        mobile,
+        position,
+      });
+
+      await newUser.save();
+      console.log(newUser);
+
+      req.flash("success_msg", "New team member created successfully");
+      res.redirect("/admin/contacts"); // adjust where you want to go
+    } catch (err) {
+      console.error(err);
+
+      // Handle duplicate email or validation errors
+      if (err.code === 11000) {
+        req.flash("error_msg", "Email already exists");
+        return res.redirect("/admin/contacts");
+      }
+
+      req.flash("error_msg", "Error creating user");
+      res.redirect("/admin/contacts");
     }
   },
   async addProduct(req, res) {

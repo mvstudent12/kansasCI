@@ -36,6 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const session = require("express-session"); //initialize express-sessions
+const flash = require("connect-flash");
 const MongoStore = require("connect-mongo"); // This stores sessions in MongoDB
 const crypto = require("crypto"); //generates random session secret
 
@@ -72,6 +73,8 @@ app.use(
   })
 );
 
+app.use(flash());
+
 // Static files
 app.use(express.static("public", { maxage: "30d", etag: false }));
 
@@ -95,6 +98,10 @@ app.use((req, res, next) => {
   // Inspiration / gallery session and count
   res.locals.inspirationList = req.session.inspirationList || [];
   res.locals.inspirationCount = res.locals.inspirationList.length;
+
+  // Flash msgs
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.error_msg = req.flash("error_msg");
 
   next();
 });
