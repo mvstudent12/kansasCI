@@ -21,7 +21,8 @@
                     <div class="col-12 pb-1">
                         <div class="bg-light p-30 mb-5">
                             <div class="pt-2">
-                                <a href="/cart" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Send your
+                                <a href="/shop/cart" class="btn btn-block btn-primary font-weight-bold my-3 py-3">Send
+                                    your
                                     Inspiration Gallery to the KCI sales team to explore your
                                     options.</a>
                             </div>
@@ -39,14 +40,14 @@
                                     </a>
 
                                     {{!-- Inspiration button --}}
-                                    {{#if (containsInspiration ../inspirationList this.filePath "gallery")}}
+                                    {{#if (containsInspiration ../shop/inspirationList this.filePath "gallery")}}
                                         <a class="btn btn-outline-dark btn-square"
-                                            href="/inspirationList/remove?file={{this.filePath}}">
+                                            href="/shop/inspirationList/remove?file={{this.filePath}}">
                                             <i class="fas fa-star text-danger"></i>
                                         </a>
                                     {{else}}
                                         <a class="btn btn-outline-dark btn-square"
-                                            href="/inspirationList/add?file={{this.filePath}}">
+                                            href="/shop/inspirationList/add?file={{this.filePath}}">
                                             <i class="far fa-star"></i>
                                         </a>
                                     {{/if}}

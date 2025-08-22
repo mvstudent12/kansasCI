@@ -269,8 +269,7 @@ module.exports = {
   },
   async contacts(req, res) {
     try {
-      const users = await User.find().lean();
-      res.render("admin/contacts", { layout: "admin", users });
+      res.render("admin/contacts", { layout: "admin" });
     } catch (err) {
       console.log(err);
       res.render("error/404", { layout: "error" });

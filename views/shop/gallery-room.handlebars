@@ -21,7 +21,7 @@
                 <span class="bg-secondary pr-3">Design Themes</span>
             </h5>
             <div class="bg-light p-4 mb-30">
-                <form id="filter-form" method="GET" action="/galleryRoom">
+                <form id="filter-form" method="GET" action="/shop/galleryRoom">
                     {{#each allCategories}}
                         <div
                             class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -62,14 +62,14 @@
                                 </a>
 
                                 {{!-- Inspiration button --}}
-                                {{#if (containsInspiration ../inspirationList this.filePath "gallery")}}
+                                {{#if (containsInspiration ../shop/inspirationList this.filePath "gallery")}}
                                     <a class="btn btn-outline-dark btn-square"
-                                        href="/inspirationList/remove?file={{this.filePath}}">
+                                        href="/shop/inspirationList/remove?file={{this.filePath}}">
                                         <i class="fas fa-star text-danger"></i>
                                     </a>
                                 {{else}}
                                     <a class="btn btn-outline-dark btn-square"
-                                        href="/inspirationList/add?file={{this.filePath}}">
+                                        href="/shop/inspirationList/add?file={{this.filePath}}">
                                         <i class="far fa-star"></i>
                                     </a>
                                 {{/if}}

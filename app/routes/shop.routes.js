@@ -2,15 +2,11 @@ const express = require("express");
 const shop = express.Router();
 const shopController = require("../controllers/shop.controllers");
 
-shop.get("/shop", shopController.shop);
+shop.get("/", shopController.shop);
 
 shop.get("/searchProducts", shopController.searchProducts);
 
-shop.get("/products", shopController.products);
-
 shop.get("/product-details/:ID", shopController.productDetails);
-
-shop.get("/favorites/:filePath", shopController.favorites);
 
 shop.get("/checkout", shopController.checkout);
 
@@ -27,8 +23,6 @@ shop.get("/signs", shopController.signs);
 shop.get("/metal", shopController.metal);
 
 shop.get("/janitorial", shopController.janitorial);
-
-shop.get("/software", shopController.software);
 
 shop.post("/submitOrder", shopController.submitOrder);
 

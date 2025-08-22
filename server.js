@@ -81,9 +81,13 @@ app.use(express.static("public", { maxage: "30d", etag: false }));
 // Routes
 const publicRoutes = require("./app/routes/public.routes");
 const shopRoutes = require("./app/routes/shop.routes");
+const adminRoutes = require("./app/routes/admin.routes");
+const authRoutes = require("./app/routes/auth.routes");
 
-// Middleware to make cart, wishList, inspirationList and counts available to all views
-app.use((req, res, next) => {
+const User = require("./app/models/User");
+
+// --- Public/Shop Middleware ---
+app.use(["/", "/shop"], (req, res, next) => {
   // Cart session and count
   res.locals.cart = req.session.cart || [];
   res.locals.cartCount = res.locals.cart.reduce(
@@ -99,20 +103,47 @@ app.use((req, res, next) => {
   res.locals.inspirationList = req.session.inspirationList || [];
   res.locals.inspirationCount = res.locals.inspirationList.length;
 
-  // Flash msgs
-  res.locals.success_msg = req.flash("success_msg");
-  res.locals.error_msg = req.flash("error_msg");
-
   next();
 });
 
-app.use("/", publicRoutes); // public pages
-app.use("/", shopRoutes); // shop pages
+// --- Admin Middleware with cached sales contacts ---
+let cachedSalesContacts = null;
+let lastCacheTime = 0;
+const CACHE_DURATION_MS = 5 * 60 * 1000; // 5 minutes
 
-const adminRoutes = require("./app/routes/admin.routes");
+app.use("/admin", async (req, res, next) => {
+  try {
+    // Flash messages
+    res.locals.success_msg = req.flash("success_msg");
+    res.locals.error_msg = req.flash("error_msg");
+
+    // Current path for sidebar active highlighting
+    res.locals.currentPath = req.originalUrl;
+
+    // Sales contacts caching
+    const now = Date.now();
+    if (!cachedSalesContacts || now - lastCacheTime > CACHE_DURATION_MS) {
+      cachedSalesContacts = await User.find(
+        {},
+        "_id firstName lastName mobile email position _id"
+      )
+        .sort({ firstName: 1 })
+        .lean();
+      lastCacheTime = now;
+    }
+    res.locals.salesContacts = cachedSalesContacts;
+
+    next();
+  } catch (err) {
+    console.error("Error fetching sales contacts:", err);
+    res.locals.salesContacts = [];
+    next();
+  }
+});
+
+app.use("/", publicRoutes);
+app.use("/shop", shopRoutes);
 app.use("/admin", adminRoutes);
-
-const authRoutes = require("./app/routes/auth.routes");
 app.use("/auth", authRoutes);
 
 //404 route

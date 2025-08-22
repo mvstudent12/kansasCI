@@ -53,4 +53,14 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
+  async software(req, res) {
+    try {
+      res.render("software/home", {
+        layout: "software",
+      });
+    } catch (err) {
+      console.error(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
 };

@@ -14,4 +14,6 @@ public.get("/services", publicController.services);
 
 public.get("/serviceDetails", publicController.serviceDetails);
 
+public.get("/software", publicController.software);
+
 module.exports = public;

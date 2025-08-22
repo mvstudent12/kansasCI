@@ -40,14 +40,14 @@
                                 </td>
                                 <td class="align-middle text-center">
                                     <!-- Remove Button -->
-                                    <a href="/wishList/remove?{{#if (eq this.type 'gallery')}}file={{this.filePath}}{{else}}productId={{this.id}}{{/if}}"
+                                    <a href="/shop/wishList/remove?{{#if (eq this.type 'gallery')}}file={{this.filePath}}{{else}}productId={{this.id}}{{/if}}"
                                         class="btn btn-sm btn-danger">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>
                                 <td class="align-middle text-center">
                                     <!-- Move to Cart Button -->
-                                    <a href="/wishList/moveToCart?productId={{this.id}}"
+                                    <a href="/shop/wishList/moveToCart?productId={{this.id}}"
                                         class="btn btn-sm btn-primary ml-1">
                                         <i class="fas fa-cart-plus"></i>
                                     </a>

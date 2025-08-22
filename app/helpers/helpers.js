@@ -104,6 +104,13 @@ const helpers = {
       (item) => item.type === "gallery" && item.filePath === filePath
     );
   },
+  isActive: function (link, currentPath) {
+    // remove trailing slashes
+    link = link.replace(/\/$/, "");
+    currentPath = currentPath.replace(/\/$/, "");
+
+    return currentPath.startsWith(link) ? "active" : "";
+  },
 };
 
 module.exports = helpers;

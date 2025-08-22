@@ -56,14 +56,15 @@
                 <div class="sidebar-left" data-simplebar style="height: 100%;">
                     <!-- sidebar menu -->
                     <ul class="nav sidebar-inner" id="sidebar-menu">
-                        <li class="active">
+
+                        <li class="{{isActive '/admin/dashboard' currentPath}}">
                             <a class="sidenav-item-link" href="/admin/dashboard">
                                 <i class="mdi mdi-briefcase-account-outline"></i>
                                 <span class="nav-text">KCI Shop Dashboard</span>
                             </a>
                         </li>
 
-                        <li>
+                        <li class="{{isActive '/admin/analytics' currentPath}}">
                             <a class="sidenav-item-link" href="/admin/analytics">
                                 <i class="mdi mdi-chart-line"></i>
                                 <span class="nav-text">Analytics</span>
@@ -73,77 +74,83 @@
                         <li class="section-title">
                             Store Management
                         </li>
-                        <li>
+
+                        <li class="{{isActive '/admin/openOrders' currentPath}}">
                             <a class="sidenav-item-link" href="/admin/openOrders">
                                 <i class="mdi mdi-table-edit"></i>
                                 <span class="nav-text">Open Orders</span>
                             </a>
                         </li>
-                        <li>
+
+                        <li class="{{isActive '/admin/products' currentPath}}">
                             <a class="sidenav-item-link" href="/admin/products">
                                 <i class="mdi mdi-shopping"></i>
                                 <span class="nav-text">Products</span>
                             </a>
                         </li>
 
-                        <li>
+                        <li class="{{isActive '/admin/customers' currentPath}}">
                             <a class="sidenav-item-link" href="/admin/customers">
                                 <i class="mdi mdi-account-tag"></i>
                                 <span class="nav-text">Customers</span>
                             </a>
                         </li>
 
-
                         <li class="section-title">
                             Workspace
                         </li>
-                        <li>
+
+                        <li class="{{isActive '/admin/contacts' currentPath}}">
                             <a class="sidenav-item-link" href="/admin/contacts">
                                 <i class="mdi mdi-account-group"></i>
                                 <span class="nav-text">Sales Team</span>
                             </a>
                         </li>
 
-                        <li>
+                        <li class="{{isActive '/admin/calendar' currentPath}}">
                             <a class="sidenav-item-link" href="/admin/calendar">
                                 <i class="mdi mdi-calendar-check"></i>
                                 <span class="nav-text">Calendar</span>
                             </a>
                         </li>
 
-                        {{!-- <li>
-                            <a class="sidenav-item-link" href="#">
-                                <i class="mdi mdi mdi-email"></i>
-                                <span class="nav-text">Inbox</span>
-                            </a>
-                        </li> --}}
+                        {{!--
+        <li>
+            <a class="sidenav-item-link" href="#">
+                <i class="mdi mdi mdi-email"></i>
+                <span class="nav-text">Inbox</span>
+            </a>
+        </li>
+        --}}
 
                         <li class="section-title">
                             Profile
                         </li>
 
-                        <li>
+                        <li class="{{isActive '/admin/profile' currentPath}}">
                             <a class="sidenav-item-link" href="#">
                                 <i class="mdi mdi-account"></i>
                                 <span class="nav-text">My Profile</span>
                             </a>
                         </li>
 
-                        <li>
+                        <li class="{{isActive '/admin/activities' currentPath}}">
                             <a class="sidenav-item-link" href="#">
                                 <i class="mdi mdi-account-file-text"></i>
                                 <span class="nav-text">My Activities</span>
                             </a>
                         </li>
 
-                        <li>
+                        <li class="{{isActive '/admin/settings' currentPath}}">
                             <a class="sidenav-item-link" href="#">
                                 <i class="mdi mdi-account-settings"></i>
                                 <span class="nav-text">Account Settings</span>
                             </a>
                         </li>
+
                     </ul>
                 </div>
+
 
                 <div class="sidebar-footer">
                     <div class="sidebar-footer-content">
@@ -486,96 +493,22 @@
                 <input type="text" class="form-control form-control-lg form-control-secondary rounded-0"
                     placeholder="Search contacts...">
             </div>
-
-            <div class="media media-sm">
-                <div class="media-sm-wrapper">
-                    <a href="#">
-                        <img src="/images/user/avatar.png" alt="User Image">
-                        <span class="active bg-primary"></span>
-                    </a>
+            {{#each salesContacts}}
+                <div class="media media-sm">
+                    <div class="media-sm-wrapper">
+                        <a href="#">
+                            <img src="/images/user/avatar.png" alt="User Image">
+                            <span class="active bg-primary"></span>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <a href="#">
+                            <span class="title text-capitalize">{{firstName}} {{lastName}}</span>
+                            <span class="discribe text-capitalize">{{position}}</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="media-body">
-                    <a href="#">
-                        <span class="title">Selena Wagner</span>
-                        <span class="discribe">Sales Rep</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="media media-sm">
-                <div class="media-sm-wrapper">
-                    <a href="#">
-                        <img src="/images/user/avatar.png" alt="User Image">
-                        <span class="active bg-primary"></span>
-                    </a>
-                </div>
-                <div class="media-body">
-                    <a href="#">
-                        <span class="title">Walter Reuter</span>
-                        <span>Sales Rep</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="media media-sm">
-                <div class="media-sm-wrapper">
-                    <a href="#">
-                        <img src="/images/user/avatar.png" alt="User Image">
-                    </a>
-                </div>
-                <div class="media-body">
-                    <a href="#">
-                        <span class="title">Larissa Gebhardt</span>
-                        <span>Sales Rep</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="media media-sm">
-                <div class="media-sm-wrapper">
-                    <a href="#">
-                        <img src="/images/user/avatar.png" alt="User Image">
-                    </a>
-
-                </div>
-                <div class="media-body">
-                    <a href="#">
-                        <span class="title">Albrecht Straub</span>
-                        <span>Sales Rep</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="media media-sm">
-                <div class="media-sm-wrapper">
-                    <a href="#">
-                        <img src="/images/user/avatar.png" alt="User Image">
-                        <span class="active bg-danger"></span>
-                    </a>
-                </div>
-                <div class="media-body">
-                    <a href="#">
-                        <span class="title">Leopold Ebert</span>
-                        <span>Sales Rep</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="media media-sm">
-                <div class="media-sm-wrapper">
-                    <a href="#">
-                        <img src="/images/user/avatar.png" alt="User Image">
-                        <span class="active bg-primary"></span>
-                    </a>
-                </div>
-                <div class="media-body">
-                    <a href="#">
-                        <span class="title">Selena Wagner</span>
-                        <span>Sales Rep</span>
-                    </a>
-                </div>
-            </div>
-
+            {{/each}}
         </div>
     </div>
 

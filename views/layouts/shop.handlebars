@@ -55,7 +55,7 @@
                 </div> --}}
                 <div class="d-inline-flex align-items-center d-block d-lg-none">
                     <!-- Inspiration / Star -->
-                    <a href="/inspirationList" class="btn px-0 ml-2" title="Inspiration Gallery"
+                    <a href="/shop/inspirationList" class="btn px-0 ml-2" title="Inspiration Gallery"
                         data-bs-toggle="tooltip">
                         <i class="fas fa-star text-warning"></i>
                         <span class="badge bg-white text-dark rounded-circle" style="padding-bottom: 2px;">
@@ -64,7 +64,7 @@
                     </a>
 
                     <!-- Wishlist / Heart -->
-                    <a href="/wishList" class="btn px-0 ml-3" title="Wishlist" data-bs-toggle="tooltip">
+                    <a href="/shop/wishList" class="btn px-0 ml-3" title="Wishlist" data-bs-toggle="tooltip">
                         <i class="fas fa-heart text-primary"></i>
                         <span class="badge bg-white text-dark rounded-circle" style="padding-bottom: 2px;">
                             {{wishCount}}
@@ -72,7 +72,7 @@
                     </a>
 
                     <!-- Cart -->
-                    <a href="/cart" class="btn px-0 ml-2" title="Shopping Cart" data-bs-toggle="tooltip">
+                    <a href="/shop/cart" class="btn px-0 ml-2" title="Shopping Cart" data-bs-toggle="tooltip">
                         <i class="fas fa-shopping-cart text-dark"></i>
                         <span class="badge bg-white text-dark rounded-circle" style="padding-bottom: 2px;">
                             {{cartCount}}
@@ -91,7 +91,7 @@
                 </a>
             </div>
             <div class="col-12 col-lg-4 mb-3 mb-lg-0">
-                <form action="/searchProducts" method="GET" class="w-100">
+                <form action="/shop/searchProducts" method="GET" class="w-100">
                     <div class="input-group">
                         <input type="text" class="form-control" name="q" placeholder="Search for products..."
                             aria-label="Search" required />
@@ -124,16 +124,16 @@
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light"
                     id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                     <div class="navbar-nav w-100">
-                        <a href="/seating" class="nav-item nav-link">Seating</a>
-                        <a href="/furniture" class="nav-item nav-link">Furniture</a>
+                        <a href="/shop/furniture" class="nav-item nav-link">Seating</a>
+                        <a href="/shop/furniture" class="nav-item nav-link">Furniture</a>
                         {{!-- <a href="/error/503" class="nav-item nav-link">Office Panel
                             Systems</a> --}}
-                        <a href="/textiles" class="nav-item nav-link">Clothing &amp;
+                        <a href="/shop/textiles" class="nav-item nav-link">Clothing &amp;
                             Textiles</a>
-                        <a href="/signs" class="nav-item nav-link">Signs &amp;
+                        <a href="/shop/textiles" class="nav-item nav-link">Signs &amp;
                             Graphics</a>
-                        <a href="/metal" class="nav-item nav-link">Metal Works</a>
-                        <a href="/janitorial" class="nav-item nav-link">Janitorial
+                        <a href="/shop/metal" class="nav-item nav-link">Metal Works</a>
+                        <a href="/shop/janitorial" class="nav-item nav-link">Janitorial
                             &amp; Paint</a>
 
                     </div>
@@ -148,22 +148,22 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="/galleryRoom"
-                                class="nav-item nav-link {{#if (eq currentPath '/galleryRoom')}}active{{/if}}">
+                            <a href="/shop/galleryRoom"
+                                class="nav-item nav-link {{#if (eq currentPath '/shop/galleryRoom')}}active{{/if}}">
                                 Gallery Room
                             </a>
 
                             <!-- Categories only inside hamburger menu for small screens -->
-                            <a href="/seating" class="nav-item nav-link d-lg-none">Seating</a>
-                            <a href="/furniture" class="nav-item nav-link d-lg-none">Furniture</a>
+                            <a href="/shop/furniture" class="nav-item nav-link d-lg-none">Seating</a>
+                            <a href="/shop/furniture" class="nav-item nav-link d-lg-none">Furniture</a>
                             {{!-- <a href="/error/503" class="nav-item nav-link d-lg-none">Office
                                 Panel Systems</a> --}}
-                            <a href="/textiles" class="nav-item nav-link d-lg-none">Clothing &amp;
+                            <a href="/shop/textiles" class="nav-item nav-link d-lg-none">Clothing &amp;
                                 Textiles</a>
-                            <a href="/signs" class="nav-item nav-link d-lg-none">Signs
+                            <a href="/shop/textiles" class="nav-item nav-link d-lg-none">Signs
                                 &amp; Graphics</a>
-                            <a href="/metal" class="nav-item nav-link d-lg-none">Metal Works</a>
-                            <a href="/janitorial" class="nav-item nav-link d-lg-none">Janitorial
+                            <a href="/shop/metal" class="nav-item nav-link d-lg-none">Metal Works</a>
+                            <a href="/shop/janitorial" class="nav-item nav-link d-lg-none">Janitorial
                                 &amp;
                                 Paint</a>
 
@@ -171,7 +171,7 @@
 
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <!-- Inspiration / Star -->
-                            <a href="/inspirationList" class="btn px-0 ml-3" title="Inspiration Gallery"
+                            <a href="/shop/inspirationList" class="btn px-0 ml-3" title="Inspiration Gallery"
                                 data-bs-toggle="tooltip">
                                 <i class="fas fa-star text-warning"></i>
                                 <span class="badge bg-white text-dark rounded-circle" style="padding-bottom: 2px;">
@@ -180,7 +180,7 @@
                             </a>
 
                             <!-- Wishlist / Heart -->
-                            <a href="/wishList" class="btn px-0 ml-3" title="Wishlist" data-bs-toggle="tooltip">
+                            <a href="/shop/wishList" class="btn px-0 ml-3" title="Wishlist" data-bs-toggle="tooltip">
                                 <i class="fas fa-heart text-primary"></i>
                                 <span class="badge bg-white text-dark rounded-circle" style="padding-bottom: 2px;">
                                     {{wishCount}}
@@ -188,7 +188,7 @@
                             </a>
 
                             <!-- Cart -->
-                            <a href="/cart" class="btn px-0 ml-3" title="Shopping Cart" data-bs-toggle="tooltip">
+                            <a href="/shop/cart" class="btn px-0 ml-3" title="Shopping Cart" data-bs-toggle="tooltip">
                                 <i class="fas fa-shopping-cart text-primary"></i>
                                 <span class="badge bg-white text-dark rounded-circle" style="padding-bottom: 2px;">
                                     {{cartCount}}
@@ -223,12 +223,14 @@
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-secondary mb-2" href="/shop"><i class="fa fa-angle-right mr-2"></i>KCI
                                 Shop</a>
-                            <a class="text-secondary mb-2" href="/galleryRoom"><i
+                            <a class="text-secondary mb-2" href="/shop/galleryRoom"><i
                                     class="fa fa-angle-right mr-2"></i>Gallery
                                 Room</a>
-                            <a class="text-secondary mb-2" href="/cart"><i class="fa fa-angle-right mr-2"></i>Shopping
+                            <a class="text-secondary mb-2" href="/shop/cart"><i
+                                    class="fa fa-angle-right mr-2"></i>Shopping
                                 Cart</a>
-                            <a class="text-secondary mb-2" href="/wishList"><i class="fa fa-angle-right mr-2"></i>Wish
+                            <a class="text-secondary mb-2" href="/shop/wishList"><i
+                                    class="fa fa-angle-right mr-2"></i>Wish
                                 List</a>
                         </div>
                     </div>

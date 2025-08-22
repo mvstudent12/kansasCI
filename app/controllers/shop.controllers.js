@@ -96,77 +96,6 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
-  async products(req, res) {
-    try {
-      const perPage = 30;
-      const page = parseInt(req.query.page) || 1;
-
-      let selectedCategories = [];
-      let selectedMetaCategory = null;
-
-      if (req.query.metaCategory) {
-        selectedMetaCategory = req.query.metaCategory;
-
-        // Get all categories belonging to the metaCategory
-        selectedCategories = categoriesData
-          .filter((cat) => cat.metaCategory === selectedMetaCategory)
-          .map((cat) => cat.name);
-      } else if (req.query.category) {
-        // category param can be string or array
-        selectedCategories = Array.isArray(req.query.category)
-          ? req.query.category
-          : [req.query.category];
-      }
-
-      // Build Mongo filter
-      let filter = { visible: true }; // only fetch visible products by default
-
-      if (selectedCategories.length) {
-        filter.category = { $in: selectedCategories };
-      }
-
-      // Fetch filtered products and count
-      const [products, totalCount] = await Promise.all([
-        Product.find(filter)
-          .skip((page - 1) * perPage)
-          .limit(perPage)
-          .lean(),
-        Product.countDocuments(filter),
-      ]);
-
-      // Determine categories to show in filter sidebar:
-      // If filtering by metaCategory, show only categories under it,
-      // else show all distinct categories in DB.
-      let allCategoriesForFilter = [];
-      if (selectedMetaCategory) {
-        allCategoriesForFilter = categoriesData
-          .filter((cat) => cat.metaCategory === selectedMetaCategory)
-          .map((cat) => cat.name);
-      } else {
-        allCategoriesForFilter = await Product.distinct("category");
-      }
-
-      // Get unique metaCategories for dynamic nav
-      const metaCategories = [
-        ...new Set(categoriesData.map((c) => c.metaCategory)),
-      ];
-
-      res.render("shop/products", {
-        layout: "shop",
-        products,
-        currentPage: page,
-        totalPages: Math.ceil(totalCount / perPage),
-        selectedCategories,
-        selectedMetaCategory,
-        allCategories: allCategoriesForFilter,
-        metaCategories,
-        currentPath: req.path,
-      });
-    } catch (err) {
-      console.error("Error loading products:", err);
-      res.render("error/404", { layout: "error" });
-    }
-  },
   async productDetails(req, res) {
     try {
       const { ID } = req.params;
@@ -568,24 +497,6 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
-  async software(req, res) {
-    try {
-      res.render("software/home", {
-        layout: "software",
-      });
-    } catch (err) {
-      console.error(err);
-      res.render("error/404", { layout: "error" });
-    }
-  },
-  async favorites(req, res) {
-    try {
-      res.render("shop/favorites", { layout: "shop" });
-    } catch (err) {
-      console.log(err);
-      res.render("error/404", { layout: "error" });
-    }
-  },
   async checkout(req, res) {
     try {
       res.render("shop/checkout", {
@@ -668,7 +579,7 @@ module.exports = {
       req.session.inspirationList = [];
       await req.session.save();
 
-      res.redirect(`/order-confirmation/${order._id}`);
+      res.redirect(`/shop/order-Confirmation/${order._id}`);
     } catch (err) {
       console.error(err);
       res.render("error/404", { layout: "error" });
@@ -729,7 +640,7 @@ module.exports = {
       await req.session.save();
 
       // Redirect with query param for toast
-      res.redirect(`/product-details/${productID}?toast=added`);
+      res.redirect(`/shop/product-details/${productID}?toast=added`);
     } catch (err) {
       console.error(err);
       res.render("error/404", { layout: "error" });
@@ -750,7 +661,7 @@ module.exports = {
 
       await req.session.save();
 
-      res.redirect(`/product-details/${productId}`);
+      res.redirect(`/shop/product-details/${productId}`);
     } catch (err) {
       console.error(err);
       res.status(500).send("Unable to add to wishlist");
@@ -769,7 +680,7 @@ module.exports = {
 
       await req.session.save();
 
-      res.redirect(`/product-details/${productId}`);
+      res.redirect(`/shop/product-details/${productId}`);
     } catch (err) {
       console.error(err);
       res.status(500).send("Unable to remove from wishlist");
@@ -783,7 +694,7 @@ module.exports = {
         );
       }
       req.session.save(() => {
-        res.redirect("/cart");
+        res.redirect("/shop/cart");
       });
     } catch (err) {
       console.error(err);
@@ -871,7 +782,7 @@ module.exports = {
 
       await req.session.save();
 
-      res.redirect(req.get("referer") || "/wishList");
+      res.redirect(req.get("referer") || "/shop/wishList");
     } catch (err) {
       console.error("Error moving item to cart:", err);
       res.status(500).send("Unable to move item to cart");
@@ -930,7 +841,7 @@ module.exports = {
 
       await req.session.save();
 
-      res.redirect(req.get("referer") || "/inspirationList");
+      res.redirect(req.get("referer") || "/shop/inspirationList");
     } catch (err) {
       console.error("Error removing from inspiration list:", err);
       res.status(500).send("Unable to remove from inspiration list");

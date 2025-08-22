@@ -23,7 +23,7 @@
                 <span class="bg-secondary pr-3">Shop by Line</span>
             </h5>
             <div class="bg-light p-4 mb-30">
-                <form id="line-filter-form" method="GET" action="/furniture">
+                <form id="line-filter-form" method="GET" action="/shop/furniture">
                     <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
                         <input type="radio" class="custom-control-input" name="line" value="signature"
                             id="line-signature" {{#if (includes selectedLines "signature" )}}checked{{/if}} />
@@ -48,7 +48,7 @@
                 <span class="bg-secondary pr-3">Shop by Type</span>
             </h5>
             <div class="bg-light p-4 mb-30">
-                <form id="category-filter-form" method="GET" action="/furniture">
+                <form id="category-filter-form" method="GET" action="/shop/furniture">
                     <!-- Furniture Categories -->
                     <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
                         <input type="radio" class="custom-control-input" name="category" value="Desks" id="cat-desks"
@@ -86,7 +86,7 @@
                     <span class="bg-secondary pr-3">Shop By Category</span>
                 </h5>
                 <div class="bg-light p-4 mb-30">
-                    <form id="subcategory-filter-form" method="GET" action="/furniture">
+                    <form id="subcategory-filter-form" method="GET" action="/shop/furniture">
                         <!-- Keep category selection -->
                         {{#each selectedCategories}}
                             <input type="hidden" name="category" value="{{this}}">
@@ -119,14 +119,14 @@
                                 <img class="img-fluid w-100 bg-white" src="{{firstImagePath this.images}}" alt="">
                                 <div class="product-action">
 
-                                    <a class="btn btn-outline-dark btn-square" href="/product-details/{{this._id}}"><i
-                                            class="fa fa-search"></i></a>
+                                    <a class="btn btn-outline-dark btn-square"
+                                        href="/shop/product-details/{{this._id}}"><i class="fa fa-search"></i></a>
                                 </div>
 
                             </div>
                             <div class="text-center py-4">
                                 <a class="h6 text-decoration-none text-wrap"
-                                    href="/product-details/{{this._id}}">{{this.title}}</a>
+                                    href="/shop/product-details/{{this._id}}">{{this.title}}</a>
                             </div>
                         </div>
                     </div>
