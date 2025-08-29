@@ -394,7 +394,7 @@ $(document).ready(function () {
       columnDefs: [
         {
           orderable: false,
-          targets: [, 0, 6, -1],
+          targets: [0, 6, -1],
         },
       ],
       language: {
