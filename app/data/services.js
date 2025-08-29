@@ -3,14 +3,6 @@
 module.exports = {
   chemical: {
     short: "chemical",
-    img: [
-      "/img/products/chemical/chemical-1.jpg",
-      "/img/products/chemical/chemical-2.jpg",
-      "/img/products/chemical/chemical-3.jpg",
-      "/img/products/chemical/chemical-4.jpg",
-      "/img/products/chemical/chemical-5.jpg",
-      "/img/products/chemical/chemical-6.jpg",
-    ],
     category: "Janitorial & Paint Products",
     shopLink: "/products?category=Janitorial&category=Paint",
     description:
@@ -59,14 +51,6 @@ module.exports = {
 
   seating: {
     short: "seating",
-    img: [
-      "/img/products/clothing-textiles/textiles-1.jpg",
-      "/img/products/clothing-textiles/textiles-2.jpg",
-      "/img/products/clothing-textiles/textiles-3.jpg",
-      "/img/products/clothing-textiles/textiles-4.jpg",
-      "/img/products/clothing-textiles/textiles-5.jpg",
-      "/img/products/clothing-textiles/textiles-6.jpg",
-    ],
     category: "Seating",
     shopLink: "/products?category=Seating",
     description:

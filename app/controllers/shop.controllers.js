@@ -31,13 +31,15 @@ module.exports = {
         visible: true, // ✅ only return products marked visible
         $or: [
           { title: regex },
-          { brandLine: regex }, // 👈 I changed this from "brand" to "brandLine" since your schema uses brandLine
+          { brandLine: regex },
           { category: regex },
           { description: regex },
         ],
       })
         .limit(12)
         .lean();
+
+      console.log(results[0].images);
 
       res.render("shop/search-results", {
         layout: "shop",
