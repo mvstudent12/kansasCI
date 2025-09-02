@@ -540,6 +540,8 @@ module.exports = {
       const customer = order.customerId;
       delete order.customerId;
 
+      console.log(order);
+
       // Render admin template with separate customer object
       res.render("admin/viewOrder", {
         layout: "admin",

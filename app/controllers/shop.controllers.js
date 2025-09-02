@@ -39,8 +39,6 @@ module.exports = {
         .limit(12)
         .lean();
 
-      console.log(results[0].images);
-
       res.render("shop/search-results", {
         layout: "shop",
         products: results,
