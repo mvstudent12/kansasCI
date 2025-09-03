@@ -15,14 +15,16 @@
                             <div class="row">
                                 {{!-- left column --}}
                                 <div class="col-lg-8">
+                                    {{!-- Title --}}
                                     <div class="form-group mb-5">
                                         <label for="title">Product Title</label>
                                         <input type="text" class="form-control" id="title" name="title"
-                                            placeholder="Add Product" value="{{product.title}}">
+                                            placeholder="Add Product" value="{{product.title}}" required>
                                     </div>
+                                    {{!-- Brand line --}}
                                     <div class="form-group">
                                         <label for="brandLine">Brand Line</label>
-                                        <select class="form-control" id="brandLine" name="brandLine">
+                                        <select class="form-control" id="brandLine" name="brandLine" required>
                                             <option value="Commercial Concepts" {{#if (eq
                                                 product.brandLine "Commercial Concepts" )}}selected{{/if}}>Commercial
                                                 Concepts</option>
@@ -37,23 +39,24 @@
 
                                         </select>
                                     </div>
+                                    {{!-- category --}}
                                     <div class="form-group">
                                         <label for="category">Product Category</label>
-                                        <select class="form-control" id="category" name="category">
+                                        <select class="form-control" id="category" name="category" required>
                                             <option value="">-- Select a Product Category --</option>
 
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="subcategory">Product SubCategory</label>
-                                        <select class="form-control" id="subcategory" name="subcategory">
+                                        <select class="form-control" id="subcategory" name="subcategory" required>
                                             <option value="">-- Select a Product SubCategory --</option>
                                         </select>
                                     </div>
                                     <div class="form-group mb-5">
                                         <label for="details">Product Details</label>
                                         <input type="text" class="form-control" id="details" name="details"
-                                            placeholder="Add Detail Line" value="{{product.details}}">
+                                            placeholder="Add Detail Line" value="{{product.details}}" required>
                                     </div>
 
                                     <div class="editor mb-5">
