@@ -16330,9 +16330,9 @@ table.dataTable thead .sorting {
   background-color: rgba(49, 52, 61, 0.1);
 }
 
-#nprogress .bar {
+/* #nprogress .bar {
   background: #9e6de0 !important;
-}
+} */
 
 /*===== CIRCLE PROGRESS =====*/
 .circle {

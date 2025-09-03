@@ -803,6 +803,7 @@ module.exports = {
       if (!req.session.inspirationList) req.session.inspirationList = [];
 
       const { file } = req.query;
+      console.log(file);
 
       if (!file) {
         return res.status(400).send("No gallery image specified");

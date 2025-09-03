@@ -377,7 +377,6 @@ $(document).ready(function () {
   // }
 
   /*======== 13. PROGRESS BAR ========*/
-  NProgress.done();
 
   /*======== 14. DATA TABLE ========*/
   var productsTable = $("#productsTable");
