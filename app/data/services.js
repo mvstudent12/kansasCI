@@ -4,7 +4,6 @@ module.exports = {
   chemical: {
     short: "chemical",
     category: "Janitorial & Paint Products",
-    shopLink: "/products?category=Janitorial&category=Paint",
     description:
       "KCI offers a dependable line of chemical products designed for correctional facility maintenance, janitorial services, and industrial use. Manufactured with safety, performance, and sustainability in mind, our chemical solutions meet the rigorous demands of a wide range of environments.",
     overview: {
@@ -52,7 +51,6 @@ module.exports = {
   seating: {
     short: "seating",
     category: "Seating",
-    shopLink: "/products?category=Seating",
     description:
       "Durable and comfortable seating solutions for every environment, from offices to correctional settings.",
     overview: {
@@ -157,7 +155,6 @@ module.exports = {
   textiles: {
     short: "textiles",
     category: "Clothing & Textiles",
-    shopLink: "/products?category=Clothing&category=Textiles",
     description:
       "Textile goods and apparel for correctional and institutional use, crafted with durability and value in mind.",
     overview: {
@@ -225,8 +222,7 @@ module.exports = {
   furniture: {
     short: "furniture",
     category: "Furniture",
-    shopLink:
-      "/products?category=Desks&category=Seating&category=Tables&category=Storage&category=Accessories",
+
     description:
       "Custom and standard furniture options for offices, classrooms, and institutional settings.",
     overview: {
@@ -342,7 +338,6 @@ module.exports = {
   metal: {
     short: "metal",
     category: "Metal Works",
-    shopLink: "/products?category=Metal+Works",
     description:
       "Heavy-duty metal fabrication products including furniture and outdoor items.",
     overview: {
@@ -434,20 +429,14 @@ module.exports = {
   signs: {
     short: "signs",
     category: "Signs & Graphics",
-    shopLink: "/products?category=Signs+%26+Graphics",
     description:
       "Custom signage and graphic solutions for a wide range of applications.",
     overview: {
       title: "Custom Signs & Graphics for Clear Communication and Branding",
       content:
-        "KCI’s Signs & Graphics category includes a variety of products designed to provide clear direction, identification, and informational signage for correctional facilities and other institutional settings. Our products are built to withstand tough environments and are customizable to meet your specific needs. From decals and nameplates to custom signs, we ensure your facility is well-marked and organized.",
+        "KCI's Signs & Graphics category includes a variety of products designed to provide clear direction, identification, and informational signage for correctional facilities and other institutional settings. Our products are built to withstand tough environments and are customizable to meet your specific needs. From decals and nameplates to custom signs, we ensure your facility is well-marked and organized.",
     },
     keyOfferings: [
-      {
-        name: "Awards",
-        description:
-          "Customizable awards designed to recognize achievements and milestones within your facility, available in various materials and styles.",
-      },
       {
         name: "Decals",
         description:
@@ -507,7 +496,6 @@ module.exports = {
       },
     ],
     items: [
-      "Awards",
       "Decals",
       "Nameplates",
       "Neighborhood Signs",
@@ -516,11 +504,52 @@ module.exports = {
       "Custom Signs",
     ],
   },
+  awards: {
+    short: "awards",
+    category: "Awards",
+    description:
+      "Custom awards and plaques for recognizing excellence and achievement.",
+    overview: {
+      title:
+        "Custom Awards & Plaques for Recognizing Excellence and Achievement",
+      content:
+        "KCI's awards and plaques are designed to make recognition memorable. From employee achievements to community milestones, our high-quality, customizable pieces reflect craftsmanship and pride, ensuring every honor is celebrated with distinction.",
+    },
+    keyOfferings: [
+      {
+        name: "Awards",
+        description:
+          "Celebrate achievement and recognize excellence with custom awards and plaques, crafted to honor milestones with lasting quality and elegance.",
+      },
+    ],
+    benefits: [
+      {
+        name: "Durability",
+        description:
+          "KCI's awards and plaques are made to last, with materials that can withstand harsh conditions and heavy use.",
+      },
+      {
+        name: "Customizable Solutions",
+        description:
+          "All of our awards and plaques can be customized to meet your exact specifications, ensuring they fit your unique needs.",
+      },
 
+      {
+        name: "Supports Reentry Programs",
+        description:
+          "Each item purchase helps provide job training for incarcerated individuals, equipping them with valuable skills in manufacturing and graphic design.",
+      },
+      {
+        name: "Cost-Effective",
+        description:
+          "Our awards and plaques are priced competitively, offering high-quality solutions at affordable rates.",
+      },
+    ],
+    items: ["Awards", "Plaques"],
+  },
   office: {
     short: "office",
     category: "Office Panel Systems",
-    shopLink: "/products?category=Office+Panel+Systems",
     description:
       "Flexible and professional office panel configurations for modern workspaces.",
     overview: {
@@ -575,7 +604,7 @@ module.exports = {
       {
         name: "Supports Reentry Programs",
         description:
-          "By purchasing KCI’s office panel systems, you contribute to job training programs for incarcerated individuals, helping them gain valuable skills for their future employment.",
+          "By purchasing KCI's office panel systems, you contribute to job training programs for incarcerated individuals, helping them gain valuable skills for their future employment.",
       },
     ],
     items: [
@@ -589,7 +618,6 @@ module.exports = {
   software: {
     short: "software",
     category: "Software Solutions",
-    shopLink: "/software",
     description:
       "Custom software development and digital services to support modern business needs.",
     overview: {

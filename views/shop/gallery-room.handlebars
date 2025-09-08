@@ -133,8 +133,16 @@
     document.addEventListener("DOMContentLoaded", function () {
         GLightbox({
             selector: '.glightbox',
-            touchNavigation: true,
             loop: true,
+            openEffect: 'fade',
+            closeEffect: 'fade',
+            plyr: false,
+            moreLength: false,
+            slideAnimationType: 'slide',
+            touchNavigation: true,
+            keyboardNavigation: true,
+            // key part:
+            backFocus: false,
             closeButton: true,
         });
     });

@@ -106,7 +106,6 @@
     "name": "Signs & Graphics",
     "slug": "signs-and-graphics",
     "subcategories": [
-      "Awards & Plaques",
       "Decals",
       "Nameplates",
       "ADA Signs",
@@ -115,6 +114,12 @@
       "Neighborhood Signs",
       "Park Signs"
     ]
+  },
+  {
+    "metaCategory": "Awards",
+    "name": "Awards & Plaques",
+    "slug": "awards-and-plaques",
+    "subcategories": ["Awards", "Plaques"]
   },
   {
     "metaCategory": "Metal",

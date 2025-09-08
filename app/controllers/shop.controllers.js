@@ -383,6 +383,62 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
+  async awards(req, res) {
+    try {
+      const perPage = 30;
+      const page = parseInt(req.query.page, 10) || 1;
+
+      // === Selected subcategories from query params ===
+      const rawSubcats = req.query.subcategory || [];
+      const selectedSubcategories = Array.isArray(rawSubcats)
+        ? rawSubcats
+        : rawSubcats
+        ? [rawSubcats]
+        : [];
+
+      // === Gather all subcategories under the Signs metaCategory ===
+      const awardsEntries = categoriesData.filter(
+        (c) => c.metaCategory === "Awards"
+      );
+      const awardsSubcategories = [
+        ...new Set(awardsEntries.flatMap((c) => c.subcategories)),
+      ];
+
+      // === Build Mongo filter ===
+      const filter = {
+        category: { $in: awardsEntries.map((c) => c.name) }, // e.g. ["Awards & Plaques"]
+        visible: true, // only show visible products
+      };
+      if (selectedSubcategories.length) {
+        filter.subcategory = { $in: selectedSubcategories };
+      }
+
+      // === Query products & count ===
+      const [products, totalCount] = await Promise.all([
+        Product.find(filter)
+          .skip((page - 1) * perPage)
+          .limit(perPage)
+          .lean(),
+        Product.countDocuments(filter),
+      ]);
+
+      // === Render using the same template as other categories ===
+      res.render("shop/categories/products", {
+        layout: "shop",
+        products,
+        currentPage: page,
+        totalPages: Math.ceil(totalCount / perPage),
+        selectedSubcategories,
+        subcategoriesToRender: awardsSubcategories,
+        currentPath: req.path,
+        name: "Awards & Plaques", // used for page heading or breadcrumbs
+        filter: "awards",
+      });
+    } catch (err) {
+      console.error(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
   async metal(req, res) {
     try {
       const perPage = 30;

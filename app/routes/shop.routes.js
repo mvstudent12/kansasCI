@@ -20,6 +20,8 @@ shop.get("/textiles", shopController.textiles);
 
 shop.get("/signs", shopController.signs);
 
+shop.get("/awards", shopController.awards);
+
 shop.get("/metal", shopController.metal);
 
 shop.get("/janitorial", shopController.janitorial);
