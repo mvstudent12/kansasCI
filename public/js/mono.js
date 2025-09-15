@@ -334,12 +334,5 @@ $(document).ready(function () {
     };
   }
 
-  hotkeys("/", function (event, handler) {
-    switch (handler.key) {
-      case "/":
-        event.preventDefault();
-        searchInput.focus();
-        break;
-    }
-  });
+
 });
