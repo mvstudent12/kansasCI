@@ -857,29 +857,23 @@ module.exports = {
   async addToInspirationList(req, res) {
     try {
       if (!req.session.inspirationList) req.session.inspirationList = [];
-
       const { file } = req.query;
-      console.log(file);
+      if (!file)
+        return res
+          .status(400)
+          .json({ success: false, message: "No file specified" });
 
-      if (!file) {
-        return res.status(400).send("No gallery image specified");
-      }
-
-      // Avoid duplicates
       const exists = req.session.inspirationList.some(
         (item) => item.filePath === file
       );
-
-      if (!exists) {
+      if (!exists)
         req.session.inspirationList.push({ type: "gallery", filePath: file });
-      }
 
       await req.session.save();
-
-      res.redirect(req.get("referer") || "/");
+      res.json({ success: true });
     } catch (err) {
-      console.error("Error adding to inspiration list:", err);
-      res.status(500).send("Unable to add to inspiration list");
+      console.error(err);
+      res.status(500).json({ success: false, message: "Unable to add image" });
     }
   },
   async removeFromInspirationList(req, res) {
@@ -887,9 +881,11 @@ module.exports = {
       if (!req.session.inspirationList) req.session.inspirationList = [];
 
       const { file } = req.query;
-
       if (!file) {
-        return res.status(400).send("No gallery image specified to remove");
+        return res.status(400).json({
+          success: false,
+          message: "No gallery image specified to remove",
+        });
       }
 
       req.session.inspirationList = req.session.inspirationList.filter(
@@ -898,10 +894,14 @@ module.exports = {
 
       await req.session.save();
 
-      res.redirect(req.get("referer") || "/shop/inspirationList");
+      // Return JSON instead of redirect
+      res.json({ success: true });
     } catch (err) {
       console.error("Error removing from inspiration list:", err);
-      res.status(500).send("Unable to remove from inspiration list");
+      res.status(500).json({
+        success: false,
+        message: "Unable to remove from inspiration list",
+      });
     }
   },
 };

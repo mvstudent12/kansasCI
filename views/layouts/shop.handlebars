@@ -26,9 +26,75 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/../css/shop.css" rel="stylesheet">
+    <style>
+        .sales-banner {
+            width: 100%;
+            overflow: hidden;
+            padding: 10px 0;
+            white-space: nowrap;
+            background-color: #ffffff;
+            margin-bottom: 5px;
+            /* vertically centers text relative to banner height */
+        }
+
+        .scrolling-items {
+            display: inline-block;
+            animation: scroll 40s linear infinite;
+            /* slower scroll */
+        }
+
+        .scrolling-items .item {
+            display: inline-block;
+            margin-right: 50px;
+            text-align: center;
+            font-weight: bold;
+            vertical-align: middle;
+            /* align images/text in same line */
+        }
+
+        .scrolling-items .item img {
+            width: 80px;
+            height: 80px;
+            display: block;
+            margin: 0 auto 0 auto;
+            /* centers image above text */
+        }
+
+        .scrolling-items .item.label {
+            font-size: 1.8em;
+            text-transform: uppercase;
+            color: #333;
+            line-height: 80px;
+            /* matches image height for vertical centering */
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(10%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Pause scrolling on hover */
+        .scrolling-items:hover {
+            animation-play-state: paused;
+        }
+
+        #navbar-vertical {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            /* optional, softens edges */
+        }
+    </style>
+
+
 </head>
 
 <body>
+
     <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-1 px-xl-5">
@@ -112,7 +178,7 @@
     </div>
 
     <!-- Navbar Start -->
-    <div class="container-fluid bg-dark mb-30">
+    <div class="container-fluid bg-dark mb-10">
         <div class="row px-xl-5">
             <!-- Vertical Categories - visible only on large screens -->
             <div class="col-lg-3 d-none d-lg-block">
@@ -124,7 +190,7 @@
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light"
                     id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                     <div class="navbar-nav w-100">
-                        <a href="/shop/furniture" class="nav-item nav-link">Seating</a>
+                        <a href="/shop/seating" class="nav-item nav-link">Seating</a>
                         <a href="/shop/furniture" class="nav-item nav-link">Furniture</a>
                         {{!-- <a href="/error/503" class="nav-item nav-link">Office Panel
                             Systems</a> --}}
@@ -203,7 +269,62 @@
             </div>
         </div>
     </div>
+    {{!-- Sales Banner --}}
+    <div class="sales-banner mb-10">
+        <div class="scrolling-items">
+            <div class="item label">
+                <span>Most Popular Signature Products</span>
+            </div>
+            <div class="item">
+                <a href="/shop/product-details/689a0823c05bcc08d2ebad2d"> <img
+                        src="/uploads/2 Drawer Low Personal Storage.webp" alt="Product 1"></a>
 
+            </div>
+            <div class="item">
+                <img src="/uploads/1755095839094-7704SRED-600x600.webp" alt="Product 2">
+
+            </div>
+            <div class="item">
+                <img src="/uploads/1755801933641-file.webp" alt="Product 3">
+
+            </div>
+            <div class="item">
+                <img src="/uploads/Classic Laminate Bow Front Desk Full Double Pedestal 30″ x 66″.webp" alt="Product 4">
+
+            </div>
+            <div class="item">
+                <img src="/uploads/Laminate Lateral File 3 Drawer 36W.webp" alt="Product 5">
+
+            </div>
+            <!-- Final label -->
+            <div class="item label">
+                <span>Most Popular Signature Products</span>
+            </div>
+            <!-- Duplicate for smooth scrolling -->
+            <div class="item">
+                <img src="/uploads/2 Drawer Low Personal Storage.webp" alt="Product 1">
+
+            </div>
+            <div class="item">
+                <img src="/uploads/1755095839094-7704SRED-600x600.webp" alt="Product 2">
+
+            </div>
+            <div class="item">
+                <img src="/uploads/1755801933641-file.webp" alt="Product 3">
+
+            </div>
+            <div class="item">
+                <img src="/uploads/Classic Laminate Bow Front Desk Full Double Pedestal 30″ x 66″.webp" alt="Product 4">
+
+            </div>
+            <div class="item">
+                <img src="/uploads/Laminate Lateral File 3 Drawer 36W.webp" alt="Product 5">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content -->
     {{{body}}}
 
     <!-- Footer Start -->
@@ -264,11 +385,9 @@
             </div>
         </div>
     </div>
-    <!-- Footer End -->
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="/../lib/easing/easing.min.js"></script>
@@ -277,6 +396,7 @@
 
     <!-- Template Javascript -->
     <script src="/../js/main.js"></script>
+
 </body>
 
 </html>
