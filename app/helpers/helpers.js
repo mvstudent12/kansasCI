@@ -112,6 +112,19 @@ const helpers = {
 
     return currentPath.startsWith(link) ? "active" : "";
   },
+  or: function () {
+    // Convert arguments to array, remove the last one (options)
+    const args = Array.prototype.slice.call(arguments, 0, -1);
+    // Return true if any argument is truthy
+    return args.some(Boolean);
+  },
+
+  isArray: function (value) {
+    return Array.isArray(value);
+  },
+  and: function (a, b) {
+    return a && b;
+  },
 };
 
 module.exports = helpers;

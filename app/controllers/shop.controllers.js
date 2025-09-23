@@ -130,11 +130,15 @@ module.exports = {
         : [];
 
       const rawSubcats = req.query.subcategory || [];
-      const selectedSubcategories = Array.isArray(rawSubcats)
+      let selectedSubcategories = Array.isArray(rawSubcats)
         ? rawSubcats
         : rawSubcats
         ? [rawSubcats]
         : [];
+
+      selectedSubcategories = selectedSubcategories.map((s) =>
+        decodeURIComponent(s)
+      );
 
       const rawBrands = req.query.brand || [];
       const selectedBrands = Array.isArray(rawBrands)
@@ -191,6 +195,14 @@ module.exports = {
       const brands = await Product.distinct("brandLine", {
         category: { $in: categoriesToFilter },
       });
+
+      const normalizedQuery = {};
+      for (const key in req.query) {
+        if (req.query[key] === undefined || req.query[key] === null) continue;
+        normalizedQuery[key] = Array.isArray(req.query[key])
+          ? req.query[key]
+          : [req.query[key]];
+      }
 
       // === Render template ===
       res.render("shop/categories/furniture", {

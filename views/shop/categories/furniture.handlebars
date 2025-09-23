@@ -126,6 +126,11 @@
                             (includes selectedBrands "OFD" )}}checked{{/if}} />
                         <label class="custom-control-label" for="brand-ofd">OFD</label>
                     </div>
+                    <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
+                        <input type="radio" class="custom-control-input" name="brand" value="Bay Products" id="brand-bb"
+                            {{#if (includes selectedBrands "Bay Products" )}}checked{{/if}} />
+                        <label class="custom-control-label" for="brand-bb">Bay Products</label>
+                    </div>
                 </form>
             </div>
 
@@ -134,6 +139,28 @@
         <!-- Shop Products -->
         <div class="col-lg-9 col-md-8">
             <div class="row pb-3">
+                {{!-- Show message if any filter is active but no products --}}
+                <div class="col-12">
+                    {{#if (eq products.length 0)}}
+                        {{#if (gt selectedCategories.length 0)}}
+                            <p class="text-center text-danger">No products found for the selected filters.</p>
+                        {{else}}
+                            {{#if (gt selectedSubcategories.length 0)}}
+                                <p class="text-center text-danger">No products found for the selected filters.</p>
+                            {{else}}
+                                {{#if (gt selectedLines.length 0)}}
+                                    <p class="text-center text-danger">No products found for the selected filters.</p>
+                                {{else}}
+                                    {{#if (gt selectedBrands.length 0)}}
+                                        <p class="text-center text-danger">No products found for the selected filters.
+                                        </p>
+                                    {{/if}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+                </div>
+
 
                 {{#each products}}
                     <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
@@ -156,18 +183,17 @@
                 {{/each}}
 
             </div>
+            <!-- Pagination -->
             <div class="row pb-3">
                 <div class="col-12 pb-1">
                     <nav>
                         <ul class="pagination justify-content-center">
+
                             {{!-- Previous Button --}}
                             {{#if (gt currentPage 1)}}
                                 <li class="page-item">
-                                    <a class="page-link" href="?page={{subtract currentPage 1}}
-                                   {{#each selectedCategories}}&category={{this}}{{/each}}
-                                   {{#each selectedSubcategories}}&subcategory={{this}}{{/each}}
-                                   {{#each selectedLines}}&line={{this}}{{/each}}
-                                   {{#each selectedBrands}}&brand={{this}}{{/each}}">
+                                    <a class="page-link"
+                                        href="?page={{subtract currentPage 1}}{{#each selectedCategories}}&category={{urlEncode this}}{{/each}}{{#each selectedSubcategories}}&subcategory={{urlEncode this}}{{/each}}{{#each selectedLines}}&line={{urlEncode this}}{{/each}}{{#each selectedBrands}}&brand={{urlEncode this}}{{/each}}">
                                         Previous
                                     </a>
                                 </li>
@@ -175,17 +201,14 @@
                                 <li class="page-item disabled"><span class="page-link">Previous</span></li>
                             {{/if}}
 
-                            {{!-- Dynamic Page Links --}}
+                            {{!-- Page Numbers --}}
                             {{#each (paginationRange currentPage totalPages)}}
                                 {{#if (eq this "...")}}
                                     <li class="page-item disabled"><span class="page-link">…</span></li>
                                 {{else}}
                                     <li class="page-item {{#if (eq this ../currentPage)}}active{{/if}}">
-                                        <a class="page-link" href="?page={{this}}
-                                       {{#each ../selectedCategories}}&category={{this}}{{/each}}
-                                       {{#each ../selectedSubcategories}}&subcategory={{this}}{{/each}}
-                                       {{#each ../selectedLines}}&line={{this}}{{/each}}
-                                       {{#each ../selectedBrands}}&brand={{this}}{{/each}}">
+                                        <a class="page-link"
+                                            href="?page={{this}}{{#each ../selectedCategories}}&category={{urlEncode this}}{{/each}}{{#each ../selectedSubcategories}}&subcategory={{urlEncode this}}{{/each}}{{#each ../selectedLines}}&line={{urlEncode this}}{{/each}}{{#each ../selectedBrands}}&brand={{urlEncode this}}{{/each}}">
                                             {{this}}
                                         </a>
                                     </li>
@@ -195,21 +218,21 @@
                             {{!-- Next Button --}}
                             {{#if (lt currentPage totalPages)}}
                                 <li class="page-item">
-                                    <a class="page-link" href="?page={{add currentPage 1}}
-                                   {{#each selectedCategories}}&category={{this}}{{/each}}
-                                   {{#each selectedSubcategories}}&subcategory={{this}}{{/each}}
-                                   {{#each selectedLines}}&line={{this}}{{/each}}">
+                                    <a class="page-link"
+                                        href="?page={{add currentPage 1}}{{#each selectedCategories}}&category={{urlEncode this}}{{/each}}{{#each selectedSubcategories}}&subcategory={{urlEncode this}}{{/each}}{{#each selectedLines}}&line={{urlEncode this}}{{/each}}{{#each selectedBrands}}&brand={{urlEncode this}}{{/each}}">
                                         Next
                                     </a>
                                 </li>
                             {{else}}
                                 <li class="page-item disabled"><span class="page-link">Next</span></li>
                             {{/if}}
+
                         </ul>
                     </nav>
-
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>
