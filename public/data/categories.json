@@ -18,6 +18,27 @@
   },
   {
     "metaCategory": "Furniture",
+    "name": "Office Panel Systems",
+    "slug": "office panel systems",
+    "subcategories": [
+      "Reception",
+      "Team",
+      "Private",
+      "Demountable",
+      "Individual Panels",
+      "Fabric Panels",
+      "Glass Panels",
+      "Accessories",
+      "Storage",
+      "Doors",
+      "Stackable",
+      "Electric",
+      "Worksurfaces",
+      "Overhead"
+    ]
+  },
+  {
+    "metaCategory": "Furniture",
     "name": "Seating",
     "slug": "seating",
     "subcategories": [

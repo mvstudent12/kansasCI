@@ -106,6 +106,29 @@
                     </form>
                 </div>
             {{/if}}
+            <h5 class="section-title position-relative text-uppercase mb-3">
+                <span class="bg-secondary pr-3">Shop by Brand</span>
+            </h5>
+            <div class="bg-light p-4 mb-30">
+                <form id="brand-filter-form" method="GET" action="/shop/furniture">
+                    <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
+                        <input type="radio" class="custom-control-input" name="brand" value="Commercial Concepts"
+                            id="brand-cc" {{#if (includes selectedBrands "Commercial Concepts" )}}checked{{/if}} />
+                        <label class="custom-control-label" for="brand-cc">Commercial Concepts</label>
+                    </div>
+                    <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
+                        <input type="radio" class="custom-control-input" name="brand" value="OEI" id="brand-oei" {{#if
+                            (includes selectedBrands "OEI" )}}checked{{/if}} />
+                        <label class="custom-control-label" for="brand-oei">OEI</label>
+                    </div>
+                    <div class="custom-control custom-radio d-flex align-items-center justify-content-between mb-3">
+                        <input type="radio" class="custom-control-input" name="brand" value="OFD" id="brand-ofd" {{#if
+                            (includes selectedBrands "OFD" )}}checked{{/if}} />
+                        <label class="custom-control-label" for="brand-ofd">OFD</label>
+                    </div>
+                </form>
+            </div>
+
         </div>
 
         <!-- Shop Products -->
@@ -143,7 +166,8 @@
                                     <a class="page-link" href="?page={{subtract currentPage 1}}
                                    {{#each selectedCategories}}&category={{this}}{{/each}}
                                    {{#each selectedSubcategories}}&subcategory={{this}}{{/each}}
-                                   {{#each selectedLines}}&line={{this}}{{/each}}">
+                                   {{#each selectedLines}}&line={{this}}{{/each}}
+                                   {{#each selectedBrands}}&brand={{this}}{{/each}}">
                                         Previous
                                     </a>
                                 </li>
@@ -160,7 +184,8 @@
                                         <a class="page-link" href="?page={{this}}
                                        {{#each ../selectedCategories}}&category={{this}}{{/each}}
                                        {{#each ../selectedSubcategories}}&subcategory={{this}}{{/each}}
-                                       {{#each ../selectedLines}}&line={{this}}{{/each}}">
+                                       {{#each ../selectedLines}}&line={{this}}{{/each}}
+                                       {{#each ../selectedBrands}}&brand={{this}}{{/each}}">
                                             {{this}}
                                         </a>
                                     </li>
@@ -201,6 +226,12 @@
     document.querySelectorAll('#line-filter-form input[type="radio"]').forEach(radio => {
         radio.addEventListener('change', () => {
             document.getElementById('line-filter-form').submit();
+        });
+    });
+    // Auto-submit on brand change
+    document.querySelectorAll('#brand-filter-form input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            document.getElementById('brand-filter-form').submit();
         });
     });
 </script>

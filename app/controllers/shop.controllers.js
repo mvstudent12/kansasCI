@@ -121,9 +121,13 @@ module.exports = {
       const perPage = 30;
       const page = parseInt(req.query.page, 10) || 1;
 
-      // === Normalize incoming query params ===
-      const rawCategory = req.query.category || null; // only one category allowed
-      const selectedCategories = rawCategory ? [rawCategory] : [];
+      // === Normalize query params ===
+      const rawCategory = req.query.category || null; // single or multiple categories
+      const selectedCategories = Array.isArray(rawCategory)
+        ? rawCategory
+        : rawCategory
+        ? [rawCategory]
+        : [];
 
       const rawSubcats = req.query.subcategory || [];
       const selectedSubcategories = Array.isArray(rawSubcats)
@@ -146,15 +150,14 @@ module.exports = {
       const furnitureEntries = categoriesData.filter(
         (c) => c.metaCategory === "Furniture"
       );
-
-      const furnitureTypes = furnitureEntries.map((c) => c.name); // product types
+      const furnitureTypes = furnitureEntries.map((c) => c.name); // e.g., Desks, Seating
 
       // === Determine categories to filter by ===
       const categoriesToFilter = selectedCategories.length
         ? selectedCategories
         : furnitureTypes;
 
-      // === Dynamic subcategories for selected category ===
+      // === Determine subcategories for selected category ===
       let subcategoriesToRender = [];
       if (selectedCategories.length === 1) {
         const categoryEntry = furnitureEntries.find(
@@ -167,20 +170,13 @@ module.exports = {
       // === Build Mongo filter ===
       const filter = {
         category: { $in: categoriesToFilter },
-        visible: true, // only show visible products
+        visible: true,
       };
 
-      if (selectedSubcategories.length) {
+      if (selectedSubcategories.length)
         filter.subcategory = { $in: selectedSubcategories };
-      }
-
-      if (selectedBrands.length) {
-        filter.brand = { $in: selectedBrands };
-      }
-
-      if (selectedLines.length) {
-        filter.productLine = { $in: selectedLines };
-      }
+      if (selectedBrands.length) filter.brandLine = { $in: selectedBrands };
+      if (selectedLines.length) filter.productLine = { $in: selectedLines };
 
       // === Query products & count ===
       const [products, totalCount] = await Promise.all([
@@ -191,8 +187,8 @@ module.exports = {
         Product.countDocuments(filter),
       ]);
 
-      // === Build brand list for filter UI ===
-      const brands = await Product.distinct("brand", {
+      // === Build brandLine list for filter UI ===
+      const brands = await Product.distinct("brandLine", {
         category: { $in: categoriesToFilter },
       });
 
@@ -207,9 +203,10 @@ module.exports = {
         selectedBrands,
         selectedLines,
         productTypes: furnitureTypes,
-        subcategories: subcategoriesToRender, // dynamic
+        subcategories: subcategoriesToRender,
         brands,
         currentPath: req.path,
+        queryParams: req.query, // useful for keeping all filters in pagination
       });
     } catch (err) {
       console.error(err);
