@@ -140,8 +140,12 @@
                             {{!-- Previous Button --}}
                             {{#if (gt currentPage 1)}}
                                 <li class="page-item">
-                                    <a class="page-link"
-                                        href="?page={{subtract currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Previous</a>
+                                    <a class="page-link" href="?page={{subtract currentPage 1}}
+                                   {{#each selectedCategories}}&category={{this}}{{/each}}
+                                   {{#each selectedSubcategories}}&subcategory={{this}}{{/each}}
+                                   {{#each selectedLines}}&line={{this}}{{/each}}">
+                                        Previous
+                                    </a>
                                 </li>
                             {{else}}
                                 <li class="page-item disabled"><span class="page-link">Previous</span></li>
@@ -153,8 +157,12 @@
                                     <li class="page-item disabled"><span class="page-link">…</span></li>
                                 {{else}}
                                     <li class="page-item {{#if (eq this ../currentPage)}}active{{/if}}">
-                                        <a class="page-link"
-                                            href="?page={{this}}{{#each ../selectedCategories}}&category={{this}}{{/each}}">{{this}}</a>
+                                        <a class="page-link" href="?page={{this}}
+                                       {{#each ../selectedCategories}}&category={{this}}{{/each}}
+                                       {{#each ../selectedSubcategories}}&subcategory={{this}}{{/each}}
+                                       {{#each ../selectedLines}}&line={{this}}{{/each}}">
+                                            {{this}}
+                                        </a>
                                     </li>
                                 {{/if}}
                             {{/each}}
@@ -162,15 +170,19 @@
                             {{!-- Next Button --}}
                             {{#if (lt currentPage totalPages)}}
                                 <li class="page-item">
-                                    <a class="page-link"
-                                        href="?page={{add currentPage 1}}{{#each selectedCategories}}&category={{this}}{{/each}}">Next</a>
+                                    <a class="page-link" href="?page={{add currentPage 1}}
+                                   {{#each selectedCategories}}&category={{this}}{{/each}}
+                                   {{#each selectedSubcategories}}&subcategory={{this}}{{/each}}
+                                   {{#each selectedLines}}&line={{this}}{{/each}}">
+                                        Next
+                                    </a>
                                 </li>
                             {{else}}
                                 <li class="page-item disabled"><span class="page-link">Next</span></li>
                             {{/if}}
-
                         </ul>
                     </nav>
+
                 </div>
             </div>
         </div>

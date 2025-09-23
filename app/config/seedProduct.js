@@ -81,12 +81,12 @@
 // seed();
 //"mongodb+srv://kcicodingdev:zaaKZI27u5MtY6Pw@kansasci.jdywjne.mongodb.net/?retryWrites=true&w=majority&appName=Kansasci"
 const mongoose = require("mongoose");
-const Product = require("../models/Product"); // adjust path if needed
+const Product = require("../models/Product"); // Adjust path to your Product model
 
 const MONGODB_URI =
   "mongodb+srv://kcicodingdev:zaaKZI27u5MtY6Pw@kansasci.jdywjne.mongodb.net/?retryWrites=true&w=majority&appName=Kansasci";
 
-async function removeDuplicateTitles() {
+async function updateBrandLine() {
   try {
     await mongoose.connect(MONGODB_URI, {
       useNewUrlParser: true,
@@ -94,36 +94,20 @@ async function removeDuplicateTitles() {
     });
     console.log("✅ Connected to MongoDB");
 
-    // Aggregate duplicate titles
-    const duplicates = await Product.aggregate([
-      {
-        $group: {
-          _id: "$title", // group by title
-          ids: { $addToSet: "$_id" },
-          count: { $sum: 1 },
-        },
-      },
-      { $match: { count: { $gt: 1 } } }, // only duplicates
-    ]);
+    const result = await Product.updateMany(
+      { brandLine: "OEI" }, // filter
+      { $set: { brandLine: "OFD" } } // update
+    );
 
-    console.log(`Found ${duplicates.length} duplicate titles`);
+    console.log(`✅ Updated ${result.modifiedCount} products`);
 
-    // Remove duplicates but keep one of each
-    for (const doc of duplicates) {
-      const idsToRemove = doc.ids.slice(1); // keep the first, remove rest
-      await Product.deleteMany({ _id: { $in: idsToRemove } });
-      console.log(
-        `Removed ${idsToRemove.length} duplicates for title: ${doc._id}`
-      );
-    }
-
-    console.log("✅ Finished removing duplicates");
     await mongoose.disconnect();
+    console.log("🛑 Disconnected from MongoDB");
     process.exit(0);
   } catch (err) {
-    console.error("❌ Error removing duplicates:", err);
+    console.error("❌ Error updating brandLine:", err);
     process.exit(1);
   }
 }
 
-removeDuplicateTitles();
+updateBrandLine();
