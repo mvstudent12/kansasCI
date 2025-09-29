@@ -35,10 +35,10 @@
                                 {{#each orders}}
                                     <tr>
                                         <td>{{add @index 1}}</td>
-                                        <td>{{customer.firstName}} {{customer.lastName}}</td>
+                                        <td class="text-capitalize">{{customer.firstName}} {{customer.lastName}}</td>
                                         <td>{{formatDate createdAt}}</td>
                                         <td>{{customer.mobile}}</td>
-                                        <td>{{customer.city}}</td>
+                                        <td class="text-capitalize">{{customer.city}}</td>
                                         <td>{{status}}</td>
                                         <td>
                                             <div class="dropdown">

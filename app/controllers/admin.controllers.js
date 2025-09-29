@@ -288,7 +288,6 @@ module.exports = {
       });
 
       await newUser.save();
-      console.log(newUser);
 
       req.flash("success_msg", "New team member created successfully");
       res.redirect("/admin/contacts"); // adjust where you want to go
@@ -539,8 +538,6 @@ module.exports = {
       // Separate customer from order
       const customer = order.customerId;
       delete order.customerId;
-
-      console.log(order);
 
       // Render admin template with separate customer object
       res.render("admin/viewOrder", {

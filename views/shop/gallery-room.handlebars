@@ -45,10 +45,12 @@
                 <div class="col-12 pb-1">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                     </div>
-                    <div class="alert alert-info mt-3">
-                        ⭐ Add rooms to your inspiration gallery. Your selections can be sent to the KCI sales
-                        team for further discussion and quotes.
-                    </div>
+                    <a href="/shop/inspirationList">
+                        <div class="alert alert-info mt-3">
+                            ⭐ Add rooms to your inspiration gallery. Your selections can be sent to the KCI sales
+                            team for further discussion and quotes.
+                        </div>
+                    </a>
                 </div>
                 {{#each images}}
                     <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
@@ -161,6 +163,9 @@
                 const data = await res.json();
 
                 if (data.success) {
+                    document.getElementById("inspirationBadge").textContent = data.count;
+                    console.log(document.getElementById("inspirationBadge").textContent)
+
                     // Toggle the star icon dynamically
                     const icon = button.querySelector("i");
                     if (action === "add") {

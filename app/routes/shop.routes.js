@@ -46,7 +46,7 @@ shop.get("/wishList/moveToCart/", shopController.moveToCart);
 
 shop.get("/inspirationList", shopController.inspirationList);
 
-shop.get("/inspirationList/add", shopController.addToInspirationList);
+shop.get("/inspirationList/add/", shopController.addToInspirationList);
 
 shop.get("/inspirationList/remove/", shopController.removeFromInspirationList);
 

@@ -99,7 +99,6 @@ const helpers = {
 
   // Checks if a gallery image is in the “inspiration” list
   containsInspiration: function (inspirationList, filePath) {
-    console.log(inspirationList, filePath);
     if (!inspirationList) return false;
     return inspirationList.some(
       (item) => item.type === "gallery" && item.filePath === filePath

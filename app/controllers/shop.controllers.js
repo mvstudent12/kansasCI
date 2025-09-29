@@ -591,7 +591,7 @@ module.exports = {
         state,
         zip,
         customerType,
-        custId,
+        custID,
         companyName,
       } = req.body;
 
@@ -609,7 +609,7 @@ module.exports = {
           state,
           zip,
           customerType,
-          custId,
+          custID,
           companyName,
         });
         await customer.save();
@@ -661,7 +661,6 @@ module.exports = {
       // Separate customer object from order
       const customer = order.customerId;
       delete order.customerId; // remove from order to avoid duplication
-      console.log(customer, order);
 
       res.render("shop/order-confirmation", {
         layout: "shop",
@@ -879,7 +878,7 @@ module.exports = {
         req.session.inspirationList.push({ type: "gallery", filePath: file });
 
       await req.session.save();
-      res.json({ success: true });
+      res.json({ success: true, count: req.session.inspirationList.length });
     } catch (err) {
       console.error(err);
       res.status(500).json({ success: false, message: "Unable to add image" });
