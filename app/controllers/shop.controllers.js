@@ -225,123 +225,27 @@ module.exports = {
       res.render("error/404", { layout: "error" });
     }
   },
-  async seating(req, res) {
+  async products(req, res) {
     try {
       const perPage = 30;
       const page = parseInt(req.query.page, 10) || 1;
 
-      // === Selected subcategories from query params ===
-      const rawSubcats = req.query.subcategory || [];
-      const selectedSubcategories = Array.isArray(rawSubcats)
-        ? rawSubcats
-        : rawSubcats
-        ? [rawSubcats]
-        : [];
+      const slug = req.params.category; // e.g. "seating", "signs-and-graphics"
 
-      // === Get seating category entry from categoriesData ===
-      const seatingEntry = categoriesData.find(
-        (c) => c.metaCategory === "Furniture" && c.name === "Seating"
-      );
+      // Find all entries in categories.json that match this slug
+      const entries = categoriesData.filter((c) => c.slug === slug);
 
-      const seatingSubcategories = seatingEntry?.subcategories || [];
-
-      // === Build Mongo filter ===
-      const filter = {
-        category: "Seating",
-        visible: true, // only show visible products
-      };
-
-      if (selectedSubcategories.length) {
-        filter.subcategory = { $in: selectedSubcategories };
+      if (!entries.length) {
+        return res.render("error/404", { layout: "error" });
       }
 
-      // === Query products & count ===
-      const [products, totalCount] = await Promise.all([
-        Product.find(filter)
-          .skip((page - 1) * perPage)
-          .limit(perPage)
-          .lean(),
-        Product.countDocuments(filter),
-      ]);
-
-      res.render("shop/categories/products", {
-        layout: "shop",
-        products,
-        currentPage: page,
-        totalPages: Math.ceil(totalCount / perPage),
-        selectedSubcategories,
-        subcategoriesToRender: seatingSubcategories,
-        currentPath: req.path,
-        name: "Seating",
-        filter: "seating",
-      });
-    } catch (err) {
-      console.error(err);
-      res.render("error/404", { layout: "error" });
-    }
-  },
-  async textiles(req, res) {
-    try {
-      const perPage = 30;
-      const page = parseInt(req.query.page, 10) || 1;
-
-      // === Selected subcategories from query params ===
-      const rawSubcats = req.query.subcategory || [];
-      const selectedSubcategories = Array.isArray(rawSubcats)
-        ? rawSubcats
-        : rawSubcats
-        ? [rawSubcats]
-        : [];
-
-      // === Gather all subcategories under the Textiles metaCategory ===
-      const textilesEntries = categoriesData.filter(
-        (c) => c.metaCategory === "Textiles"
-      );
-      const textilesSubcategories = [
-        ...new Set(textilesEntries.flatMap((c) => c.subcategories)),
+      // Collect category names and subcategories
+      const categoryNames = entries.map((c) => c.name);
+      const subcategoriesToRender = [
+        ...new Set(entries.flatMap((c) => c.subcategories)),
       ];
 
-      // === Build Mongo filter ===
-      const filter = {
-        category: { $in: ["Textiles", "Clothing"] },
-        visible: true, // only show visible products
-      };
-      if (selectedSubcategories.length) {
-        filter.subcategory = { $in: selectedSubcategories };
-      }
-
-      // === Query products & count ===
-      const [products, totalCount] = await Promise.all([
-        Product.find(filter)
-          .skip((page - 1) * perPage)
-          .limit(perPage)
-          .lean(),
-        Product.countDocuments(filter),
-      ]);
-
-      // === Render using the same template as Seating / Furniture ===
-      res.render("shop/categories/products", {
-        layout: "shop",
-        products,
-        currentPage: page,
-        totalPages: Math.ceil(totalCount / perPage),
-        selectedSubcategories,
-        subcategoriesToRender: textilesSubcategories,
-        currentPath: req.path,
-        name: "Clothing & Textiles", // used for page heading or breadcrumbs
-        filter: "textiles",
-      });
-    } catch (err) {
-      console.error(err);
-      res.render("error/404", { layout: "error" });
-    }
-  },
-  async signs(req, res) {
-    try {
-      const perPage = 30;
-      const page = parseInt(req.query.page, 10) || 1;
-
-      // === Selected subcategories from query params ===
+      // Grab selected subcategories from query
       const rawSubcats = req.query.subcategory || [];
       const selectedSubcategories = Array.isArray(rawSubcats)
         ? rawSubcats
@@ -349,24 +253,16 @@ module.exports = {
         ? [rawSubcats]
         : [];
 
-      // === Gather all subcategories under the Signs metaCategory ===
-      const signsEntries = categoriesData.filter(
-        (c) => c.metaCategory === "Signs"
-      );
-      const signsSubcategories = [
-        ...new Set(signsEntries.flatMap((c) => c.subcategories)),
-      ];
-
-      // === Build Mongo filter ===
+      // Build Mongo filter
       const filter = {
-        category: { $in: signsEntries.map((c) => c.name) }, // e.g. ["Signs & Graphics"]
-        visible: true, // only show visible products
+        category: { $in: categoryNames },
+        visible: true,
       };
       if (selectedSubcategories.length) {
         filter.subcategory = { $in: selectedSubcategories };
       }
 
-      // === Query products & count ===
+      // Query products
       const [products, totalCount] = await Promise.all([
         Product.find(filter)
           .skip((page - 1) * perPage)
@@ -375,193 +271,24 @@ module.exports = {
         Product.countDocuments(filter),
       ]);
 
-      // === Render using the same template as other categories ===
+      // Render page
       res.render("shop/categories/products", {
         layout: "shop",
         products,
         currentPage: page,
         totalPages: Math.ceil(totalCount / perPage),
         selectedSubcategories,
-        subcategoriesToRender: signsSubcategories,
+        subcategoriesToRender,
         currentPath: req.path,
-        name: "Signs & Graphics", // used for page heading or breadcrumbs
-        filter: "signs",
+        name: categoryNames.join(", "), // heading, e.g. "Seating"
+        filter: slug, // used in form action
       });
     } catch (err) {
       console.error(err);
       res.render("error/404", { layout: "error" });
     }
   },
-  async awards(req, res) {
-    try {
-      const perPage = 30;
-      const page = parseInt(req.query.page, 10) || 1;
 
-      // === Selected subcategories from query params ===
-      const rawSubcats = req.query.subcategory || [];
-      const selectedSubcategories = Array.isArray(rawSubcats)
-        ? rawSubcats
-        : rawSubcats
-        ? [rawSubcats]
-        : [];
-
-      // === Gather all subcategories under the Signs metaCategory ===
-      const awardsEntries = categoriesData.filter(
-        (c) => c.metaCategory === "Awards"
-      );
-      const awardsSubcategories = [
-        ...new Set(awardsEntries.flatMap((c) => c.subcategories)),
-      ];
-
-      // === Build Mongo filter ===
-      const filter = {
-        category: { $in: awardsEntries.map((c) => c.name) }, // e.g. ["Awards & Plaques"]
-        visible: true, // only show visible products
-      };
-      if (selectedSubcategories.length) {
-        filter.subcategory = { $in: selectedSubcategories };
-      }
-
-      // === Query products & count ===
-      const [products, totalCount] = await Promise.all([
-        Product.find(filter)
-          .skip((page - 1) * perPage)
-          .limit(perPage)
-          .lean(),
-        Product.countDocuments(filter),
-      ]);
-
-      // === Render using the same template as other categories ===
-      res.render("shop/categories/products", {
-        layout: "shop",
-        products,
-        currentPage: page,
-        totalPages: Math.ceil(totalCount / perPage),
-        selectedSubcategories,
-        subcategoriesToRender: awardsSubcategories,
-        currentPath: req.path,
-        name: "Awards & Plaques", // used for page heading or breadcrumbs
-        filter: "awards",
-      });
-    } catch (err) {
-      console.error(err);
-      res.render("error/404", { layout: "error" });
-    }
-  },
-  async metal(req, res) {
-    try {
-      const perPage = 30;
-      const page = parseInt(req.query.page, 10) || 1;
-
-      // === Selected subcategories from query params ===
-      const rawSubcats = req.query.subcategory || [];
-      const selectedSubcategories = Array.isArray(rawSubcats)
-        ? rawSubcats
-        : rawSubcats
-        ? [rawSubcats]
-        : [];
-
-      // === Gather all subcategories under the Metal metaCategory ===
-      const metalEntries = categoriesData.filter(
-        (c) => c.metaCategory === "Metal"
-      );
-      const metalSubcategories = [
-        ...new Set(metalEntries.flatMap((c) => c.subcategories)),
-      ];
-
-      // === Build Mongo filter ===
-      const filter = {
-        category: { $in: metalEntries.map((c) => c.name) }, // e.g. ["Metal Works"]
-        visible: true, // only show visible products
-      };
-      if (selectedSubcategories.length) {
-        filter.subcategory = { $in: selectedSubcategories };
-      }
-
-      // === Query products & count ===
-      const [products, totalCount] = await Promise.all([
-        Product.find(filter)
-          .skip((page - 1) * perPage)
-          .limit(perPage)
-          .lean(),
-        Product.countDocuments(filter),
-      ]);
-
-      // === Render using the same template ===
-      res.render("shop/categories/products", {
-        layout: "shop",
-        products,
-        currentPage: page,
-        totalPages: Math.ceil(totalCount / perPage),
-        selectedSubcategories,
-        subcategoriesToRender: metalSubcategories,
-        currentPath: req.path,
-
-        name: "Metal Works",
-        filter: "metal",
-      });
-    } catch (err) {
-      console.error(err);
-      res.render("error/404", { layout: "error" });
-    }
-  },
-  async janitorial(req, res) {
-    try {
-      const perPage = 30;
-      const page = parseInt(req.query.page, 10) || 1;
-
-      // === Selected subcategories from query params ===
-      const rawSubcats = req.query.subcategory || [];
-      const selectedSubcategories = Array.isArray(rawSubcats)
-        ? rawSubcats
-        : rawSubcats
-        ? [rawSubcats]
-        : [];
-
-      // === Gather all subcategories under the Janitorial metaCategory ===
-      const janitorialEntries = categoriesData.filter(
-        (c) => c.metaCategory === "Janitorial"
-      );
-      const janitorialSubcategories = [
-        ...new Set(janitorialEntries.flatMap((c) => c.subcategories)),
-      ];
-
-      // === Build Mongo filter ===
-      const filter = {
-        category: { $in: janitorialEntries.map((c) => c.name) }, // e.g. ["Janitorial", "Paint"]
-        visible: true, // only show visible products
-      };
-      if (selectedSubcategories.length) {
-        filter.subcategory = { $in: selectedSubcategories };
-      }
-
-      // === Query products & count ===
-      const [products, totalCount] = await Promise.all([
-        Product.find(filter)
-          .skip((page - 1) * perPage)
-          .limit(perPage)
-          .lean(),
-        Product.countDocuments(filter),
-      ]);
-
-      // === Render using the same template ===
-      res.render("shop/categories/products", {
-        layout: "shop",
-        products,
-        currentPage: page,
-        totalPages: Math.ceil(totalCount / perPage),
-        selectedSubcategories,
-        subcategoriesToRender: janitorialSubcategories,
-        currentPath: req.path,
-
-        name: "Janitorial & Paint",
-        filter: "janitorial",
-      });
-    } catch (err) {
-      console.error(err);
-      res.render("error/404", { layout: "error" });
-    }
-  },
   async checkout(req, res) {
     try {
       res.render("shop/checkout", {
@@ -595,7 +322,7 @@ module.exports = {
         companyName,
       } = req.body;
 
-      // Check if customer already exists (optional)
+      // Find or create customer
       let customer = await Customer.findOne({ email });
       if (!customer) {
         customer = new Customer({
@@ -631,15 +358,24 @@ module.exports = {
         (item) => item.filePath
       );
 
-      // Create and save the order
+      // Create order with initial activity log
       const order = new Order({
         customerId: customer._id,
         cartItems,
         inspirationGallery,
+        activityLog: [
+          {
+            action: "Order Created",
+            description: `Order created for customer ${customer._id}`,
+            performedBy: null, // can be admin ID if placed by staff
+          },
+        ],
+        archived: false,
       });
+
       await order.save();
 
-      // Clear session cart
+      // Clear session cart & inspiration gallery
       req.session.cart = [];
       req.session.inspirationList = [];
       await req.session.save();
@@ -674,6 +410,7 @@ module.exports = {
   },
   async cart(req, res) {
     try {
+      console.log("I am here");
       res.render("shop/cart", {
         layout: "shop",
       });

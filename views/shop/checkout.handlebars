@@ -35,7 +35,9 @@
                                 </span>
                             </label>
                             <input class="form-control" type="text" name="companyName" placeholder="Company Name"
-                                pattern="^[A-Za-z\s-]+$" title="Please enter the name of the company you work for.">
+                                pattern="[A-Za-z -]+" title="Please enter the name of the company you work for."
+                                required>
+
                         </div>
                         <div class="col-md-6 form-group">
                             <label>
@@ -46,33 +48,37 @@
                                 </span>
                             </label>
                             <input class="form-control" type="text" name="custID" placeholder="Customer ID"
-                                pattern="^[0-9]+$" title="Customer ID must contain numbers only.">
+                                pattern="[0-9]+" title="Customer ID must contain numbers only." required>
+
                         </div>
 
                         <div class="col-md-6 form-group">
                             <label>First Name</label>
                             <input class="form-control" type="text" name="firstName" placeholder="John" required
-                                pattern="^[A-Za-z\s-]+$"
-                                title="First name can only contain letters, spaces, and hyphens">
+                                pattern="[A-Za-z -]+" title="First name can only contain letters, spaces, and hyphens">
+
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Last Name</label>
                             <input class="form-control" type="text" name="lastName" placeholder="Doe" required
-                                pattern="^[A-Za-z\s-]+$"
-                                title="Last name can only contain letters, spaces, and hyphens">
+                                pattern="[A-Za-z -]+" title="Last name can only contain letters, spaces, and hyphens">
+
                         </div>
 
                         <div class="col-md-6 form-group">
                             <label>E-mail</label>
                             <input class="form-control" type="email" name="email" placeholder="example@email.com"
-                                required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                                 title="Please enter a valid email address">
+
                         </div>
 
                         <div class="col-md-6 form-group">
                             <label>Mobile No</label>
                             <input id="mobileInput" class="form-control" type="text" name="mobile"
-                                placeholder="(123) 456-7890" required maxlength="14">
+                                placeholder="(123) 456-7890" required maxlength="14" pattern="\(\d{3}\) \d{3}-\d{4}"
+                                title="Please enter a valid phone number in the format (123) 456-7890">
+
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Address Line 1</label>
@@ -85,8 +91,8 @@
                         <div class="col-md-6 form-group">
                             <label>City</label>
                             <input class="form-control" name="city" type="text" placeholder="Topeka" required
-                                pattern="^[A-Za-z\s-]+$"
-                                title="City name can only contain letters, spaces, and hyphens">
+                                pattern="[A-Za-z -]+" title="City name can only contain letters, spaces, and hyphens">
+
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="state">State</label>
@@ -147,8 +153,9 @@
                         <div class="col-md-6 form-group">
                             <label>ZIP Code</label>
                             <input class="form-control" name="zip" type="text" placeholder="12345" required
-                                pattern="^\d{5}(-\d{4})?$"
+                                pattern="\d{5}(-\d{4})?"
                                 title="ZIP code must be 5 digits or 5 digits followed by a dash and 4 digits (12345 or 12345-6789)">
+
                         </div>
 
                         <!-- Customer Type Select -->

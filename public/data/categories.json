@@ -13,13 +13,14 @@
       "Desk Configurations",
       "Returns & Bridges",
       "Steel Desks",
-      "Desk Frames & Bases"
+      "Desk Frames & Bases",
+      "Workstations"
     ]
   },
   {
     "metaCategory": "Furniture",
     "name": "Office Panel Systems",
-    "slug": "office panel systems",
+    "slug": "panels",
     "subcategories": [
       "Reception",
       "Team",
@@ -125,7 +126,7 @@
   {
     "metaCategory": "Signs",
     "name": "Signs & Graphics",
-    "slug": "signs-and-graphics",
+    "slug": "signs",
     "subcategories": [
       "Decals",
       "Nameplates",
@@ -139,17 +140,18 @@
   {
     "metaCategory": "Awards",
     "name": "Awards & Plaques",
-    "slug": "awards-and-plaques",
+    "slug": "awards",
     "subcategories": ["Awards", "Plaques"]
   },
   {
     "metaCategory": "Metal",
     "name": "Metal Works",
-    "slug": "metal-works",
+    "slug": "metal",
     "subcategories": [
       "Grills",
       "Kiosks",
       "Detention Furniture",
+      "Benches",
       "Outdoor Items",
       "Fire Pits & Rings",
       "Custom Designs"

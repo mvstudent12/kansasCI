@@ -14,18 +14,6 @@ shop.get("/galleryRoom", shopController.galleryRoom);
 
 shop.get("/furniture", shopController.furniture);
 
-shop.get("/seating", shopController.seating);
-
-shop.get("/textiles", shopController.textiles);
-
-shop.get("/signs", shopController.signs);
-
-shop.get("/awards", shopController.awards);
-
-shop.get("/metal", shopController.metal);
-
-shop.get("/janitorial", shopController.janitorial);
-
 shop.post("/submitOrder", shopController.submitOrder);
 
 shop.get("/order-Confirmation/:orderId", shopController.orderConfirmation);
@@ -49,5 +37,7 @@ shop.get("/inspirationList", shopController.inspirationList);
 shop.get("/inspirationList/add/", shopController.addToInspirationList);
 
 shop.get("/inspirationList/remove/", shopController.removeFromInspirationList);
+
+shop.get("/:category", shopController.products);
 
 module.exports = shop;

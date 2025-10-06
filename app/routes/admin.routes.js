@@ -12,6 +12,8 @@ admin.get("/analytics", adminController.analytics);
 
 admin.get("/products", adminController.products);
 
+admin.get("/products/data", adminController.productsData);
+
 admin.get("/calendar", adminController.calendar);
 
 admin.post("/addEvent", adminController.addEvent);
@@ -28,9 +30,11 @@ admin.post("/editCustomer/:ID", adminController.editCustomer);
 
 admin.get("/openOrders", adminController.openOrders);
 
+admin.get("/orderHistory", adminController.orderHistory);
+
 admin.get("/viewOrder/:_id", adminController.viewOrder);
 
-admin.get("/deleteOrder/:ID", adminController.deleteOrder);
+admin.get("/voidOrder/:ID", adminController.voidOrder);
 
 admin.get("/contacts", adminController.contacts);
 

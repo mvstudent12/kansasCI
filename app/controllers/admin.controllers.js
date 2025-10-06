@@ -67,15 +67,72 @@ module.exports = {
   },
   async products(req, res) {
     try {
-      const products = await Product.find().lean(); // use lean for Handlebars
-
-      res.render("admin/products", {
-        layout: "admin",
-        products,
-      });
+      res.render("admin/products", { layout: "admin" });
     } catch (err) {
       console.log(err);
       res.render("error/404", { layout: "error" });
+    }
+  },
+  async productsData(req, res) {
+    try {
+      let start = parseInt(req.query.start) || 0;
+      let length = parseInt(req.query.length) || 10;
+
+      // Safely extract search value
+      let search = req.query.search?.value || "";
+
+      let orderCol = req.query.order?.[0]?.column || 0;
+      let orderDir = req.query.order?.[0]?.dir || "asc";
+
+      // Map column index to field name
+      const columns = [
+        "title",
+        "brandLine",
+        "productLine",
+        "category",
+        "subcategory",
+      ];
+      const sortField = columns[orderCol] || "title";
+
+      // Build search query
+      const query = search ? { title: { $regex: search, $options: "i" } } : {};
+
+      const totalRecords = await Product.countDocuments();
+      const filteredRecords = await Product.countDocuments(query);
+
+      const products = await Product.find(query)
+        .sort({ [sortField]: orderDir === "asc" ? 1 : -1 })
+        .skip(start)
+        .limit(length)
+        .lean();
+
+      const data = products.map((p, index) => ({
+        index: start + index + 1,
+        title: p.title,
+        brandLine: p.brandLine,
+        productLine: p.productLine,
+        category: p.category,
+        subcategory: p.subcategory,
+        options: `
+        <div class="dropdown">
+          <a class="dropdown-toggle icon-burger-mini" href="#" role="button" data-toggle="dropdown"></a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="/admin/editProduct/${p._id}">Edit</a>
+            <a class="dropdown-item text-danger" href="#" onclick="confirmDelete('${p._id}', '${p.title}')">Delete</a>
+          </div>
+        </div>
+      `,
+      }));
+
+      res.json({
+        draw: parseInt(req.query.draw) || 0,
+        recordsTotal: totalRecords,
+        recordsFiltered: filteredRecords,
+        data,
+      });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: "Server error" });
     }
   },
   async calendar(req, res) {
@@ -484,41 +541,83 @@ module.exports = {
   },
   async openOrders(req, res) {
     try {
-      // Fetch all orders with status "Pending" and populate customer info
-      let orders = await Order.find({ status: "Pending" })
-        .populate("customerId") // gets the full customer document
+      // Fetch all active (non-archived) orders with status "Pending"
+      let orders = await Order.find({ status: "New", archived: false })
+        .populate("customerId") // full customer document
+        .populate("assignedTo") // get sales rep info
         .lean();
 
-      // Separate customer from order for each
+      // Restructure orders to separate customer and assignedTo objects
       orders = orders.map((order) => {
         const customer = order.customerId;
+        const assignedTo = order.assignedTo || null; // might be unassigned
         delete order.customerId;
-        return { ...order, customer };
+        delete order.assignedTo;
+
+        return { ...order, customer, assignedTo };
       });
 
       res.render("admin/openOrders", {
         layout: "admin",
-        orders, // each order now has a separate 'customer' object
+        orders, // each order now has separate 'customer' and 'assignedTo' objects
       });
     } catch (err) {
       console.error(err);
       res.render("error/404", { layout: "error" });
     }
   },
-  async deleteOrder(req, res) {
+  async orderHistory(req, res) {
     try {
-      const { ID } = req.params;
+      // Fetch all orders to date
+      let orders = await Order.find({})
+        .populate("customerId") // full customer document
+        .populate("assignedTo") // get sales rep info
+        .lean();
 
-      // Update the order: empty cartItems and inspirationGallery, mark as Completed
-      await Order.findByIdAndUpdate(
-        ID,
-        {
-          $set: { cartItems: [], inspirationGallery: [], status: "Completed" },
-        },
-        { new: true }
-      );
+      // Restructure orders to separate customer and assignedTo objects
+      orders = orders.map((order) => {
+        const customer = order.customerId;
+        const assignedTo = order.assignedTo || null; // might be unassigned
+        delete order.customerId;
+        delete order.assignedTo;
 
-      res.redirect("/admin/openOrders"); // redirect after update
+        return { ...order, customer, assignedTo };
+      });
+
+      res.render("admin/orderHistory", {
+        layout: "admin",
+        orders, // each order now has separate 'customer' and 'assignedTo' objects
+      });
+    } catch (err) {
+      console.error(err);
+      res.render("error/404", { layout: "error" });
+    }
+  },
+  async voidOrder(req, res) {
+    try {
+      const orderId = req.params.id;
+      const performedBy = req.user._id; // assuming you have current admin in req.user
+
+      const order = await Order.findById(orderId);
+      if (!order) {
+        return res.status(404).json({ message: "Order not found" });
+      }
+
+      // Soft delete: mark as archived and status as voided
+      order.archived = true;
+      order.status = "Voided";
+
+      // Add activity log entry
+      order.activityLog.push({
+        action: "Voided",
+        description: `Order voided by user ${performedBy}`,
+        performedBy,
+      });
+
+      await order.save();
+
+      // Redirect back to orders page
+      res.redirect("/admin/openOrders");
     } catch (err) {
       console.error(err);
       res.render("error/404", { layout: "error" });

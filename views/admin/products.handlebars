@@ -21,6 +21,7 @@
                         <h2>Products Inventory</h2>
                     </div>
                     <div class="card-body">
+
                         <table id="productsTable" class="table table-hover table-product" style="width:100%">
                             <thead>
                                 <tr>
@@ -34,66 +35,37 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{#each products}}
-                                    <tr>
-                                        <td>{{add @index 1}}</td>
-                                        <td>{{title}}</td>
-                                        <td>{{brandLine}}</td>
-                                        <td>{{productLine}}</td>
-                                        <td>{{category}}</td>
-                                        <td>{{subcategory}}</td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                </a>
-
-                                                <div class="dropdown-menu dropdown-menu-right"
-                                                    aria-labelledby="dropdownMenuLink">
-                                                    <a class="dropdown-item" href="/admin/editProduct/{{_id}}">Edit</a>
-                                                    <a href="#" class="dropdown-item text-danger" data-toggle="modal"
-                                                        data-target="#deleteModal-{{_id}}">
-                                                        Delete
-                                                    </a>
-
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <div class="modal fade" id="deleteModal-{{_id}}" tabindex="-1" role="dialog"
-                                        aria-labelledby="deleteModalLabel-{{_id}}" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header bg-danger text-white">
-                                                    <h5 class="modal-title" id="deleteModalLabel-{{_id}}">Confirm
-                                                        Deletion</h5>
-                                                    <button type="button" class="close text-white" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Are you sure you want to permanently delete
-                                                    <strong>{{title}}</strong>? This action cannot be undone.
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary btn-pill"
-                                                        data-dismiss="modal">Cancel</button>
-                                                    <a href="/admin/deleteProduct/{{_id}}"
-                                                        class="btn btn-danger btn-pill">Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {{/each}}
+                                <!-- leave empty, DataTables will populate -->
                             </tbody>
                         </table>
+
                     </div>
                 </div>
             </div>
         </div>
 
+    </div>
+</div>
+
+{{!-- Delete Modal --}}
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to permanently delete <strong id="deleteProductName"></strong>? This action cannot
+                be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-pill" data-dismiss="modal">Cancel</button>
+                <a href="#" class="btn btn-danger btn-pill" id="deleteConfirmBtn">Delete</a>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -200,7 +172,7 @@
                             </div>
                             <div class="form-check d-inline-block mr-3 mb-3 mt-3">
                                 <input name="visible" class="form-check-input" type="checkbox" checked="checked"
-                                    value="" id="showProduct">
+                                    id="showProduct">
                                 <label class="form-check-label" for="showProduct">
                                     Show Product On Site
                                 </label>
@@ -263,6 +235,7 @@
             }
         });
     });
+
 </script>
 
 <script>
@@ -305,4 +278,12 @@
                 console.error("Failed to load categories:", err);
             });
     });
+</script>
+<script>
+    function confirmDelete(id, title) {
+        document.getElementById("deleteProductName").textContent = title;
+        document.getElementById("deleteConfirmBtn").href = `/admin/deleteProduct/${id}`;
+        $('#deleteModal').modal('show');
+    }
+
 </script>
