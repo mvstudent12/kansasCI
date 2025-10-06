@@ -379,49 +379,49 @@ $(document).ready(function () {
   /*======== 13. PROGRESS BAR ========*/
 
   /*======== 14. DATA TABLE ========*/
-  // var productsTable = $("#productsTable");
-  // if (productsTable.length != 0) {
-  //   productsTable.DataTable({
-  //     info: false,
-  //     lengthChange: false,
-  //     lengthMenu: [
-  //       [5, 10, 15, -1],
-  //       [5, 10, 15, "All"],
-  //     ],
-  //     scrollX: true,
-  //     order: [[2, "asc"]],
-  //     columnDefs: [
-  //       {
-  //         orderable: false,
-  //         targets: [0, 6, -1],
-  //       },
-  //     ],
-  //     language: {
-  //       search: "_INPUT_",
-  //       searchPlaceholder: "Search...",
-  //     },
-  //   });
-  // }
-
-  // var productSale = $("#product-sale");
-  // if (productSale.length != 0) {
-  //   productSale.DataTable({
-  //     info: false,
-  //     paging: false,
-  //     searching: false,
-  //     scrollX: true,
-  //     order: [[0, "asc"]],
-  //     columnDefs: [
-  //       {
-  //         orderable: false,
-  //         targets: [-1],
-  //       },
-  //     ],
-  //   });
-  // }
   var productsTable = $("#productsTable");
   if (productsTable.length != 0) {
     productsTable.DataTable({
+      info: false,
+      lengthChange: false,
+      lengthMenu: [
+        [5, 10, 15, -1],
+        [5, 10, 15, "All"],
+      ],
+      scrollX: true,
+      order: [[2, "asc"]],
+      columnDefs: [
+        {
+          orderable: false,
+          targets: [0, 6, -1],
+        },
+      ],
+      language: {
+        search: "_INPUT_",
+        searchPlaceholder: "Search...",
+      },
+    });
+  }
+
+  var productSale = $("#product-sale");
+  if (productSale.length != 0) {
+    productSale.DataTable({
+      info: false,
+      paging: false,
+      searching: false,
+      scrollX: true,
+      order: [[0, "asc"]],
+      columnDefs: [
+        {
+          orderable: false,
+          targets: [-1],
+        },
+      ],
+    });
+  }
+  var kciProductsTable = $("#kciProductsTable");
+  if (kciProductsTable.length != 0) {
+    kciProductsTable.DataTable({
       serverSide: true, // enable server-side processing
       // processing: true, // show “loading” indicator
       ajax: "/admin/products/data", // new route that returns JSON
