@@ -79,23 +79,43 @@ module.exports = {
       let length = parseInt(req.query.length) || 10;
 
       // Safely extract search value
-      let search = req.query.search?.value || "";
+      const search = req.query["search[value]"]
+        ? req.query["search[value]"].trim()
+        : "";
 
+      console.log("Received query:", req.query);
+      console.log("Search value parsed:", search);
       let orderCol = req.query.order?.[0]?.column || 0;
       let orderDir = req.query.order?.[0]?.dir || "asc";
 
       // Map column index to field name
       const columns = [
-        "title",
-        "brandLine",
-        "productLine",
-        "category",
-        "subcategory",
+        "index", // column 0, not in DB but we can ignore for sorting
+        "title", // column 1
+        "brandLine", // column 2
+        "productLine", // column 3
+        "category", // column 4
+        "subcategory", // column 5
+        "options", // column 6, not searchable
       ];
-      const sortField = columns[orderCol] || "title";
+
+      let sortField = columns[orderCol];
+      if (!sortField || sortField === "index" || sortField === "options") {
+        sortField = "title"; // default
+      }
 
       // Build search query
-      const query = search ? { title: { $regex: search, $options: "i" } } : {};
+      const query = search
+        ? {
+            $or: [
+              { title: { $regex: search, $options: "i" } },
+              { brandLine: { $regex: search, $options: "i" } },
+              { productLine: { $regex: search, $options: "i" } },
+              { category: { $regex: search, $options: "i" } },
+              { subcategory: { $regex: search, $options: "i" } },
+            ],
+          }
+        : {};
 
       const totalRecords = await Product.countDocuments();
       const filteredRecords = await Product.countDocuments(query);

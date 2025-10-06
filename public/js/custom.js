@@ -419,12 +419,15 @@ $(document).ready(function () {
       ],
     });
   }
+
+  //search kci products table
   var kciProductsTable = $("#kciProductsTable");
-  if (kciProductsTable.length != 0) {
+
+  if (kciProductsTable.length) {
     kciProductsTable.DataTable({
-      serverSide: true, // enable server-side processing
-      // processing: true, // show “loading” indicator
-      ajax: "/admin/products/data", // new route that returns JSON
+      serverSide: true,
+      processing: true, // THIS IS IMPORTANT
+      ajax: "/admin/products/data",
       scrollX: true,
       info: false,
       lengthChange: false,
@@ -432,17 +435,19 @@ $(document).ready(function () {
         [5, 10, 15, -1],
         [5, 10, 15, "All"],
       ],
-      order: [[2, "asc"]], // default sort
+      info: false,
+      searching: true,
+      order: [[2, "asc"]],
       columnDefs: [
-        { orderable: false, targets: [0, 6, -1] }, // disable ordering for #, options
-        { width: "300px", targets: 1 }, // sets column 1 (Product Name) to 150px
+        { orderable: false, targets: [0, 6] }, // row # and options
+        { width: "300px", targets: 1 }, // Product Name width
       ],
       language: {
         search: "_INPUT_",
         searchPlaceholder: "Search...",
       },
       columns: [
-        { data: "index" }, // # row number
+        { data: "index" },
         { data: "title" },
         { data: "brandLine" },
         { data: "productLine" },
