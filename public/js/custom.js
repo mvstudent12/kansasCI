@@ -503,7 +503,39 @@ $(document).ready(function () {
       ],
     });
   }
-
+  // Orders Table
+  const ordersTable = $("#ordersTable");
+  if (ordersTable.length) {
+    ordersTable.DataTable({
+      info: false,
+      lengthChange: false,
+      lengthMenu: [
+        [5, 10, 15, -1],
+        [5, 10, 15, "All"],
+      ],
+      scrollX: true,
+      autoWidth: false,
+      order: [[2, "desc"]], // default sort by Order Date
+      columnDefs: [
+        {
+          orderable: false,
+          targets: [4], // Options column not sortable
+        },
+      ],
+      language: {
+        search: "_INPUT_",
+        searchPlaceholder: "Search orders...",
+      },
+    });
+  }
+  // Make row clickable
+  ordersTable.find("tbody").on("click", "tr", function () {
+    const data = table.row(this).data();
+    console.log("Row clicked, data:", data);
+    if (data && data._id) {
+      window.location.href = `/admin/viewOrder/{{_id}}`;
+    }
+  });
   /*======== 15. OWL CAROUSEL ========*/
   var slideOnly = $(".slide-only");
   if (slideOnly.length != 0) {
