@@ -157,13 +157,16 @@ module.exports = {
         category: p.category,
         subcategory: p.subcategory,
         options: `
-        <div class="dropdown">
-          <a class="dropdown-toggle icon-burger-mini" href="#" role="button" data-toggle="dropdown"></a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="/admin/editProduct/${p._id}">Edit</a>
-            <a class="dropdown-item text-danger" href="#" onclick="confirmDelete('${p._id}', '${p.title}')">Delete</a>
-          </div>
+      <div class="dropdown">
+       <a class="dropdown-toggle icon-burger-mini" href="#" role="button" data-toggle="dropdown"></a>
+       <div class="dropdown-menu dropdown-menu-right">
+       <a class="dropdown-item" href="/admin/editProduct/${p._id}">Edit</a>
+       <a class="dropdown-item text-danger" href="#" onclick="confirmDelete('${
+         p._id
+       }', 
+       ${JSON.stringify(p.title)})">Delete</a>
         </div>
+      </div>
       `,
       }));
 

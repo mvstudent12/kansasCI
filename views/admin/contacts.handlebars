@@ -19,32 +19,39 @@
             <div class="card-body px-3 px-md-5">
                 <div class="row">
                     {{#each salesContacts}}
-                        <div class="col-lg-6 col-xl-4">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
                             <div class="card card-default p-4">
                                 <a href="javascript:0" class="media text-secondary" data-toggle="modal"
                                     data-target="#modal-contact-{{_id}}">
                                     <img src="/img/static/avatar.webp" class="mr-3 img-fluid rounded"
                                         alt="Avatar Image">
                                     <div class="media-body">
-                                        <h5 class="mt-0 mb-2 text-dark text-capitalize">{{firstName}} {{lastName}}</h5>
-                                        <ul class="list-unstyled text-smoke text-smoke">
-                                            <li class="d-flex">
-                                                <i class="mdi mdi-account-tie mr-1"></i>
-                                                <span class="text-capitalize">{{position}}</span>
+                                        <h5 class="mt-0 mb-2 text-dark text-capitalize text-wrap">{{firstName}}
+                                            {{lastName}}
+                                        </h5>
+                                        <ul class="list-unstyled text-smoke">
+                                            <li class="d-flex align-items-start mb-1">
+                                                <i class="mdi mdi-account-tie mr-2 flex-shrink-0"
+                                                    style="width: 24px;"></i>
+                                                <span class="text-capitalize text-wrap"
+                                                    style="word-break: break-word;">{{position}}</span>
                                             </li>
-                                            <li class="d-flex">
-                                                <i class="mdi mdi-email mr-1"></i>
-                                                <span>{{email}}</span>
+                                            <li class="d-flex align-items-start mb-1">
+                                                <i class="mdi mdi-email mr-2 flex-shrink-0" style="width: 24px;"></i>
+                                                <span class="text-wrap" style="word-break: break-word;">{{email}}</span>
                                             </li>
-                                            <li class="d-flex">
-                                                <i class="mdi mdi-phone mr-1"></i>
-                                                <span>{{mobile}}</span>
+                                            <li class="d-flex align-items-start mb-1">
+                                                <i class="mdi mdi-phone mr-2 flex-shrink-0" style="width: 24px;"></i>
+                                                <span class="text-wrap"
+                                                    style="word-break: break-word;">{{mobile}}</span>
                                             </li>
                                         </ul>
                                     </div>
                                 </a>
                             </div>
                         </div>
+
+
 
                         <!-- Contact Modal -->
                         <div class="modal fade" id="modal-contact-{{_id}}" tabindex="-1" role="dialog"

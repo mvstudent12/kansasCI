@@ -5,7 +5,9 @@
             <div class="card-body card-profile-body">
                 <div class="profile-avata">
                     <img class="rounded-circle" src="/img/static/avatar_big.webp" alt="Avatar Image">
-                    <span class="h5 d-block mt-3 mb-2">{{customer.firstName}} {{customer.lastName}}</span>
+                    <span class="h5 d-block mt-3 mb-2 text-capitalize">{{customer.firstName}}
+                        {{customer.lastName}}</span>
+                    <span class="d-block text-capitalize mb-2">{{customer.companyName}}</span>
                     <span class="d-block">{{customer.email}}</span>
                 </div>
             </div>
@@ -19,7 +21,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-target="settingsTab" href="#">Settings</a>
+                        <a class="nav-link" data-target="messageTab" href="#">Message</a>
                     </li>
                 </ul>
 
@@ -97,62 +99,52 @@
                         <h2>Order History</h2>
                     </div>
                     <div class="card-body">
-                        <table id="" class="table table-hover " style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Order Date</th>
-                                    <th>Status</th>
-                                    <th>Cust ID</th>
-                                    <th>Products</th>
-                                    <th>Cart Items</th>
-                                    <th>Gallery</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{#each orders}}
+                        {{#if orders}}
+                            <table id="" class="table table-hover " style="width:100%">
+                                <thead>
                                     <tr>
-                                        <td>{{add @index 1}}</td>
-                                        <td>{{formatDate createdAt}}</td>
-                                        <td>{{status}}</td>
-                                        <td>{{#if ../customer.custID}}{{../customer.custID}}{{else}}none{{/if}}</td>
-                                        <td>{{cartItems.length}}</td>
-                                        <td>{{#if cartItems}}yes{{else}}no{{/if}}</td>
-                                        <td>{{#if inspirationGallery}}yes{{else}}no{{/if}}</td>
+                                        <th>#</th>
+                                        <th>Order Date</th>
+                                        <th>Status</th>
+                                        <th>Cust ID</th>
+                                        <th>Products</th>
+                                        <th>Cart Items</th>
+                                        <th>Gallery</th>
                                     </tr>
-                                {{/each}}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    {{#each orders}}
+                                        <tr onclick="window.location.href='/admin/viewOrder/{{_id}}'"
+                                            style="cursor: pointer;">
+                                            <td>{{add @index 1}}</td>
+                                            <td>{{formatDate createdAt}}</td>
+                                            <td>{{status}}</td>
+                                            <td>{{#if ../customer.custID}}{{../customer.custID}}{{else}}none{{/if}}</td>
+                                            <td>{{cartItems.length}}</td>
+                                            <td>{{#if cartItems}}yes{{else}}no{{/if}}</td>
+                                            <td>{{#if inspirationGallery}}yes{{else}}no{{/if}}</td>
+                                        </tr>
+
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        {{else}}
+                            <p>This customer has not placed any orders yet.</p>
+                        {{/if}}
                     </div>
                 </div>
             </div>
         </div>
         <!-- Settings Section -->
-        <div class="row tab-content d-none" id="settingsTab">
+        <div class="row tab-content d-none" id="messageTab">
             <div class="col-12">
                 <div class="card card-default">
                     <div class="card-header">
-                        <h2>Settings</h2>
+                        {{!-- <h2 text-capitalize>Message {{customer.firstName}}</h2> --}}
                     </div>
+                    {{!-- NEED TO DO --}}
                     <div class="card-body">
-                        <ul class="list-underline">
-                            <li class="list-item">
-                                Show customer in Dashboard
-                                <label class="switch switch-primary switch-pill form-control-label">
-                                    <input type="checkbox" class="switch-input form-check-input" value="on" checked>
-                                    <span class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-                            </li>
-                            <li class="list-item">
-                                Customer is active
-                                <label class="switch switch-primary switch-pill form-control-label">
-                                    <input type="checkbox" class="switch-input form-check-input" value="on" checked>
-                                    <span class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-                            </li>
-                        </ul>
+                        <p>This feature is coming soon!</p>
                     </div>
                 </div>
             </div>

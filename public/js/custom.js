@@ -420,32 +420,31 @@ $(document).ready(function () {
     });
   }
 
-  //search kci products table
   var kciProductsTable = $("#kciProductsTable");
 
   if (kciProductsTable.length) {
     kciProductsTable.DataTable({
       serverSide: true,
-      processing: true, // THIS IS IMPORTANT
-      ajax: "/admin/products/data",
+      processing: true,
+      ajax: {
+        url: "/admin/products/data",
+        dataSrc: function (json) {
+          // Hide spinner
+          $("#productsLoading").hide();
+          // Show table
+          kciProductsTable.show();
+          return json.data;
+        },
+      },
       scrollX: true,
+      autoWidth: false,
       info: false,
       lengthChange: false,
-      lengthMenu: [
-        [5, 10, 15, -1],
-        [5, 10, 15, "All"],
-      ],
-      info: false,
-      searching: true,
       order: [[2, "asc"]],
       columnDefs: [
         { orderable: false, targets: [0, 6] }, // row # and options
         { width: "300px", targets: 1 }, // Product Name width
       ],
-      language: {
-        search: "_INPUT_",
-        searchPlaceholder: "Search...",
-      },
       columns: [
         { data: "index" },
         { data: "title" },
@@ -454,6 +453,19 @@ $(document).ready(function () {
         { data: "category" },
         { data: "subcategory" },
         { data: "options", orderable: false, searchable: false },
+      ],
+      initComplete: function () {
+        // Extra safety: hide spinner and show table when initialized
+        $("#productsLoading").hide();
+        kciProductsTable.show();
+      },
+      language: {
+        search: "_INPUT_",
+        searchPlaceholder: "Search...",
+      },
+      lengthMenu: [
+        [5, 10, 15, -1],
+        [5, 10, 15, "All"],
       ],
     });
   }

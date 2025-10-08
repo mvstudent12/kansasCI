@@ -21,8 +21,15 @@
                         <h2>Products Inventory</h2>
                     </div>
                     <div class="card-body">
+                        <div id="productsLoading" class="text-center my-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <p class="mt-2">Loading products...</p>
+                        </div>
 
-                        <table id="kciProductsTable" class="table table-hover table-product" style="width:100%">
+                        <table id="kciProductsTable" class="table table-hover table-product" style="width:100%;">
+
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -281,9 +288,18 @@
 </script>
 <script>
     function confirmDelete(id, title) {
+        // Set the product title
         document.getElementById("deleteProductName").textContent = title;
+
+        // Set the delete button href
         document.getElementById("deleteConfirmBtn").href = `/admin/deleteProduct/${id}`;
-        $('#deleteModal').modal('show');
+
+        // Show the modal using vanilla JS
+        const deleteModalEl = document.getElementById("deleteModal");
+        const modal = new bootstrap.Modal(deleteModalEl); // bootstrap.Modal requires Bootstrap 5 JS
+        modal.show();
     }
+
+
 
 </script>
