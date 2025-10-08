@@ -482,7 +482,7 @@ module.exports = {
 
       // Delete the product document
       await Product.findByIdAndDelete(ID);
-
+      req.flash("error_msg", "Product Deleted");
       res.redirect("/admin/products");
     } catch (err) {
       console.error(err);
