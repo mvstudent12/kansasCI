@@ -85,8 +85,13 @@ module.exports = {
 
       console.log("Received query:", req.query);
       console.log("Search value parsed:", search);
-      let orderCol = req.query.order?.[0]?.column || 0;
-      let orderDir = req.query.order?.[0]?.dir || "asc";
+
+      // Extract sorting information safely
+      let orderCol = req.query["order[0][column]"]
+        ? parseInt(req.query["order[0][column]"])
+        : 0;
+
+      let orderDir = req.query["order[0][dir]"] || "asc";
 
       // Map column index to field name
       const columns = [
