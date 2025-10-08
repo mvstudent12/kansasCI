@@ -45,9 +45,7 @@ const userSchema = new Schema(
     // passwordHash: { type: String },
     role: {
       type: String,
-      enum: ["admin"], // only "admin" allowed
-      default: "admin", // always set to admin by default
-      immutable: true, // prevents it from being changed after creation
+      enum: ["user", "admin"],
       required: true,
     },
   },

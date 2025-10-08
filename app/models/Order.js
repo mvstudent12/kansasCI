@@ -85,7 +85,7 @@ const orderSchema = new Schema(
         "Awaiting Customer",
         "Pending",
         "Completed",
-        "Cancelled",
+        "Void",
       ],
       default: "New",
     },

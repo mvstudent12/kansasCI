@@ -4,7 +4,7 @@
     "lastName": "daugherty",
     "email": "mark.daugherty@ks.gov",
     "mobile": "(785) 224-5096",
-    "role": "admin",
+    "role": "user",
     "position": "marketing manager"
   },
   {
@@ -20,7 +20,7 @@
     "lastName": "baughman",
     "email": "martin.baughman@ks.gov",
     "mobile": "(913) 683-8853",
-    "role": "admin",
+    "role": "user",
     "position": "sales representative"
   },
   {
@@ -28,7 +28,7 @@
     "lastName": "ball",
     "email": "kerby.ball@ks.gov",
     "mobile": "(913) 775-2086",
-    "role": "admin",
+    "role": "user",
     "position": "marketing sales representative"
   },
   {
@@ -36,7 +36,7 @@
     "lastName": "haffner",
     "email": "jeff.hafner@ks.gov",
     "mobile": "(913) 547-1370",
-    "role": "admin",
+    "role": "user",
     "position": "sales representative"
   },
   {
@@ -44,7 +44,7 @@
     "lastName": "porche",
     "email": "aleah.porche@ks.gov",
     "mobile": "(111) 111-1111",
-    "role": "admin",
+    "role": "user",
     "position": "customer service"
   }
 ]

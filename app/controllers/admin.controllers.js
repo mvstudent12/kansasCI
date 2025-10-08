@@ -7,6 +7,8 @@ const User = require("../models/User");
 const fs = require("fs");
 const path = require("path");
 
+const { getUsersWithOpenOrders } = require("../utils/orderHelpers");
+
 // Helper function to convert 12h time to 24h format string
 function convertTimeTo24(timeStr) {
   if (!timeStr) return "00:00"; // default to midnight
@@ -32,25 +34,41 @@ module.exports = {
   },
   async dashboard(req, res) {
     try {
-      // Get pending orders
-      let orders = await Order.find({ status: "Pending" })
+      // Fetch all active (non-archived) orders with open status
+      let orders = await Order.find({
+        status: { $nin: ["Completed", "Void"] },
+        archived: false,
+      })
         .populate("customerId")
+        .populate("assignedTo")
         .lean();
 
-      // Re-map orders to include customer info separately
+      // Restructure orders to separate customer and assignedTo objects
       orders = orders.map((order) => {
         const customer = order.customerId;
+        const assignedTo = order.assignedTo || null; // might be unassigned
         delete order.customerId;
-        return { ...order, customer };
+        delete order.assignedTo;
+
+        return { ...order, customer, assignedTo };
       });
 
       // Count customers
       const customerCount = await Customer.countDocuments();
 
+      //Count Products
+      const productCount = await Product.countDocuments();
+
+      // Get open orders per user using global helper
+      const usersWithOpenOrders = await getUsersWithOpenOrders();
+      console.log(usersWithOpenOrders);
+
       res.render("admin/dashboard", {
         layout: "admin",
         orders,
-        customerCount, // pass to view
+        customerCount,
+        productCount,
+        usersWithOpenOrders, // pass to view
       });
     } catch (err) {
       console.error(err);
@@ -566,10 +584,13 @@ module.exports = {
   },
   async openOrders(req, res) {
     try {
-      // Fetch all active (non-archived) orders with status "Pending"
-      let orders = await Order.find({ status: "New", archived: false })
-        .populate("customerId") // full customer document
-        .populate("assignedTo") // get sales rep info
+      // Fetch all active (non-archived) orders with open status
+      let orders = await Order.find({
+        status: { $nin: ["Completed", "Void"] },
+        archived: false,
+      })
+        .populate("customerId")
+        .populate("assignedTo")
         .lean();
 
       // Restructure orders to separate customer and assignedTo objects

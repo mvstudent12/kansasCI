@@ -24,7 +24,7 @@
                         </div>
                         <div class="text-left">
                             <span class="h2 d-block">{{orders.length}}</span>
-                            <p>Orders</p>
+                            <p>Open Orders</p>
                         </div>
                     </div>
                 </div>
@@ -33,11 +33,11 @@
                 <div class="card card-default">
                     <div class="d-flex p-5">
                         <div class="icon-md bg-primary rounded-circle mr-3">
-                            <i class="mdi mdi-content-save-edit-outline"></i>
+                            <i class="mdi mdi-shopping-outline"></i>
                         </div>
                         <div class="text-left">
-                            <span class="h2 d-block">214</span>
-                            <p>Total Sales</p>
+                            <span class="h2 d-block">{{productCount}}</span>
+                            <p>Products</p>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                             <i class="mdi mdi-account-group"></i>
                         </div>
                         <div class="text-left">
-                            <span class="h2 d-block">4</span>
+                            <span class="h2 d-block">{{salesContacts.length}}</span>
                             <p>Sales Team</p>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary btn-pill"
                                                         data-dismiss="modal">Cancel</button>
-                                                    <a href="#" class="btn btn-danger btn-pill">Save</a>
+                                                    <a href="#" class="btn btn-danger btn-pill">Confirm</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -205,7 +205,7 @@
                 </div>
             </div>
             <div class="col-xl-4">
-                <!-- Sales Team -->
+                <!-- Sales Team Orders -->
                 <div class="card card-default">
                     <div class="card-header">
                         <h2>Sales Team</h2>
@@ -219,27 +219,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="text-dark font-weight-bold">Gunter Reich</td>
-                                    <td class="text-right">3</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark font-weight-bold">Anke Kirsch</td>
-                                    <td class="text-right">7</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark font-weight-bold">Karolina Beer</td>
-                                    <td class="text-right">0</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark font-weight-bold">Lucia Christ</td>
-                                    <td class="text-right">5</td>
-                                </tr>
+                                {{#each usersWithOpenOrders}}
+                                    <tr>
+                                        <td class="text-dark font-weight-bold text-capitalize">{{name}}
+                                        </td>
+                                        <td class="text-right">{{openOrders}}</td>
+                                    </tr>
+                                {{/each}}
                             </tbody>
                             <tfoot class="border-top">
-                                {{!-- <tr>
-                                                            <td><a href="#" class="text-uppercase">See All</a></td>
-                                                        </tr> --}}
+                                {{!-- <tr><td><a href="#" class="text-uppercase">See All</a></td></tr> --}}
                             </tfoot>
                         </table>
                     </div>
