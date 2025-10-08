@@ -19,7 +19,7 @@
 ====== End ======*/
 
 $(document).ready(function () {
-  "use strict";
+  ("use strict");
 
   /*======== 1. SCROLLBAR CONTENT ========*/
 
@@ -419,7 +419,41 @@ $(document).ready(function () {
       ],
     });
   }
+  //===========================================
+  //customerTable
 
+  var customerTable = $("#customerTable");
+  if (customerTable.length != 0) {
+    customerTable.DataTable({
+      info: false,
+      lengthChange: false,
+      lengthMenu: [
+        [5, 10, 15, -1],
+        [5, 10, 15, "All"],
+      ],
+      scrollX: true,
+      order: [[1, "asc"]], // default sort by Name
+      columnDefs: [
+        {
+          orderable: true, // all columns sortable
+          targets: "_all",
+        },
+      ],
+      language: {
+        search: "_INPUT_",
+        searchPlaceholder: "Search...",
+      },
+    });
+
+    // Optional: make rows clickable if you have data-href
+    customerTable.find("tbody").on("click", "tr", function () {
+      var href = $(this).data("href");
+      if (href) window.location.href = href;
+    });
+  }
+
+  //=================================================
+  //products table
   var kciProductsTable = $("#kciProductsTable");
 
   if (kciProductsTable.length) {

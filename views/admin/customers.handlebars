@@ -17,29 +17,26 @@
                         <h2>Customers</h2>
                     </div>
                     <div class="card-body">
-                        <table id="productsTable" class="table table-hover table-product" style="width:100%">
+                        <table id="customerTable" class="table table-hover table-striped table-product"
+                            style="width:100%">
+
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>Company</th>
                                     <th>Name</th>
-                                    <th>email</th>
-                                    <th>mobile</th>
-                                    <th>type</th>
-                                    <th>state</th>
-
+                                    <th>Email</th>
+                                    <th>Type</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {{#each customers}}
-                                    <tr class="clickable-row" data-href="/admin/viewCustomer/{{_id}}">
-                                        <td>{{add @index 1}}</td>
+                                    <tr class="clickable-row" data-href="/admin/viewCustomer/{{_id}}"
+                                        style="color:#212529; font-weight: 500;">
+
                                         <td>{{companyName}}</td>
                                         <td class="text-capitalize">{{firstName}} {{lastName}}</td>
                                         <td>{{email}}</td>
-                                        <td>{{mobile}}</td>
                                         <td>{{customerType}}</td>
-                                        <td>{{state}}</td>
                                     </tr>
                                 {{/each}}
 
