@@ -12532,7 +12532,7 @@ button {
     width: 33.33%;
   }
 }
-.card-profile .card-profile-body .profile-avata {
+.card-profile .card-profile-body .profile-avatar {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -12540,7 +12540,7 @@ button {
   text-align: center;
 }
 @media (min-width: 1200px) {
-  .card-profile .card-profile-body .profile-avata {
+  .card-profile .card-profile-body .profile-avatar {
     width: 33.33%;
     order: 2;
   }

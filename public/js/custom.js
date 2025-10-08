@@ -423,15 +423,13 @@ $(document).ready(function () {
   var kciProductsTable = $("#kciProductsTable");
 
   if (kciProductsTable.length) {
-    kciProductsTable.DataTable({
+    var table = kciProductsTable.DataTable({
       serverSide: true,
       processing: true,
       ajax: {
         url: "/admin/products/data",
         dataSrc: function (json) {
-          // Hide spinner
           $("#productsLoading").hide();
-          // Show table
           kciProductsTable.show();
           return json.data;
         },
@@ -440,24 +438,26 @@ $(document).ready(function () {
       autoWidth: false,
       info: false,
       lengthChange: false,
-      order: [[2, "asc"]],
-      columnDefs: [
-        { orderable: false, targets: [0, 6] }, // row # and options
-        { width: "300px", targets: 1 }, // Product Name width
-      ],
+      order: [[0, "asc"]], // sort by first column (title)
       columns: [
-        { data: "index" },
         { data: "title" },
         { data: "brandLine" },
         { data: "productLine" },
         { data: "category" },
         { data: "subcategory" },
-        { data: "options", orderable: false, searchable: false },
       ],
       initComplete: function () {
-        // Extra safety: hide spinner and show table when initialized
         $("#productsLoading").hide();
         kciProductsTable.show();
+
+        // Make row clickable
+        kciProductsTable.find("tbody").on("click", "tr", function () {
+          const data = table.row(this).data();
+          console.log("Row clicked, data:", data);
+          if (data && data._id) {
+            window.location.href = `/admin/editProduct/${data._id}`;
+          }
+        });
       },
       language: {
         search: "_INPUT_",

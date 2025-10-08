@@ -113,13 +113,11 @@ module.exports = {
 
       // Map column index to field name
       const columns = [
-        "index", // column 0, not in DB but we can ignore for sorting
-        "title", // column 1
-        "brandLine", // column 2
-        "productLine", // column 3
-        "category", // column 4
-        "subcategory", // column 5
-        "options", // column 6, not searchable
+        "title",
+        "brandLine",
+        "productLine",
+        "category",
+        "subcategory",
       ];
 
       let sortField = columns[orderCol];
@@ -149,25 +147,13 @@ module.exports = {
         .limit(length)
         .lean();
 
-      const data = products.map((p, index) => ({
-        index: start + index + 1,
+      const data = products.map((p) => ({
+        _id: p._id, // needed for row click
         title: p.title,
         brandLine: p.brandLine,
         productLine: p.productLine,
         category: p.category,
         subcategory: p.subcategory,
-        options: `
-      <div class="dropdown">
-       <a class="dropdown-toggle icon-burger-mini" href="#" role="button" data-toggle="dropdown"></a>
-       <div class="dropdown-menu dropdown-menu-right">
-       <a class="dropdown-item" href="/admin/editProduct/${p._id}">Edit</a>
-       <a class="dropdown-item text-danger" href="#" onclick="confirmDelete('${
-         p._id
-       }', 
-       ${JSON.stringify(p.title)})">Delete</a>
-        </div>
-      </div>
-      `,
       }));
 
       res.json({

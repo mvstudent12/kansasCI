@@ -1,9 +1,18 @@
 <div class="content-wrapper">
     <div class="content">
         <div class="card card-default card-profile">
-            <div class="card-header-bg" style=""></div>
+
+            <div class="card-header-bg">
+                <a href="/admin/customers" class="btn btn-sm btn-dark position-absolute"
+                    style="top: 15px; left: 15px; width: 40px; height: 40px; padding: 0;">
+                    <i class="mdi mdi-arrow-left" style="font-size: 1.5rem;"></i>
+                </a>
+            </div>
+
+
+
             <div class="card-body card-profile-body">
-                <div class="profile-avata">
+                <div class="profile-avatar">
                     <img class="rounded-circle" src="/img/static/avatar_big.webp" alt="Avatar Image">
                     <span class="h5 d-block mt-3 mb-2 text-capitalize">{{customer.firstName}}
                         {{customer.lastName}}</span>
