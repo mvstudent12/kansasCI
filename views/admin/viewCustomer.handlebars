@@ -186,7 +186,7 @@
                                                 <i class="fas fa-info-circle text-primary"></i>
                                             </span>
                                         </label>
-                                        <input class="form-control" type="text" name="companyName"
+                                        <input class="form-control text-capitalize" type="text" name="companyName"
                                             placeholder="Company Name" pattern="^[A-Za-z\s-]+$"
                                             title="Please enter the name of the company you work for."
                                             value="{{customer.companyName}}">
@@ -205,15 +205,15 @@
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label>First Name</label>
-                                        <input class="form-control" type="text" name="firstName" placeholder="John"
-                                            required pattern="^[A-Za-z\s-]+$"
+                                        <input class="form-control text-capitalize" type="text" name="firstName"
+                                            placeholder="John" required pattern="^[A-Za-z\s-]+$"
                                             title="First name can only contain letters, spaces, and hyphens"
                                             value="{{customer.firstName}}">
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label>Last Name</label>
-                                        <input class="form-control" type="text" name="lastName" placeholder="Doe"
-                                            required pattern="^[A-Za-z\s-]+$"
+                                        <input class="form-control text-capitalize" type="text" name="lastName"
+                                            placeholder="Doe" required pattern="^[A-Za-z\s-]+$"
                                             title="Last name can only contain letters, spaces, and hyphens"
                                             value="{{customer.lastName}}">
                                     </div>

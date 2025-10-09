@@ -1,11 +1,12 @@
 // server.js
+
 const express = require("express");
 const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
 const path = require("path");
 const dotenv = require("dotenv");
 
-//links database api
+// links database api
 require("./app/config/db");
 
 // Load environment variables
@@ -13,7 +14,7 @@ dotenv.config();
 
 const app = express();
 
-//handlebars helpers
+// handlebars helpers
 const helpers = require("./app/helpers/helpers");
 
 // Handlebars setup
@@ -27,126 +28,55 @@ app.engine(
     layoutsDir: __dirname + "/views/layouts",
   })
 );
+
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
+
 // app.enable("view cache"); --enable in production
 
 // Body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const session = require("express-session"); //initialize express-sessions
-const flash = require("connect-flash");
-const MongoStore = require("connect-mongo"); // This stores sessions in MongoDB
-const crypto = require("crypto"); //generates random session secret
+//session setup
+require("./app/config/session")(app);
 
-//const dbURI = "mongodb://localhost/kansasci";
-
-const dbURI =
-  "mongodb+srv://kcicodingdev:zaaKZI27u5MtY6Pw@kansasci.jdywjne.mongodb.net/?retryWrites=true&w=majority&appName=Kansasci";
-
-// Generate a random session secret dynamically
-const generateSessionSecret = () => {
-  return crypto.randomBytes(32).toString("hex"); // Generates a 64-character secret
-};
-
-// Use the generated session secret
-//const sessionSecret = generateSessionSecret();
-
-const sessionSecret = "asdasdasd8798798798279827342kmnikjn89s8ed0s8d";
-
+// Static files
 app.use(
-  session({
-    secret: sessionSecret, // Use a strong, unique secret key for session ,encryption
-    resave: false,
-    saveUninitialized: true,
-    store: MongoStore.create({
-      mongoUrl: dbURI, // MongoDB URI
-      collectionName: "sessions", // Collection name for storing sessions in MongoDB
-    }),
-    cookie: {
-      maxAge: 2 * 60 * 60 * 1000, // 1 day
-      secure: false, //set true only in production
-      httpOnly: true, // Set 'secure: true' if you're using HTTPS
-      sameSite: "strict", // Helps prevent CSRF
-    },
+  express.static("public", {
+    maxage: "30d",
+    etag: false,
   })
 );
 
-app.use(flash());
-
-// Static files
-app.use(express.static("public", { maxage: "30d", etag: false }));
+//Graceful Shutdown for Database
+const { setupShutdownHandlers } = require("./app/utils/gracefulShutdown");
 
 // Routes
 const publicRoutes = require("./app/routes/public.routes");
 const shopRoutes = require("./app/routes/shop.routes");
 const adminRoutes = require("./app/routes/admin.routes");
-const authRoutes = require("./app/routes/auth.routes");
 
 const User = require("./app/models/User");
 
 // --- Public/Shop Middleware ---
-app.use(["/", "/shop"], (req, res, next) => {
-  // Cart session and count
-  res.locals.cart = req.session.cart || [];
-  res.locals.cartCount = res.locals.cart.reduce(
-    (total, item) => total + (item.quantity || 0),
-    0
-  );
+const publicMiddleware = require("./app/middleware/publicMiddleware");
+app.use(["/", "/shop"], publicMiddleware);
 
-  // Wishlist session and count
-  res.locals.wishList = req.session.wishList || [];
-  res.locals.wishCount = res.locals.wishList.length;
-
-  // Inspiration / gallery session and count
-  res.locals.inspirationList = req.session.inspirationList || [];
-  res.locals.inspirationCount = res.locals.inspirationList.length;
-
-  next();
-});
+// --- Auth Routes ---
+const authRoutes = require("./app/routes/auth.routes");
+app.use("/auth", authRoutes);
 
 // --- Admin Middleware with cached sales contacts ---
-let cachedSalesContacts = null;
-let lastCacheTime = 0;
-const CACHE_DURATION_MS = 5 * 60 * 1000; // 5 minutes
+const adminMiddleware = require("./app/middleware/adminMiddleware");
+app.use("/admin", adminMiddleware);
 
-app.use("/admin", async (req, res, next) => {
-  try {
-    // Flash messages
-    res.locals.success_msg = req.flash("success_msg");
-    res.locals.error_msg = req.flash("error_msg");
-
-    // Current path for sidebar active highlighting
-    res.locals.currentPath = req.originalUrl;
-
-    // Sales contacts caching
-    const now = Date.now();
-    if (!cachedSalesContacts || now - lastCacheTime > CACHE_DURATION_MS) {
-      cachedSalesContacts = await User.find(
-        {},
-        "_id firstName lastName mobile email position _id"
-      )
-        .sort({ firstName: 1 })
-        .lean();
-      lastCacheTime = now;
-    }
-    res.locals.salesContacts = cachedSalesContacts;
-
-    next();
-  } catch (err) {
-    console.error("Error fetching sales contacts:", err);
-    res.locals.salesContacts = [];
-    next();
-  }
-});
-
+// Use routes
 app.use("/", publicRoutes);
 app.use("/shop", shopRoutes);
 app.use("/admin", adminRoutes);
-app.use("/auth", authRoutes);
 
-//404 route
+// 404 route
 app.use((req, res) => {
   res.status(404).render("error/503", { layout: "error" });
 });
@@ -155,15 +85,7 @@ app.use((req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-// For app termination
-const gracefulShutdown = (msg, callback) => {
-  console.log(`Application disconnected through ${msg}`);
-  callback();
-};
-process.on("SIGINT", () => {
-  gracefulShutdown("App termination", () => {
-    process.exit(0);
-  });
-});
+// For graceful app termination
+setupShutdownHandlers();
 
 module.exports = app; // for testing

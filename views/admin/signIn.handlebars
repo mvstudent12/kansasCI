@@ -1,0 +1,54 @@
+<body class="bg-light-gray" id="body">
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh">
+        <div class="d-flex flex-column justify-content-between">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <div class="card card-default mb-0">
+                        <div class="card-header pb-0">
+                            <div class="app-brand w-100 d-flex justify-content-center border-bottom-0">
+                                <div class="d-flex">
+                                    <span class="h1 text-uppercase text-primary bg-dark px-2">KCI</span>
+                                    <span class="h1 text-uppercase text-dark bg-primary px-2">Dashboard</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body px-5 pb-5 pt-0">
+                            <h4 class="text-dark mb-6 mt-4 text-center">Sign In</h4>
+
+                            <!-- Flash Messages -->
+                            {{#if error_msg}}
+                                <div class="alert alert-danger text-center">{{error_msg}}</div>
+                            {{/if}}
+                            {{#if success_msg}}
+                                <div class="alert alert-success text-center">{{success_msg}}</div>
+                            {{/if}}
+
+                            <form action="/auth/admin/signIn" method="POST">
+                                <div class="row">
+                                    <div class="form-group col-md-12 mb-4">
+                                        <input type="email" class="form-control input-lg" id="email"
+                                            aria-describedby="emailHelp" placeholder="Email" name="email"
+                                            value="{{email}}" autofocus>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <input type="password" class="form-control input-lg" id="password"
+                                            placeholder="Password" name="password">
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-primary btn-pill mb-4 mt-4">Sign
+                                            In</button>
+                                        <p class="mb-0">
+                                            <a href="#">Forgot password?</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

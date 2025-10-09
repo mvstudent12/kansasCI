@@ -105,6 +105,9 @@ const helpers = {
     );
   },
   isActive: function (link, currentPath) {
+    // If either is missing, return empty string
+    if (typeof link !== "string" || typeof currentPath !== "string") return "";
+
     // remove trailing slashes
     link = link.replace(/\/$/, "");
     currentPath = currentPath.replace(/\/$/, "");

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>KCI Admin</title>
+    <title>KCI Console</title>
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
@@ -47,7 +47,7 @@
             <div id="sidebar" class="sidebar sidebar-with-footer">
                 <!-- Aplication Brand -->
                 <div class="app-brand">
-                    <a href="/admin/dashboard">
+                    <a href="/shop">
                         <img src="/img/favicon/favicon.png" alt="KCI">
                         <span class="brand-name">KCI Shop</span>
                     </a>
@@ -182,7 +182,6 @@
                     <span class="page-title"></span>
 
                     <div class="navbar-right ">
-
 
                         <ul class="nav navbar-nav">
                             <!-- Offcanvas -->
@@ -422,11 +421,13 @@
                             </li>
                             <!-- User Account -->
                             <li class="dropdown user-menu">
-                                <button class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                <button class="dropdown-toggle nav-link d-flex align-items-center"
+                                    data-toggle="dropdown">
                                     <img src="/img/static/avatar.webp" class="user-image rounded-circle"
                                         alt="User Image" />
-                                    <span class="d-none d-lg-inline-block">Admin</span>
+                                    <span class="ml-2 text-capitalize">{{user.firstName}}</span>
                                 </button>
+
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li>
                                         <a class="dropdown-link-item" href="#">

@@ -1,0 +1,238 @@
+<div class="content-wrapper">
+    <div class="content">
+        <div class="card card-default card-profile">
+
+            <div class="card-header-bg">
+                <a href="/admin/dashboard" class="btn btn-sm btn-dark position-absolute"
+                    style="top: 15px; left: 15px; width: 40px; height: 40px; padding: 0;">
+                    <i class="mdi mdi-arrow-left" style="font-size: 1.5rem;"></i>
+                </a>
+            </div>
+
+
+            <div class="card-body card-profile-body">
+                <div class="profile-avatar">
+                    <img class="rounded-circle" src="/img/static/avatar_big.webp" alt="Avatar Image">
+                    <span class="h5 d-block mt-3 mb-2 text-capitalize">{{user.firstName}}
+                        {{user.lastName}}</span>
+                    <span class="d-block text-capitalize mb-2">{{user.companyName}}</span>
+                    <span class="d-block">{{user.email}}</span>
+                </div>
+            </div>
+            <div class="card-footer card-profile-footer">
+                <ul class="nav nav-border-top justify-content-center" id="profileTabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-target="infoTab" href="#">Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-target="activityTab" href="#">Activity</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-target="messageTab" href="#">Message</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- Info Section -->
+        <div class="row tab-content" id="infoTab">
+            <div class="col-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h2>My Info</h2>
+                    </div>
+                    <div class="card-body">
+                        <form>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label text-capitalize"><strong>Name</strong></label>
+                                    <input type="text" class="form-control" value="{{user.firstName}} {{user.lastName}}"
+                                        disabled>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label"><strong>Mobile</strong></label>
+                                    <input type="text" class="form-control" value="{{user.mobile}}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label"><strong>Email</strong></label>
+                                    <input type="text" class="form-control" value="{{user.email}}" disabled>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label"><strong>Position</strong></label>
+                                    <input type="text" class="form-control" value="{{user.position}}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-end mt-4">
+                                <a href="#" class="btn btn-primary btn-pill" data-toggle="modal"
+                                    data-target="#modal-stock">
+                                    Edit user
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Orders Table -->
+        <div class="row tab-content d-none" id="activityTab">
+            <div class="col-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h2>My Activity</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>nothing to see here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Settings Section -->
+        <div class="row tab-content d-none" id="messageTab">
+            <div class="col-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        {{!-- <h2 text-capitalize>Message {{user.firstName}}</h2> --}}
+                    </div>
+                    {{!-- NEED TO DO --}}
+                    <div class="card-body">
+                        <p>This feature is coming soon!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- edit modal --}}
+<div class="modal fade modal-stock" id="modal-stock" aria-labelledby="modal-stock" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <form action="/admin/edituser/{{user._id}}" method="POST">
+            <div class="modal-content">
+                <div class="modal-header align-items-center p3 p-md-5">
+                    <h2 class="modal-title" id="exampleModalGridTitle">Edit user</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-3 p-md-5">
+                    <div class="row px-5">
+                        <div class="col-lg-12">
+                            <h3 class="h5 mb-5">user Information</h3>
+                            <div class="bg-light p-30 mb-5">
+                                <div class="row px-5 pt-3">
+
+
+                                    <div class="col-md-6 form-group">
+                                        <label>First Name</label>
+                                        <input class="form-control" type="text" name="firstName" placeholder="John"
+                                            required pattern="^[A-Za-z\s-]+$"
+                                            title="First name can only contain letters, spaces, and hyphens"
+                                            value="{{user.firstName}}">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>Last Name</label>
+                                        <input class="form-control" type="text" name="lastName" placeholder="Doe"
+                                            required pattern="^[A-Za-z\s-]+$"
+                                            title="Last name can only contain letters, spaces, and hyphens"
+                                            value="{{user.lastName}}">
+                                    </div>
+
+                                    <div class="col-md-6 form-group">
+                                        <label>E-mail</label>
+                                        <input class="form-control" type="email" name="email"
+                                            placeholder="example@email.com" required
+                                            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                            title="Please enter a valid email address" value="{{user.email}}">
+                                    </div>
+
+                                    <div class="col-md-6 form-group">
+                                        <label>Mobile No</label>
+                                        <input id="mobileInput" class="form-control" type="text" name="mobile"
+                                            placeholder="(123) 456-7890" required maxlength="14"
+                                            value="{{user.mobile}}">
+                                    </div>
+
+
+                                    <!-- user Type Select -->
+                                    <div class="col-md-6 form-group">
+                                        <label>
+                                            Position
+                                            <span data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="By law, KCI can only sell products to certain agencies, organizations, and approved groups. Please select the appropriate user type.">
+                                                <i class="fas fa-info-circle text-primary"></i>
+                                            </span>
+                                        </label>
+                                        <select class="form-control" name="userType" id="userType" required>
+                                            <option value="" disabled {{#unless user.userType}}selected{{/unless}}>
+                                                Select user Type</option>
+                                            <option value="State of KS Employee" {{#if (eq
+                                                user.userType "State of KS Employee" )}}selected{{/if}}>State
+                                                of KS Employee</option>
+                                            <option value="State of KS Agency" {{#if (eq
+                                                user.userType "State of KS Agency" )}}selected{{/if}}>State of
+                                                KS Agency</option>
+                                            <option value="Non-Profit Agency" {{#if (eq
+                                                user.userType "Non-Profit Agency" )}}selected{{/if}}>Non-Profit
+                                                Agency</option>
+                                            <option value="Government Agency" {{#if (eq
+                                                user.userType "Government Agency" )}}selected{{/if}}>Government
+                                                Agency</option>
+                                            <option value="Educational Institution" {{#if (eq
+                                                user.userType "Educational Institution" )}}selected{{/if}}>
+                                                Educational Institution</option>
+                                            <option value="Religious Organization" {{#if (eq
+                                                user.userType "Religious Organization" )}}selected{{/if}}>
+                                                Religious Organization</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div>
+                        <button type="button" class="btn btn-light btn-pill mr-1 mr-md-2" data-dismiss="modal">
+                            cancel </button>
+                        <button type="submit" class="btn btn-primary btn-pill">
+                            save </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{{!-- Switch Tabs --}}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const tabs = document.querySelectorAll("#profileTabs .nav-link");
+        const contents = document.querySelectorAll(".tab-content");
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                // Remove active from all tabs
+                tabs.forEach(t => t.classList.remove("active"));
+
+                // Hide all content sections
+                contents.forEach(c => c.classList.add("d-none"));
+
+                // Activate clicked tab
+                tab.classList.add("active");
+
+                // Show the matching section
+                const targetId = tab.getAttribute("data-target");
+                document.getElementById(targetId).classList.remove("d-none");
+            });
+        });
+    });
+</script>

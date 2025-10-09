@@ -18,7 +18,7 @@
 
             <div class="card-body px-3 px-md-5">
                 <div class="row">
-                    {{#each salesContacts}}
+                    {{#each contacts}}
                         <div class="col-12 col-sm-12 col-md-12 col-lg-6">
                             <div class="card card-default p-4">
                                 <a href="javascript:0" class="media text-secondary" data-toggle="modal"
@@ -44,6 +44,12 @@
                                                 <i class="mdi mdi-phone mr-2 flex-shrink-0" style="width: 24px;"></i>
                                                 <span class="text-wrap"
                                                     style="word-break: break-word;">{{mobile}}</span>
+                                            </li>
+                                            <li class="d-flex align-items-start mb-1">
+                                                <i class="mdi mdi-account-key mr-2 flex-shrink-0"
+                                                    style="width: 24px;"></i>
+                                                <span class="text-capitalize text-wrap"
+                                                    style="word-break: break-word;">{{role}}</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -163,6 +169,25 @@
                                         <input type="text" class="form-control" id="position" name="position" required>
                                     </div>
                                 </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-4">
+                                        <label for="role">Role</label>
+                                        <select class="form-control" id="role" name="role" required>
+                                            <option value="" disabled selected>Select Member Role</option>
+
+                                            {{!-- Admin option: only enabled if user.role === "Admin" --}}
+                                            {{#if (eq user.role "admin")}}
+                                                <option value="admin">Admin</option>
+                                            {{else}}
+                                                <option value="admin" disabled>Admin</option>
+                                            {{/if}}
+
+                                            <option value="user">User</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
 
                                 <div class="col-md-6 form-group">
                                     <label for="mobileInput">Mobile No</label>
@@ -174,6 +199,19 @@
                                     <div class="form-group mb-4">
                                         <label for="email">Email</label>
                                         <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-4">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-4">
+                                        <label for="confirmPassword">Confirm Password</label>
+                                        <input type="password" class="form-control" id="confirmPassword" required>
                                     </div>
                                 </div>
                             </div>
@@ -275,3 +313,65 @@
         });
     });
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("form"); // adjust if needed
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirmPassword");
+
+        form.addEventListener("submit", (e) => {
+            if (password.value.trim() !== confirmPassword.value.trim()) {
+                e.preventDefault(); // stop form submission
+                showToast("Passwords do not match", "error");
+            }
+        });
+
+        // Simple toast function (customize if you already have your own)
+        function showToast(message, type = "success") {
+            const toast = document.createElement("div");
+            toast.className = `toast ${type}`;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add("show");
+            }, 100);
+
+            setTimeout(() => {
+                toast.classList.remove("show");
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+    });
+</script>
+
+<style>
+    /* Minimal toast style */
+    .toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #333;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 6px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+        z-index: 9999;
+    }
+
+    .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .toast.error {
+        background: #d9534f;
+    }
+
+    .toast.success {
+        background: #5cb85c;
+    }
+</style>

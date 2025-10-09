@@ -1,8 +1,4 @@
-const Product = require("../models/Product");
-const Order = require("../models/Order");
-const Customer = require("../models/Customer");
-const Event = require("../models/Event");
-const User = require("../models/User");
+const { Product, Order, Customer, Event, User } = require("../models");
 
 const fs = require("fs");
 const path = require("path");
@@ -10,23 +6,12 @@ const path = require("path");
 const { getUsersWithOpenOrders } = require("../utils/orderHelpers");
 
 // Helper function to convert 12h time to 24h format string
-function convertTimeTo24(timeStr) {
-  if (!timeStr) return "00:00"; // default to midnight
-  let [time, modifier] = timeStr.split(/(am|pm)/i);
-  let [hours, minutes] = time.split(":").map(Number);
-
-  if (modifier.toLowerCase() === "pm" && hours < 12) hours += 12;
-  if (modifier.toLowerCase() === "am" && hours === 12) hours = 0;
-
-  return `${hours.toString().padStart(2, "0")}:${minutes
-    .toString()
-    .padStart(2, "0")}:00`;
-}
+const { convertTimeTo24 } = require("../utils/timeHelpers");
 
 module.exports = {
-  async signIn(req, res) {
+  async index(req, res) {
     try {
-      res.render("admin/signIn", { currentPage: "signIn" });
+      res.render("admin/signIn", { layout: "error" });
     } catch (err) {
       console.log(err);
       res.render("error/404", { layout: "error" });
@@ -61,14 +46,17 @@ module.exports = {
 
       // Get open orders per user using global helper
       const usersWithOpenOrders = await getUsersWithOpenOrders();
-      console.log(usersWithOpenOrders);
+
+      const success_msg = req.session.success_msg || null;
+      delete req.session.success_msg; // clear after reading
 
       res.render("admin/dashboard", {
         layout: "admin",
         orders,
         customerCount,
         productCount,
-        usersWithOpenOrders, // pass to view
+        usersWithOpenOrders,
+        success_msg,
       });
     } catch (err) {
       console.error(err);
@@ -100,9 +88,6 @@ module.exports = {
       const search = req.query["search[value]"]
         ? req.query["search[value]"].trim()
         : "";
-
-      console.log("Received query:", req.query);
-      console.log("Search value parsed:", search);
 
       // Extract sorting information safely
       let orderCol = req.query["order[0][column]"]
@@ -358,7 +343,25 @@ module.exports = {
   },
   async contacts(req, res) {
     try {
-      res.render("admin/contacts", { layout: "admin" });
+      const success_msg = req.session.success_msg || null;
+      delete req.session.success_msg; // clear after reading
+
+      const error_msg = req.session.error_msg || null;
+      delete req.session.error_msg; // clear after reading
+
+      const contacts = await User.find(
+        {},
+        "_id firstName lastName mobile email position role"
+      )
+        .sort({ firstName: 1 })
+        .lean();
+
+      res.render("admin/contacts", {
+        layout: "admin",
+        contacts,
+        success_msg,
+        error_msg,
+      });
     } catch (err) {
       console.log(err);
       res.render("error/404", { layout: "error" });
@@ -366,7 +369,8 @@ module.exports = {
   },
   async addNewUser(req, res) {
     try {
-      const { firstName, lastName, email, mobile, position } = req.body;
+      const { firstName, lastName, email, mobile, position, role, password } =
+        req.body;
 
       const newUser = new User({
         firstName,
@@ -374,22 +378,26 @@ module.exports = {
         email,
         mobile,
         position,
+        role,
+        password,
       });
 
       await newUser.save();
 
-      req.flash("success_msg", "New team member created successfully");
-      res.redirect("/admin/contacts"); // adjust where you want to go
+      req.session.success_msg = `New team member created successfully`;
+      res.redirect("/admin/contacts");
     } catch (err) {
       console.error(err);
 
       // Handle duplicate email or validation errors
       if (err.code === 11000) {
-        req.flash("error_msg", "Email already exists");
+        req.session.error_msg = `Email already exists`;
+
         return res.redirect("/admin/contacts");
       }
 
-      req.flash("error_msg", "Error creating user");
+      req.session.error_msg = `Error creating user`;
+
       res.redirect("/admin/contacts");
     }
   },
@@ -482,7 +490,8 @@ module.exports = {
 
       // Delete the product document
       await Product.findByIdAndDelete(ID);
-      req.flash("error_msg", "Product Deleted");
+
+      req.session.success_msg = `Product Deleted`;
       res.redirect("/admin/products");
     } catch (err) {
       console.error(err);

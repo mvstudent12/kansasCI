@@ -33,14 +33,28 @@ const MONGO_URI =
     await User.deleteMany({});
     console.log("🗑️  Existing users deleted");
 
-    // 🔹 Insert new users
-    const inserted = await User.insertMany(users);
-    console.log(`✅ Successfully seeded ${inserted.length} users`);
+    // 🔹 Insert new users one by one to trigger pre-save hook
+    for (const u of users) {
+      const user = new User({
+        firstName: u.firstName,
+        lastName: u.lastName,
+        email: u.email,
+        mobile: u.mobile,
+        position: u.position,
+        role: u.role,
+        password: u.password, // raw password from JSON
+      });
+
+      await user.save(); // pre-save hook hashes the password
+      console.log(`✅ User ${u.email} created`);
+    }
+
+    console.log(`🎉 Successfully seeded ${users.length} users`);
 
     await mongoose.disconnect();
     console.log("🔒 Disconnected from MongoDB");
   } catch (err) {
-    console.error("❌ Error seeding users:", err.message);
+    console.error("❌ Error seeding users:", err);
     process.exit(1);
   }
 })();

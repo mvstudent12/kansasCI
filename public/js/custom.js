@@ -487,7 +487,6 @@ $(document).ready(function () {
         // Make row clickable
         kciProductsTable.find("tbody").on("click", "tr", function () {
           const data = table.row(this).data();
-          console.log("Row clicked, data:", data);
           if (data && data._id) {
             window.location.href = `/admin/editProduct/${data._id}`;
           }
@@ -531,7 +530,6 @@ $(document).ready(function () {
   // Make row clickable
   ordersTable.find("tbody").on("click", "tr", function () {
     const data = table.row(this).data();
-    console.log("Row clicked, data:", data);
     if (data && data._id) {
       window.location.href = `/admin/viewOrder/{{_id}}`;
     }

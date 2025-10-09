@@ -1,6 +1,4 @@
-const Product = require("../models/Product");
-const Customer = require("../models/Customer");
-const Order = require("../models/Order");
+const { Product, Order, Customer } = require("../models");
 
 const fs = require("fs").promises;
 const path = require("path");
@@ -410,7 +408,6 @@ module.exports = {
   },
   async cart(req, res) {
     try {
-      console.log("I am here");
       res.render("shop/cart", {
         layout: "shop",
       });

@@ -1,10 +1,9 @@
 const express = require("express");
 const admin = express.Router();
 const adminController = require("../controllers/admin.controllers");
+const upload = require("../middleware/upload");
 
-const upload = require("../middelware/upload");
-
-admin.get("/", adminController.signIn);
+admin.get("/", adminController.index);
 
 admin.get("/dashboard", adminController.dashboard);
 
@@ -52,7 +51,5 @@ admin.post(
   upload.array("imageFiles", 10),
   adminController.editProductDB
 );
-
 admin.get("/deleteProduct/:ID", adminController.deleteProduct);
-
 module.exports = admin;
